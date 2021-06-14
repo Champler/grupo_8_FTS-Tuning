@@ -1,4 +1,6 @@
-# FTS TUNNING
+![WhatsApp Image 2021-06-14 at 11 36 54](https://user-images.githubusercontent.com/63321083/121944324-ee941480-cd28-11eb-90a4-2d0a2befd856.jpeg)
+
+# Primer Sprint (1/6 - 16/6)
 
 ## ¿Quiénes somos?
 
@@ -8,7 +10,8 @@ En nuestra forma de trabajo buscamos generar un sistema de mercado amigable y se
 ## Nosotros:
 
 - Fabio Andres Cicerelli
-- Tobias Racedo
+- Hola, me llamo Tobias Racedo, tengo 19 años y vivo en Bella Vista, San Miguel, toda la vida me fascino la tecnología y apunto a hacer mi vida futura en base a esta.![WhatsApp 
+
 -  Hola me llamo Santiago Rafael Bruno, soy de Avellaneda, estudio programación web Full-stack y actualmente estoy haciendo un proyecto programacion de un ecommerce llamado FTS Tunning
 - Hola mí nombre es Nicolas saucedo tengo 20 años vivo en pareja en la la localidad de Florencio Varela , trabajo desde los 15 años  , me gusta trabajar en grupo ,soy una persona alegre y positiva
 
