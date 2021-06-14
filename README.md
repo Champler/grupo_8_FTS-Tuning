@@ -1,4 +1,5 @@
-![WhatsApp Image 2021-06-14 at 11 36 54](https://user-images.githubusercontent.com/63321083/121944324-ee941480-cd28-11eb-90a4-2d0a2befd856.jpeg)
+![Logo](https://user-images.githubusercontent.com/63321083/121944546-269b5780-cd29-11eb-88d3-f388a3ee64f4.jpeg)
+
 
 # Primer Sprint (1/6 - 16/6)
 
