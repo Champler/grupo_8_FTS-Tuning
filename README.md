@@ -9,8 +9,8 @@ En nuestra forma de trabajo buscamos generar un sistema de mercado amigable y se
 
 - Fabio Andres Cicerelli
 - Tobias Racedo
-- Santiago Rafael Bruno: Hola me llamo Santiago Rafael Bruno, soy de Avellaneda, estudio programación web Full-stack y actualmente estoy haciendo un proyecto programacion de un ecommerce llamado FTS Tunning
-- Nicolas Saucedo
+-  Hola me llamo Santiago Rafael Bruno, soy de Avellaneda, estudio programación web Full-stack y actualmente estoy haciendo un proyecto programacion de un ecommerce llamado FTS Tunning
+- Hola mí nombre es Nicolas saucedo tengo 20 años vivo en pareja en la la localidad de Florencio Varela , trabajo desde los 15 años  , me gusta trabajar en grupo ,soy una persona alegre y positiva
 
 ## Inspiraciones:
 
