@@ -8,7 +8,7 @@
 Nosotros somos FTS Tunning, una empresa especializada en crear tu auto de ensueños mediante nuestros artículos de primera calidad. 
 Nuestra forma de trabajo se basa en generar un sistema de mercado amigable y seguro, gracias a esto brindamos nuestros servicios las 24 horas para todo tipo de clientes. Ya seas un joven entrando al mundo o un experimentado en el mismo, nosotros tenemos la solución a tu inquietud.
 
-## El equipo:
+## Integrantes:
 
 - Hola, soy Fabio Cicerelli, posadeño de 46 años, me apasionan los autos y la tecnología. Deseo con este proyecto ayudar a los demás a construir el auto de sus sueños.
 - Hola, soy Tobias Racedo, tengo 19 años y vivo en Bella Vista, San Miguel, toda la vida me fascinó la tecnología y apunto a hacer mi vida futura en base a esta.
