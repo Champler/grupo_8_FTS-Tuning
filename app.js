@@ -19,6 +19,34 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+/* Conexión de los html */
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Home.html'))
+})
+
+app.get('/Productos', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Productos.html'))
+})
+
+app.get('/ProductoDetallado', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/ProductoDetalle.html'))
+})
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Login.html'))
+})
+
+app.get('/Registro', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Registro.html'))
+})
+
+app.get('/Carrito', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Carrito.html'))
+})
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
