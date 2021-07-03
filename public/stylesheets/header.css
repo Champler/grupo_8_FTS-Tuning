@@ -1,0 +1,43 @@
+@import url('general.css');
+@import url('variables.css');
+
+header .header {
+    display: flex;
+    justify-content: space-between;
+}
+header .left-container {
+    background-color: var(--color-negro);
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 0;
+    width: 106px;
+}
+header .left-container img{
+    width: 60px;
+    height: auto;
+    border-radius: 51%;
+}
+header .input-ul-container {
+    display: flex;
+    width: 80px;
+}
+
+header .input-ul-container ul{
+    display: none;
+}
+
+header .right-container {
+    background-color: var(--color-negro);
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 0;
+    width: 106px;
+}
+
+header .right-container .pc{
+    display: none;
+}
