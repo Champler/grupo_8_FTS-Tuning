@@ -4,7 +4,10 @@
 header .header {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid var(--color-negro);
+    border-top: 1px solid var(--color-negro);
 }
+/* Container Izquierdo */
 header .left-container {
     background-color: var(--color-negro);
     border-radius: 0 20px 20px 0;
@@ -12,21 +15,37 @@ header .left-container {
     justify-content: space-around;
     align-items: center;
     padding: 7px 0;
-    width: 106px;
+    width: 5rem;
 }
+
 header .left-container img{
     width: 60px;
     height: auto;
-    border-radius: 51%;
+    border-radius: 45%;
 }
+/* Parte Central */
 header .input-ul-container {
     display: flex;
-    width: 80px;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 19px;
+
 }
 
+header .input-ul-container input{
+    width: 9rem;
+    height: 2rem;
+}
+header .input-ul-container #lupa{
+    height: 1.2rem;
+    position: relative;
+    right: 135px;
+}
 header .input-ul-container ul{
     display: none;
 }
+
+/* Container Derecho */
 
 header .right-container {
     background-color: var(--color-negro);
@@ -35,7 +54,7 @@ header .right-container {
     justify-content: space-around;
     align-items: center;
     padding: 7px 0;
-    width: 106px;
+    width: 5rem;
 }
 
 header .right-container .pc{
