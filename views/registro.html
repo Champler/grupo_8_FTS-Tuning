@@ -12,9 +12,66 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Css -->
     <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
     <title>Document</title>
 </head>
 <body>
-    
+
+    <header>
+        <div class="header">
+            <!-- Container izquierdo -->
+            <div class="left-container">
+                <a href=""><img src="/images/Logo.jpeg" alt="Logo"></a>
+            </div>
+            <!-- Parte Central (Input y Menu) -->
+            <div class="input-ul-container">
+                <input type="search" placeholder="Busca aquí">
+                <img src="/images/svg/Lupa.svg" alt="Lupa de búsqueda" id="lupa">
+                <ul>
+                    <li><a href=""><img src="/images/svg/Freno.svg" alt=""></a></li>
+                    <li><a href=""><img src="/images/svg/Rueda.svg" alt=""></a></li>
+                    <li><a href=""><img src="/images/svg/Escapes.svg" alt=""></a></li>
+                    <li><a href=""><img src="/images/svg/Motor.svg" alt=""></a></li>
+                    <li><a href=""><img src="/images/svg/Volante.svg" alt=""></a></li>
+                    <li><a href=""><img src="/images/svg/Interior.svg" alt=""></a></li>
+                </ul>
+            </div>
+            <!-- Container Derecho -->
+            <div class="right-container">
+                <a href="" id="hamburguesa"><img src="/images/svg/Hamburguesa.svg" alt="Menu"></a>
+                <div class="pc">
+                    <a href=""><img src="/images/svg/Login-registro.svg" alt="Login-registro"></a>
+                    <a href=""><img src="/images/svg/Carrito.svg" alt="Carro de compras"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <form action="action_page">
+        <div class="container">
+          <h1>Registro</h1>
+          <hr>
+          <label for="email"><b>Nombre</b></label>
+          <input type="text" placeholder="Ingrese su nombre" name="name" id="name" required
+          >
+          <label for="email"><b>Telefono</b></label>
+          <input type="number" placeholder="Ingrese su telefono" name="number" id="number" required>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Ingrese su Email" name="email" id="email" required>
+      
+          <label for="psw"><b>Contraseña</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      
+          <label for="psw-repeat"><b>Repita su Contraseña</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+          <hr>
+      
+      
+          <button type="submit" class="registerbtn">Register</button>
+        </div>
+
+      </form>
 </body>
 </html>

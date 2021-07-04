@@ -38,8 +38,8 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Login.html'))
 })
 
-app.get('/Registro', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Registro.html'))
+app.get('/registro', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/registro.html'))
 })
 
 app.get('/Carrito', (req, res) => {
