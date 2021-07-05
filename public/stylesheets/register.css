@@ -2,3 +2,62 @@
 @import url('variables.css');
 
 
+body{
+    background-image: url(/images/cars-tuning.jpeg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 79%;
+    height: 55%;
+    padding: 9%;
+    position: absolute;
+    top: 10%;
+    left: 12%;
+    background-color: rgba(141, 132, 132, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 16%;
+}
+
+.buttom-form{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 1rem;
+}
+.buttom-submit{
+    background-color: var(--color-rojo);
+    border-radius: 30px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+input{
+    padding: 15px;
+}
+
+.register{
+    background-color: var(--color-rojo);
+    border-radius: 30px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+
+b{
+    color: white;
+}
+
+h1{
+    color: white;
+}
