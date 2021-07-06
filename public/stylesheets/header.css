@@ -46,8 +46,7 @@ header .input-ul-container ul{
 
 #search-bar {
     display: flex;
-    align-items: center; 
-
+    margin-left: 15px;
 }
 #search-bar button img{
     height: 1.2rem;
