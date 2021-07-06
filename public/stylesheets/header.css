@@ -16,6 +16,7 @@ header .left-container {
     align-items: center;
     padding: 7px 0;
     width: 5rem;
+    box-shadow: 0px 3px 2px grey;
 }
 
 header .left-container img{
@@ -34,12 +35,30 @@ header .input-ul-container {
 header .input-ul-container input{
     width: 45vw;
     height: 2rem;
+    border-radius: 10px;
+    border: solid 1px var(--color-negro);
+    padding-left: 3px;
 }
 
 header .input-ul-container ul{
     display: none;
 }
 
+#search-bar {
+    display: flex;
+    align-items: center; 
+
+}
+#search-bar button img{
+    height: 1.2rem;
+}
+#search-bar button {
+    position: relative;
+    right: 38px;
+    top: -1;
+    background-color: transparent;
+    border: none;
+}
 /* Container Derecho */
 
 header .right-container {
@@ -50,8 +69,12 @@ header .right-container {
     align-items: center;
     padding: 7px 0;
     width: 4.5rem;
+    box-shadow: 3px 3px 2px grey;
 }
 
+#line {
+    display: none;
+}
 header .right-container .pc{
     display: none;
 }
@@ -82,12 +105,20 @@ header .right-container .pc{
 
     }
 
+    #line{
+        display: block;
+        margin-top: 10px;
+    }
     header .input-ul-container ul li a img {
         width: 35px;
         height: 35px;
     }
     header .input-ul-container input{
-        margin-top: 7px;
+        margin-top: 10px;
+    }
+
+    #search-bar button {
+        top: 6px;
     }
     /* Contenedor Derecho */
     
