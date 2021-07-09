@@ -16,6 +16,7 @@ header .left-container {
     align-items: center;
     padding: 7px 0;
     width: 5rem;
+    box-shadow: 0px 3px 2px grey;
 }
 
 header .left-container img{
@@ -27,24 +28,36 @@ header .left-container img{
 header .input-ul-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    padding-left: 19px;
-
+    justify-content: center;
+    padding: 0 10px;
 }
 
 header .input-ul-container input{
-    width: 9rem;
+    width: 45vw;
     height: 2rem;
+    border-radius: 10px;
+    border: solid 1px var(--color-negro);
+    padding-left: 3px;
 }
-header .input-ul-container #lupa{
-    height: 1.2rem;
-    position: relative;
-    right: 135px;
-}
+
 header .input-ul-container ul{
     display: none;
 }
 
+#search-bar {
+    display: flex;
+    margin-left: 15px;
+}
+#search-bar button img{
+    height: 1.2rem;
+}
+#search-bar button {
+    position: relative;
+    right: 38px;
+    top: -1;
+    background-color: transparent;
+    border: none;
+}
 /* Container Derecho */
 
 header .right-container {
@@ -54,9 +67,86 @@ header .right-container {
     justify-content: space-around;
     align-items: center;
     padding: 7px 0;
-    width: 5rem;
+    width: 4.5rem;
+    box-shadow: 3px 3px 2px grey;
 }
 
+#line {
+    display: none;
+}
 header .right-container .pc{
     display: none;
+}
+
+@media (min-width: 500px){
+    /* Contenedor Izquierdo */
+    
+    header .left-container {
+        width: 10rem;
+    }
+
+    header .left-container img{
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+    }
+    /* Contenedor Central */
+    header .input-ul-container ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 56vw;
+    }
+
+    header .input-ul-container ul li {
+        margin-top: 15px;
+        padding: 0 15px;
+
+    }
+
+    #line{
+        display: block;
+        margin-top: 10px;
+    }
+    header .input-ul-container ul li a img {
+        width: 35px;
+        height: 35px;
+    }
+    header .input-ul-container input{
+        margin-top: 10px;
+    }
+
+    #search-bar button {
+        top: 6px;
+    }
+    /* Contenedor Derecho */
+    
+    header .right-container .pc{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    header .right-container .pc a img{
+        width: 40px;
+    }
+    #Carrito{
+        width: 55px;
+        margin-left: 10px;
+    }
+    header .input-ul-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    header .right-container{
+        width: 10rem;
+    }
+
+    header .right-container #hamburguesa{
+        display: none;
+    }
 }
