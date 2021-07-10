@@ -1,0 +1,154 @@
+@import url('general.css');
+@import url('variables.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+main .carrousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .carrousel img{
+    width: 85%;
+    height: 200px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 30px;
+}
+
+main .video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+main .video iframe{
+    width: 85%;
+    height: 200px;
+    border-radius: 15px;
+}
+
+main .products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+}
+main .products .product {
+    width: 160px;
+    height: 160px;
+    border-radius: 15px;
+}
+main .products .product img{
+    width:120px;
+    height: 120px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px 1px var(--color-azul);
+}
+
+main .nota{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fuente);
+    flex-direction: column;
+}
+
+main .nota img{
+    width: 85%;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 1px 1px 1px 1px var(--color-azul);
+}
+
+main .nota p{
+    font-size: 15px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+
+/* Animaciones */
+
+
+/* Media Tablet */
+@media (min-width: 500px){
+    main .carrousel img{
+        height: 300px;
+        
+    }
+    main .video iframe{
+        height: 300px;
+    }
+    main .products .product{
+        width: 200px;
+        height: 200px;
+    }
+    main .products .product img{
+        width: 180px;
+        height: 180px;
+    }
+    main .nota p{
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 800px){
+    main .carrousel img{
+        height: 400px;
+        
+    }
+    main .video iframe{
+        height: 400px;
+    }
+    main .products .product{
+        width: 33%;
+        height: 270px;
+    }
+    main .products .product img{
+        width: 230px;
+        height: 230px;
+        margin-bottom: 10px;
+    }
+    main .nota p{
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 1020px){
+    main .carrousel img{
+        height: 500px;
+        
+    }
+    main .video iframe{
+        height: 500px;
+    }
+    main .products .product{
+        width: 33%;
+        height: 300px;
+    }
+    main .products .product img{
+        width: 280px;
+        height: 280px;
+    }
+    main .nota p{
+        font-size: 39px;
+    }
+    main .nota{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 40px;
+    }
+    main .nota img{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    main .n2 p{
+        display: flex;
+        order: -1;
+    }
+}
+

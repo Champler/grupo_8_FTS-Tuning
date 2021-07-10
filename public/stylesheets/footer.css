@@ -8,42 +8,42 @@ footer {
 }
 
 
-a{
+footer a{
     color: var(--color-rojo);
 }
-li{
+footer li{
     list-style: inside;
 }
 
 
-.contact-payment {
+footer .contact-payment {
     display: flex;
     flex-direction: column;
     color: var(--color-rojo);
     font-size: 30px;
 }
 
-.logo{
+footer .logo{
     display: flex;
     justify-content:right;
     align-items: center;
     padding-right: 5px;
 }
-img{
+footer img{
     border-radius: 50px;
     width: auto;
     height: 65px;
 }
 
-.categories-us {
+footer .categories-us {
     display: none;
 }
 
 @media (min-width:500px) {
-    .contact-payment {
+    footer .contact-payment {
         font-size: 50px;
     }
-    img{
+    footer img{
         border-radius: 50px;
         width: auto;
         height: 100px;
@@ -55,32 +55,32 @@ img{
         justify-content: space-between;
         align-items: center;
     }
-    .categories-us .categories{
+    footer .categories-us .categories{
         display: flex;
         flex-direction: column;
     }
-        .categories-us .us {
-            display: flex;
-            flex-direction: column;
-            margin-left: 25px;
+    footer .categories-us .us {
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
     }
-    .categories-us {
+    footer .categories-us {
         color: var(--color-rojo);
         display: flex;
         padding: 20px 20px;
         font-size: 23px;
         font-weight: bold;
     }
-    .contact-payment {
+    footer .contact-payment {
         font-size: 30px;
     }
 }
 
 @media (min-width: 1000px) {
-    img{
+    footer img{
         height: 150px;
     }
-    .contact-payment{
+    footer .contact-payment{
         font-size: 40px;
     }
 }
