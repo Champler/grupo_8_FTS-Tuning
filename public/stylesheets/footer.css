@@ -1,0 +1,86 @@
+@import url('general.css');
+@import url('variables.css');
+
+footer {
+    background-color: var(--color-negro);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+a{
+    color: var(--color-rojo);
+}
+li{
+    list-style: inside;
+}
+
+
+.contact-payment {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-rojo);
+    font-size: 30px;
+}
+
+.logo{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    padding-right: 5px;
+}
+img{
+    border-radius: 50px;
+    width: auto;
+    height: 65px;
+}
+
+.categories-us {
+    display: none;
+}
+
+@media (min-width:500px) {
+    .contact-payment {
+        font-size: 50px;
+    }
+    img{
+        border-radius: 50px;
+        width: auto;
+        height: 100px;
+    }
+}
+
+@media (min-width:800px){
+    footer{
+        justify-content: space-between;
+        align-items: center;
+    }
+    .categories-us .categories{
+        display: flex;
+        flex-direction: column;
+    }
+        .categories-us .us {
+            display: flex;
+            flex-direction: column;
+            margin-left: 25px;
+    }
+    .categories-us {
+        color: var(--color-rojo);
+        display: flex;
+        padding: 20px 20px;
+        font-size: 23px;
+        font-weight: bold;
+    }
+    .contact-payment {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 1000px) {
+    img{
+        height: 150px;
+    }
+    .contact-payment{
+        font-size: 40px;
+    }
+}
