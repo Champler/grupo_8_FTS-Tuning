@@ -1,0 +1,78 @@
+@import url('general.css');
+@import url('variables.css');
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+h3.price {
+    color: var(--color-rojo);
+}
+ul.description-list li{
+    list-style: circle;
+    list-style-type: circle;
+}
+div.caroussel-product {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--color-negro);
+    border-radius: 50px;
+    padding:10px;
+    margin: 10px;
+}
+.button-purchase {
+    background-color: var(--color-rojo);
+    border-radius: 30px;
+    color: var(--color-azul);
+    font-size:large;
+    font-weight: bold;
+    padding: 5px 10px;
+
+}
+/* ********************************************    Carrousel   ******************************************** */
+
+article.carrousel {
+    border: solid 1px var(--color-negro);
+    border-radius: 20px;
+    padding:10px;
+    margin: 10px;
+}
+div.carrousel-content {
+    display: flex;
+    flex-direction:row;
+     align-items: center;
+    justify-items: center;
+    /* justify-content: center; */
+    /* flex-wrap: nowrap; */
+    border: solid 1px var(--color-negro);
+    border-radius: 20px;
+    padding:10px;
+    margin: 10px; 
+}
+div.carrousel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries */
+/* Tablet */
+
+@media (min-width: 500px) {
+    /* main {
+        
+    } */
+}
+
+/* Desktop */
+
+@media (min-width: 860px) {
+    /* main {
+        
+    } */
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +11,201 @@
     <!-- Íconos: -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Css -->
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/productos.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/carrouselFabio/lightslider.css"/>
+    <!--Jquery-->
+    <script type="text/javascript" src="/javascript/carrouselFabio/JQuery3.3.1.js"></script>
+    <script type="text/javascript" src="/javascript/carrouselFabio/lightslider.js"></script>
+    <script src="/javascript/carrouselFabio/menu.js" defer></script>
+    <title>Productos</title>
 </head>
 <body>
-    <h1>AAAAAAAAAAAAAAAAAA</h1>
+    <main class="main-product">
+        <section class="category-section">
+            <div class="product-category">
+                <h1 class="product-category-title">Escapes y Silenciadores</h1>
+            
+                <img class="img-product-category" src="/images/Products/fescape.jpg" alt="Escape Chevrolet Corsa">
+                <article>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur ipsa maiores ipsum aperiam atque ad sit harum unde est nobis expedita laboriosam doloribus saepe, repellendus iure quos voluptatem id dolor provident ratione quisquam iste asperiores cum. Possimus ut beatae ab, eius eligendi in temporibus.</p>
+                </article>
+            </div> 
+            <!-- Filter -->
+            <ul class="filter">
+                <h3>Filtrar<i class="fas fa-chevron-down"></i></h3>
+                <li>
+                    <ul class="filter-price">
+                        <a>Precio<i class="fas fa-chevron-down"></i></a>
+                        <li><a>$ 0</a></li>
+                        <li><a>$ 30.000</a></li>
+                        <li><a>barra del precio</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="filter-brand">
+                        <a class="filter-brand" onclick="dropMenu()">Marca<i class="fas fa-chevron-down" ></i></a>
+                        <li><a>Chevrolet</a></li>
+                        <li><a>Fiat</a></li>
+                        <li><a>Ford</a></li>
+                        <li><a>Renault</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="filter-model">
+                        <a>Modelo<i class="fas fa-chevron-down"></i></a>
+                        <li><a>Corsa</a></li>
+                        <li><a>Agile</a></li>
+                        <li><a>Astra</a></li>
+                        <li><a>Onix</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="filter-year">
+                        <a>Año<i class="fas fa-chevron-down"></i></a>
+                        <li><a>2021</a></li>
+                        <li><a>2020</a></li>
+                        <li><a>2019</a></li>
+                        <li><a>2018</a></li>
+                    </ul>
+                </li>    
+            </ul>
+            <!-- Carrousel -->
+            <!-- <article class="carrousel">
+                <div class="carrousel-content">
+                    <div class="carrousel-arrow"><i class="fas fa-chevron-left"></i></div>
+                    <div class="carrousel-card">
+                        <img class="img-product" src="\images\Products\fescape.jpg" alt="Escape Chevrolet Corsa 2">
+                        <ul class="product-description-list">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing.</li>
+                            <li>Nunc senectus condimentum venenatis quam, inceptos aenean ullamcorper.</li>
+                            <li>Ullamcorper est pretium porta fermentum mollis, nunc condimentum potenti.</li>
+                            <li>Ut aptent erat blandit himenaeos, mollis pharetra.</li>
+                            <li>Orci integer magnis eget sollicitudin, interdum ac penatibus.</li>
+                            <li>In pharetra fermentum fames, sociosqu ultricies</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis. Explicabo delectus quos nulla.</p>
+                        <form action="" method="post">
+                            <button type="submit" class="button-purchase">comprar</button>
+                        </form>
+                    </div>
+                    <div class="carrousel-arrow"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </article> -->
+
+            <div class="container">
+                <!--slider------------------->
+                <ul id="autoWidth" class="cs-hidden">
+                <!--1------------------------------>
+          <li class="item-a">
+              <!--slider-box-->
+                <div class="box">
+                <p class="marvel">Producto 1</p>
+                <!--model-->
+                <img src="/images/Products/fescape.jpg" class="model">
+                <!--details-->
+                <div class="details">
+                <!--logo-character-->
+                <img src="/images/Products/SpiderMan-logo.png" class="logo" >
+                <!--character-details-->
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quis natus sint optio non quisquam quidem fuga laudantium rem.</p>
+                </div>
+                
+                </div>
+                </li>
+                <!--2------------------------------>
+          <li class="item-a">
+              <!--slider-box-->
+                <div class="box">
+                <p class="marvel">Producto 2</p>
+                <!--model-->
+                <img src="/images/Products/fescape.jpg" class="model">
+                <!--details-->
+                <div class="details">
+                <!--logo-character-->
+                <img src="/images/Products/SpiderMan-logo.png" class="logo" >
+                <!--character-details-->
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quis natus sint optio non quisquam quidem fuga laudantium rem.</p>
+                </div>
+                
+                </div>
+                </li>
+                <!--3------------------------------>
+          <li class="item-a">
+              <!--slider-box-->
+                <div class="box">
+                <p class="marvel">Producto 3</p>
+                <!--model-->
+                <img src="/images/Products/fescape.jpg" class="model">
+                <!--details-->
+                <div class="details">
+                <!--logo-character-->
+                <img src="/images/Products/SpiderMan-logo.png" class="logo" >
+                <!--character-details-->
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quis natus sint optio non quisquam quidem fuga laudantium rem.</p>
+                </div>
+                
+                </div>
+                </li>
+                <!--4------------------------------>
+          <li class="item-a">
+              <!--slider-box-->
+                <div class="box">
+                <p class="marvel">Producto 4</p>
+                <!--model-->
+                <img src="/images/Products/fescape.jpg" class="model">
+                <!--details-->
+                <div class="details">
+                <!--logo-character-->
+                <img src="/images/Products/SpiderMan-logo.png" class="logo" >
+                <!--character-details-->
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quis natus sint optio non quisquam quidem fuga laudantium rem.</p>
+                </div>
+                
+                </div>
+                </li>
+                <!--5------------------------------>
+          <li class="item-a">
+              <!--slider-box-->
+                <div class="box">
+                <p class="marvel">Producto 5</p>
+                <!--model-->
+                <img src="/images/Products/fescape.jpg" class="model">
+                <!--details-->
+                <div class="details">
+                <!--logo-character-->
+                <img src="/images/Products/SpiderMan-logo.png" class="logo" >
+                <!--character-details-->
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quis natus sint optio non quisquam quidem fuga laudantium rem.</p>
+                </div>
+                
+                </div>
+                </li>
+                <!--6------------------------------>
+          <li class="item-a">
+              <!--slider-box-->
+                <div class="box">
+                <p class="marvel">Producto 6</p>
+                <!--model-->
+                <img src="/images/Products/fescape.jpg" class="model">
+                <!--details-->
+                <div class="details">
+                <!--logo-character-->
+                <img src="/images/Products/SpiderMan-logo.png" class="logo" >
+                <!--character-details-->
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit quis natus sint optio non quisquam quidem fuga laudantium rem.</p>
+                </div>
+                
+                </div>
+                </li>
+                </ul>
+                    
+                    
+            
+            
+            </div>
+        
+        </section>
+    </main>
+<script src="/javascript/carrouselFabio/script.js" type="text/javascript"></script>
 </body>
 </html>
