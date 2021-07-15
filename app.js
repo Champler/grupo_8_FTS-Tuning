@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Conexión de los html */
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Home.html'))
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/home.html'))
 })
 
 app.get('/Productos', (req, res) => {

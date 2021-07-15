@@ -1,6 +1,7 @@
 @import url('general.css');
 @import url('variables.css');
 
+
 body{
     background-image: url(/images/cars-tuning.jpeg);
     background-attachment: fixed;
@@ -13,14 +14,15 @@ body{
     justify-content: center;
     width: 90%;
     height: 50%;
-    padding: 40px;
-    position: absolute;
+    padding: 13%;
+    position: relative;
     top: 10%;
     left: 5%;
     background-color: rgba(141, 132, 132, 0.6);
     border-radius: 10px;
     text-align: center;
-    margin-top: 100px
+    margin-top: 100px;
+    margin-bottom: 20%;
 }
 
 .buttom-form{
@@ -35,6 +37,20 @@ body{
     display: flex;
     justify-content: center;
     align-self: center;
+margin-bottom: 12px;}
+
+
+
+
+
+
+
+
+label{
+    color: whitesmoke;
+}
+span a {
+    color: lightgray;
 }
 
 
@@ -45,8 +61,18 @@ body{
         background-attachment: fixed;
         background-position: center center;
         background-size: cover;
+        
     }
     
+
+  .box{
+      width: 68%;
+      left: 20%;
+  }
+  
+
+
+
   
 }
 @media (min-width: 860px){
@@ -75,6 +101,8 @@ body{
         margin: 1rem;
     }
 
+
+
 }
 
 @media (min-width: 1100px){
@@ -85,22 +113,20 @@ body{
         width: 77%;
         height: 50%;
         padding: 40px;
-        position: absolute;
+        position: relative;
         top: 14%;
         left: 15%;
         background-color: rgba(141, 132, 132, 0.6);
         border-radius: 10px;
         text-align: center;
-        margin-top: 100px
+        margin-top: 21% ;
     }
 
-
-
-
-
-
-
-
+    .box{
+        width: 68%;
+        left: 19%;
+    }
+  
 
 
 }
