@@ -60,6 +60,9 @@ header .input-ul-container ul{
     border: none;
 }
 /* Container Derecho */
+header .right-container #check{
+    display: none;
+}
 
 header .right-container {
     background-color: var(--color-negro);
@@ -71,6 +74,65 @@ header .right-container {
     width: 4.5rem;
     box-shadow: 3px 3px 2px grey;
 }
+/* Sidebar */
+header .sidebar {
+    position: fixed;
+    right: -2500px;
+    width: 50%;
+    height: 100%;
+    background: var(--color-azul);
+    transition: all .5s ease;
+    top: 0;
+    z-index: 9;
+}
+
+
+header .sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: var(--color-rojo);
+    padding-left: 40px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid var(--color-negro);
+    transition: .4s;
+}
+
+header .sidebar ul li:hover a {
+    padding-left: 50px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+header #check {
+    display: none;
+}
+
+header label #btn {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 15px;
+    font-size: 35px;
+    color: var(--color-rojo);
+    transition: all .5s ease;
+}
+
+header #check:checked ~ .right-container{
+    right: 40px;
+    top: 25px;
+    z-index: 10;
+}
+header #check:checked ~ .sidebar{
+    right: 0;
+    top: 68px;
+}
+
+
 
 #line {
     display: none;
@@ -78,6 +140,8 @@ header .right-container {
 header .right-container .pc{
     display: none;
 }
+
+
 
 @media (min-width: 850px){
     /* Contenedor Izquierdo */
@@ -168,7 +232,7 @@ header .right-container .pc{
         width: 10rem;
     }
     
-    header .right-container #hamburguesa{
+    header .right-container label{
         display: none;
     }
 }
