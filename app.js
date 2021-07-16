@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Conexión de los html */
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Home.html'))
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/home.html'))
 })
 
 app.get('/Productos', (req, res) => {
@@ -38,8 +38,8 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Login.html'))
 })
 
-app.get('/Registro', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Registro.html'))
+app.get('/registro', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/registro.html'))
 })
 
 app.get('/Carrito', (req, res) => {

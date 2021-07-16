@@ -60,6 +60,9 @@ header .input-ul-container ul{
     border: none;
 }
 /* Container Derecho */
+header .right-container #check{
+    display: none;
+}
 
 header .right-container {
     background-color: var(--color-negro);
@@ -71,6 +74,65 @@ header .right-container {
     width: 4.5rem;
     box-shadow: 3px 3px 2px grey;
 }
+/* Sidebar */
+header .sidebar {
+    position: fixed;
+    right: -2500px;
+    width: 50%;
+    height: 100%;
+    background: var(--color-azul);
+    transition: all .5s ease;
+    top: 0;
+    z-index: 9;
+}
+
+
+header .sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: var(--color-rojo);
+    padding-left: 40px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid var(--color-negro);
+    transition: .4s;
+}
+
+header .sidebar ul li:hover a {
+    padding-left: 50px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+header #check {
+    display: none;
+}
+
+header label #btn {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 15px;
+    font-size: 35px;
+    color: var(--color-rojo);
+    transition: all .5s ease;
+}
+
+header #check:checked ~ .right-container{
+    right: 40px;
+    top: 25px;
+    z-index: 10;
+}
+header #check:checked ~ .sidebar{
+    right: 0;
+    top: 68px;
+}
+
+
 
 #line {
     display: none;
@@ -79,13 +141,15 @@ header .right-container .pc{
     display: none;
 }
 
-@media (min-width: 700px){
+
+
+@media (min-width: 850px){
     /* Contenedor Izquierdo */
     
     header .left-container {
         width: 10rem;
     }
-
+    
     header .left-container img{
         width: 100px;
         height: auto;
@@ -98,13 +162,8 @@ header .right-container .pc{
         align-items: flex-end;
         width: 56vw;
     }
-
-    header .input-ul-container ul li {
-        margin-top: 15px;
-        padding: 0 15px;
-
-    }
-
+    
+    
     #line{
         display: block;
         margin-top: 10px;
@@ -116,7 +175,7 @@ header .right-container .pc{
     header .input-ul-container input{
         margin-top: 10px;
     }
-
+    
     #search-bar button {
         top: 6px;
     }
@@ -125,9 +184,9 @@ header .right-container .pc{
     header .right-container .pc{
         display: flex;
         flex-direction: row;
-
+        
     }
-
+    
     header .right-container .pc .menu-user img{
         height: 55px;
         width: 49px;
@@ -145,7 +204,7 @@ header .right-container .pc{
     header .right-container .pc .menu-user li a{
         color: var(--color-gris);
         background-color: var(--color-azul);
-
+        
     }
     header .right-container .pc .menu-user ul li:hover{
         opacity: 0.8;
@@ -168,12 +227,53 @@ header .right-container .pc{
         flex-direction: column;
         padding: 0 10px;
     }
-
+    
     header .right-container{
         width: 10rem;
     }
-
-    header .right-container #hamburguesa{
+    
+    header .right-container label{
         display: none;
     }
+}
+
+
+/* Animación Ancla */
+
+header .input-ul-container a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: var(--color-negro);
+}
+
+header .input-ul-container a span {
+    transition: transform 0.2s ease-out;
+}
+
+header .input-ul-container a span:first-child {
+    display: inline-block;
+    padding: 10px;
+}
+
+header .input-ul-container a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+
+header .input-ul-container a:hover span:first-child {
+    transform: translateY(100%);
+}
+
+header .input-ul-container a:hover span:last-child,
+header .input-ul-container [data-animation] a:hover span:last-child {
+    transform: none;
 }
