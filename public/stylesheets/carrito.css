@@ -1,9 +1,7 @@
+@import url('general.css');
+@import url('variables.css');
 @import url('header.css');
-
-
-
-
-
+@import url('footer.css');
 
 
 
@@ -344,8 +342,14 @@ aside {
 }
 
 @media (max-width: 640px) {
+  .related-prod-title{
+    display: none;
+  }
   .related-prods{
     display: none;
+  }
+  aside{
+    height: 18rem;
   }
   aside,
   .basket,
@@ -441,7 +445,6 @@ aside {
 }
 .custom-fields-referenced-title {
   text-align: center;
-
 }
 .custom-fields-referenced-title a, 
 .custom-fields-referenced-image a {
@@ -487,5 +490,4 @@ h4{
 .articulo img{
   width: 100px;
   height: 100px;
-  display: block;
 }
