@@ -244,14 +244,14 @@ aside {
   float: right;
   position: relative;
   width: 30%;
+  bottom: -1.6rem;
 }
 
 .summary {
   background-color: #eee;
   border: 1px solid #aaa;
   padding: 1rem;
-  position: fixed;
-  width: 250px;
+
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -344,6 +344,9 @@ aside {
 }
 
 @media (max-width: 640px) {
+  .related-prods{
+    display: none;
+  }
   aside,
   .basket,
   .summary,
@@ -403,7 +406,7 @@ aside {
     padding: 0 1rem 0 0;
   }
   .summary {
-    width: 28%;
+  
     bottom: 11.5rem;
   }
 }
@@ -421,4 +424,68 @@ aside {
     bottom: 29.6rem;
  }
  
+}
+
+
+
+
+
+/*productos relacionados */
+
+.items {
+  padding-left: 25px;
+  float: left;
+}
+.items:first-child {
+  padding-left: 0;
+}
+.custom-fields-referenced-title {
+  text-align: center;
+
+}
+.custom-fields-referenced-title a, 
+.custom-fields-referenced-image a {
+  border-bottom: 0 !important;
+}
+
+
+.imagen{
+  width: 58%;
+}
+
+.articulo{
+  display: flex;
+  width: 25%;
+  border-right: 1px solid black;
+}
+
+.botton-card{
+  left: 4px;
+  position: relative;
+  padding: 9px;
+  margin: 20px;
+  border-radius: 1rem;
+  background-color: red;
+}
+
+section{
+  display: flex;
+  margin: 40px;
+}
+
+.articulo:last-child{
+  border-right: none;
+}
+
+h4{
+  text-align: center;
+  margin: 1rem;
+  font-size: 28px;
+}
+
+
+.articulo img{
+  width: 100px;
+  height: 100px;
+  display: block;
 }
