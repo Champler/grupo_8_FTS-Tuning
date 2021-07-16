@@ -15,6 +15,7 @@
     padding-top: 30px;
     border-radius: 20px;
     z-index: -1;
+    object-fit: cover;
 }
 
 /* forward & Back buttons */
@@ -50,7 +51,7 @@ main .video {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin: 50px 0;
 }
 main .video iframe{
     width: 85%;
@@ -76,6 +77,7 @@ main .products .product img{
     height: 120px;
     border-radius: 15px;
     box-shadow: 1px 1px 1px 1px var(--color-azul);
+    transition: ease all 0.2s;
 }
 
 .a {
@@ -92,16 +94,13 @@ main .word{
     width:75%;
     left: 20px;
     cursor: pointer;
+    text-transform: uppercase ;
 }
 
 .product img:hover {
     opacity: 0.8;
     border: 3px solid var(--color-azul);
 }
-.product img:hover ~ p{
-    color: black;
-    background-color: blanchedalmond;
-} 
 
 main .nota{
     display: flex;
@@ -185,6 +184,7 @@ main .nota img{
         bottom: 145px;
         width: 100%;
         left: 0px;
+        font-size: 20px;
     }
     main .products{       
         justify-content: space-evenly;   

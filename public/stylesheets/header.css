@@ -248,7 +248,7 @@ header .input-ul-container a {
 }
 
 header .input-ul-container a span {
-    transition: transform 0.2s ease-out;
+    transition: transform 0.4s ease-out;
 }
 
 header .input-ul-container a span:first-child {
