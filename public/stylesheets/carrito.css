@@ -12,14 +12,13 @@ html a {
 }
 
 body {
-  background-color: #fff;
   color: #666;
   font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
   margin: 0 auto;
 }
 
-a {
+main a {
   border: 0 none;
   outline: 0;
   text-decoration: none;
@@ -40,31 +39,31 @@ h1 {
   padding: 0;
 }
 
-input,
-button {
+main input,
+main button {
   border: 0 none;
   outline: 0 none;
 }
 
-button {
+main button {
   background-color: #666;
   color: #fff;
 }
 
-button:hover,
-button:focus {
+main button:hover,
+main button:focus {
   background-color: #555;
 }
 
-img,
+main img,
 .basket-module,
 .basket-labels,
 .basket-product {
   width: 100%;
 }
 
-input,
-button,
+main input,
+main button,
 .basket,
 .basket-module,
 .basket-labels,
@@ -145,20 +144,20 @@ label {
   font-size: 16px;
 }
 
-ul {
+main ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li {
+main li {
   color: #111;
   display: inline-block;
   padding: 0.625rem 0;
 }
 
-li.price:before,
-li.subtotal:before {
+main li.price:before,
+main li.subtotal:before {
   content: '';
 }
 
@@ -480,7 +479,7 @@ section{
   border-right: none;
 }
 
-h4{
+.related-prod-title{
   text-align: center;
   margin: 1rem;
   font-size: 28px;
