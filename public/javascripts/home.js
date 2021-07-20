@@ -20,5 +20,4 @@ function SlideShow(n) {
       slides[i].style.display = "none";
   }
   slides[slidePosition-1].style.display = "block";
-  circles[slidePosition-1].className += " enable";
 } 
