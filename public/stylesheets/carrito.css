@@ -46,13 +46,14 @@ main button {
 }
 
 main button {
-  background-color: #666;
+  background-color: #F05454;
   color: #fff;
 }
 
 main button:hover,
 main button:focus {
-  background-color: #555;
+  background-color: #f05980;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
 main img,
@@ -340,6 +341,77 @@ aside {
   width: 100%;
 }
 
+
+
+
+/*productos relacionados */
+
+.items {
+  padding-left: 25px;
+  float: left;
+}
+.items:first-child {
+  padding-left: 0;
+}
+.custom-fields-referenced-title {
+  text-align: center;
+}
+.custom-fields-referenced-title a, 
+.custom-fields-referenced-image a {
+  border-bottom: 0 !important;
+}
+
+
+.imagen{
+  width: 58%;
+}
+
+.articulo{
+  display: flex;
+  width: 25%;
+  border-right: 1px solid black;
+}
+
+.botton-card{
+  left: 4px;
+  position: relative;
+  padding: 9px;
+  margin: 20px;
+  border-radius: 1rem;
+  background-color: #F05454;
+
+}
+.botton-card:hover {
+	background-color: #f05980; /* Color de fondo al pasar el cursor */
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+
+}
+
+section{
+  display: flex;
+  margin: 40px;
+}
+
+.articulo:last-child{
+  border-right: none;
+}
+
+.related-prod-title{
+  text-align: center;
+  margin: 1rem;
+  font-size: 28px;
+}
+
+
+.articulo img{
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
 @media (max-width: 640px) {
   .related-prod-title{
     display: none;
@@ -348,7 +420,7 @@ aside {
     display: none;
   }
   aside{
-    height: 18rem;
+    height: 22rem;
   }
   aside,
   .basket,
@@ -404,6 +476,14 @@ aside {
     font-weight: 200;
 }
 
+
+
+
+
+
+
+
+
 @media (min-width: 641px) and (max-width: 960px) {
   aside {
     padding: 0 1rem 0 0;
@@ -412,7 +492,24 @@ aside {
   
     bottom: 11.5rem;
   }
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @media(max-width: 960px) {
   main {
@@ -430,63 +527,3 @@ aside {
 }
 
 
-
-
-
-/*productos relacionados */
-
-.items {
-  padding-left: 25px;
-  float: left;
-}
-.items:first-child {
-  padding-left: 0;
-}
-.custom-fields-referenced-title {
-  text-align: center;
-}
-.custom-fields-referenced-title a, 
-.custom-fields-referenced-image a {
-  border-bottom: 0 !important;
-}
-
-
-.imagen{
-  width: 58%;
-}
-
-.articulo{
-  display: flex;
-  width: 25%;
-  border-right: 1px solid black;
-}
-
-.botton-card{
-  left: 4px;
-  position: relative;
-  padding: 9px;
-  margin: 20px;
-  border-radius: 1rem;
-  background-color: red;
-}
-
-section{
-  display: flex;
-  margin: 40px;
-}
-
-.articulo:last-child{
-  border-right: none;
-}
-
-.related-prod-title{
-  text-align: center;
-  margin: 1rem;
-  font-size: 28px;
-}
-
-
-.articulo img{
-  width: 100px;
-  height: 100px;
-}
