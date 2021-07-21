@@ -15,14 +15,15 @@ header .left-container {
     justify-content: space-around;
     align-items: center;
     padding: 7px 0;
-    width: 5rem;
+    width: 6rem;
     box-shadow: 0px 3px 2px grey;
 }
 
 header .left-container img{
-    width: 60px;
+    width: 50px;
     height: auto;
     border-radius: 45%;
+    
 }
 /* Parte Central */
 header .input-ul-container {
@@ -71,7 +72,7 @@ header .right-container {
     justify-content: space-around;
     align-items: center;
     padding: 7px 0;
-    width: 4.5rem;
+    width: 6rem;
     box-shadow: 3px 3px 2px grey;
 }
 /* Sidebar */
@@ -79,11 +80,12 @@ header .sidebar {
     position: fixed;
     right: -2500px;
     width: 50%;
-    height: 100%;
+    max-height: 100vh;
     background: var(--color-azul);
     transition: all .5s ease;
-    top: 0;
+    top: -1;
     z-index: 9;
+    overflow-y: scroll;
 }
 
 
@@ -91,13 +93,14 @@ header .sidebar ul a{
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 65px;
-    font-size: 20px;
+    line-height: 40px;
+    font-size: 15px;
     color: var(--color-rojo);
     padding-left: 40px;
     border-top: 1px solid rgba(255, 255, 255, .1);
     border-bottom: 1px solid var(--color-negro);
-    transition: .4s;
+    transition: .6s;
+
 }
 
 header .sidebar ul li:hover a {
@@ -115,11 +118,12 @@ header #check {
 header label #btn {
     position: absolute;
     cursor: pointer;
-    right: 20px;
-    top: 15px;
+    right: 15px;
+    top: 10px;
     font-size: 35px;
     color: var(--color-rojo);
     transition: all .5s ease;
+
 }
 
 header #check:checked ~ .right-container{
@@ -188,8 +192,8 @@ header .right-container .pc{
     }
     
     header .right-container .pc .menu-user img{
-        height: 55px;
-        width: 49px;
+        height: 50px;
+        width: 40px;
     }
     header .right-container .pc .menu-user #baja{
         color: var(--color-gris);
@@ -277,3 +281,4 @@ header .input-ul-container a:hover span:last-child,
 header .input-ul-container [data-animation] a:hover span:last-child {
     transform: none;
 }
+
