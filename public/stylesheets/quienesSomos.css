@@ -1,0 +1,30 @@
+@import url('general.css');
+@import url('variables.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+
+
+.photo{
+    border-radius: 50%;
+    width:200px;
+    height:200px;
+    border-radius:150px;
+    padding: 12px;
+}
+
+
+ .container-user-about-us  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+section  .user{
+    background-color: rgba(141, 132, 132, 0.6);
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px rgb(100 100 100);
+    margin: 21px;
+   }
