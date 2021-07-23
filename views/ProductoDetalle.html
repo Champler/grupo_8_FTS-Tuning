@@ -93,18 +93,22 @@
                 </div>
                 <div class="price-purchase">
                     <h3 class="price">Precio: 21.000</h3>
-                    <p>12 cuotas de 1.000</p>
-                    <p>18 cuotas de 800</p>
-                    <p>24 cuotas de 700</p>
+                    <p class="fees">12 cuotas de 1.000</p>
+                    <p class="fees">18 cuotas de 800</p>
+                    <p class="fees">24 cuotas de 700</p>
                     <div class="credit">
                         <i class="fab fa-cc-visa credit"></i>
                         <i class="fab fa-cc-mastercard credit"></i>
                         <i class="fab fa-cc-amex credit"></i>
                         <i class="fab fa-cc-paypal credit"></i>
                     </div>
-                    <input type="number" value="1" min="0" max="15" class="quantity-field" />
-                    <a href="http://localhost:3000/Carrito"><button type="submit" class="button-purchase">Comprar</button></a>
-                    <a href=""><button type="submit" class="button-add-to-cart">Agregar al Carrito</button></a>
+                    <div>
+                        <span class="fees">Cantidad: </span>
+                        <input type="number" value="1" min="0" max="15" class="quantity-field" />
+                    </div>
+                    
+                    <a href="http://localhost:3000/Carrito"><button type="submit" class="button button-purchase">Comprar</button></a>
+                    <a href=""><button type="submit" class="button button-add-to-cart">Agregar al Carrito</button></a>
                 </div>
             </article>
                 <p class="paragraph">Caño de escape y silenciador Chevrolet original, lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam!</p>
@@ -113,7 +117,7 @@
             <div class="product-details">
                 <img class="img-product-2" src="/images/ProductoDetalle/fescape.jpg" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
-                    <li class="product-caracteristics">Características:</li>
+                    <p class="product-caracteristics">Características:</p>
                     <li>Marca:  Chevrolet</li>
                     <li>Modelo:  Corsa</li>
                     <li>Material del silenciador:  galvanizado</li>
@@ -132,46 +136,37 @@
         <h3 class="sugestions">Productos Sugeridos</h3>
             <div class="carousel-product">
                 <!-- <p>Product 1</p> -->
-                <div class="carousel-card">
-                    <div class="carousel-content">
-                        <div class="carousel-card">
-                            <div class="photo-container">
-                                <img class="photo-carousel" src="/images/ProductoDetalle/41C64T08DzL.jpg" alt="Volante Deportivo">
-                            </div>
-                            <p class="paragraph-card">Volante Deportivo</p>
-                            <form action="" method="post">
-                                <button type="submit" class="button-purchase">Ver más</button>
-                            </form>
-                        </div>
+                <div class="carousel-card card-1">
+                    <div class="photo-container">
+                        <img class="photo-carousel" src="/images/ProductoDetalle/41C64T08DzL.jpg" alt="Volante Deportivo">
                     </div>
+                    <p class="paragraph-card">Volante Deportivo</p>
+                    <p class="paragraph-card card-price">$ 9.000</p>
+                    <form action="" method="post">
+                        <button type="submit" class="button button-purchase">Ver más</button>
+                    </form>
                 </div>
                 <!-- <p>Product 2</p> -->
-                <div class="carousel-card">
-                    <div class="carousel-content">
-                        <div class="carousel-card">
-                            <div class="photo-container">
-                                <img class="photo-carousel" src="/images/ProductoDetalle/unnamed.jpg" alt="Llanta de aleación 14 pulgadas">
-                            </div>
-                            <p class="paragraph-card">Llanta de aleación</p>
-                            <form action="" method="post">
-                                <button type="submit" class="button-purchase">Ver más</button>
-                            </form>
-                        </div>
+                <div class="carousel-card card-2">
+                    <div class="photo-container">
+                        <img class="photo-carousel" src="/images/ProductoDetalle/unnamed.jpg" alt="Llanta de aleación 14 pulgadas">
                     </div>
+                    <p class="paragraph-card">Llanta de aleación</p>
+                    <p class="paragraph-card card-price">$ 11.000</p>
+                    <form action="" method="post">
+                        <button type="submit" class="button button-purchase">Ver más</button>
+                    </form>
                 </div>
                 <!-- Product 3 -->
-                <div class="carousel-card">
-                    <div class="carousel-content">
-                        <div class="carousel-card">
-                            <div class="photo-container">
-                                <img class="photo-carousel" src="/images/ProductoDetalle/D_NQ_NP_2X_830559-MLA41240815817_032020-F.webp" alt="Combo óptica Renault 12">
-                            </div>
-                            <p class="paragraph-card">Óptica Renault 12 </p>
-                            <form action="" method="post">
-                                <button type="submit" class="button-purchase">Ver más</button>
-                            </form>
-                        </div>
+                <div class="carousel-card card-3">
+                    <div class="photo-container">
+                        <img class="photo-carousel" src="/images/ProductoDetalle/D_NQ_NP_2X_830559-MLA41240815817_032020-F.webp" alt="Combo óptica Renault 12">
                     </div>
+                    <p class="paragraph-card">Óptica Renault 12 </p>
+                    <p class="paragraph-card card-price">$ 5.999</p>
+                    <form action="" method="post">
+                        <button type="submit" class="button button-purchase">Ver más</button>
+                    </form>
                 </div>
             </div>
     </main>
