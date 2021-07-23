@@ -21,6 +21,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 /* Conexión de los html */
+app.get('/Quienes-Somos', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/quienesSomos.html'))
+})
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './views/home.html'))
