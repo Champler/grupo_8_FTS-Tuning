@@ -1,7 +1,7 @@
 @import url('general.css');
 @import url('variables.css');
 
-main {
+.main-product {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,11 +14,11 @@ main section article {
     width: 85%;
     margin: 0 30px;
 }
-h1 {
+.title-product {
     font-size: 19px;
     margin: 20px 0;
 }
-h3 {
+.price {
     font-size: 15px;
     margin-bottom: 15px;
 }
@@ -46,8 +46,26 @@ h3 {
 h3.price {
     color: var(--color-rojo);
 }
-form {
-    margin: 20px 0 0 0;
+.credit {
+    color: var(--color-azul);
+    opacity: 0.7;
+    font-size: 15px;
+}
+.quantity-field {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 0.625rem;
+    padding: 2px;
+    width: 3.75rem;
+    font-size: 25px;
+  }
+.product-caracteristics {
+    font-size: 14;
+    text-decoration: underline;
+    font-weight: bold;
+    list-style: none;
+    list-style-type: none;
 }
 .description-list {
     display: flex;
@@ -62,19 +80,28 @@ form {
     font-size: 12px;
     text-align: justify;
 }
-p {
+.paragraph {
     font-size: 12px;
     font-weight: bold;
     margin: 40px 30px;
     text-align: justify;
-    /* text-indent: 2em; */
+    text-indent: 2em;
 }
 
 .button-purchase {
     background-color: var(--color-rojo);
     border-radius: 20px;
     color: var(--color-azul);
-    font-size:large;
+    font-size: 14;
+    font-weight: bold;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 2px 1px rgba(206, 52, 52, 0.2);
+}
+.button-add-to-cart {
+    background-color: var(--color-azul);
+    border-radius: 20px;
+    color: var(--color-gris);
+    font-size: 14;
     font-weight: bold;
     padding: 5px 10px;
     box-shadow: 2px 2px 2px 1px rgba(206, 52, 52, 0.2);
@@ -91,13 +118,81 @@ p {
     color: var(--color-rojo);
     box-shadow: 0px 0px 3px 0px;   
 }
+.button-add-to-cart:hover {
+    cursor:pointer;
+    background-color: var(--color-gris);
+    color: var(--color-azul);
+    box-shadow: 0px 0px 3px 0px;   
+}
 
+/* ********************************************    Carrousel   ******************************************** */
+.sugestions {
+    color: var(--color-azul);
+    font-size: 16px;
+    font-weight: bold;
+}
+article.carousel {
+    border: solid 1px var(--color-negro);
+    border-radius: 20px;
+    padding:10px;
+    margin: 10px;
+}
+div.carousel-content {
+    display: flex;
+    flex-direction:row;
+     align-items: center;
+    justify-items: center;
+    /* justify-content: center; */
+    /* flex-wrap: nowrap; */
+    border: solid 1px var(--color-negro);
+    border-radius: 20px;
+    padding:10px;
+    margin: 10px; 
+}
+div.carousel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 80%; */
+} 
+div.carousel-product {
+    display: flex; 
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--color-negro);
+    border-radius: 50px;
+    padding:10px;
+    margin: 10px;
+}
+/* .photo-container{
+    width: 250px;
+    height: 250px;
+} 
+.photo-carousel {
+    width: auto; 
+    height: auto;
+    max-width: 250px;
+    max-height: 237px;
+} */
+.photo-carousel {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.paragraph {
+    font-size: 12px;
+    font-weight: bold;
+    /* margin: 40px 30px; */
+    text-align: center;
+}
 
-/* Media Queries */
+/******************************************** Media Queries ******************************************************/
 /* Tablet */
 
 @media (min-width: 500px) {
-    h1 {
+    .title-product {
         font-size: 24px;
         margin: 40px 0;
     }
@@ -105,18 +200,24 @@ p {
         width: 85%;
         margin: 0 50px;
     }
-    h3 {
+    .price {
         font-size: 16x;
         margin-bottom: 15px;
     }
-    p {
+    .paragraph {
         font-size: 20px;
+        font-weight: bold;
         margin: 40px 50px;
+        text-align: justify;
+        text-indent: 2em;
     }
     .price-purchase p {
         font-size: 20px;
         margin: 2px 0;
         
+    }
+    .credit {
+        font-size: 18px;
     }
     .description-list li{
         font-size: 18px;
@@ -139,7 +240,7 @@ p {
     /* body {
         max-width: 1000px;
     } */
-    h1 {
+    .title-product {
         font-size: 42px;
         margin: 40px 0;
     }
@@ -147,18 +248,24 @@ p {
         width: 85%;
         margin: 0 60px;
     }
-    h3 {
+    .price {
         font-size: 29px;
         margin-bottom: 15px;
     }
-    p {
+    .paragraph {
         font-size: 22px;
+        font-weight: bold;
         margin: 40px 50px;
+        text-align: justify;
+        text-indent: 2em;
     }
     .price-purchase p {
         font-size: 30px;
         margin: 2px 0;
         
+    }
+    .credit {
+        font-size: 42px;
     }
     .description-list {
         padding-left: 40px;
