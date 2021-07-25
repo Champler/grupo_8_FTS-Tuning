@@ -45,6 +45,11 @@ app.get('/registro', (req, res) => {
 app.get('/Carrito', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Carrito.html'))
 })
+
+app.get('/DatosDePago', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/DatosDePago.html'))
+})
+
 app.get('/pruebas', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Header.html'))
 })

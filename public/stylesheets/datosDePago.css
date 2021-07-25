@@ -1,0 +1,329 @@
+@import url('general.css');
+@import url('variables.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+
+html,
+html a {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+body {
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 62.5%;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+/* MAIN */
+main a {
+  border: 0 none;
+  outline: 0;
+  text-decoration: none;
+}
+
+
+
+main input,
+main button {
+  border: 0 none;
+  outline: 0 none;
+}
+
+main button {
+  background-color: #F05454;
+  color: #fff;
+}
+
+main button:hover,
+main button:focus {
+  background-color: #f05980;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+main {
+  clear: both;
+  font-size: 0.75rem;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 1rem 0;
+  width: 60%;
+}
+
+
+
+/* Aside pue' */
+aside {
+  padding: 0 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+aside {
+  float: right;
+  position: relative;
+  width: 30%;
+  bottom: -1.6rem;
+}
+
+
+
+
+
+/* Datos Personales */
+.datos-Personales{
+  line-height: 1.3rem;
+    background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 1rem;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 29.6rem;
+  margin-bottom: 1rem;
+}
+
+.entrega{
+  line-height: 1.3rem;
+    background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 1rem;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 29.6rem;
+  margin-bottom: 1rem;
+}
+
+.mediodepago{
+    line-height: 1.3rem;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 1rem;
+  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: 29.6rem;
+    margin-bottom: 1rem;
+}
+.tarjetas{display: flex;
+justify-content: space-between;
+}
+
+
+/* Resumen de compra */
+
+.summary {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 1rem;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 29.6rem;
+  margin-bottom: 10rem;
+
+}
+
+.summary-total-items {
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.summary-subtotal,
+.summary-total {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  clear: both;
+  margin: 1rem 0;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.subtotal-title,
+.subtotal-value,
+.total-title,
+.total-value,
+.promo-title,
+.promo-value {
+  color: #111;
+  float: left;
+  width: 50%;
+}
+
+
+.subtotal-value,
+.total-value {
+  text-align: right;
+}
+
+.total-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.summary-checkout {
+  display: block;
+  font-size: 0.75rem;
+
+}
+
+.checkout-cta {
+  display: block;
+  float: none;
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.625rem 0;
+  width: 100%;
+}
+
+.summary-delivery-selection {
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  display: block;
+  font-size: 0.25rem;
+  height: 34px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+/* MEDIAS QUERIES */
+
+@media (max-width: 640px) {
+  .related-prod-title{
+    display: none;
+  }
+  .related-prods{
+    display: none;
+  }
+  aside{
+    height: 22rem;
+  }
+  aside,
+  .basket,
+  .summary,
+  .item,
+  .quitar {
+    width: 100%;
+    font-size: 28px;
+  }
+  .basket-labels {
+    display: none;
+  }
+  .basket-module {
+    margin-bottom: 1rem;
+  }
+  .item {
+    margin-bottom: 1rem;
+  }
+  .product-image {
+    width: 40%;
+  }
+  .product-details {
+    width: 60%;
+  }
+  .price,
+  .subtotal {
+    width: 33%;
+    font-size: 27px;
+  }
+  .quantity {
+    text-align: center;
+    width: 34%;
+  }
+  .quantity-field {
+    float: none;
+  }
+  .remove {
+    bottom: 0;
+    text-align: left;
+    margin-top: 0.75rem;
+    position: relative;
+  }
+  .remove button {
+    padding: 0;
+  }
+  .summary {
+    margin-top: 31.25rem;
+    position: relative;
+
+  }
+}
+.segundo-h2{
+    font-weight: 200;
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 641px) and (max-width: 960px) {
+  aside {
+    padding: 0 1rem 0 0;
+  }
+  .summary {
+  
+    bottom: 11.5rem;
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 960px) {
+  main {
+    width: 100%;
+  }
+  .product-details {
+    padding: 0 1rem;
+    font-size: 13px;
+
+  }
+ .summary{
+    bottom: 29.6rem;
+ }
+ 
+}
+
+
