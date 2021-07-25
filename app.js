@@ -48,8 +48,11 @@ app.get('/registro', (req, res) => {
 app.get('/Carrito', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Carrito.html'))
 })
-app.get('/pruebas', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Header.html'))
+app.get('/historial', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/historialCompras.html'))
+})
+app.get('/usuarios', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/listaUsuarios.html'))
 })
 
 

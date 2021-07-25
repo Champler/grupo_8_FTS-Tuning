@@ -1,0 +1,44 @@
+@import url('general.css');
+@import url('variables.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+.purchase-history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase-history .data .my-data {
+    border: 1px solid var(--color-negro);
+    border-radius: 20px;
+    padding: 20px;
+    height: fit-content;
+    margin: 15px;
+}
+
+.purchase-history  p{
+    margin: 5px;
+}
+
+.purchase-history .history .purchases{
+    border: 1px solid var(--color-negro);
+    border-radius: 20px;
+    padding: 20px;
+    height: fit-content;
+    margin: 15px;
+    width: fit-content;
+}
+
+.purchase-history .history .purchases .photo img {
+    border-radius: 30px;
+}
+
+@media (min-width: 800px) {
+    .purchase-history {
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+}
