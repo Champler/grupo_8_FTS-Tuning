@@ -51,6 +51,9 @@ app.get('/Carrito', (req, res) => {
 app.get('/historial', (req, res) => {
   res.sendFile(path.join(__dirname, './views/historialCompras.html'))
 })
+app.get('/usuarios', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/listaUsuarios.html'))
+})
 
 
 app.use('/', indexRouter);
