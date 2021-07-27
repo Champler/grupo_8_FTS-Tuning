@@ -72,7 +72,7 @@ aside {
 aside {
   float: right;
   position: relative;
-  width: 30%;
+  width: 30vw;
   bottom: -1.6rem;
 }
 
@@ -287,6 +287,10 @@ justify-content: space-between;
 @media (min-width: 641px) and (max-width: 960px) {
   aside {
     padding: 0 1rem 0 0;
+    float: left;
+    position: relative;
+    left: 20%;
+    width: 60%;
   }
   .summary {
   
@@ -311,7 +315,8 @@ justify-content: space-between;
 
 
 
-@media(max-width: 960px) {
+@media(max-width: 960px){
+ 
   main {
     width: 100%;
   }
@@ -327,3 +332,10 @@ justify-content: space-between;
 }
 
 
+@media (min-width: 768px) and (max-width: 2000px) {
+  aside {   float: left;
+    position: relative;
+    left: 25%;
+    width: 50%;
+  }
+}
