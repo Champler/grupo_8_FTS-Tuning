@@ -51,7 +51,9 @@ app.get('/Carrito', (req, res) => {
 app.get('/pruebas', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Header.html'))
 })
-
+app.get('/Contactanos', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/contactanos.html'))
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
