@@ -1,63 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fuentes: -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/quienesSomos.css">
     <!-- Íconos: -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Css -->
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/register.css">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
     <title>Document</title>
 </head>
-<body>
+<body class="register-body">
     <header>
-         
+        
         <!-- Container izquierdo -->
         <div class="left-container">
             <a href="/"><img src="/images/header/Logo.jpeg" alt="Logo"></a>
-           
+            
         </div>
     </header>
     
-
-    <form action="action_page">
-        <div class="container">
-          <h1>Registro</h1>
-          <hr>
-          <label for="email"><b>Nombre</b></label>
-          <input type="text" placeholder="Ingrese su nombre y apellido" name="name" id="name" required
-          >
-      
-      
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Ingrese su Email" name="email" id="email" required>
-      
-          <label for="psw"><b>Contraseña</b></label>
-          <input type="password" placeholder="Ingrese su Contraseña" name="psw" id="psw" required>
-      
-          <label for="psw-repeat"><b>Repita su Contraseña</b></label>
-          <input type="password" placeholder="Repita su Contraseña" name="psw-repeat" id="psw-repeat" required>
-          
-         
-          <hr>
-     
-        <button  type="submit" class="register">Registrarse</button>
-     
-         
-        </div>
-
-      </form>
-
-
-
-      <footer>
+    <main class="register-main">
+        <form action="action_page">
+            <div class="container">
+                <h1>Registro</h1>
+                <hr>
+                <label for="email"><b>Nombre</b></label>
+                <input type="text" placeholder="Ingrese su nombre y apellido" name="name" id="name" required
+                >
+                
+                
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Ingrese su Email" name="email" id="email" required>
+                
+                <label for="psw"><b>Contraseña</b></label>
+                <input type="password" placeholder="Ingrese su Contraseña" name="psw" id="psw" required>
+                
+                <label for="psw-repeat"><b>Repita su Contraseña</b></label>
+                <input type="password" placeholder="Repita su Contraseña" name="psw-repeat" id="psw-repeat" required>
+                
+                
+                <hr>
+                
+                <button  type="submit" class="register">Registrarse</button>
+                
+                
+            </div>
+            
+        </form>
+        
+    </main>
+    
+    <footer>
         <div class="categories-us">
             <div class="categories">
                 <h2>Categorías</h2>
@@ -95,9 +93,9 @@
         </div>
         <div class="logo"><img src="/images/header/Logo.jpeg" alt=""></div>
     </footer>
-
-
-
+    
+    
+    
     
 </body>
 </html>
