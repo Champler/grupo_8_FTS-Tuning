@@ -66,6 +66,9 @@ app.get('/usuarios', (req, res) => {
 app.get('/Contactanos', (req, res) => {
   res.sendFile(path.join(__dirname, './views/contactanos.html'))
 })
+app.get('/cargaProductos', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/cargaProductos.html'))
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
