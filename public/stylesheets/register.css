@@ -2,13 +2,13 @@
 @import url('variables.css');
 
 
-body{
+.register-body{
     background-image: url(/images/cars-tuning.jpeg);
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
 }
-.container {
+.register-main .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,12 +25,12 @@ body{
     margin-bottom: 20%;
 }
 
-.buttom-form{
+.register-main .buttom-form{
     border: 2px solid black;
     padding: 10px;
     margin: 1rem;
 }
-.buttom-submit{
+.register-main .buttom-submit{
     background-color: var(--color-rojo);
     border-radius: 30px;
     width: 40%;
@@ -39,11 +39,11 @@ body{
     align-self: center;
 }
 
-input{
+.register-main input{
     padding: 15px;
 }
 
-.register{
+.register-main .register{
     background-color: var(--color-rojo);
     border-radius: 30px;
     width: 40%;
@@ -55,37 +55,34 @@ input{
 }
 
 
-b{
+.register-main b{
     color: white;
 }
 
-h1{
+.register-main h1{
     color: white;
 }
 
 
 @media (min-width: 500px){
-
-    body{
+    .register-body{
+        background-image: url(/images/auto.jpg);
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+@media (min-width: 860px){
+    
+    
+    .register-body{
         background-image: url(/images/auto.jpg);
         background-attachment: fixed;
         background-position: center center;
         background-size: cover;
     }
     
-  
-}
-@media (min-width: 860px){
-
-
-    body{
-        background-image: url(/images/auto.jpg);
-        background-attachment: fixed;
-        background-position: center center;
-        background-size: cover;
-    }
-
-    .buttom-submit{
+    .register-main .buttom-submit{
         background-color: var(--color-rojo);
         border-radius: 18px;
         width: 40%;
@@ -94,20 +91,16 @@ h1{
         align-self: center;
         padding: 1%;
     }
-
-    .buttom-form{
+    
+    .register-main .buttom-form{
         border: 2px solid black;
         padding: 15px;
         margin: 1rem;
     }
-
-
-
-
 }
 
 @media (min-width: 1100px){
-    .box {
+    .register-main .box {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -122,13 +115,9 @@ h1{
         text-align: center;
         margin-top: 21% ;
     }
-
-.container{
-    width: 61%;
-    left: 23%;
-}
-
-
-
-
+    
+    .register-main .container{
+        width: 61%;
+        left: 23%;
+    }
 }

@@ -3,11 +3,11 @@
 @import url('general.css');
 @import url('footer.css');
 
-p{
+.product-main p{
     font-family: var(--fuente);
     margin: 5px;
 }
-main .titular {
+.product-main .titular {
     margin-top: 20px;
     width: 90%;
     margin-left: 5%;
@@ -22,7 +22,7 @@ main .titular {
     margin-bottom: 30px;
 }
 
-main .titular img {
+.product-main .titular img {
     width: 80px;
     height: 80px;
     margin: 10px 0;
@@ -30,18 +30,18 @@ main .titular img {
     left: 35%;
 }
 
-main .list-product {
+.product-main .list-product {
     display: none;
 }
 
-main .lista-productos {
+.product-main .lista-productos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-main .lista-productos .each-product {
+.product-main .lista-productos .each-product {
     margin-bottom: 30px;
     margin-left: 10%;
 }
@@ -97,7 +97,7 @@ main .lista-productos .each-product div button:hover {
         main .lista-productos {
             grid-template-columns: repeat(3,1fr);
         }
-        main .list-product{
+        .product-main .list-product{
             display: block;
             border-radius: 15px;
             border: 1px solid var(--color-negro);
@@ -105,15 +105,15 @@ main .lista-productos .each-product div button:hover {
             padding: 20px;
             margin-left: 20px
         }
-        main .list-product h4 {
+        .product-main .list-product h4 {
             color: var(--color-negro);
             font-family: var(--fuente);
             margin-bottom: 5px;
         }
-        main .list-product ul li {
+        .product-main .list-product ul li {
             margin-bottom: 5px;
         }
-        main .list-product ul li a{
+        .product-main .list-product ul li a{
             color: var(--color-negro);
             font-family: var(--fuente);
         }
