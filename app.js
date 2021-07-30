@@ -54,7 +54,9 @@ app.get('/historial', (req, res) => {
 app.get('/usuarios', (req, res) => {
   res.sendFile(path.join(__dirname, './views/listaUsuarios.html'))
 })
-
+app.get('/cargaProductos', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/cargaProductos.html'))
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
