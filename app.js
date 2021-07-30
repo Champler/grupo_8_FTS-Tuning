@@ -48,22 +48,21 @@ app.get('/registro', (req, res) => {
 app.get('/Carrito', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Carrito.html'))
 })
-<<<<<<< HEAD
+
 
 app.get('/DatosDePago', (req, res) => {
   res.sendFile(path.join(__dirname, './views/DatosDePago.html'))
 })
 
-app.get('/pruebas', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Header.html'))
-=======
+
 app.get('/historial', (req, res) => {
   res.sendFile(path.join(__dirname, './views/historialCompras.html'))
 })
 app.get('/usuarios', (req, res) => {
   res.sendFile(path.join(__dirname, './views/listaUsuarios.html'))
->>>>>>> bc671154ca454f191e9652e5b7d5084c262dd840
+  
 })
+
 app.get('/Contactanos', (req, res) => {
   res.sendFile(path.join(__dirname, './views/contactanos.html'))
 })
