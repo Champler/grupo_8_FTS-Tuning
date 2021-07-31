@@ -1,7 +1,3 @@
-@import url('variables.css');
-@import url('header.css');
-@import url('general.css');
-@import url('footer.css');
 
 .product-main p{
     font-family: var(--fuente);

@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 /* MAIN */
 main a {
   border: 0 none;
@@ -32,8 +26,8 @@ main button:focus {
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-main {
+/* Lo comento porque rompe partes en otros lados, hay que arreglarle la categoría */
+/* main {
   clear: both;
   font-size: 0.75rem;
   margin: 0 auto;
@@ -41,7 +35,7 @@ main {
   padding: 1rem 0;
   width: 60%;
 }
-
+ */
 
 
 /* Aside pue' */

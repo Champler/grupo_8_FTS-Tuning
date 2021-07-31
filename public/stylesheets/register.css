@@ -1,7 +1,3 @@
-@import url('general.css');
-@import url('variables.css');
-
-
 .register-body{
     background-image: url(/images/cars-tuning.jpeg);
     background-attachment: fixed;
