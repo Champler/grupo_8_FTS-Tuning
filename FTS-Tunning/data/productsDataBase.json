@@ -1,0 +1,20 @@
+[{
+    "id": "1",
+    "nombre": "nombre de producto",
+    "category": "categoria del producto",
+    "description": "descripcion del producto",
+    "img": "imagen del producto",
+    "color": "color del producto",
+    "discount": "15",
+    "price": "1500"
+  },
+  {
+    "id": "1",
+    "name": "nombre de producto",
+    "category": "categoria del producto",
+    "description": "descripcion del producto",
+    "img": "imagen del producto",
+    "color": "color del producto",
+    "discount": "15",
+    "price": "1500"
+  }]
