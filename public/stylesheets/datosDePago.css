@@ -1,33 +1,30 @@
 
 
 /* MAIN */
-main a {
+.mainpay a {
   border: 0 none;
   outline: 0;
   text-decoration: none;
 }
 
-
-
-main input,
-main button {
+.summary input,
+.summary button {
   border: 0 none;
   outline: 0 none;
 }
 
-main button {
+.mainpay button {
   background-color: #F05454;
   color: #fff;
 }
 
-main button:hover,
-main button:focus {
+.mainpay button:hover,
+.mainpay button:focus {
   background-color: #f05980;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Lo comento porque rompe partes en otros lados, hay que arreglarle la categoría */
-/* main {
+ .mainpay {
   clear: both;
   font-size: 0.75rem;
   margin: 0 auto;
@@ -35,7 +32,6 @@ main button:focus {
   padding: 1rem 0;
   width: 60%;
 }
- */
 
 
 /* Aside pue' */
@@ -56,9 +52,13 @@ aside {
 
 
 
-
 /* Datos Personales */
+form input{
+  border:solid black 1px;
+  outline: 10px;
+}
 .datos-Personales{
+  border-radius: 10px;
   line-height: 1.3rem;
     background-color: #eee;
   border: 1px solid #aaa;
@@ -72,6 +72,7 @@ aside {
 }
 
 .entrega{
+  border-radius: 10px;
   line-height: 1.3rem;
     background-color: #eee;
   border: 1px solid #aaa;
@@ -85,6 +86,7 @@ aside {
 }
 
 .mediodepago{
+  border-radius: 10px;
     line-height: 1.3rem;
     background-color: #eee;
     border: 1px solid #aaa;
@@ -106,6 +108,7 @@ justify-content: space-between;
 .summary {
   background-color: #eee;
   border: 1px solid #aaa;
+  border-radius: 10px;
   padding: 1rem;
 
   -webkit-box-sizing: border-box;
@@ -113,6 +116,7 @@ justify-content: space-between;
   box-sizing: border-box;
   bottom: 29.6rem;
   margin-bottom: 10rem;
+
 
 }
 
@@ -136,9 +140,7 @@ justify-content: space-between;
 .subtotal-title,
 .subtotal-value,
 .total-title,
-.total-value,
-.promo-title,
-.promo-value {
+.total-value {
   color: #111;
   float: left;
   width: 50%;
@@ -161,6 +163,10 @@ justify-content: space-between;
 
 }
 
+.checkboxx {
+  padding-bottom: 1.625rem;
+}
+
 .checkout-cta {
   display: block;
   float: none;
@@ -180,11 +186,6 @@ justify-content: space-between;
   height: 34px;
   width: 100%;
 }
-
-
-
-
-
 
 
 /* MEDIAS QUERIES */
@@ -294,7 +295,7 @@ justify-content: space-between;
 
 @media(max-width: 960px){
  
-  main {
+  .mainpay {
     width: 100%;
   }
   .product-details {
