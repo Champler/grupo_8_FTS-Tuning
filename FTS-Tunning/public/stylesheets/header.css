@@ -1,0 +1,281 @@
+
+header .header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-negro);
+    border-top: 1px solid var(--color-negro);
+}
+/* Container Izquierdo */
+header .left-container {
+    background-color: var(--color-negro);
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 0;
+    width: 6rem;
+    box-shadow: 0px 3px 2px grey;
+}
+
+header .left-container img{
+    width: 50px;
+    height: auto;
+    border-radius: 45%;
+    
+}
+/* Parte Central */
+header .input-ul-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    background-color: var(--color-gris);
+}
+
+header .input-ul-container input{
+    width: 45vw;
+    height: 2rem;
+    border-radius: 10px;
+    border: solid 1px var(--color-negro);
+    padding-left: 3px;
+}
+
+header .input-ul-container ul{
+    display: none;
+}
+
+#search-bar {
+    display: flex;
+    margin-left: 15px;
+}
+#search-bar button img{
+    height: 1.2rem;
+}
+#search-bar button {
+    position: relative;
+    right: 38px;
+    top: -1;
+    background-color: transparent;
+    border: none;
+}
+/* Container Derecho */
+header .right-container #check{
+    display: none;
+}
+
+header .right-container {
+    background-color: var(--color-negro);
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 0;
+    width: 6rem;
+    box-shadow: 3px 3px 2px grey;
+}
+/* Sidebar */
+header .sidebar {
+    position: fixed;
+    right: -2500px;
+    width: 50%;
+    max-height: 100vh;
+    background: var(--color-azul);
+    transition: all .5s ease;
+    top: -1;
+    z-index: 9;
+    overflow-y: scroll;
+}
+
+header .sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    font-size: 15px;
+    color: var(--color-rojo);
+    padding-left: 40px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid var(--color-negro);
+    transition: .6s;
+
+}
+
+header .sidebar ul li:hover a {
+    padding-left: 50px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+header #check {
+    display: none;
+}
+
+header label #btn {
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 10px;
+    font-size: 35px;
+    color: var(--color-rojo);
+    transition: all .5s ease;
+
+}
+
+header #check:checked ~ .right-container{
+    right: 40px;
+    top: 25px;
+    z-index: 10;
+}
+header #check:checked ~ .sidebar{
+    right: 0;
+    top: 68px;
+}
+
+
+
+#line {
+    display: none;
+}
+header .right-container .pc{
+    display: none;
+}
+
+
+
+@media (min-width: 850px){
+    /* Contenedor Izquierdo */
+    
+    header .left-container {
+        width: 10rem;
+    }
+    
+    header .left-container img{
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+    }
+    /* Contenedor Central */
+    header .input-ul-container ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 56vw;
+    }
+    
+    
+    #line{
+        display: block;
+        margin-top: 10px;
+    }
+    header .input-ul-container ul li a img {
+        width: 35px;
+        height: 35px;
+    }
+    header .input-ul-container input{
+        margin-top: 10px;
+    }
+    
+    #search-bar button {
+        top: 6px;
+    }
+    /* Contenedor Derecho */
+    
+    header .right-container .pc{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    header .right-container .pc .menu-user img{
+        height: 50px;
+        width: 40px;
+    }
+    header .right-container .pc .menu-user #baja{
+        color: var(--color-gris);
+        background-color: var(--color-azul);
+        padding: 10px 15px;
+        display: none;
+        position: absolute;
+        min-width: 140px;
+        border-radius: 0 0 10px 10px;
+        right: 7px;
+    }
+    header .right-container .pc .menu-user li a{
+        color: var(--color-gris);
+        background-color: var(--color-azul);
+        
+    }
+    header .right-container .pc .menu-user ul li:hover{
+        opacity: 0.8;
+    }
+    header .right-container .pc .menu-user ul li:hover > #baja{
+        display: block;
+        box-shadow: 10px 10px 10px 0px var(--color-negr);
+    }
+    header .right-container .pc a img{
+        width: 40px;
+    }
+    #Carrito{
+        width: 55px;
+        margin-left: 10px;
+    }
+    header .input-ul-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    
+    header .right-container{
+        width: 10rem;
+    }
+    
+    header .right-container label{
+        display: none;
+    }
+}
+
+
+/* Animación Ancla */
+
+header .input-ul-container a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: var(--color-negro);
+}
+
+header .input-ul-container a span {
+    transition: transform 0.4s ease-out;
+}
+
+header .input-ul-container a span:first-child {
+    display: inline-block;
+    padding: 10px;
+}
+
+header .input-ul-container a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+
+header .input-ul-container a:hover span:first-child {
+    transform: translateY(100%);
+}
+
+header .input-ul-container a:hover span:last-child,
+header .input-ul-container [data-animation] a:hover span:last-child {
+    transform: none;
+}
+

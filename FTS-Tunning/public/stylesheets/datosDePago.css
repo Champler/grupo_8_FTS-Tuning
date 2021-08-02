@@ -1,0 +1,319 @@
+
+
+/* MAIN */
+.mainpay a {
+  border: 0 none;
+  outline: 0;
+  text-decoration: none;
+}
+
+.summary input,
+.summary button {
+  border: 0 none;
+  outline: 0 none;
+}
+
+.mainpay button {
+  background-color: #F05454;
+  color: #fff;
+}
+
+.mainpay button:hover,
+.mainpay button:focus {
+  background-color: #f05980;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+ .mainpay {
+  clear: both;
+  font-size: 0.75rem;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 1rem 0;
+  width: 60%;
+}
+
+
+/* Aside pue' */
+aside {
+  padding: 0 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+aside {
+  float: right;
+  position: relative;
+  width: 30vw;
+  bottom: -1.6rem;
+}
+
+
+
+
+/* Datos Personales */
+form input{
+  border:solid black 1px;
+  outline: 10px;
+}
+.datos-Personales{
+  border-radius: 10px;
+  line-height: 1.3rem;
+    background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 1rem;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 29.6rem;
+  margin-bottom: 1rem;
+}
+
+.entrega{
+  border-radius: 10px;
+  line-height: 1.3rem;
+    background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 1rem;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 29.6rem;
+  margin-bottom: 1rem;
+}
+
+.mediodepago{
+  border-radius: 10px;
+    line-height: 1.3rem;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 1rem;
+  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: 29.6rem;
+    margin-bottom: 1rem;
+}
+.tarjetas{display: flex;
+justify-content: space-between;
+}
+
+
+/* Resumen de compra */
+
+.summary {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 1rem;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 29.6rem;
+  margin-bottom: 10rem;
+
+
+}
+
+.summary-total-items {
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.summary-subtotal,
+.summary-total {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  clear: both;
+  margin: 1rem 0;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.subtotal-title,
+.subtotal-value,
+.total-title,
+.total-value {
+  color: #111;
+  float: left;
+  width: 50%;
+}
+
+
+.subtotal-value,
+.total-value {
+  text-align: right;
+}
+
+.total-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.summary-checkout {
+  display: block;
+  font-size: 0.75rem;
+
+}
+
+.checkboxx {
+  padding-bottom: 1.625rem;
+}
+
+.checkout-cta {
+  display: block;
+  float: none;
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.625rem 0;
+  width: 100%;
+}
+
+.summary-delivery-selection {
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  display: block;
+  font-size: 0.25rem;
+  height: 34px;
+  width: 100%;
+}
+
+
+/* MEDIAS QUERIES */
+
+@media (max-width: 640px) {
+  .related-prod-title{
+    display: none;
+  }
+  .related-prods{
+    display: none;
+  }
+  aside{
+    height: 22rem;
+  }
+  aside,
+  .basket,
+  .summary,
+  .item,
+  .quitar {
+    width: 100%;
+    font-size: 28px;
+  }
+  .basket-labels {
+    display: none;
+  }
+  .basket-module {
+    margin-bottom: 1rem;
+  }
+  .item {
+    margin-bottom: 1rem;
+  }
+  .product-image {
+    width: 40%;
+  }
+  .product-details {
+    width: 60%;
+  }
+  .price,
+  .subtotal {
+    width: 33%;
+    font-size: 27px;
+  }
+  .quantity {
+    text-align: center;
+    width: 34%;
+  }
+  .quantity-field {
+    float: none;
+  }
+  .remove {
+    bottom: 0;
+    text-align: left;
+    margin-top: 0.75rem;
+    position: relative;
+  }
+  .remove button {
+    padding: 0;
+  }
+  .summary {
+    margin-top: 31.25rem;
+    position: relative;
+
+  }
+}
+.segundo-h2{
+    font-weight: 200;
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 641px) and (max-width: 960px) {
+  aside {
+    padding: 0 1rem 0 0;
+    float: left;
+    position: relative;
+    left: 20%;
+    width: 60%;
+  }
+  .summary {
+  
+    bottom: 11.5rem;
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 960px){
+ 
+  .mainpay {
+    width: 100%;
+  }
+  .product-details {
+    padding: 0 1rem;
+    font-size: 13px;
+
+  }
+ .summary{
+    bottom: 29.6rem;
+ }
+ 
+}
+
+
+@media (min-width: 768px) and (max-width: 2000px) {
+  aside {   float: left;
+    position: relative;
+    left: 25%;
+    width: 50%;
+  }
+}

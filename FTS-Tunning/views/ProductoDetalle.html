@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/quienesSomos.css">
+        <!-- Íconos: -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <!-- Css -->
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+     <title>Document</title>
+    </head>
+<body>
+    <!-----------------------------------                Header              ------------------------------------------->
+    <header>
+        <div class="header">
+            <!-- Container izquierdo -->
+            <div class="left-container">
+                <a href="http://localhost:3000/"><img src="/images/header/Logo.jpeg" alt="Logo"></a>
+            </div>
+            <!-- Parte Central (Input y Menu) -->
+            <div class="input-ul-container">
+                <div id="search-bar">
+                    <input type="search" placeholder="Busca aquí">
+                    <button>
+                        <img src="/images/header/svg/Lupa.svg" alt="">
+                    </button>
+                </div>
+                <hr style="width: 75%;text-align:left;margin-left:0" id="line">
+                <ul>
+                    <li><a href="http://localhost:3000/Productos"><span>Frenos</span><span><img src="/images/header/svg/Freno.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Neumaticos</span> <span><img src="/images/header/svg/Rueda.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Escapes</span><span><img src="/images/header/svg/Escapes.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Motores</span><span><img src="/images/header/svg/Motor.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Volantes</span> <span><img src="/images/header/svg/Volante.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Interiores</span><span><img src="/images/header/svg/Interior.svg" alt="" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <!-- Container Derecho -->
+            <div class="right-container">
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                </label>
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="http://localhost:3000/Productos"></i>Frenos</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Neumáticos</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Escapes</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Motor</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Interior</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Exterior</a></li>
+                        <li><a href="http://localhost:3000/Carrito"></i>Carrito</a></li>
+                        <li><a href="http://localhost:3000/Login"></i>Login</a></li>
+                        <li><a href="http://localhost:3000/Registro"></i>Registro</a></li>
+                    </ul>
+                </div>
+                <div class="pc">
+                    <div class="menu-user">
+                        <ul>
+                            <li><img src="/images/header/svg/Login-registro.svg" alt="Login-registro">
+                                <ul id="baja">
+                                    <li><a href="http://localhost:3000/Login">Login</a></li>
+                                    <li><a href="http://localhost:3000/Registro">Registro</a></li>
+                                    <li><a href="">Usuarios</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                            
+                    </div>
+                    <a href="http://localhost:3000/Carrito"><img src="/images/header/svg/Carrito.svg" alt="Carro de compras" id="Carrito"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-----------------------------------        Deltalle del Producto       ------------------------------------------->
+    <main class="main-product">
+        
+        <h1 class="title-product">Escape Chevrolet Corsa año 2011</h1>
+        <section class="destacado">
+            <article>
+                <div>
+                    <img class="img-product" src="/images/ProductoDetalle/fescape.jpg" alt="Escape Chevrolet Corsa">
+                </div>
+                <div class="price-purchase">
+                    <h3 class="price">Precio: 21.000</h3>
+                    <p class="fees">12 cuotas de 1.000</p>
+                    <p class="fees">18 cuotas de 800</p>
+                    <p class="fees">24 cuotas de 700</p>
+                    <div class="credit">
+                        <i class="fab fa-cc-visa credit"></i>
+                        <i class="fab fa-cc-mastercard credit"></i>
+                        <i class="fab fa-cc-amex credit"></i>
+                        <i class="fab fa-cc-paypal credit"></i>
+                    </div>
+                    <div>
+                        <span class="fees">Cantidad: </span>
+                        <input type="number" value="1" min="0" max="15" class="quantity-field" />
+                    </div>
+                    
+                    <a href="http://localhost:3000/Carrito"><button type="submit" class="button button-purchase">Comprar</button></a>
+                    <a href=""><button type="submit" class="button button-add-to-cart">Agregar al Carrito</button></a>
+                </div>
+            </article>
+                <p class="paragraph">Caño de escape y silenciador Chevrolet original, lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam!</p>
+                <p class="paragraph">Máximo rendimiento y potencia con el mayor lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam! Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis. Explicabo delectus quos nulla.</p>
+            
+            <div class="product-details">
+                <img class="img-product-2" src="/images/ProductoDetalle/fescape.jpg" alt="Escape Chevrolet Corsa 2">
+                <ul class="description-list">
+                    <p class="product-caracteristics">Características:</p>
+                    <li>Marca:  Chevrolet</li>
+                    <li>Modelo:  Corsa</li>
+                    <li>Material del silenciador:  galvanizado</li>
+                    <li>Forma del silenciador:  redondo</li>
+                    <li>Largo del silenciador:  121 cm</li>
+                    <li>Ancho del silenciador:  30 cm</li>
+                    <li>Número de entradas:  1</li>
+                    <li>Número de salidas:  1</li>
+                    <li>Origen:  Argentina</li>
+                </ul>
+            </div>
+                <p class="paragraph"> La óptima eliminación de ruídos y contaminantes, harán que el lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis.</p>
+            
+        </section>
+        <!-- Sugestions -->
+        <h3 class="sugestions">Productos Sugeridos</h3>
+            <div class="carousel-product">
+                <!-- <p>Product 1</p> -->
+                <div class="carousel-card card-1">
+                    <div class="photo-container">
+                        <img class="photo-carousel" src="/images/ProductoDetalle/41C64T08DzL.jpg" alt="Volante Deportivo">
+                    </div>
+                    <p class="paragraph-card">Volante Deportivo</p>
+                    <p class="paragraph-card card-price">$ 9.000</p>
+                    <form action="" method="post">
+                        <button type="submit" class="button button-purchase">Ver más</button>
+                    </form>
+                </div>
+                <!-- <p>Product 2</p> -->
+                <div class="carousel-card card-2">
+                    <div class="photo-container">
+                        <img class="photo-carousel" src="/images/ProductoDetalle/unnamed.jpg" alt="Llanta de aleación 14 pulgadas">
+                    </div>
+                    <p class="paragraph-card">Llanta de aleación</p>
+                    <p class="paragraph-card card-price">$ 11.000</p>
+                    <form action="" method="post">
+                        <button type="submit" class="button button-purchase">Ver más</button>
+                    </form>
+                </div>
+                <!-- Product 3 -->
+                <div class="carousel-card card-3">
+                    <div class="photo-container">
+                        <img class="photo-carousel" src="/images/ProductoDetalle/D_NQ_NP_2X_830559-MLA41240815817_032020-F.webp" alt="Combo óptica Renault 12">
+                    </div>
+                    <p class="paragraph-card">Óptica Renault 12 </p>
+                    <p class="paragraph-card card-price">$ 5.999</p>
+                    <form action="" method="post">
+                        <button type="submit" class="button button-purchase">Ver más</button>
+                    </form>
+                </div>
+            </div>
+    </main>
+
+    <!-----------------------------------           Footer            ------------------------------------------->
+    <footer>
+        <div class="categories-us">
+            <div class="categories">
+                <h2>Categorías</h2>
+                <ul>
+                    <li><a href="">Frenos</a></li>
+                    <li><a href="">Escapes</a></li>
+                    <li><a href="">Motores</a></li>
+                    <li><a href="">Interior</a></li>
+                    <li><a href="">Exterior</a></li>
+                    <li><a href="">Neumáticos y llantas</a></li>
+                </ul>
+            </div>
+            <div class="us">
+                <h2>Nosotros</h2>
+                <ul>
+                    <li><a href="">¿Quiénes somos?</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact-payment">
+            <div class="social-media">
+                <a href="https://wa.me/5401144226666"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/home"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="payment">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+        <div class="logo"><img src="/images/header/Logo.jpeg" alt=""></div>
+    </footer>
+
+</body>
+</html>

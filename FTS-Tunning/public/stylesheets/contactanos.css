@@ -1,0 +1,125 @@
+
+  .slogan{
+    position: relative;
+      top: 52%;
+  }
+  
+  .pulpo{
+    height: 50%;
+    margin-top: 27px;
+    width: 50%;
+  
+  }
+  
+  
+   .banner-antention-user {
+    color: #F05454;
+    font-size: 3rem;
+    position: relative;
+    top: 21px;
+   background-color: #30475E ;
+  }
+  
+  .todo-justo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  
+  .icons-wsp{
+    color: #F05454;
+    font-size: 3rem;
+    position: relative;
+    top: 8px;
+   background-color: #30475E ;
+  }
+  
+  .atc-user{
+    font-size: 59%;
+  }
+  
+  .form-qs{
+    display: flex;
+    flex-direction: column;
+    margin: 27px;
+    text-align: center;
+  }
+  
+  .input-qs{
+    border-radius: 12px;
+    margin: 12px;
+    height: 60px;
+  }
+  
+  
+  .textarea-qs{
+    border-radius: 18px;
+    width: 95.5%;
+    margin-left: 10px;
+    border: solid;
+  }
+  
+  
+  .envias-sq{
+    width: 40%;
+   
+    margin: auto;
+   
+    border-radius: 22px;
+    background-color: #F05454;
+    height: 37px;
+  }
+  
+  .envias-sq:hover {
+    background-color: #f05980; /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+
+
+
+@media (min-width: 960px) {
+
+
+
+
+  .form-qs{
+    margin: 110px;
+  }
+
+.textarea-qs{
+  width: 97.5%;
+}
+
+
+
+}
+
+
+@media (min-width: 960px) {
+
+
+
+
+
+  .input-qs{
+
+   margin: 12px 122px;
+ 
+  }
+ 
+
+
+  .textarea-qs{
+    width: 78.5%;
+margin-left: 112px;
+  }
+
+
+  
+
+
+
+}
+

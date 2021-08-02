@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/quienesSomos.css">
+        <!-- Íconos: -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <!-- Css -->
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+     <title>Document</title>
+    </head>
+<body>
+    <header>
+        <div class="header">
+            <!-- Container izquierdo -->
+            <div class="left-container">
+                <a href="http://localhost:3000/"><img src="/images/header/Logo.jpeg" alt="Logo"></a>
+            </div>
+            <!-- Parte Central (Input y Menu) -->
+            <div class="input-ul-container">
+                <div id="search-bar">
+                    <input type="search" placeholder="Busca aquí">
+                    <button>
+                        <img src="/images/header/svg/Lupa.svg" alt="">
+                    </button>
+                </div>
+                <hr style="width: 75%;text-align:left;margin-left:0" id="line">
+                <ul>
+                    <li><a href="http://localhost:3000/Productos"><span>Frenos</span><span><img src="/images/header/svg/Freno.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Neumaticos</span> <span><img src="/images/header/svg/Rueda.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Escapes</span><span><img src="/images/header/svg/Escapes.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Motores</span><span><img src="/images/header/svg/Motor.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Volantes</span> <span><img src="/images/header/svg/Volante.svg" alt="" aria-hidden="true"></span></a></li>
+                    <li><a href="http://localhost:3000/Productos"><span>Interiores</span><span><img src="/images/header/svg/Interior.svg" alt="" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <!-- Container Derecho -->
+            <div class="right-container">
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                </label>
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="http://localhost:3000/Productos"></i>Frenos</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Neumáticos</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Escapes</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Motor</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Interior</a></li>
+                        <li><a href="http://localhost:3000/Productos"></i>Exterior</a></li>
+                        <li><a href="http://localhost:3000/Carrito"></i>Carrito</a></li>
+                        <li><a href="http://localhost:3000/Login"></i>Login</a></li>
+                        <li><a href="http://localhost:3000/Registro"></i>Registro</a></li>
+                    </ul>
+                </div>
+                <div class="pc">
+                    <div class="menu-user">
+                        <ul>
+                            <li><img src="/images/header/svg/Login-registro.svg" alt="Login-registro">
+                                <ul id="baja">
+                                    <li><a href="http://localhost:3000/Login">Login</a></li>
+                                    <li><a href="http://localhost:3000/Registro">Registro</a></li>
+                                    <li><a href="">Usuarios</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                            
+                        </div>
+                        <a href="http://localhost:3000/Carrito"><img src="/images/header/svg/Carrito.svg" alt="Carro de compras" id="Carrito"></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="users-list">
+            <section class="search-bar">
+                <div>
+                    <form action="/POST">
+                        <div><input type="search" placeholder="Nombre"></div>
+                    </form>
+                </div>
+            </section>
+            <section class="users">
+                <div class="usuario">
+                    <div class="photo">
+                        <img src="/images/quienesSomos/messirve.jpg" alt="">
+                    </div>
+                    <h5>Nombre</h5>
+                    <p>Email: aaaaa@bbbbbb.com</p>
+                    <p>ID: 35</p>
+                    <div class="user-type">
+                        <form action="/POST">
+                            <input type="radio" name="User" id="User">
+                            <label for="User">Usuario</label>
+                            <input type="radio" name="User" id="Admin">
+                            <label for="Admin">Administrador</label>
+                        </form>
+                    </div>
+                    <button>Eliminar</button>
+                </div>
+                <div class="usuario">
+                    <div class="photo">
+                        <img src="/images/quienesSomos/messirve.jpg" alt="">
+                    </div>
+                    <h5>Nombre</h5>
+                    <p>Email: aaaaa@bbbbbb.com</p>
+                    <p>ID: 35</p>
+                    <div class="user-type">
+                        <form action="/POST">
+                            <input type="radio" name="User" id="User">
+                            <label for="User">Usuario</label>
+                            <input type="radio" name="User" id="Admin">
+                            <label for="Admin">Administrador</label>
+                        </form>
+                    </div>
+                    <button>Eliminar</button>
+                </div>
+                <div class="usuario">
+                    <div class="photo">
+                        <img src="/images/quienesSomos/messirve.jpg" alt="">
+                    </div>
+                    <h5>Nombre</h5>
+                    <p>Email: aaaaa@bbbbbb.com</p>
+                    <p>ID: 35</p>
+                    <div class="user-type">
+                        <form action="/POST">
+                            <input type="radio" name="User" id="User">
+                            <label for="User">Usuario</label>
+                            <input type="radio" name="User" id="Admin">
+                            <label for="Admin">Administrador</label>
+                        </form>
+                    </div>
+                    <button>Eliminar</button>
+                </div>
+                <div class="usuario">
+                    <div class="photo">
+                        <img src="/images/quienesSomos/messirve.jpg" alt="">
+                    </div>
+                    <h5>Nombre</h5>
+                    <p>Email: aaaaa@bbbbbb.com</p>
+                    <p>ID: 35</p>
+                    <div class="user-type">
+                        <form action="/POST">
+                            <input type="radio" name="User" id="User">
+                            <label for="User">Usuario</label>
+                            <input type="radio" name="User" id="Admin">
+                            <label for="Admin">Administrador</label>
+                        </form>
+                    </div>
+                    <button>Eliminar</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="categories-us">
+                <div class="categories">
+                    <h2>Categorías</h2>
+                    <ul>
+                        <li><a href="">Frenos</a></li>
+                        <li><a href="">Escapes</a></li>
+                        <li><a href="">Motores</a></li>
+                        <li><a href="">Interior</a></li>
+                        <li><a href="">Exterior</a></li>
+                        <li><a href="">Neumáticos y llantas</a></li>
+                    </ul>
+                </div>
+                <div class="us">
+                    <h2>Nosotros</h2>
+                    <ul>
+                        <li><a href="">¿Quiénes somos?</a></li>
+                        <li><a href="">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contact-payment">
+                <div class="social-media">
+                    <a href="https://wa.me/5401144226666"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/home"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="payment">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+            <div class="logo"><img src="/images/header/Logo.jpeg" alt=""></div>
+        </footer>
+</body>
+</html>

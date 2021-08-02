@@ -1,0 +1,124 @@
+
+.login{
+    background-image: url(/images/cars-tuning.jpeg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 50%;
+    padding: 13%;
+    position: relative;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(141, 132, 132, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20%;
+}
+
+.login-main .buttom-form{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 1rem;
+}
+.login-main .buttom-submit{
+    background-color: var(--color-rojo);
+    border-radius: 30px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 12px;}
+    
+    
+    
+    
+    
+    
+    
+    
+    .login-main label{
+        color: whitesmoke;
+    }
+    .login-main span a {
+        color: lightgray;
+    }
+    
+    
+    @media (min-width: 500px){
+        
+        .login{
+            background-image: url(/images/auto.jpg);
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+            
+        }
+        .login-main .box{
+            width: 68%;
+            left: 20%;
+        }
+        
+    }
+    @media (min-width: 860px){
+        
+        
+        .login{
+            background-image: url(/images/auto.jpg);
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+        }
+        
+        .login-main .buttom-submit{
+            background-color: var(--color-rojo);
+            border-radius: 18px;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            padding: 1%;
+        }
+        
+        .login-main .buttom-form{
+            border: 2px solid black;
+            padding: 15px;
+            margin: 1rem;
+        }
+        
+        
+        
+    }
+    
+    @media (min-width: 1100px){
+        .login-main .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 77%;
+            height: 50%;
+            padding: 40px;
+            position: relative;
+            top: 14%;
+            left: 15%;
+            background-color: rgba(141, 132, 132, 0.6);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 21% ;
+        }
+        
+        .login-main .box{
+            width: 68%;
+            left: 19%;
+        }
+        
+        
+        
+    }
+    

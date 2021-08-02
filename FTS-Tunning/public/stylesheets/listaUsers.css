@@ -1,0 +1,84 @@
+
+.users-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.users-list .search-bar div{
+    border: 2px solid var(--color-azul);
+    border-radius: 30px;
+    margin: 20px;
+}
+.users-list .search-bar div form div {
+    border: none;
+}
+.users-list .search-bar div form div input{
+    padding-left: 15px;
+    border-radius: 30px;
+    border: none;
+    width: 100%;
+}
+
+.users-list .search-bar div form div input:focus{
+    outline: none;
+}
+.users-list .users {
+    width: 80%;
+   
+    
+}
+.users-list .users p{
+    margin: 5px;
+    font-size: 14px;
+}
+.users-list .users .usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-azul);
+    border-radius: 30px;
+    margin: 20px;
+    height: fit-content;
+    padding: 20px;
+}
+.users-list .users button{
+    background-color: var(--color-rojo);
+    color: var(--color-azul);
+    width: 80%;
+    border-radius: 30px;
+    margin: 5px;
+}
+.users-list .users button:hover{
+    background-color: var(--color-azul);
+    color: var(--color-rojo);
+}
+.users-list .users .usuario .photo {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.users-list .users .usuario .photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    
+}
+
+@media (min-width:768px){
+    .users-list {
+        display: grid;
+        grid-template-columns: 20% 75%;
+    }
+    .users-list .users {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .users-list .users .usuario{
+        width:250px;
+    }
+}
