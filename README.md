@@ -26,3 +26,65 @@ Nuestra forma de trabajo se basa en generar un sistema de mercado amigable y seg
 ### ¿Por qué elegimos estas páginas?
 
   Nosotros siempre buscamos lo mejor para nuestro negocio, por lo cual buscamos las mejores funcionalidades de distintas páginas y buscamos replicarlas, menús como el de Mishimoto llamaron particularmente nuestra atención, mientras que, el filtrado de Jap Performance Parts, nos mostró una posibilidad de facilitarle la experiencia al usuario, que podrá ver todos los detalles de su producto gracias a una interfaz similar a la de Amazon.  El usuario, se podrá registrar en nuestra página gracias al fácil diseño simplista que nos ofrece Bikinis Sea You, y, cuando el mismo vaya a terminar su compra, un carrito inspirado en el diseño de Logitech mostrará su pedido de una manera completa pero resumida.
+
++
+
+# segun sprint 
+
+************
+ empezar a hacer  :
+************
+
+ reuniones fuera del sprint para ver el contenido del playgroud
+
+ ver el codigo que hacen los demas 
+
+ organizar mejor el codigo de el visual studio code para lograr un mejor entendimiento del codigo entre los compañeros
+
+
+*****************
+dejar de hacer : 
+*****************
+
+mala andministracion del tiempo. 
+
+
+****************
+seguir haciendo:
+****************
+entregar todo atiempo.
+
+reuniones cada dos o tres dias.
+
+adelantar los trabajos lo mas que se pueda. 
+
+retrospecticvas.
+
+***************
+  hacer menos : 
+***************
+no confiarze con los plazos de tiempo que  nos da en cada sprint 
+
+
+
+***************
+   hacer mas :
+***************
+ pedir ayuda antes 
+
+ empezar el mismo dia que nos dan los sprints 
+
+ tener trello actualizado 
+
+ comunicaciones fuera de las reuniones por whatsapp
+
+ subdividir las tareas complejas en checklists para alivianar la carga de 
+
+
+
+
+
+
+
+
+

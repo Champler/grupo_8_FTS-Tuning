@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var quienesSomos = require ("./routes/quienesSomos")
 var contactanos = require("./routes/contactanos")
 var carrito = require ("./routes/carrito")
+var login = require("./routes/login")
 var app = express();
 
 // view engine setup
@@ -29,7 +30,7 @@ app.use("/", contactanos)
 
 app.use("/", carrito)
 
-
+app.use("/", login)
 
 
 
