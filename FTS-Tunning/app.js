@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var quienesSomos = require ("./routes/quienesSomos")
+var contactanos = require("./routes/contactanos")
+var carrito = require ("./routes/carrito")
 var app = express();
 
 // view engine setup
@@ -21,9 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 /* Conexión de los html */
-app.get('/Quienes-Somos', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/quienesSomos.html'))
-})
+app.use("/",quienesSomos)
+
+app.use("/", contactanos)
+
+app.use("/", carrito)
+
+
+
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './views/home.html'))
@@ -45,9 +53,6 @@ app.get('/registro', (req, res) => {
   res.sendFile(path.join(__dirname, './views/registro.html'))
 })
 
-app.get('/Carrito', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Carrito.html'))
-})
 
 
 app.get('/DatosDePago', (req, res) => {
@@ -63,9 +68,8 @@ app.get('/usuarios', (req, res) => {
   
 })
 
-app.get('/Contactanos', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/contactanos.html'))
-})
+
+
 app.get('/cargaProductos', (req, res) => {
   res.sendFile(path.join(__dirname, './views/cargaProductos.html'))
 })
