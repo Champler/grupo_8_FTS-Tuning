@@ -83,14 +83,14 @@
     <!-----------------------------------        Deltalle del Producto       ------------------------------------------->
     <main class="main-product">
         
-        <h1 class="title-product">Escape Chevrolet Corsa año 2011</h1>
+        <h1 class="title-product"><%= producto.name %>  </h1>
         <section class="destacado">
             <article class="photo-n-price">
                 <div>
-                    <img class="img-product" src="/images/ProductoDetalle/fescape.jpg" alt="Escape Chevrolet Corsa">
+                    <img class="img-product" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa">
                 </div>
                 <div class="price-purchase">
-                    <h3 class="the-price">Precio: 21.000</h3>
+                    <h3 class="the-price">Precio: <%= producto.price %></h3>
                     <p class="fees">12 cuotas de 1.000</p>
                     <p class="fees">18 cuotas de 800</p>
                     <p class="fees">24 cuotas de 700</p>
@@ -109,15 +109,17 @@
                     <a href=""><button type="submit" class="button button-add-to-cart">Agregar al Carrito</button></a>
                 </div>
             </article>
+            <p class="paragraph"><%= producto.description %></p>
+            <p class="paragraph"></p>
                 <p class="paragraph">Caño de escape y silenciador Chevrolet original, lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam!</p>
                 <p class="paragraph">Máximo rendimiento y potencia con el mayor lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam! Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis. Explicabo delectus quos nulla.</p>
             
             <div class="product-details">
-                <img class="img-product-2" src="/images/ProductoDetalle/fescape.jpg" alt="Escape Chevrolet Corsa 2">
+                <img class="img-product-2" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
-                    <li>Marca:  Chevrolet</li>
-                    <li>Modelo:  Corsa</li>
+                    <li>Marca:  <%= producto.marca %></li>
+                    <li>Modelo: <%- producto.carModel %></li>
                     <li>Material del silenciador:  galvanizado</li>
                     <li>Forma del silenciador:  redondo</li>
                     <li>Largo del silenciador:  121 cm</li>
@@ -127,46 +129,40 @@
                     <li>Origen:  Argentina</li>
                 </ul>
             </div>
-                <p class="paragraph"> La óptima eliminación de ruídos y contaminantes, harán que el lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis.</p>
+                <!-- <p class="paragraph"> La óptima eliminación de ruídos y contaminantes, harán que el lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis.</p> -->
             
         </section>
         <!-- Sugestions -->
-        <h3 class="sugestions">Productos Sugeridos</h3>
+        <h3 class="sugestions"><%= sliderTitle %></h3>
             <div class="carousel-product">
-                <!-- <p>Product 1</p> -->
-                <div class="carousel-card card-1">
-                    <div class="photo-container">
-                        <img class="photo-carousel" src="/images/ProductoDetalle/41C64T08DzL.jpg" alt="Volante Deportivo">
+                <!-- <p>Product</p> -->
+                <% sliderProducts.forEach(productis => { %>
+                    <div class="carousel-card">
+                        <div class="photo-container">
+                            <img class="photo-carousel" src="/images/productos/<%= productis.img %>" alt="Combo óptica Renault 12">
+                        </div>
+                        <p class="paragraph-card"><%= productis.name %></p>
+                        <p class="paragraph-card card-price">$ <%= productis.price %></p>
+                        <form action="" method="post">
+                            <button type="submit" class="button button-purchase">Ver más</button>
+                        </form>
                     </div>
-                    <p class="paragraph-card">Volante Deportivo</p>
-                    <p class="paragraph-card card-price">$ 9.000</p>
-                    <form action="" method="post">
-                        <button type="submit" class="button button-purchase">Ver más</button>
-                    </form>
-                </div>
-                <!-- <p>Product 2</p> -->
-                <div class="carousel-card card-2">
-                    <div class="photo-container">
-                        <img class="photo-carousel" src="/images/ProductoDetalle/unnamed.jpg" alt="Llanta de aleación 14 pulgadas">
-                    </div>
-                    <p class="paragraph-card">Llanta de aleación</p>
-                    <p class="paragraph-card card-price">$ 11.000</p>
-                    <form action="" method="post">
-                        <button type="submit" class="button button-purchase">Ver más</button>
-                    </form>
-                </div>
-                <!-- Product 3 -->
-                <div class="carousel-card card-3">
-                    <div class="photo-container">
-                        <img class="photo-carousel" src="/images/ProductoDetalle/D_NQ_NP_2X_830559-MLA41240815817_032020-F.webp" alt="Combo óptica Renault 12">
-                    </div>
-                    <p class="paragraph-card">Óptica Renault 12 </p>
-                    <p class="paragraph-card card-price">$ 5.999</p>
-                    <form action="" method="post">
-                        <button type="submit" class="button button-purchase">Ver más</button>
-                    </form>
-                </div>
+                <% }) %>
             </div>
+            <div>               <!--             Prueba         -->
+                <% sliderProducts.forEach(prod => { %>
+                    <div class="carousel-cell  productSlide">
+                        <a href="/producto/productoDetalle/<%= prod.id %>">
+                            <div class="productDiscount"><%- prod.discount %>% OFF</div>
+                            <img src="/images/productos/<%- prod.img %>" alt="">
+                            <p class="productName"><%- prod.name %></p>
+                            <h4 class="productPrice">$<%- prod.price %></h4>
+                        </a>
+                    </div>
+                <% }) %>
+    
+            </div>
+
     </main>
 
     <!-----------------------------------           Footer            ------------------------------------------->

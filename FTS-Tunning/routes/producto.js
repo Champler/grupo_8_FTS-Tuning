@@ -7,7 +7,6 @@ router.get('/', controller.index);
 
 router.get('/producto', controller.producto);
 
-router.get('/productoDetalle', controller.productoDetalle)
-
+router.get('/productoDetalle/:idProducto', controller.detalle);
 
 module.exports = router;
