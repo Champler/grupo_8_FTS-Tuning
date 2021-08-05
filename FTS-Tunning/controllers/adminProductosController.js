@@ -6,7 +6,7 @@ module.exports = {
         res.render('cargaProductos');
     },
     cargaProducto: (req, res) => {
-        
+        res.render('cargaProductos');
     },
     modificacionProducto: (req, res) => {
         res.render('modificacionProductos');
