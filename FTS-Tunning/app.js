@@ -6,6 +6,7 @@ var logger = require('morgan');
 /* Enrutadores */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var register = require ('./routes/register');
 
 let adminProductosRouter = require('./routes/adminProductos');  // Fabio
 let productoRouter = require('./routes/producto');              // Fabio
@@ -16,6 +17,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use("/", register)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -43,8 +45,8 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Login.html'))
 })
 
-app.get('/registro', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/registro.html'))
+app.get('/Registro', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Registro.html'))
 })
 
 app.get('/Carrito', (req, res) => {
