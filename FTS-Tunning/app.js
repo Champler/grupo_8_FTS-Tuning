@@ -4,9 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+/* Enrutadores */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var register = require ('./routes/register');
+var productsRouter = require('./routes/products--t')
 
 var app = express();
 
@@ -14,7 +15,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use("/", register)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,14 +27,6 @@ app.get('/Quienes-Somos', (req, res) => {
   res.sendFile(path.join(__dirname, './views/quienesSomos.html'))
 })
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/home.html'))
-})
-
-app.get('/Productos', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Productos.html'))
-})
-
 app.get('/ProductoDetallado', (req, res) => {
   res.sendFile(path.join(__dirname, './views/ProductoDetalle.html'))
 })
@@ -43,8 +35,8 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, './views/Login.html'))
 })
 
-app.get('/Registro', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Registro.html'))
+app.get('/registro', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/registro.html'))
 })
 
 app.get('/Carrito', (req, res) => {
@@ -56,15 +48,6 @@ app.get('/DatosDePago', (req, res) => {
   res.sendFile(path.join(__dirname, './views/DatosDePago.html'))
 })
 
-
-app.get('/historial', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/historialCompras.html'))
-})
-app.get('/usuarios', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/listaUsuarios.html'))
-  
-})
-
 app.get('/Contactanos', (req, res) => {
   res.sendFile(path.join(__dirname, './views/contactanos.html'))
 })
@@ -72,8 +55,25 @@ app.get('/cargaProductos', (req, res) => {
   res.sendFile(path.join(__dirname, './views/cargaProductos.html'))
 })
 
+
+/* app.get('/Productos', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/Productos.html'))
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/home.html'))
+})
+app.get('/historial', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/historialCompras.html'))
+})
+app.get('/usuarios', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/listaUsuarios.html'))
+  
+}) */
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/Productos', productsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
