@@ -2,9 +2,6 @@ const { products } = require('../data/productsDB')
 
 
 module.exports = {
-    index: (req, res) => {
-        res.render('Productos');
-    },
     producto: (req, res) => {
         res.render('Productos');
     },
@@ -23,4 +20,7 @@ module.exports = {
             res.send('No tenemos ese producto, pero tenemos muchos otros más...')
         }
     },
+    carrito: (req, res) =>{
+        res.render('Carrito')
+    }
 }

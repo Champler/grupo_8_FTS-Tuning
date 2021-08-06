@@ -3,10 +3,10 @@ let router = express.Router();
 let controller = require('../controllers/productosController')
 
 /* GET */
-router.get('/', controller.index);
 
-router.get('/producto', controller.producto);
+router.get('/', controller.producto);
 
-router.get('/productos/:idProducto', controller.detalle);
+router.get('/carrito', controller.carrito)
+router.get('/:idProducto', controller.detalle);
 
 module.exports = router;
