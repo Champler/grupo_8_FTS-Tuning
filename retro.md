@@ -25,3 +25,33 @@
 
 - Procrastinar
 
+# Segundo Sprint (2/7 - 16/7)
+
+## Seguir haciendo
+
+- Reuniones cada 2/3 días
+- Entregar y todo a tiempo
+- Adelantar trabajo
+- Retrospectivas
+
+## Hacer mas
+
+- Comunicar novedades por Whatsapp y mantener contacto fuera de reuniones
+- Tener Trello actualizado
+- Pedir ayuda antes
+- Subdividir las tareas complejas en checklists, para hacerlas mas llevaderas
+- Empezar ni bien nos dan los sprints
+
+## Empezar a hacer
+
+- Reuniones fuera de sprint para ver el contenido de PG
+- Retrospectivas
+- Ver el código que hacen los demás
+- Organizar mejor el código de visual para entender mejor el código de los otros integrantes
+
+## Hacer menos
+- Confiarse con los plazos
+
+## Dejar de hacer
+
+- Administrar mal el tiempo
