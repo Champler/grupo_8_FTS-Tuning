@@ -27,7 +27,7 @@
   {
     "id": "3",
     "name": "Escape deportivo Trasero Silens",
-    "category": "Caño de Escape",
+    "category": "Freno",
     "description": "descripcion del producto",
     "img": ["Escape-Bedoya.jpg"],
     "carModel" :"Varios",
@@ -40,7 +40,7 @@
   {
     "id": "4",
     "name": "Escape Spr Evo 5 Universal",
-    "category": "Caño de Escape",
+    "category": "Freno",
     "description": "descripcion del producto",
     "img": ["Escape-SPR.jpg"],
     "carModel" :"Varios",
@@ -53,7 +53,7 @@
   {
     "id": "5",
     "name": "Neumático Pirelli Formula Evo 195/65 R15 91 H",
-    "category": "Neumático",
+    "category": "Freno",
     "description": "descripcion del producto",
     "img": ["Rueda-Pirelli.jpg"],
     "carModel" :"Varios",
@@ -66,9 +66,9 @@
   {
     "id": "6",
     "name": "Neumático Bridgestone Turanza T001 215/50 R17 91 V",
-    "category": "Neumático",
+    "category": "Freno",
     "description": "descripcion del producto",
-    "img": ["Rueda-Bridgestonte.jpg"],
+    "img": ["Rueda-Bridgestone.jpg"],
     "carModel" :"Varios",
     "marca": "Bridgestone",
     "year": "2021",

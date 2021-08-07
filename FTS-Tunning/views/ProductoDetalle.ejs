@@ -12,6 +12,11 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
         <!-- Css -->
         <link rel="stylesheet" href="/stylesheets/styles.css">
+        <!-- CSS flickity -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <link rel="stylesheet" href="/stylesheets/product-slider.css">
+        <!-- Scripts Locales -->
+        <script src="/javascripts/product-slider.js" defer></script>
      <title>Document</title>
     </head>
 <body>
@@ -149,24 +154,16 @@
                     </div>
                 <% }) %>
             </div>
-            <div>               <!--             Prueba         -->
-                <% sliderProducts.forEach(prod => { %>
-                    <div class="carousel-cell  productSlide">
-                        <a href="/producto/productoDetalle/<%= prod.id %>">
-                            <div class="productDiscount"><%- prod.discount %>% OFF</div>
-                            <img src="/images/productos/<%- prod.img %>" alt="">
-                            <p class="productName"><%- prod.name %></p>
-                            <h4 class="productPrice">$<%- prod.price %></h4>
-                        </a>
-                    </div>
-                <% }) %>
-    
-            </div>
-
+          
     </main>
+    <!-- /* Slider */ -->  
+    <%- include('slider.ejs') %>
 
     <!-----------------------------------           Footer            ------------------------------------------->
     <%- include('Footer.ejs')%>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     
 </body>
 </html>
