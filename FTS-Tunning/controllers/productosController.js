@@ -22,5 +22,20 @@ module.exports = {
     },
     carrito: (req, res) =>{
         res.render('Carrito')
+    },
+    categoria: (req,res) =>{
+        let categoria = req.params.categoria.trim()
+        let filtradosPorCategoria = []
+        products.forEach(producto =>{
+            if(producto.category.replace(/ /g, "").toLowerCase() === categoria.toLowerCase()){
+                filtradosPorCategoria.push(producto)
+            }
+        })
+        if(filtradosPorCategoria.length > 0){
+            res.render('Productos', {products: filtradosPorCategoria})
+        }else {
+            res.render('Productos', {products})
+        }
+        
     }
 }
