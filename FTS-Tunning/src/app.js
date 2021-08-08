@@ -21,20 +21,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 /* Conexión de los html */
 
-app.get('/Carrito', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/Carrito.html'))
-})
-
 app.get('/DatosDePago', (req, res) => {
   res.sendFile(path.join(__dirname, './views/DatosDePago.html'))
-})
-
-app.get('/cargaProductos', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/cargaProductos.html'))
 })
 
 
