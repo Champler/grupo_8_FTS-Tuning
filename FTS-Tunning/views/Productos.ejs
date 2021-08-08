@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head.ejs')  %> 
+<%- include('./partials/head.ejs')  %> 
 <body>
     <%- include('./partials/header.ejs')  %> 
     <main class="product-main">
@@ -27,57 +27,19 @@
             </section>
             <!-- Sección de muestra de productos -->
             <section class="lista-productos">
-                <article class="each-product">
-                    <div>
-                        <img src="/images/productos/Caño de escape.png" alt="">
-                        <h5>Motor Chevrolet Corsa Año 2011</h5>
-                        <p class="prod-prod-price">$4000</p>
-                        <a href="http://localhost:3000/Productodetallado"><button>Ver producto</button></a>
-                    </div>
-                </article>
-                <article class="each-product">
-                    <div>
-                        <img src="/images/productos/Caño de escape.png" alt="">
-                        <h5>Motor Chevrolet Corsa Año 2011</h5>
-                        <p class="prod-price">$4000</p>
-                        <a href="http://localhost:3000/Productodetallado"><button>Ver producto</button></a>
-                    </div>
-                </article>
-                <article class="each-product">
-                    <div>
-                        <img src="/images/productos/Caño de escape.png" alt="">
-                        <h5>Motor Chevrolet Corsa Año 2011</h5>
-                        <p class="prod-price">$4000</p>
-                        <a href="http://localhost:3000/Productodetallado"><button>Ver producto</button></a>
-                    </div>
-                </article>
-                <article class="each-product">
-                    <div>
-                        <img src="/images/productos/Caño de escape.png" alt="">
-                        <h5>Motor Chevrolet Corsa Año 2011</h5>
-                        <p class="prod-price">$4000</p>
-                        <a href="http://localhost:3000/Productodetallado"><button>Ver producto</button></a>
-                    </div>
-                </article>
-                <article class="each-product">
-                    <div>
-                        <img src="/images/productos/Caño de escape.png" alt="">
-                        <h5>Motor Chevrolet Corsa Año 2011</h5>
-                        <p class="prod-price">$4000</p>
-                        <a href="http://localhost:3000/Productodetallado"><button>Ver producto</button></a>
-                    </div>
-                </article>
-                <article class="each-product">
-                    <div>
-                        <img src="/images/productos/Caño de escape.png" alt="">
-                        <h5>Motor Chevrolet Corsa Año 2011</h5>
-                        <p class="prod-price">$4000</p>
-                        <a href="http://localhost:3000/Productodetallado"><button>Ver producto</button></a>
-                    </div>
-                </article>
-            </section>
-        </div>
-    </main>
-    <%- include('./partials/footer.ejs')  %> 
+                <% products.forEach(product => { %>
+                    <article class="each-product">
+                        <div>
+                            <img src="/images/productos/<%- product.img %>" alt="">
+                            <h5><%= product.name %></h5>
+                            <p class="prod-prod-price"><%= product.price %></p>
+                            <a href="http://localhost:3000/productos/<%= product.id %>"><button>Ver producto</button></a>
+                        </div>
+                    </article>
+                    <% }) %>                
+                </section>
+            </div>
+        </main>
+        <%- include('./partials/footer.ejs')  %> 
 </body>
 </html>

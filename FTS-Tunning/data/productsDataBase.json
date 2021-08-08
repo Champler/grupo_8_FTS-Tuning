@@ -1,6 +1,6 @@
 [{
     "id": "1",
-    "name": "Subaru Impreza GDB",
+    "name": "Freno Subaru Impreza GDB",
     "category": "Freno",
     "description": "descripcion del producto",
     "img": ["Disco-Freno-Subaru.jpg"],
@@ -68,7 +68,7 @@
     "name": "Neumático Bridgestone Turanza T001 215/50 R17 91 V",
     "category": "Neumático",
     "description": "descripcion del producto",
-    "img": ["Rueda-Bridgestonte.jpg"],
+    "img": ["Rueda-Bridgestone.jpg"],
     "carModel" :"Varios",
     "marca": "Bridgestone",
     "year": "2021",

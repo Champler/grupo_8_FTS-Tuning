@@ -54,6 +54,8 @@ main .lista-productos .each-product div .prod-price {
 
 main .lista-productos .each-product div img{
     width: 80%;
+    height: 190px;
+    border-radius: 30px;
 }
 main .lista-productos .each-product div a button{
     width: 100%;

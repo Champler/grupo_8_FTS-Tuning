@@ -3,7 +3,7 @@ const { products } = require('../data/productsDB')
 
 module.exports = {
     producto: (req, res) => {
-        res.render('Productos');
+        res.render('Productos', {products});
     },
     detalle: (req, res) => {                             //  Fabio
         let paramsIdProducto = req.params.idProducto.trim();

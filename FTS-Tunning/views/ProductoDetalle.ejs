@@ -69,9 +69,7 @@
                         </div>
                         <p class="paragraph-card"><%= productis.name %></p>
                         <p class="paragraph-card card-price">$ <%= productis.price %></p>
-                        <form action="" method="post">
-                            <button type="submit" class="button button-purchase">Ver más</button>
-                        </form>
+                        <a class="search-more" href="http://localhost:3000/productos/<%= productis.id %>"><button>Ver producto</button></a>
                     </div>
                 <% }) %>
             </div>
