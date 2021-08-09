@@ -24,13 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-/* Conexión de los html */
-
-app.get('/DatosDePago', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/DatosDePago.html'))
-})
-
-
 /* Rutas */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
