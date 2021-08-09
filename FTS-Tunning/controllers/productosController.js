@@ -13,7 +13,8 @@ module.exports = {
         let producto = products.find(element => element.id === paramsIdProducto)
         
         if (producto !== undefined){
-            let sliderProducts = products.filter(item => item.category === producto.category)
+            /* let sliderProducts = products.filter(item => item.category === producto.category) */
+            let sliderProducts = products;    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
             res.render('ProductoDetalle', {
                 sliderTitle : "También te pueden interesar",
                 sliderProducts,

@@ -146,7 +146,7 @@
     "name": "Volante Mitsubishi Evo 7-8",
     "category": "Volante",
     "description": "descripcion del producto",
-    "img": ["Volante-Mitsubishi.jpg"],
+    "img": ["Volante-Mitsubishi.jpg","Volante-Subaru.jpg","Asientos-Subaru.jpg","Asientos-Mitsubishi.jpg"],
     "carModel" :"Evo 7-8",
     "marca": "Mitsubishi",
     "year": "2021",
