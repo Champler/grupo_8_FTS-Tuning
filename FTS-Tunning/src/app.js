@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 let adminProductosRouter = require('./routes/adminProductos');  // Fabio
 let productoRouter = require('./routes/producto');   
 let usRouter = require('./routes/us');              // Fabio
+let DatosDePagoRouter = require('./routes/DatosDePago') //Santiago
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/users', usersRouter);
 app.use('/adminProductos', adminProductosRouter);  // Fabio
 app.use('/productos', productoRouter);   
 app.use('/us', usRouter)           // Fabio
+app.use('/DatosDePago', DatosDePagoRouter) //santiago
 
 
 // catch 404 and forward to error handler
