@@ -14,3 +14,5 @@
 @import url('datosDePago.css');
 @import url('cargaProductos.css');
 @import url('contactanos.css');
+@import url('product-slider.css');                                    /* slider.ejs */
+@import url('https://unpkg.com/flickity@2/dist/flickity.min.css');    /* slider.ejs */

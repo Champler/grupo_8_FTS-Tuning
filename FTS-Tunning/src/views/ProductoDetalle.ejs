@@ -12,9 +12,19 @@
         <h1 class="title-product"><%= producto.name %>  </h1>
         <section class="destacado">
             <article class="photo-n-price">
-                <div>
-                    <img class="img-product" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa">
+                <div class="images-container">
+                    <div class="thumbnailImages">
+                        <% producto.img.forEach(image => { %>
+                            <img src="/images/productos/<%- image%>" alt="Imagen de producto" class="smallImg" onclick="myFunction(this);">
+                        <% }) %>
+                    </div>
+                    <div class="mainImage">
+                        <img src="/images/productos/<%= producto.img[0]%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
+                    </div>
                 </div>
+               <!--  <div>
+                    <img class="img-product" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa">
+                </div> -->
                 <div class="price-purchase">
                     <h3 class="the-price">Precio: <%= producto.price %></h3>
                     <p class="fees">12 cuotas de 1.000</p>
@@ -60,8 +70,8 @@
         </section>
         <!-- Sugestions -->
         <h3 class="sugestions"><%= sliderTitle %></h3>
-            <div class="carousel-product">
-                <!-- <p>Product</p> -->
+           <!--  <div class="carousel-product">
+           
                 <% sliderProducts.forEach(productis => { %>
                     <div class="carousel-card">
                         <div class="photo-container">
@@ -70,11 +80,14 @@
                         <p class="paragraph-card"><%= productis.name %></p>
                         <p class="paragraph-card card-price">$ <%= productis.price %></p>
                         <a class="search-more" href="http://localhost:3000/productos/<%= productis.id %>"><button>Ver producto</button></a>
+                        <form action="" method="post">
+                            <button type="submit" class="button button-purchase">Ver más</button>
+                        </form>
                     </div>
                 <% }) %>
-            </div>
+            </div> -->
             <div>               <!--             Prueba         -->
-                <% sliderProducts.forEach(prod => { %>
+                <!-- <% sliderProducts.forEach(prod => { %>
                     <div class="carousel-cell  productSlide">
                         <a href="/producto/productoDetalle/<%= prod.id %>">
                             <div class="productDiscount"><%- prod.discount %>% OFF</div>
@@ -84,13 +97,20 @@
                         </a>
                     </div>
                 <% }) %>
-    
+     -->
             </div>
 
     </main>
 
+    <!-- /* Slider */ -->  
+    <%- include('partials/slider.ejs') %>
     <!-----------------------------------           Footer            ------------------------------------------->
     <%- include('partials/footer.ejs')  %> 
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="/javascripts/product-slider.js"></script>
+    <script src="/javascripts/productoDetalle.js"></script>
     
 </body>
 </html>
