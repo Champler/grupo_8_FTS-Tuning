@@ -9,5 +9,6 @@ router.get('/cargaProducto', controller.cargaProducto)
 
 router.get('/modificacionProducto', controller.modificacionProducto)
 
-
+router.get('/users', controller.usuarios);
+router.get('/productos', controller.productos);
 module.exports = router;
