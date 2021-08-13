@@ -16,5 +16,17 @@ module.exports = {
     },
     productos: (req, res) => {
         res.render('adminProducts', {products})
-    }
+    },
+    create: {
+
+    },
+    editForm: {
+
+    },
+    editProduct: {
+
+    },
+    delete: {
+
+    },
 }

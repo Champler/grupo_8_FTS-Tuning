@@ -7,7 +7,7 @@
     "carModel" :"Impreza GDB",
     "marca": "Subaru",
     "year": "2021",
-    "color": "Gris",
+    "color": "Plateado",
     "discount": "15",
     "price": "10.000"
   },
@@ -20,7 +20,7 @@
     "carModel" :"Evo 5",
     "marca": "Mitsubishi",
     "year": "2021",
-    "color": "Gris",
+    "color": "Plateado",
     "discount": "15",
     "price": "15.000"
   },
@@ -124,7 +124,7 @@
     "carModel" :"Evo 10",
     "marca": "Mitsubishi",
     "year": "2020",
-    "color": "Gris",
+    "color": "Plateado",
     "discount": "15",
     "price": "25.000"
   },
