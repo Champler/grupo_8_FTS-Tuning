@@ -1,0 +1,62 @@
+.allProds {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.allProds .search-prod{
+    border-radius: 30px;
+    border: 1px var(--color-negro) solid;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.allProds  a button{
+    background-color: var(--color-azul);
+    color: var(--color-rojo);
+    width: 100%;
+    padding: 5px;
+    margin: 3px;
+}
+.allProds  a button:hover{
+    background-color: var(--color-rojo);
+    color: var(--color-azul);
+}
+.allProds .admin-prods .admin-each-product img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.allProds .admin-prods .admin-each-product div{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px var(--color-negro) solid;
+}
+.allProds .admin-prods .admin-each-product div h3{
+    font-size: 13px;
+}
+.allProds .admin-prods .admin-each-product div .edit-delete{
+    flex-direction: column;
+    margin: 2px;
+    border: none;
+}
+.allProds .admin-prods .admin-each-product div .edit-delete a button:hover{
+    background-color: var(--color-rojo);
+    color: var(--color-azul);
+}
+.allProds .admin-prods .admin-each-product div .edit-delete a button{
+    background-color: var(--color-azul);
+    color: var(--color-rojo);
+    width: 70px;
+    padding: 5px;
+    margin: 3px;
+}

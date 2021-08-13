@@ -10,5 +10,23 @@ module.exports = {
     },
     modificacionProducto: (req, res) => {
         res.render('modificacionProductos');
-    }
+    },
+    usuarios: (req, res) => {
+        res.render('listaUsuarios')
+    },
+    productos: (req, res) => {
+        res.render('adminProducts', {products})
+    },
+    create: {
+
+    },
+    editForm: {
+
+    },
+    editProduct: {
+
+    },
+    delete: {
+
+    },
 }
