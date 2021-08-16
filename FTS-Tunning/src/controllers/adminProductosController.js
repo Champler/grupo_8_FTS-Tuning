@@ -20,13 +20,13 @@ module.exports = {
     create: {
 
     },
-    editForm: {
+    editForm: (req, res) {
 
     },
-    editProduct: {
+    editProduct: (req, res) {
 
     },
-    delete: {
+    delete: (req, res) {
 
     },
 }

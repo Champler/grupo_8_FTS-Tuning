@@ -16,8 +16,12 @@ let create = 3
 
 
 
-let editForm = 1
-let editProd = 2
-let delet = 1
+/* GET / mostrar datos de edicion */
+router.get('/editarAuto/:id', controller.editForm)
+/* PUT - Recibe los datos de edicion */
+router.put('/editarAuto/:id', controller.editProduct)
+
+/* / Borrar un producto */
+router.delete('/eliminarAuto/:id', controller.delete)
 
 module.exports = router;
