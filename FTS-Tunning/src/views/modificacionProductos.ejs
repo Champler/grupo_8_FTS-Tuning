@@ -8,33 +8,37 @@
     <!----------------------------------------  Carga de Productos  --------------------------------------------------------->
     <main>
         <h2 class="title">Formulario de Modificación de Productos</h2>
-        <form action="" class="form">
+        <form action="/adminProductos/editarProducto/<%= producto.id %>?_method=PUT"  method="POST" class="form">
             <div class="categoryNPrice">
                 <div class="category">
                     <label for="category" class="label">Categoría:</label>
                     <select name="category" id="" class="select border">
-                        <option value="frenos">Frenos</option>
-                        <option value="neumaticos">Neumáticos</option>
-                        <option value="escapes">Escapes</option>
-                        <option value="motores">Motores</option>
-                        <option value="volantes">Volantes</option>
-                        <option value="interiores">Interiores</option>
+                        <option <%- producto.category === "Freno" ? "selected" : "" %> value="Freno">Freno</option>
+                        <option <%- producto.category === "Neumático" ? "selected" : "" %> value="Neumático">Neumático</option>
+                        <option <%- producto.category === "Caño de Escape" ? "selected" : "" %> value="Caño de Escape">Caño de Escape</option>
+                        <option <%- producto.category === "Motor" ? "selected" : "" %> value="Motor">Motor</option>
+                        <option <%- producto.category === "Volante" ? "selected" : "" %> value="Volante">Volante</option>
+                        <option <%- producto.category === "Interior" ? "selected" : "" %> value="Interior">Interior</option>
                     </select>
                 </div>
                 <div class="pricef">
                     <label for="price" class="label">Precio:</label>
-                    <input type="text" name="price" id="" class="price-input border">
-
+                    <input type="text" name="price" id="" class="price-input border" value="<%= producto.price %>">
+                </div>
+                <div class="pricef">
+                    <label for="discount" class="label">Descuento:</label>
+                    <input type="text" name="discount" id="" class="price-input border" value="<%= producto.discount %>">
                 </div>
             </div>
             <div class="nameModelYear">
                 <label for="name" class="label">Nombre del Producto:</label>
-                <input type="text" name="name" id="" class="name border">
+                <input type="text" name="name" id="" class="name border" value="<%= producto.name %>">
             </div>
             <div class="brandModelYear">
                 <div class="brand">
-                    <label for="brand" class="label">Marca</label>
-                    <select name="brand" id="brand" class="select border">
+                    <label for="marca" class="label">Marca</label>
+                    <input type="text" name="marca" id="" class="select border" value="<%= producto.marca %>">
+                    <!-- <select name="brand" id="brand" class="select border">
                         <option value="none">-------</option>
                         <option value="ford">Ford</option>
                         <option value="chevrolet">Chevrolet</option>
@@ -46,67 +50,84 @@
                         <option value="audi">Audi</option>
                         <option value="nissan">Nissan</option>
                         <option value="other">otra</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div>
-                    <label for="model" class="label">Modelo:</label>
-                    <select name="model" id="" class="select border">
-                        <option value="model-1">Focus</option>
+                    <label for="carModel" class="label">Modelo:</label>
+                    <input type="text" name="carModel" id="" class="select border" value="<%= producto.carModel %>">
+                        <!-- <option value="model-1">Focus</option>
                         <option value="model-2">Fiesta</option>
                         <option value="model-3">Mondeo</option>
                         <option value="model-4">Ecosport</option>
                         <option value="model-5">F-100</option>
-                        <option value="model-6">Ranger</option>
-                    </select>
+                        <option value="model-6">Ranger</option> 
+                    </select> -->
                 </div>
                 <div>
                     <label for="year" class="label">Año:</label>
                     <select name="year" id="" class="border">
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
+                        <option <%- producto.year === "2021" ? "selected" : "" %> value="2021">2021</option>
+                        <option <%- producto.year === "2020" ? "selected" : "" %> value="2020">2020</option>
+                        <option <%- producto.year === "2019" ? "selected" : "" %> value="2019">2019</option>
+                        <option <%- producto.year === "2018" ? "selected" : "" %> value="2018">2018</option>
+                        <option <%- producto.year === "2017" ? "selected" : "" %> value="2017">2017</option>
+                        <option <%- producto.year === "2016" ? "selected" : "" %> value="2016">2016</option>
+                        <option <%- producto.year === "2015" ? "selected" : "" %> value="2015">2015</option>
+                        <option <%- producto.year === "2014" ? "selected" : "" %> value="2014">2014</option>
+                        <option <%- producto.year === "2013" ? "selected" : "" %> value="2013">2013</option>
+                        <option <%- producto.year === "2012" ? "selected" : "" %> value="2012">2012</option>
+                        <option <%- producto.year === "2011" ? "selected" : "" %> value="2011">2011</option>
+                        <option <%- producto.year === "2010" ? "selected" : "" %> value="2010">2010</option>
+                        <option <%- producto.year === "2009" ? "selected" : "" %> value="2009">2009</option>
+                        <option <%- producto.year === "2008" ? "selected" : "" %> value="2008">2008</option>
+                        <option <%- producto.year === "2007" ? "selected" : "" %> value="2007">2007</option>
+                        <option <%- producto.year === "2006" ? "selected" : "" %> value="2006">2006</option>
+                        <option <%- producto.year === "2005" ? "selected" : "" %> value="2005">2005</option>
+                        <option <%- producto.year === "2004" ? "selected" : "" %> value="2004">2004</option>
+                        <option <%- producto.year === "2003" ? "selected" : "" %> value="2003">2003</option>
+                        <option <%- producto.year === "2002" ? "selected" : "" %> value="2002">2002</option>
+                        <option <%- producto.year === "2001" ? "selected" : "" %> value="2001">2001</option>
+                        <option <%- producto.year === "2000" ? "selected" : "" %> value="2000">2000</option>
+                        <option <%- producto.year === "1999" ? "selected" : "" %> value="1999">1999</option>
                     </select>
                 </div>
             </div>
             <div class="photo">
-                <label for="photo" class="label">Foto:</label>
-                <input type="file" name="photo" id="" class="border ">
+                <label for="img" class="label">Foto:</label>
+                <input type="file" name="img" id="" class="border ">
                 <button class="buttons button-blue">Agregar otra Foto</button>
             </div>
             <div class="description">
                 <label for="description" class="label">Descripción:</label>
-                <textarea name="description" id="" class="textarea-description border"></textarea>
+                <textarea name="description" id="" class="textarea-description border"><%= producto.description %></textarea>
             </div>
             <div class="colorDelIzq">
                 <div>
                     <label for="color" class="label">Color:</label>
                     <select name="color" id="" class="border">
-                        <option value="white">Blanco</option>
-                        <option value="black">Negro</option>
-                        <option value="blue">Azul</option>
-                        <option value="red">Rojo</option>
-                        <option value="gree">Verde</option>
-                        <option value="silver">Plateado</option>
+                        <option <%- producto.color === "Blanco" ? "selected" : "" %> value="Blanco">Blanco</option>
+                        <option <%- producto.color === "Negro" ? "selected" : "" %> value="Negro">Negro</option>
+                        <option <%- producto.color === "Azul" ? "selected" : "" %> value="Azul">Azul</option>
+                        <option <%- producto.color === "Rojo" ? "selected" : "" %> value="Rojo">Rojo</option>
+                        <option <%- producto.color === "Verde" ? "selected" : "" %> value="Verde">Verde</option>
+                        <option <%- producto.color === "Plateado" ? "selected" : "" %> value="Plateado">Plateado</option>
+                        <option <%- producto.color === "no" ? "selected" : "" %> value="no">no</option>
                     </select>
                 </div>
                 <div>
-                    <label for="delTrasNo" class="label">Del/Tras/No:</label>
-                    <select name="delTasNo" id="" class="border">
-                        <option value="no">No</option>
-                        <option value="del">Delantero</option>
-                        <option value="tras">Trasero</option>
+                    <label for="frontBack" class="label">Del/Tras/No:</label>
+                    <select name="frontBack" id="" class="border">
+                        <option <%- producto.frontBack === "no" ? "selected" : "" %> value="no">No</option>
+                        <option <%- producto.frontBack === "Delantero" ? "selected" : "" %> value="Delantero">Delantero</option>
+                        <option <%- producto.frontBack === "Trasero" ? "selected" : "" %> value="Trasero">Trasero</option>
                     </select>
                 </div>
                 <div>
-                    <label for="izqDerNo" class="label">Izq/Der/No:</label>
-                    <select name="izqDerNo" id="" class="border">
-                        <option value="no">No</option>
-                        <option value="izqDerNo">Izquierda</option>
-                        <option value="der">Derecha</option>
+                    <label for="leftRight" class="label">Izq/Der/No:</label>
+                    <select name="leftRight" id="" class="border">
+                        <option <%- producto.leftRight === "no" ? "selected" : "" %> value="no">No</option>
+                        <option <%- producto.leftRight === "Izqquierdo" ? "selected" : "" %> value="Izqquierdo">Izquierda</option>
+                        <option <%- producto.leftRight === "Derecho" ? "selected" : "" %> value="Derecho">Derecha</option>
                     </select>
                 </div>
             </div>

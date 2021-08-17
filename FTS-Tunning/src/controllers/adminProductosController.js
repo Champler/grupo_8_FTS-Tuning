@@ -1,4 +1,4 @@
-const { products } = require('../data/productsDB')
+const { products, writeJson } = require('../data/productsDB')
 
 
 module.exports = {
@@ -20,13 +20,34 @@ module.exports = {
     create: {
 
     },
-    editForm: (req, res) {
-
+    editForm: (req, res) => {
+        let producto = products.find(product => {
+            return product.id === req.params.id
+        })
+        res.render('modificacionProductos', {producto})
     },
-    editProduct: (req, res) {
-
+    editProduct: (req, res) => {
+        let { name, category, description, /* img, */ carModel, marca, year, color, discount, price, frontBack, leftRight } = req.body;
+        products.forEach(product => {
+            if(product.id === req.params.id){
+                product.name = name,
+                product.category = category,
+                product.description = description,
+                /* product.img[0] = img, */
+                product.carModel = carModel,
+                product.marca = marca,
+                product.year = year,
+                product.color = color,
+                product.discount = discount,
+                product.price = price,
+                product.frontBack = frontBack,
+                product.leftRight = leftRight
+            }
+        });
+        writeJson(products)
+        res.redirect('/adminProductos/productos')
     },
-    delete: (req, res) {
-
+    delete: (req, res) => {
+        res.send(req.params.id)
     },
 }

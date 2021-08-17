@@ -17,11 +17,11 @@ let create = 3
 
 
 /* GET / mostrar datos de edicion */
-router.get('/editarAuto/:id', controller.editForm)
+router.get('/editarProducto/:id', controller.editForm)
 /* PUT - Recibe los datos de edicion */
-router.put('/editarAuto/:id', controller.editProduct)
+router.put('/editarProducto/:id', controller.editProduct)
 
 /* / Borrar un producto */
-router.delete('/eliminarAuto/:id', controller.delete)
+router.delete('/eliminarProducto/:id', controller.delete)
 
 module.exports = router;
