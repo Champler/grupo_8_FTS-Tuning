@@ -45,13 +45,13 @@ module.exports = {
         writeJson(products)
         res.redirect('/adminProductos/productos')
     },
-    editForm: (req, res) {
+    editForm: (req, res) => {
 
     },
-    editProduct: (req, res) {
+    editProduct: (req, res) => {
 
     },
-    delete: (req, res) {
+    delete: (req, res) => {
 
     },
 }
