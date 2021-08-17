@@ -48,6 +48,14 @@ module.exports = {
         res.redirect('/adminProductos/productos')
     },
     delete: (req, res) => {
-        res.send(req.params.id)
+        products.forEach(product => {
+            if(product.id === req.params.id){
+                let productoAEliminar = products.indexOf(product)
+                products.splice(productoAEliminar, 1)
+                /* products.splice(products.indexOf(product), 1) */
+            }
+        })
+        writeJson(products)
+        res.redirect('/adminProductos/productos')
     },
 }
