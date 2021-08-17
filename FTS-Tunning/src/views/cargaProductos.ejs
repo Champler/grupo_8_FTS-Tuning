@@ -10,23 +10,27 @@
     <!----------------------------------------  Carga de Productos  --------------------------------------------------------->
     <main>
         <h2 class="title">Formulario de Carga de Productos</h2>
-        <form action="" class="form">
+        <form action="/adminProductos/cargaProducto" class="form" method="POST">
             <div class="categoryNPrice">
                 <div class="category">
                     <label for="category" class="label">Categoría:</label>
                     <select name="category" id="" class="select border">
-                        <option value="frenos">Frenos</option>
-                        <option value="neumaticos">Neumáticos</option>
-                        <option value="escapes">Escapes</option>
-                        <option value="motores">Motores</option>
-                        <option value="volantes">Volantes</option>
-                        <option value="interiores">Interiores</option>
+                        <option value="Freno">Frenos</option>
+                        <option value="Neumático">Neumáticos</option>
+                        <option value="Caño de Escape">Escapes</option>
+                        <option value="Motor">Motores</option>
+                        <option value="Volante">Volantes</option>
+                        <option value="Interior">Interiores</option>
                     </select>
                 </div>
                 <div class="pricef">
                     <label for="price" class="label">Precio:</label>
                     <input type="text" name="price" id="" class="price-input border">
 
+                </div>
+                <div class="pricef">
+                    <label for="discount" class="label">Descuento:</label>
+                    <input type="text" name="discount" id="" class="name border">
                 </div>
             </div>
             <div class="nameModelYear">
@@ -37,23 +41,10 @@
                 <div class="brand">
                     <label for="brand" class="label">Marca</label>
                     <input type="text" name="brand" id="" class="select border">
-                    <!-- <select name="brand" id="brand" class="select border">
-                        <option value="none">-------</option>
-                        <option value="ford">Ford</option>
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="peugeot">Peugeot</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="bmw">BMW</option>
-                        <option value="audi">Audi</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="other">otra</option>
-                    </select> -->
                 </div>
                 <div>
-                    <label for="model" class="label">Modelo:</label>
-                    <input type="text" name="model" id="" class="select border">
+                    <label for="carModel" class="label">Modelo:</label>
+                    <input type="text" name="carModel" id="" class="select border">
                 </div>
                 <div>
                     <label for="year" class="label">Año:</label>
@@ -85,8 +76,8 @@
                 </div>
             </div>
             <div class="photo">
-                <label for="photo" class="label">Foto:</label>
-                <input type="file" name="photo" id="" class="border ">
+                <label for="img" class="label">Foto:</label>
+                <input type="file" name="img" id="" class="border ">
                 <button class="buttons button-blue">Agregar otra Foto</button>
             </div>
             <div class="description">
@@ -106,16 +97,16 @@
                     </select>
                 </div>
                 <div>
-                    <label for="delTrasNo" class="label">Del/Tras/No:</label>
-                    <select name="delTasNo" id="" class="border">
+                    <label for="frontback" class="label">Del/Tras/No:</label>
+                    <select name="frontback" id="" class="border">
                         <option value="no">No</option>
                         <option value="Delantero">Delantero</option>
                         <option value="Trasero">Trasero</option>
                     </select>
                 </div>
                 <div>
-                    <label for="izqDerNo" class="label">Izq/Der/No:</label>
-                    <select name="izqDerNo" id="" class="border">
+                    <label for="leftright" class="label">Izq/Der/No:</label>
+                    <select name="leftright" id="" class="border">
                         <option value="no">No</option>
                         <option value="Izquierdo">Izquierda</option>
                         <option value="Derecho">Derecha</option>

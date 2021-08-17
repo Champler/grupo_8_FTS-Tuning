@@ -1,4 +1,4 @@
-const { products } = require('../data/productsDB')
+const { products, writeJson } = require('../data/productsDB')
 
 
 module.exports = {
@@ -17,8 +17,33 @@ module.exports = {
     productos: (req, res) => {
         res.render('adminProducts', {products})
     },
-    create: {
+    create: (req,res)=> { 
+        let lastID = 1
+        products.forEach(product =>{
+            if(product.id > lastID){
+                lastID = product.id
+            }
+        })
+        let { name, category, description, carModel, brand, year, color, discount, price, frontback, leftright} = req.body
+        let newProduct = {
+            id: lastID + 1,
+            name,
+            category,
+            description,
+            img: "default-image.jpg",
+            carModel,
+            brand, 
+            year,
+            color,
+            discount,
+            price,
+            frontback,
+            leftright
+        }
 
+        products.push(newProduct)
+        writeJson(products)
+        res.redirect('/adminProductos/productos')
     },
     editForm: {
 

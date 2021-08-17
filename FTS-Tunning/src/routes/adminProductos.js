@@ -6,13 +6,13 @@ let controller = require('../controllers/adminProductosController')
 router.get('/', controller.index)
 
 router.get('/cargaProducto', controller.cargaProducto)
+router.post('/cargaProducto', controller.create)
 
 router.get('/modificacionProducto', controller.modificacionProducto)
 
 router.get('/users', controller.usuarios);
 router.get('/productos', controller.productos);
 
-let create = 3
 
 
 
