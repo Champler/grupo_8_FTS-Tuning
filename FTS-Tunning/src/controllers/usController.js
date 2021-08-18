@@ -2,10 +2,10 @@ let db = require('../data/productsDataBase')
 
 module.exports = {
     contact: (req, res) => {
-        res.render('contactanos')
+        res.render('contactanos', {title: "Contactanos"})
     },
     us: (req, res) => {
-        res.render('quienesSomos')
+        res.render('quienesSomos', {title: "Nosotros"})
     },
 }
 

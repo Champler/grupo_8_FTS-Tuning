@@ -2,20 +2,17 @@ const { products, writeJson } = require('../data/productsDB')
 
 
 module.exports = {
-    index: (req, res) => {
-        res.render('cargaProductos');
-    },
     cargaProducto: (req, res) => {
-        res.render('cargaProductos');
+        res.render('cargaProductos', {title: "Carga de Productos"});
     },
     modificacionProducto: (req, res) => {
-        res.render('modificacionProductos');
+        res.render('modificacionProductos', {title: "Modificación de Productos"});
     },
     usuarios: (req, res) => {
-        res.render('listaUsuarios')
+        res.render('listaUsuarios', {title: "Usuarios"})
     },
     productos: (req, res) => {
-        res.render('adminProducts', {products})
+        res.render('adminProducts', {products, title:"Productos"})
     },
     create: (req,res)=> { 
         let lastID = 1

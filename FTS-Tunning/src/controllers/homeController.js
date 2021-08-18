@@ -1,8 +1,8 @@
-let db = require('../data/productsDataBase')
+const {carrousel } = require('../data/productsDB')
 
 module.exports = {
     index: (req, res) => {
-        res.render('Home')
+        res.render('Home', {title: "FTS - Tunning", carrousel})
     }
 }
 

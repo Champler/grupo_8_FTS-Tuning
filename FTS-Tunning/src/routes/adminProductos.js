@@ -6,7 +6,6 @@ let controller = require('../controllers/adminProductosController')
 let upload = require('../middlewares/uploadProdFiles')
 
 /* GET index cargaProductos */
-router.get('/', controller.index)
 
 router.get('/cargaProducto', controller.cargaProducto)
 router.post('/cargaProducto',upload.array('img'), controller.create)
