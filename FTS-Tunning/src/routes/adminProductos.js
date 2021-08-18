@@ -3,7 +3,7 @@ let router = express.Router();
 let controller = require('../controllers/adminProductosController')
 
 
-let upload = require('../middlewares/uploadFiles')
+let upload = require('../middlewares/uploadProdFiles')
 
 /* GET index cargaProductos */
 router.get('/', controller.index)
