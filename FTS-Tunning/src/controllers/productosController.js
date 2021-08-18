@@ -7,7 +7,7 @@ module.exports = {
     },
     detalle: (req, res) => {                             //  Fabio
         let paramsIdProducto = req.params.idProducto.trim();
-        let producto = products.find(element => element.id === paramsIdProducto)
+        let producto = products.find(element => element.id === +paramsIdProducto)
         
         if (producto !== undefined){
             /* let sliderProducts = products.filter(item => item.category === producto.category) */
