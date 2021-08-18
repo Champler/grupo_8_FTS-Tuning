@@ -9,7 +9,7 @@ let upload = require('../middlewares/uploadProdFiles')
 router.get('/', controller.index)
 
 router.get('/cargaProducto', controller.cargaProducto)
-router.post('/cargaProducto', controller.create)
+router.post('/cargaProducto',upload.array('img'), controller.create)
 
 router.get('/modificacionProducto', controller.modificacionProducto)
 

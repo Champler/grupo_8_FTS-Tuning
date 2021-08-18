@@ -63,7 +63,7 @@
         "year": "2021",
         "color": "Negro",
         "discount": "0",
-        "price":"11",
+        "price": "11",
         "front-back": "Trasero",
         "left-right": "no"
     },
@@ -164,7 +164,7 @@
         "brand": "Mitsubishi",
         "year": "2020",
         "color": "Plateado",
-        "discount":" 15",
+        "discount": " 15",
         "price": "25",
         "front-back": "Delantero",
         "left-right": "no"
@@ -199,7 +199,7 @@
         "year": "2021",
         "color": "Negro",
         "discount": "15",
-        "price":" 22",
+        "price": " 22",
         "front-back": "no",
         "left-right": "no"
     },
@@ -269,6 +269,24 @@
         "discount": "10",
         "price": "21212",
         "frontback": "Delantero",
+        "leftright": "no"
+    },
+    {
+        "id": 17,
+        "name": "PruebaF",
+        "category": "Freno",
+        "description": "PruebaF",
+        "img": [
+            "1629304653950_img_.jpg",
+            "1629304653954_img_.jpg"
+        ],
+        "carModel": "PruebaF",
+        "brand": "PruebaF",
+        "year": "2021",
+        "color": "Blanco",
+        "discount": "12",
+        "price": "1300",
+        "frontback": "no",
         "leftright": "no"
     }
 ]
