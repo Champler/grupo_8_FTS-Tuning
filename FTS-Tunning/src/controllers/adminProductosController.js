@@ -24,13 +24,19 @@ module.exports = {
                 lastID = product.id
             }
         })
+        let arrayImgs = []
+        if(req.files){
+            req.files.forEach(image => {
+                arrayImgs.push(image.filename)
+            })
+        }
         let { name, category, description, carModel, brand, year, color, discount, price, frontback, leftright} = req.body
         let newProduct = {
             id: lastID + 1,
             name,
             category,
             description,
-            img:[ "default-image.jpg"],
+            img: arrayImgs.length > 0? arrayImgs: ["default-image.jpg"],
             carModel,
             brand, 
             year,

@@ -3,13 +3,13 @@ let router = express.Router();
 let controller = require('../controllers/adminProductosController')
 
 
-let upload = require('../middlewares/uploadFiles')
+let upload = require('../middlewares/uploadProdFiles')
 
 /* GET index cargaProductos */
 router.get('/', controller.index)
 
 router.get('/cargaProducto', controller.cargaProducto)
-router.post('/cargaProducto', controller.create)
+router.post('/cargaProducto',upload.array('img'), controller.create)
 
 router.get('/modificacionProducto', controller.modificacionProducto)
 
