@@ -63,6 +63,16 @@
                     <li>Número de entradas:  1</li>
                     <li>Número de salidas:  1</li>
                     <li>Origen:  Argentina</li>
+                    <% if (producto.frontBack != "no") { %>
+                        <li>Tipo: <%= producto.frontBack %></li>
+                    <% } %>
+                    <% if (producto.leftRight != "no") { %>
+                        <li>Lado: <%= producto.leftRight %> </li>
+                    <% } %>
+                    <% if (producto.color != "no") { %>
+                        <li>Color: <%= producto.color %> </li>
+                    <% } %>
+                    
                 </ul>
             </div>
                 <!-- <p class="paragraph"> La óptima eliminación de ruídos y contaminantes, harán que el lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis.</p> -->
