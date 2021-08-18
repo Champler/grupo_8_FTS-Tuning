@@ -30,7 +30,7 @@ module.exports = {
             name,
             category,
             description,
-            img: "default-image.jpg",
+            img:[ "default-image.jpg"],
             carModel,
             brand, 
             year,
