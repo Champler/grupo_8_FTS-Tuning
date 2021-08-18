@@ -2,17 +2,20 @@ let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/adminProductosController')
 
+
+let upload = require('../middlewares/uploadProdFiles')
+
 /* GET index cargaProductos */
 router.get('/', controller.index)
 
 router.get('/cargaProducto', controller.cargaProducto)
+router.post('/cargaProducto',upload.array('img'), controller.create)
 
 router.get('/modificacionProducto', controller.modificacionProducto)
 
 router.get('/users', controller.usuarios);
 router.get('/productos', controller.productos);
 
-let create = 3
 
 
 

@@ -38,30 +38,10 @@
                 <div class="brand">
                     <label for="marca" class="label">Marca</label>
                     <input type="text" name="marca" id="" class="select border" value="<%= producto.marca %>">
-                    <!-- <select name="brand" id="brand" class="select border">
-                        <option value="none">-------</option>
-                        <option value="ford">Ford</option>
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="peugeot">Peugeot</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="bmw">BMW</option>
-                        <option value="audi">Audi</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="other">otra</option>
-                    </select> -->
                 </div>
                 <div>
                     <label for="carModel" class="label">Modelo:</label>
                     <input type="text" name="carModel" id="" class="select border" value="<%= producto.carModel %>">
-                        <!-- <option value="model-1">Focus</option>
-                        <option value="model-2">Fiesta</option>
-                        <option value="model-3">Mondeo</option>
-                        <option value="model-4">Ecosport</option>
-                        <option value="model-5">F-100</option>
-                        <option value="model-6">Ranger</option> 
-                    </select> -->
                 </div>
                 <div>
                     <label for="year" class="label">Año:</label>
@@ -115,19 +95,19 @@
                     </select>
                 </div>
                 <div>
-                    <label for="frontBack" class="label">Del/Tras/No:</label>
-                    <select name="frontBack" id="" class="border">
-                        <option <%- producto.frontBack === "no" ? "selected" : "" %> value="no">No</option>
-                        <option <%- producto.frontBack === "Delantero" ? "selected" : "" %> value="Delantero">Delantero</option>
-                        <option <%- producto.frontBack === "Trasero" ? "selected" : "" %> value="Trasero">Trasero</option>
+                    <label for="frontback" class="label">Del/Tras/No:</label>
+                    <select name="frontback" id="" class="border">
+                        <option <%- producto.frontback === "no" ? "selected" : "" %> value="no">No</option>
+                        <option <%- producto.frontback === "Delantero" ? "selected" : "" %> value="Delantero">Delantero</option>
+                        <option <%- producto.frontback === "Trasero" ? "selected" : "" %> value="Trasero">Trasero</option>
                     </select>
                 </div>
                 <div>
-                    <label for="leftRight" class="label">Izq/Der/No:</label>
-                    <select name="leftRight" id="" class="border">
-                        <option <%- producto.leftRight === "no" ? "selected" : "" %> value="no">No</option>
-                        <option <%- producto.leftRight === "Izqquierdo" ? "selected" : "" %> value="Izqquierdo">Izquierda</option>
-                        <option <%- producto.leftRight === "Derecho" ? "selected" : "" %> value="Derecho">Derecha</option>
+                    <label for="leftright" class="label">Izq/Der/No:</label>
+                    <select name="leftright" id="" class="border">
+                        <option <%- producto.leftright === "no" ? "selected" : "" %> value="no">No</option>
+                        <option <%- producto.leftright === "Izqquierdo" ? "selected" : "" %> value="Izqquierdo">Izquierda</option>
+                        <option <%- producto.leftright === "Derecho" ? "selected" : "" %> value="Derecho">Derecha</option>
                     </select>
                 </div>
             </div>

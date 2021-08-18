@@ -17,8 +17,39 @@ module.exports = {
     productos: (req, res) => {
         res.render('adminProducts', {products})
     },
-    create: {
+    create: (req,res)=> { 
+        let lastID = 1
+        products.forEach(product =>{
+            if(product.id > lastID){
+                lastID = product.id
+            }
+        })
+        let arrayImgs = []
+        if(req.files){
+            req.files.forEach(image => {
+                arrayImgs.push(image.filename)
+            })
+        }
+        let { name, category, description, carModel, brand, year, color, discount, price, frontback, leftright} = req.body
+        let newProduct = {
+            id: lastID + 1,
+            name,
+            category,
+            description,
+            img: arrayImgs.length > 0? arrayImgs: ["default-image.jpg"],
+            carModel,
+            brand, 
+            year,
+            color,
+            discount,
+            price,
+            frontback,
+            leftright
+        }
 
+        products.push(newProduct)
+        writeJson(products)
+        res.redirect('/adminProductos/productos')
     },
     editForm: (req, res) => {
         let producto = products.find(product => {
@@ -40,8 +71,8 @@ module.exports = {
                 product.color = color,
                 product.discount = discount,
                 product.price = price,
-                product.frontBack = frontBack,
-                product.leftRight = leftRight
+                product.frontback = frontback,
+                product.leftright = leftbight
             }
         });
         writeJson(products)

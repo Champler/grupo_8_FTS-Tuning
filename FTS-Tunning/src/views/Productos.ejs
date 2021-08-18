@@ -31,7 +31,7 @@
                 <% products.forEach(product => { %>
                     <article class="each-product">
                         <div>
-                            <img src="/images/productos/<%- product.img %>" alt="">
+                            <img src="/images/productos/<%- product.img[0] %>" alt="">
                             <h5><%= product.name %></h5>
                             <p class="prod-prod-price"><%= product.price %></p>
                             <a href="http://localhost:3000/productos/<%= product.id %>"><button>Ver producto</button></a>
