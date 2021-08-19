@@ -52,7 +52,11 @@ module.exports = {
         let producto = products.find(product => {
             return product.id === +req.params.id
         })
-        res.render('modificacionProductos', {producto})
+        let title = producto.name
+        res.render('modificacionProductos', {
+            producto, 
+            title
+        })
     },
     editProduct: (req, res) => {
         let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright } = req.body;
