@@ -1,0 +1,11 @@
+<div class="slideshow-container fade">
+    <% carrousel.forEach(slide => { %>
+        <div class="Containers">
+            <img src="/images/carrousel/<%- slide.image %>" alt="">
+        </div>
+    <% }) %>          
+    <!-- Btns atras y adelante -->
+    <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<%- include('scripts.ejs')  %> 

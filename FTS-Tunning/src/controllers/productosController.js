@@ -3,7 +3,7 @@ const { products } = require('../data/productsDB')
 
 module.exports = {
     producto: (req, res) => {
-        res.render('Productos', {products});
+        res.render('Productos', {products, title:"Productos"});
     },
     detalle: (req, res) => {                             //  Fabio
         let paramsIdProducto = req.params.idProducto.trim();
@@ -15,14 +15,15 @@ module.exports = {
             res.render('ProductoDetalle', {
                 sliderTitle : "También te pueden interesar",
                 sliderProducts,
-                producto
+                producto,
+                title:"Detalle"
             })
         }else{
             res.send('No tenemos ese producto, pero tenemos muchos otros más...')
         }
     },
     carrito: (req, res) =>{
-        res.render('Carrito')
+        res.render('Carrito', {title: "Carrito"})
     },
     categoria: (req,res) =>{
         let categoria = req.params.categoria.trim()
@@ -33,9 +34,9 @@ module.exports = {
             }
         })
         if(filtradosPorCategoria.length > 0){
-            res.render('Productos', {products: filtradosPorCategoria})
+            res.render('Productos', {products: filtradosPorCategoria, title:"Categoría"})
         }else {
-            res.render('Productos', {products})
+            res.render('Productos', {products, title:"Categoria"})
         }
         
     }
