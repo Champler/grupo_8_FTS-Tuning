@@ -22,7 +22,7 @@ router.get('/productos', controller.productos);
 /* GET / mostrar datos de edicion */
 router.get('/editarProducto/:id', controller.editForm)
 /* PUT - Recibe los datos de edicion */
-router.put('/editarProducto/:id', controller.editProduct)
+router.put('/editarProducto/:id', upload.array('img'), controller.editProduct)
 
 /* / Borrar un producto */
 router.delete('/eliminarProducto/:id', controller.delete)

@@ -27,9 +27,9 @@
                 </div> -->
                 <div class="price-purchase">
                     <h3 class="the-price">Precio: <%= producto.price %></h3>
-                    <p class="fees">12 cuotas de 1.000</p>
-                    <p class="fees">18 cuotas de 800</p>
-                    <p class="fees">24 cuotas de 700</p>
+                    <p class="fees">12 cuotas de <%= Math.round(producto.price / 12 * 100) / 100 %></p>
+                    <p class="fees">18 cuotas de <%= Math.round(producto.price / 18 * 100) / 100 %></p>
+                    <p class="fees">24 cuotas de <%= Math.round(producto.price / 24 * 100) / 100 %></p>
                     <div class="credit">
                         <i class="fab fa-cc-visa credit"></i>
                         <i class="fab fa-cc-mastercard credit"></i>
@@ -54,7 +54,7 @@
                 <img class="img-product-2" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
-                    <li>Marca:  <%= producto.marca %></li>
+                    <li>Marca:  <%= producto.brand %></li>
                     <li>Modelo: <%- producto.carModel %></li>
                     <li>Material del silenciador:  galvanizado</li>
                     <li>Forma del silenciador:  redondo</li>

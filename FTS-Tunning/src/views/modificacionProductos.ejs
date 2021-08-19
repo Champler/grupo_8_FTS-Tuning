@@ -8,7 +8,7 @@
     <!----------------------------------------  Carga de Productos  --------------------------------------------------------->
     <main>
         <h2 class="title">Formulario de Modificación de Productos</h2>
-        <form action="/adminProductos/editarProducto/<%= producto.id %>?_method=PUT"  method="POST" class="form">
+        <form action="/adminProductos/editarProducto/<%= producto.id %>?_method=PUT"  method="POST" class="form" enctype="multipart/form-data">
             <div class="categoryNPrice">
                 <div class="category">
                     <label for="category" class="label">Categoría:</label>
@@ -23,11 +23,11 @@
                 </div>
                 <div class="pricef">
                     <label for="price" class="label">Precio:</label>
-                    <input type="text" name="price" id="" class="price-input border" value="<%= producto.price %>">
+                    <input type="number" name="price" id="" class="price-input border" value="<%= producto.price %>">
                 </div>
                 <div class="pricef">
                     <label for="discount" class="label">Descuento:</label>
-                    <input type="text" name="discount" id="" class="price-input border" value="<%= producto.discount %>">
+                    <input type="number" name="discount" id="" class="price-input border" value="<%= producto.discount %>">
                 </div>
             </div>
             <div class="nameModelYear">
@@ -36,8 +36,8 @@
             </div>
             <div class="brandModelYear">
                 <div class="brand">
-                    <label for="marca" class="label">Marca</label>
-                    <input type="text" name="marca" id="" class="select border" value="<%= producto.marca %>">
+                    <label for="brand" class="label">Marca: </label>
+                    <input type="text" name="brand" id="" class="select border" value="<%= producto.brand %>">
                 </div>
                 <div>
                     <label for="carModel" class="label">Modelo:</label>
@@ -74,8 +74,7 @@
             </div>
             <div class="photo">
                 <label for="img" class="label">Foto:</label>
-                <input type="file" name="img" id="" class="border ">
-                <button class="buttons button-blue">Agregar otra Foto</button>
+                <input type="file" name="img" id="" class="border" multiple>
             </div>
             <div class="description">
                 <label for="description" class="label">Descripción:</label>

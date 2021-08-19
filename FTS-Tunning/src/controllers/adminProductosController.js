@@ -53,26 +53,32 @@ module.exports = {
     },
     editForm: (req, res) => {
         let producto = products.find(product => {
-            return product.id === req.params.id
+            return product.id === +req.params.id
         })
         res.render('modificacionProductos', {producto})
     },
     editProduct: (req, res) => {
-        let { name, category, description, /* img, */ carModel, marca, year, color, discount, price, frontBack, leftRight } = req.body;
+        let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright } = req.body;
+        let arrayImages = [];
+        if(req.files){
+            req.files.forEach(image => {
+                arrayImages.push(image.filename)
+            })
+        }
         products.forEach(product => {
-            if(product.id === req.params.id){
+            if(product.id === +req.params.id){
                 product.name = name,
                 product.category = category,
                 product.description = description,
-                /* product.img[0] = img, */
+                product.img = arrayImages.length > 0 ? arrayImages : ["default-image.jpg"],
                 product.carModel = carModel,
-                product.marca = marca,
+                product.brand = brand,
                 product.year = year,
                 product.color = color,
                 product.discount = discount,
                 product.price = price,
                 product.frontback = frontback,
-                product.leftright = leftbight
+                product.leftright = leftright
             }
         });
         writeJson(products)
@@ -80,7 +86,7 @@ module.exports = {
     },
     delete: (req, res) => {
         products.forEach(product => {
-            if(product.id === req.params.id){
+            if(product.id === +req.params.id){
                 let productoAEliminar = products.indexOf(product)
                 products.splice(productoAEliminar, 1)
                 /* products.splice(products.indexOf(product), 1) */
