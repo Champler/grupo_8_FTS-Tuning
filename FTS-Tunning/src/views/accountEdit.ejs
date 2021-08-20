@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs')  %> 
+</head>
+
+<body>
+ 
+  <%- include('partials/header.ejs')  %> 
+
+  <div class="mainEdit" >
+   <!-- PERFIL PARA AGREGAR DATOS -->
+    <form action="form">
+        <div class="formulario">
+        <!-- 1.Datos Personales -->
+        <div class="datos-Personales-Edit">
+          <h2>Datos Personales</h2>
+          <hr>
+          <label for="name"><b>Nombre</b></label>
+          <input type="text" placeholder="Nombre y apellido" name="name" id="name" required>
+      <br>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Ingrese su Email" name="email" id="email" required>
+      <br>
+          <label for="telefono"><b>Telefono</b></label>
+          <input type="tel" placeholder="Ingrese su telefono" name="telefono" id="telefono" required>
+    <br>
+    <img class="Profile" src="/images/accountEdit/Profile.jpg" alt="">
+    <br>
+          <label for="Perfil"><b>Cambiar foto de Perfil</b></label>
+          <input class="File" type="file" name="Perfil" accept="jpg">
+    
+          <hr>
+        </div>
+
+        <!-- Datos de envio -->
+        <div class="entrega">
+            <h2>Datos de envio</h2>
+            <hr>
+            <label for="Dirrecion"><b>Dirrecion</b></label>
+            <input type="text" placeholder="Direccion" name="name" id="name" required
+            >
+            <label for="Dpto"><b>Dpto</b></label>
+            <input type="number" placeholder="Departamento" name="number" id="number" required>
+        <br>
+            <label for="Numero"><b>C.Postal</b></label>
+            <input type="number" placeholder="Codigo Postal" name="Numero" id="Numero" required>
+      
+            <label for="name"><b>Provincia</b></label>
+            <input type="text" placeholder="Nombre y apellido" name="name" id="name" required
+            >
+        <br>
+            <label for="name"><b>Localidad</b></label>
+            <input type="text" placeholder="Provincia" name="name" id="name" required
+            >
+            <hr>
+          </div>
+        </div>
+          <button type='submit' class="checkout-cta-Edit">Editar</button><br>
+
+      </form>
+
+
+
+
+
+
+
+  
+
+
+    
+
+      
+       
+      </div>
+   
+  </div>
+ 
+  
+  
+
+   
+  </section>
+  
+  
+   <%- include('partials/footer.ejs')  %> 
+</body>
+</html>
