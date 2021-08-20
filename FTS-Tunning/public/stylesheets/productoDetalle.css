@@ -34,7 +34,7 @@
 }
 
 .photo-n-price .images-container .mainImage {
-    width: 70%;
+    width: 80%;
     object-fit: cover;
 }
 
@@ -293,6 +293,7 @@ div.carousel-product {
     }
     .photo-n-price {
         flex-direction: row;
+        align-items: flex-start;
         width: 85%;
         margin: 0 60px;
     }
