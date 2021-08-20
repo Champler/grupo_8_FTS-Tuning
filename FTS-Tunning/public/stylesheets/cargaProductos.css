@@ -1,82 +1,94 @@
-.title {
+.title-fcm {
     font-weight: bold;
     font-size: 32px;
     text-align: center;
     text-decoration: underline;
     margin: 20px;
 }
-.form {
+.form-fcm {
     display: flex;
     flex-direction: column;
     margin: 10px auto;
     padding: 20px;
     border: solid 1px var(--color-negro);
     border-radius: 20px;
-    max-width: 1300px;
+    max-width: 800px;
 }
-.categoryNPrice {
+.categoryNPrice-fcm {
     display: flex;
     flex-direction: row;
     align-items:flex-start;
     justify-content:space-between;
     flex-wrap: wrap;
 }
-.select {
+.select-fcm {
     width: 150px;
 }
-.price-input {
-    width: 80px;
+.price-input-fcm {
+    width: 100px;
 }
-.brandModelYear,
-.photo,
-.colorDelIzq {
+.discount-input-fcm {
+    width: 50px;
+}
+.nameModelYear-fcm, 
+.brandModelYear-fcm,
+.colorDelIzq-fcm {
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     justify-content:space-between;
 }
-.categoryNPrice, 
-.pricef, 
-.nameModelYear, 
-.brandModelYear,
-.brand {
+.categoryNPrice-fcm, 
+.pricef-fcm, 
+.nameModelYear-fcm, 
+.brandModelYear-fcm,
+.brand-fcm {
     margin: 0 0 10px 0;
     /* border: 2px solid magenta; */
 }
-.name {
+.photoFormulary-fcm {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.name-fcm {
     width: 100%;
 }
 /* div {
     border: 2px solid magenta;
 } */
-.label {
+.label-fcm {
     color: var(--color-negro);
+    font-weight: bold;
     margin-right: 10px;
 }
-.textarea-description {
+.textarea-description-fcm {
     width: 100%;
-    height: 130px;
+    height: 250px;
     resize: none;
 }
-.border {
+.border-fcm {
     border: 1px solid var(--color-negro);
+    color: var(--color-negro);
     border-radius: 5px;
+    padding: 5px;
 }
 
-.button-red {
+.button-red-fcm {
     background-color: var(--color-rojo);
     color: var(--color-azul);
 }
-.button-blue {
+.button-blue-fcm {
     background-color: var(--color-azul);
     color: var(--color-gris);
 }
-.buttons-box {
+.buttons-box-fcm {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.buttons {
+.buttons-fcm {
     border-radius: 10px;
     font-size: 13;
     font-weight: bold;
@@ -88,25 +100,58 @@
 /******************************************** Media Queries ******************************************************/
 /* Tablet */
 @media (min-width: 500px) {
-    .label {
+    .label-fcm {
         font-size: 20px;
     }
-    .brandModelYear,
-    .photo,
-    .colorDelIzq {
+    .brandModelYear-fcm,
+    .colorDelIzq-fcm {
         display: flex;
         flex-direction: row;
         align-items:flex-start;
         justify-content:space-between;
     }
+    .border-fcm {
+        font-size: 16px;
+        padding: 7px;
+    }
+    .price-input-fcm {
+        width: 120px;
+    }
+    .discount-input-fcm {
+        width: 60px;
+    }
 }
 @media (min-width: 700px) {
-    
+    .nameModelYear-fcm {
+        /* display: flex; */
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-between;
+    }
+    .border-fcm {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .price-input-fcm {
+        width: 150px;
+    }
+    .discount-input-fcm {
+        width: 70px;
+    }
 }
 /* Desktop */
 @media (min-width: 860px) {
-    .label {
+    .label-fcm {
         font-size: 24px;
     }
-    
+    .border-fcm {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .price-input-fcm {
+        width: 150px;
+    }
+    .discount-input-fcm {
+        width: 50px;
+    }
 }

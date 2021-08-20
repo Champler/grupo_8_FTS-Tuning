@@ -52,10 +52,9 @@ module.exports = {
         let producto = products.find(product => {
             return product.id === +req.params.id
         })
-        let title = producto.name
         res.render('modificacionProductos', {
             producto, 
-            title
+            title: producto.name + " | FTS-Tuning"
         })
     },
     editProduct: (req, res) => {

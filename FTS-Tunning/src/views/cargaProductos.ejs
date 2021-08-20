@@ -9,12 +9,12 @@
     
     <!----------------------------------------  Carga de Productos  --------------------------------------------------------->
     <main>
-        <h2 class="title">Formulario de Carga de Productos</h2>
-        <form action="/adminProductos/cargaProducto" class="form" method="POST" enctype="multipart/form-data">
-            <div class="categoryNPrice">
-                <div class="category">
-                    <label for="category" class="label">Categoría:</label>
-                    <select name="category" id="" class="select border">
+        <h2 class="title-fcm">Formulario de Carga de Productos</h2>
+        <form action="/adminProductos/cargaProducto" class="form-fcm" method="POST" enctype="multipart/form-data">
+            <div class="categoryNPrice-fcm">
+                <div class="category-fcm">
+                    <label for="category" class="label-fcm">Categoría:</label>
+                    <select name="category" id="" class="select-fcm border-fcm">
                         <option value="Freno">Frenos</option>
                         <option value="Neumático">Neumáticos</option>
                         <option value="Caño de Escape">Escapes</option>
@@ -23,32 +23,32 @@
                         <option value="Interior">Interiores</option>
                     </select>
                 </div>
-                <div class="pricef">
-                    <label for="price" class="label">Precio:</label>
-                    <input type="number" name="price" id="" class="price-input border">
+                <div class="pricef-fcm">
+                    <label for="price" class="label-fcm">Precio:</label>
+                    <input type="number" name="price" id="" class="price-input-fcm border-fcm">
 
                 </div>
-                <div class="pricef">
-                    <label for="discount" class="label">Descuento:</label>
-                    <input type="number" name="discount" id="" class="name border">
+                <div class="pricef-fcm">
+                    <label for="discount" class="label-fcm">Descuento:</label>
+                    <input type="number" name="discount" id="" class="discount-input-fcm border-fcm">
                 </div>
             </div>
-            <div class="nameModelYear">
-                <label for="name" class="label">Nombre del Producto:</label>
-                <input type="text" name="name" id="" class="name border">
+            <div class="nameModelYear-fcm">
+                <label for="name" class="label-fcm">Nombre del Producto:</label>
+                <input type="text" name="name" id="" class="name-fcm border-fcm">
             </div>
-            <div class="brandModelYear">
-                <div class="brand">
-                    <label for="brand" class="label">Marca</label>
-                    <input type="text" name="brand" id="" class="select border">
+            <div class="brandModelYear-fcm">
+                <div class="brand-fcm">
+                    <label for="brand" class="label-fcm">Marca</label>
+                    <input type="text" name="brand" id="" class="select-fcm border-fcm">
                 </div>
                 <div>
-                    <label for="carModel" class="label">Modelo:</label>
-                    <input type="text" name="carModel" id="" class="select border">
+                    <label for="carModel" class="label-fcm">Modelo:</label>
+                    <input type="text" name="carModel" id="" class="select-fcm border-fcm">
                 </div>
                 <div>
-                    <label for="year" class="label">Año:</label>
-                    <select name="year" id="" class="border">
+                    <label for="year" class="label-fcm">Año:</label>
+                    <select name="year" id="" class="border-fcm">
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
@@ -75,18 +75,19 @@
                     </select>
                 </div>
             </div>
-            <div class="photo">
-                <label for="img" class="label">Foto:</label>
-                <input type="file" name="img" id="" class="border" multiple>
+            <div class="photoFormulary-fcm">
+                <label for="img" class="label-fcm">Foto:</label>
+                <input type="file" name="img" id="" class="border-fcm" multiple>
             </div>
-            <div class="description">
-                <label for="description" class="label">Descripción:</label>
-                <textarea name="description" id="" class="textarea-description border"></textarea>
+            <div class="description-fcm">
+                <label for="description" class="label-fcm">Descripción:</label>
+                <textarea name="description" id="" class="textarea-description-fcm border-fcm"></textarea>
             </div>
-            <div class="colorDelIzq">
+            <div class="colorDelIzq-fcm">
                 <div>
-                    <label for="color" class="label">Color:</label>
-                    <select name="color" id="" class="border">
+                    <label for="color" class="label-fcm">Color:</label>
+                    <select name="color" id="" class="border-fcm">
+                        <option value="no">no</option>
                         <option value="Blanco">Blanco</option>
                         <option value="Negro">Negro</option>
                         <option value="Azul">Azul</option>
@@ -96,16 +97,16 @@
                     </select>
                 </div>
                 <div>
-                    <label for="frontback" class="label">Del/Tras/No:</label>
-                    <select name="frontback" id="" class="border">
+                    <label for="frontback" class="label-fcm">Del/Tras/No:</label>
+                    <select name="frontback" id="" class="border-fcm">
                         <option value="no">No</option>
                         <option value="Delantero">Delantero</option>
                         <option value="Trasero">Trasero</option>
                     </select>
                 </div>
                 <div>
-                    <label for="leftright" class="label">Izq/Der/No:</label>
-                    <select name="leftright" id="" class="border">
+                    <label for="leftright" class="label-fcm">Izq/Der/No:</label>
+                    <select name="leftright" id="" class="border-fcm">
                         <option value="no">No</option>
                         <option value="Izquierdo">Izquierda</option>
                         <option value="Derecho">Derecha</option>
@@ -113,8 +114,8 @@
                 </div>
             </div>
             
-            <div class="buttons-box">
-                <button type="submit" class="buttons button-red">Agregar</button>
+            <div class="buttons-box-fcm">
+                <button type="submit" class="buttons-fcm button-red-fcm">Agregar</button>
             </div>
         </form>
     </main>

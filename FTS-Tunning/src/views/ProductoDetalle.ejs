@@ -22,9 +22,7 @@
                         <img src="/images/productos/<%= producto.img[0]%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
                     </div>
                 </div>
-               <!--  <div>
-                    <img class="img-product" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa">
-                </div> -->
+
                 <div class="price-purchase">
                     <h3 class="the-price">Precio: <%= producto.price %></h3>
                     <p class="fees">12 cuotas de <%= Math.round(producto.price / 12 * 100) / 100 %></p>
@@ -45,24 +43,17 @@
                     <a href=""><button type="submit" class="button button-add-to-cart">Agregar al Carrito</button></a>
                 </div>
             </article>
-            <p class="paragraph"><%= producto.description %></p>
-            <p class="paragraph"></p>
-                <p class="paragraph">Caño de escape y silenciador Chevrolet original, lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam!</p>
-                <p class="paragraph">Máximo rendimiento y potencia con el mayor lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eum inventore error totam consectetur perspiciatis dolore unde! Reiciendis quidem deserunt dignissimos fuga possimus. Odio, asperiores. Dolorum dolorem amet porro quibusdam! Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis. Explicabo delectus quos nulla.</p>
-            
+            <% texto.forEach(parrafo => { %>
+                <p class="paragraph"><%- parrafo %> </p>
+            <% }) %>                                            <!-- Muestra los párrafos separdos previamente con let texto = producto.description.split('\r\n') -->
             <div class="product-details">
                 <img class="img-product-2" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
+                    <li>Nombre:  <%= producto.name %></li>
                     <li>Marca:  <%= producto.brand %></li>
                     <li>Modelo: <%- producto.carModel %></li>
-                    <li>Material del silenciador:  galvanizado</li>
-                    <li>Forma del silenciador:  redondo</li>
-                    <li>Largo del silenciador:  121 cm</li>
-                    <li>Ancho del silenciador:  30 cm</li>
-                    <li>Número de entradas:  1</li>
-                    <li>Número de salidas:  1</li>
-                    <li>Origen:  Argentina</li>
+                    <li>Año: <%- producto.year %></li>
                     <% if (producto.frontback != "no") { %>
                         <li>Tipo: <%= producto.frontback %></li>
                     <% } %>
@@ -75,8 +66,7 @@
                     
                 </ul>
             </div>
-                <!-- <p class="paragraph"> La óptima eliminación de ruídos y contaminantes, harán que el lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis.</p> -->
-            
+          
         </section>
         <!-- Sugestions -->
         <h3 class="sugestions"><%= sliderTitle %></h3>
