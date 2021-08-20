@@ -55,3 +55,31 @@
 ## Dejar de hacer
 
 - Administrar mal el tiempo
+
+
+
+
+
+# Segundo Sprint (13/8- 20/8)
+
+## Seguir haciendo
+
+- Reuniones cada 2/3 días
+- Entregar y todo a tiempo
+- Adelantar trabajo
+- Retrospectivas
+
+## Hacer mas
+
+-cumplir con las fechas de tarjetas 
+-ver el codigo de los demas
+## Empezar a hacer
+
+- Reuniones fuera de sprint para ver el contenido de PG
+-
+## Hacer menos
+- Confiarse con los plazos
+
+## Dejar de hacer
+
+- Administrar mal el tiempo
