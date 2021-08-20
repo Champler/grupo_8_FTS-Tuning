@@ -2,7 +2,6 @@
 @import url('variables.css');
 @import url('header.css');
 @import url('footer.css');
-@import url('carrito.css');
 @import url('historial.css');
 @import url('home.css');
 @import url('listaUsers.css');
@@ -11,9 +10,11 @@
 @import url('register.css');
 @import url('productos.css');
 @import url('quienesSomos.css');
-@import url('datosDePago.css');
 @import url('cargaProductos.css');
 @import url('contactanos.css');
 @import url('product-slider.css');                                    /* slider.ejs */
 @import url('https://unpkg.com/flickity@2/dist/flickity.min.css');    /* slider.ejs */
 @import url('adminProducts.css');
+@import url('carrito.css');
+@import url('datosDePago.css');
+@import url('accountEdit.css');
