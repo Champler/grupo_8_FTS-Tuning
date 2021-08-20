@@ -27,9 +27,9 @@
                 </div> -->
                 <div class="price-purchase">
                     <h3 class="the-price">Precio: <%= producto.price %></h3>
-                    <p class="fees">12 cuotas de 1.000</p>
-                    <p class="fees">18 cuotas de 800</p>
-                    <p class="fees">24 cuotas de 700</p>
+                    <p class="fees">12 cuotas de <%= Math.round(producto.price / 12 * 100) / 100 %></p>
+                    <p class="fees">18 cuotas de <%= Math.round(producto.price / 18 * 100) / 100 %></p>
+                    <p class="fees">24 cuotas de <%= Math.round(producto.price / 24 * 100) / 100 %></p>
                     <div class="credit">
                         <i class="fab fa-cc-visa credit"></i>
                         <i class="fab fa-cc-mastercard credit"></i>
@@ -41,7 +41,7 @@
                         <input type="number" value="1" min="0" max="15" class="quantity-field" />
                     </div>
                     
-                    <a href="http://localhost:3000/Carrito"><button type="submit" class="button button-purchase">Comprar</button></a>
+                    <a href="/Carrito"><button type="submit" class="button button-purchase">Comprar</button></a>
                     <a href=""><button type="submit" class="button button-add-to-cart">Agregar al Carrito</button></a>
                 </div>
             </article>
@@ -54,7 +54,7 @@
                 <img class="img-product-2" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
-                    <li>Marca:  <%= producto.marca %></li>
+                    <li>Marca:  <%= producto.brand %></li>
                     <li>Modelo: <%- producto.carModel %></li>
                     <li>Material del silenciador:  galvanizado</li>
                     <li>Forma del silenciador:  redondo</li>
@@ -63,6 +63,16 @@
                     <li>Número de entradas:  1</li>
                     <li>Número de salidas:  1</li>
                     <li>Origen:  Argentina</li>
+                    <% if (producto.frontback != "no") { %>
+                        <li>Tipo: <%= producto.frontback %></li>
+                    <% } %>
+                    <% if (producto.leftright != "no") { %>
+                        <li>Lado: <%= producto.leftright %> </li>
+                    <% } %>
+                    <% if (producto.color != "no") { %>
+                        <li>Color: <%= producto.color %> </li>
+                    <% } %>
+                    
                 </ul>
             </div>
                 <!-- <p class="paragraph"> La óptima eliminación de ruídos y contaminantes, harán que el lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aperiam blanditiis, incidunt, animi aliquid laudantium saepe, culpa vel quis rem ullam? Laboriosam, facilis molestias! Sequi tenetur nam accusantium iusto possimus earum animi vero amet? Libero voluptas, tempora reprehenderit praesentium dignissimos eveniet nam ex repellendus animi cupiditate, obcaecati veniam porro itaque dicta eum nostrum magnam expedita debitis.</p> -->
@@ -79,7 +89,7 @@
                         </div>
                         <p class="paragraph-card"><%= productis.name %></p>
                         <p class="paragraph-card card-price">$ <%= productis.price %></p>
-                        <a class="search-more" href="http://localhost:3000/productos/<%= productis.id %>"><button>Ver producto</button></a>
+                        <a class="search-more" href="/productos/<%= productis.id %>"><button>Ver producto</button></a>
                         <form action="" method="post">
                             <button type="submit" class="button button-purchase">Ver más</button>
                         </form>

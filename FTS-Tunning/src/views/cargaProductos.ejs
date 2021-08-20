@@ -10,7 +10,7 @@
     <!----------------------------------------  Carga de Productos  --------------------------------------------------------->
     <main>
         <h2 class="title">Formulario de Carga de Productos</h2>
-        <form action="/adminProductos/cargaProducto" class="form" method="POST">
+        <form action="/adminProductos/cargaProducto" class="form" method="POST" enctype="multipart/form-data">
             <div class="categoryNPrice">
                 <div class="category">
                     <label for="category" class="label">Categoría:</label>
@@ -25,12 +25,12 @@
                 </div>
                 <div class="pricef">
                     <label for="price" class="label">Precio:</label>
-                    <input type="text" name="price" id="" class="price-input border">
+                    <input type="number" name="price" id="" class="price-input border">
 
                 </div>
                 <div class="pricef">
                     <label for="discount" class="label">Descuento:</label>
-                    <input type="text" name="discount" id="" class="name border">
+                    <input type="number" name="discount" id="" class="name border">
                 </div>
             </div>
             <div class="nameModelYear">
@@ -77,8 +77,7 @@
             </div>
             <div class="photo">
                 <label for="img" class="label">Foto:</label>
-                <input type="file" name="img" id="" class="border ">
-                <button class="buttons button-blue">Agregar otra Foto</button>
+                <input type="file" name="img" id="" class="border" multiple>
             </div>
             <div class="description">
                 <label for="description" class="label">Descripción:</label>

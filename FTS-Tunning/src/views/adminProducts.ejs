@@ -11,19 +11,20 @@
                 <input type="search" placeholder="Busca tu producto" name="search-all-prods">
             </form>
         </div>
-        <a href="http://localhost:3000/adminProductos/cargaProducto"><button>Agregar</button></a>
+        <a href="/adminProductos/cargaProducto"><button>Agregar</button></a>
         <section class="admin-prods">
             <% products.forEach(product => { %>
                 <article class="admin-each-product">
                     <div>
-                        <img src="/images/productos/<%- product.img %>" alt="">
+                        <img src="/images/productos/<%- product.img[0] %>" alt="">
                         <h3><%= product.name %></h3>
                         <p class="prod-prod-price">$<%= product.price %></p>
                         <div class="edit-delete">
-                            <a href="http://localhost:3000/adminProductos/modificacionProducto"><button>Editar</button></a>
-                            <a href="http://localhost:3000/adminProductos/modificacionProducto"><button>Eliminar</button></a>
+                            <a href="http://localhost:3000/adminProductos/editarProducto/<%- product.id %>"><button>Editar</button></a>
+                            <form action="http://localhost:3000/adminProductos/eliminarProducto/<%- product.id %>?_method=DELETE" method="post">
+                                <button type="submit" class="delete-prod">Eliminar</button>
+                            </form>
                         </div>
-                        
                     </div>
                 </article>
                 <% }) %>                
