@@ -49,6 +49,11 @@
     border-radius: 30px;
     
 }
+.users-list .users form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .users-list .users form .select-userType{
     border-radius: 30px;
     padding: 7px;

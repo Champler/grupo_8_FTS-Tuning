@@ -15,16 +15,14 @@
                         <p>Email:<%- user.email%> </p>
                         <p>ID: <%- user.id %> </p>
                         <div class="user-type">
-                            <form action="/POST" method="POST">
+                            <form action="/adminProductos/editarUsuario/<%- user.id %>?_method=PUT" method="POST">
                                 <select name="rol" id="" class="select-userType">
                                     <option <%- user.rol === "user" ? "selected" : "" %> value="user">Usuario</option>
                                     <option <%- user.rol === "admin" ? "selected" : "" %> value="admin">Admin</option>
                                 </select>
+                                <button type="submit">Editar</button>
                             </form>
                         </div>
-                        <form action="/adminProductos/editarUsuario/<%- user.id %>?_method=PUT" method="POST">
-                            <button type="submit">Editar tipo de usuario</button>
-                        </form>
                         <form action="/adminProductos/eliminarUsuario/<%- user.id %>?_method=DELETE" method="POST">
                             <button type="submit">Eliminar</button>
                         </form>

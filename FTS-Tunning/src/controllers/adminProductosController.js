@@ -95,4 +95,23 @@ module.exports = {
         writeJson(products)
         res.redirect('/adminProductos/productos')
     },
+    deleteUser:(req,res) =>{
+        users.forEach(user => {
+            if(user.id === +req.params.id){
+                let userAEliminar = users.indexOf(user)
+                users.splice(userAEliminar, 1) 
+            }
+        })
+        writeUsersJson(users)
+        res.redirect('/adminProductos/users')
+    },
+    editUser:(req,res) =>{
+        users.forEach(user => {
+            if(user.id === +req.params.id){
+                user.rol = req.body.rol
+            }
+        });
+        writeUsersJson(users)
+        res.redirect('/adminProductos/users')
+    }
 }
