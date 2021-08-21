@@ -6,24 +6,7 @@
     justify-content: center;
 }
 
-.users-list .search-bar div{
-    border: 2px solid var(--color-azul);
-    border-radius: 30px;
-    margin: 20px;
-}
-.users-list .search-bar div form div {
-    border: none;
-}
-.users-list .search-bar div form div input{
-    padding-left: 15px;
-    border-radius: 30px;
-    border: none;
-    width: 100%;
-}
 
-.users-list .search-bar div form div input:focus{
-    outline: none;
-}
 .users-list .users {
     width: 80%;
    
@@ -47,9 +30,9 @@
 .users-list .users button{
     background-color: var(--color-rojo);
     color: var(--color-azul);
-    width: 80%;
-    border-radius: 30px;
+    border-radius: 20px;
     margin: 5px;
+    padding:10px;
 }
 .users-list .users button:hover{
     background-color: var(--color-azul);
@@ -57,7 +40,7 @@
 }
 .users-list .users .usuario .photo {
     width: 80%;
-    height: 100px;
+    height: 140px;
     margin-bottom: 10px;
 }
 .users-list .users .usuario .photo img{
@@ -66,11 +49,15 @@
     border-radius: 30px;
     
 }
-
+.users-list .users form .select-userType{
+    border-radius: 30px;
+    padding: 7px;
+   
+}
 @media (min-width:768px){
     .users-list {
         display: grid;
-        grid-template-columns: 20% 75%;
+        grid-template-columns: repeat(2, 1fr);
     }
     .users-list .users {
         display: flex;
@@ -80,5 +67,18 @@
     }
     .users-list .users .usuario{
         width:250px;
+    }
+}
+
+@media (min-width:1025px){
+    .users-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width:1625px){
+    .users-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
     }
 }

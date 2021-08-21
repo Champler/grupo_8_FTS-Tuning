@@ -5,83 +5,34 @@
     <%- include('partials/adminHeader.ejs')  %> 
 
         <main class="users-list">
-            <section class="search-bar">
-                <div>
-                    <form action="/POST">
-                        <div><input type="search" placeholder="Nombre"></div>
-                    </form>
-                </div>
-            </section>
-            <section class="users">
-                <div class="usuario">
-                    <div class="photo">
-                        <img src="/images/quienesSomos/messirve.jpg" alt="">
-                    </div>
-                    <h5>Nombre</h5>
-                    <p>Email: aaaaa@bbbbbb.com</p>
-                    <p>ID: 35</p>
-                    <div class="user-type">
-                        <form action="/POST">
-                            <input type="radio" name="User" id="User">
-                            <label for="User">Usuario</label>
-                            <input type="radio" name="User" id="Admin">
-                            <label for="Admin">Administrador</label>
+            <% users.forEach(user => { %>
+                <section class="users">
+                    <div class="usuario">
+                        <div class="photo">
+                            <img src="/images/users/<%- user.image %> " alt="">
+                        </div>
+                        <h5><%- user.firstName + user.lastName %></h5>
+                        <p>Email:<%- user.email%> </p>
+                        <p>ID: <%- user.id %> </p>
+                        <div class="user-type">
+                            <form action="/POST" method="POST">
+                                <select name="rol" id="" class="select-userType">
+                                    <option <%- user.rol === "user" ? "selected" : "" %> value="user">Usuario</option>
+                                    <option <%- user.rol === "admin" ? "selected" : "" %> value="admin">Admin</option>
+                                </select>
+                            </form>
+                        </div>
+                        <form action="/adminProductos/editarUsuario/<%- user.id %>?_method=PUT" method="POST">
+                            <button type="submit">Editar tipo de usuario</button>
                         </form>
-                    </div>
-                    <button>Eliminar</button>
-                </div>
-                <div class="usuario">
-                    <div class="photo">
-                        <img src="/images/quienesSomos/messirve.jpg" alt="">
-                    </div>
-                    <h5>Nombre</h5>
-                    <p>Email: aaaaa@bbbbbb.com</p>
-                    <p>ID: 35</p>
-                    <div class="user-type">
-                        <form action="/POST">
-                            <input type="radio" name="User" id="User">
-                            <label for="User">Usuario</label>
-                            <input type="radio" name="User" id="Admin">
-                            <label for="Admin">Administrador</label>
+                        <form action="/adminProductos/eliminarUsuario/<%- user.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar</button>
                         </form>
+                        
                     </div>
-                    <button>Eliminar</button>
-                </div>
-                <div class="usuario">
-                    <div class="photo">
-                        <img src="/images/quienesSomos/messirve.jpg" alt="">
-                    </div>
-                    <h5>Nombre</h5>
-                    <p>Email: aaaaa@bbbbbb.com</p>
-                    <p>ID: 35</p>
-                    <div class="user-type">
-                        <form action="/POST">
-                            <input type="radio" name="User" id="User">
-                            <label for="User">Usuario</label>
-                            <input type="radio" name="User" id="Admin">
-                            <label for="Admin">Administrador</label>
-                        </form>
-                    </div>
-                    <button>Eliminar</button>
-                </div>
-                <div class="usuario">
-                    <div class="photo">
-                        <img src="/images/quienesSomos/messirve.jpg" alt="">
-                    </div>
-                    <h5>Nombre</h5>
-                    <p>Email: aaaaa@bbbbbb.com</p>
-                    <p>ID: 35</p>
-                    <div class="user-type">
-                        <form action="/POST">
-                            <input type="radio" name="User" id="User">
-                            <label for="User">Usuario</label>
-                            <input type="radio" name="User" id="Admin">
-                            <label for="Admin">Administrador</label>
-                        </form>
-                    </div>
-                    <button>Eliminar</button>
-                </div>
-            </section>
+                </section>
+            <% }) %>
+            
         </main>
      <%- include('partials/footer.ejs')  %> 
 </body>

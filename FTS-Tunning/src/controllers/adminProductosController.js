@@ -1,5 +1,5 @@
 const { products, writeJson } = require('../data/productsDB')
-
+const { users, writeUsersJson } = require('../data/usersDB')
 
 module.exports = {
     cargaProducto: (req, res) => {
@@ -9,7 +9,7 @@ module.exports = {
         res.render('modificacionProductos', {title: "Modificación de Productos"});
     },
     usuarios: (req, res) => {
-        res.render('listaUsuarios', {title: "Usuarios"})
+        res.render('listaUsuarios', {title: "Usuarios", users})
     },
     productos: (req, res) => {
         res.render('adminProducts', {products, title:"Productos"})

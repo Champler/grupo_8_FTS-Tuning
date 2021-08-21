@@ -20,8 +20,8 @@
                         <h3><%= product.name %></h3>
                         <p class="prod-prod-price">$<%= product.price %></p>
                         <div class="edit-delete">
-                            <a href="http://localhost:3000/adminProductos/editarProducto/<%- product.id %>"><button>Editar</button></a>
-                            <form action="http://localhost:3000/adminProductos/eliminarProducto/<%- product.id %>?_method=DELETE" method="post">
+                            <a href="/adminProductos/editarProducto/<%- product.id %>"><button>Editar</button></a>
+                            <form action="/adminProductos/eliminarProducto/<%- product.id %>?_method=DELETE" method="post">
                                 <button type="submit" class="delete-prod">Eliminar</button>
                             </form>
                         </div>
