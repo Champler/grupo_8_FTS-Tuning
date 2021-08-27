@@ -19,8 +19,12 @@
             
             <div class="card">
                 <form class="box">
-                    <input class="buttom-form" type="text" name="" placeholder="Username">
-                    <input class="buttom-form" type="password" name="" placeholder="Password">
+                    <input class="buttom-form" type="email" name="email" placeholder="email">
+                    <% if (locals.errors && errors.email) { %>
+                        <small class="text-danger"><%= errors.email.msg %> </small>
+                    <% } %>
+                   
+                    <input class="buttom-form" type="password" name="pass" placeholder="Password">
                     <label><input type="checkbox" id="cbox1" value="first_checkbox">Recordarme la proxima vez</label><br>
                     <input class="buttom-submit" type="submit" name="" value="Iniciar sesión" href="#">
                     <span><a href="">¿Olvidaste tu contraseña?</a></span>
@@ -28,7 +32,7 @@
                     
                 </form>
             </div>
-            
+                                                                     
         </div>
     </div>
 </main>
