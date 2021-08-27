@@ -8,7 +8,7 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "3"
+        "PisoDpto": "3"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "rol": "admin",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "2"
+        "PisoDpto": "2"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "5"
+        "PisoDpto": "5"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "rol": "admin",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "7"
+        "PisoDpto": "7"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "9"
+        "PisoDpto": "9"
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "3"
+        "PisoDpto": "3"
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "2"
+        "PisoDpto": "2"
     },
     {
         "id": 8,
@@ -85,7 +85,7 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "5"
+        "PisoDpto": "5"
     },
     {
         "id": 9,
@@ -96,6 +96,17 @@
         "rol": "user",
         "image": "default-image.png",
         "address": "",
-        "Piso/Dpto": "7"
+        "PisoDpto": "7"
+    },
+    {
+        "id": 10,
+        "firstName": "User1",
+        "lastName": "User1",
+        "email": "mail@mail.com",
+        "password": "$2a$10$6GVNl6IMPZgimvE5xgR/5Of1ozBdr0lx4KutCCKUfOltoxzTCXxfm",
+        "rol": "admin",
+        "image": "default-image.png",
+        "address": "",
+        "PisoDpto": ""
     }
 ]
