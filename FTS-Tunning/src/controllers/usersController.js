@@ -17,15 +17,49 @@ module.exports = {
     register: (req,res) =>{
         res.render('users/registro', {title: "registro"})
     },
+    profile: (req, res) =>{
+        let user = users.find(user=> user.id === req.session.user.id);
+        res.render('userProfile', {
+            title: "profile",
+            session: req.session,
+            user
+        })
+    },
     
 
 
-    /*processLogin: (req,res) =>{
-         let errors = validationResult(req)
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+        
+        if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email);
+            req.session.user = {
+             id: user.id,
+             userName: user.name + " " + user.lastName,
+             email: user.email,
+             avatar: user.image,
+             rol: user.rol
+         }
+         /** creamos la cookie */
+         if(req.body.remember){
+             res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+         }
+         /------------------/
+         /** guardamos el usuario en locals */
+         res.locals.user = req.session.user
+         /**redireccionamos al home si todo esta ok */
+         res.redirect('/')
          
-    },*/
+         /**sino -> */
+        }else{
+            res.render('users/Login', {
+                title: "Login",
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
 
-
+    },
 
    
     
@@ -44,7 +78,7 @@ module.exports = {
             });
 
             let{
-                firstName,
+                name,
                 lastName, 
                 email,
                 password1
@@ -52,7 +86,7 @@ module.exports = {
     
             let newUser = {
                 id: lastID +1,
-                firstName,
+                name,
                 lastName,
                 email, 
                 password1: bcrypt.hashSync(password1, 10),

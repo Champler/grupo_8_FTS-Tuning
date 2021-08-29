@@ -18,17 +18,26 @@
             
             
             <div class="card">
-                <form class="box">
+                <form class="box" action="/users/login" method="POST" class="form-ad">
                     <input class="buttom-form" type="email" name="email" placeholder="email">
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                     <% } %>
                    
                     <input class="buttom-form" type="password" name="pass" placeholder="Password">
+                    <% if (locals.errors && errors.pass) { %>
+                        <small class="text-danger"><%= errors.pass.msg %> </small>
+                    <% } %>
+
                     <label><input type="checkbox" id="cbox1" value="first_checkbox">Recordarme la proxima vez</label><br>
-                    <input class="buttom-submit" type="submit" name="" value="Iniciar sesión" href="#">
+                    <input class="buttom-submit" type="submit" name="remember" value="Iniciar sesión" href="#">
+                        
+                    <% if (locals.errorMsg ) { %>
+                        <small class="text-danger"><%= errorMsg %> </small>
+                     <% } %>
+
                     <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                    <span><a href="registro">Aún no tengo cuenta</a></span>
+                    <span><a href="register">Aún no tengo cuenta</a></span>
                     
                 </form>
             </div>
