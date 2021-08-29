@@ -21,13 +21,9 @@ check("email")
             return false 
         }
     })
-    .withMessage('El email ya está registrado'),
+.withMessage('El email ya está registrado'),
 
-
-
-
-
-check('psw')
+check('password1')
 .notEmpty()
 .withMessage('Debes escribir tu contraseña') 
 .isLength({
@@ -38,15 +34,7 @@ check('psw')
 
 
 
+body('password2').custom((value,{req})=>value !== req.body.password1 ? false : true )
+.withMessage("las contraseñas no coinciden")
 
-
-
-body('psw1').custom((value,{req})=>value !== req.body.psw1 ?false : true )
-.withMessage("las contraseñas no coinciden"),
-
-
-
-
-
-
- ]
+]

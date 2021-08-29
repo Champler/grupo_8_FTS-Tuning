@@ -4,9 +4,9 @@ let controller = require('../controllers/usersController')
 const{register,
 login,
 processLogin,
-newUser} = require('../controllers/usersController')
+proccesRegister} = require('../controllers/usersController')
 let  loginValidator = require("../validations/loginValidator") 
-let  Validator = require("../validations/registerValidator") 
+let  registerValidator = require("../validations/registerValidator") 
 
 /* GET users listing */
 router.get('/historial', controller.historial)
@@ -18,13 +18,11 @@ router.get('/historial', controller.historial)
 
 
 router.get('/login', controller.login)
-router.post('/login',loginValidator, controller.newUser)
-router.get('/register', controller.register)
-router.post('/register', controller.newUser)
+router.post('/login',loginValidator, )
+
+router.get('/register',register)
+router.post('/register', registerValidator, proccesRegister)
+
 router.get('/profile', controller.accountEdit);
 
-
-
-router.get('/register', controller.register)
-router.post('/register',Validator, controller.newUser)
 module.exports = router;
