@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-   <%- include('partials/head.ejs')  %> 
+    <%- include('../partials/head.ejs')  %> 
 <body class="register-body">
     <header>
         
@@ -12,13 +12,15 @@
     </header>
     
     <main class="register-main">
-        <form action="/users/register" method="POST"
-        enctype="multipart/form-data" >
+        <form action="/users/register" method="POST">
             <div class="container">
                 <h1>Registro</h1>
                 <hr>
-            
                 
+                <label for="email"><b>Nombre</b></label>
+                <input type="text" placeholder="Ingrese su nombre" name="firstName" id="firstName" required>
+                <label for="text"><b>Apellido</b></label>
+                <input type="text" placeholder="Ingrese su apellido" name="lastName" id="lastName" required>
                 
                 <label for="email"><b>Email</b></label>
                 <input type="email" placeholder="Ingrese su Email" name="email" id="email" required>
@@ -26,10 +28,7 @@
                     <small class="texto invalido"><%= errors.email.msg %> </small>
                 <% } %>
                 <label for="psw"><b>Contraseña</b></label>
-                <input type="password" placeholder="Ingrese su Contraseña" name="psw"  >
-                <% if (locals.errors && errors.psw) { %>
-                    <small class="small"><%= errors.psw.msg %> </small>
-                <% } %>
+                <input type="password" placeholder="Ingrese su Contraseña" name="password" id="password" required>
                 
                 <label for="psw-repeat"><b>Repita su Contraseña</b></label>
                 <input type="password" placeholder="Repita su Contraseña" name="psw1" id="psw1" >
@@ -48,7 +47,7 @@
         
     </main>
     
-    <%- include('partials/footer.ejs')  %> 
+    <%- include('../partials/footer.ejs')  %> 
     
     
     

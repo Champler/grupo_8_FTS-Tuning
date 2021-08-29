@@ -4,7 +4,7 @@ let controller = require('../controllers/usersController')
 const{register,
 login,
 processLogin,
-processRegister} = require('../controllers/accountEditController')
+newUser} = require('../controllers/usersController')
 let  loginValidator = require("../validations/loginValidator") 
 let  Validator = require("../validations/registerValidator") 
 
@@ -18,10 +18,13 @@ router.get('/historial', controller.historial)
 
 
 router.get('/login', controller.login)
-router.post('/login',loginValidator, controller.proceesLogin)
+router.post('/login',loginValidator, controller.newUser)
+router.get('/register', controller.register)
+router.post('/register', controller.newUser)
+router.get('/profile', controller.accountEdit);
 
 
 
 router.get('/register', controller.register)
-router.post('/register',Validator, controller.processRegister)
+router.post('/register',Validator, controller.newUser)
 module.exports = router;

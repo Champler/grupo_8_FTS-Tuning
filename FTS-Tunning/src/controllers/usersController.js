@@ -1,79 +1,72 @@
-let db = require('../data/productsDataBase')
+
 const {  validationResult}= require("express-validator")
-let {categories, users} = require('../data/productsDataBase')
-const usersDB = require('../data/usersDB')
+
+
+let { users, writeUsersJson} = require('../data/usersDB.js')
+
+const bcrypt = require('bcryptjs')
+
+
 module.exports = {
     historial: (req, res) => {
-        res.render('historialCompras', {title: "Historial"})
+        res.render('users/historialCompras', {title: "Historial"})
     },
     login: (req, res) => {
-        res.render('Login', {title: "Login"})
+        res.render('users/Login', {title: "Login"})
     },
     register: (req,res) =>{
-        res.render('registro', {title: "registro"})
+        res.render('users/registro', {title: "registro"})
     },
     
 
 
-    proceesLogin: (req,res) =>{
+    processLogin: (req,res) =>{
          let errors = validationResult(req)
          
     },
 
 
 
-    processRegister: (req,res) =>{
-
-        let errors = validationResult(req);
-
-        if (errors.isEmpty()) {
-
-            let lastId = 0;
-        
+   
+    
+    newUser: (req,res) => {
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            lastID = 0
             users.forEach(user => {
-                if(user.id > lastId){
-                    lastId = user.id
+                if(user.id > lastID){
+                    lastID = user.id
                 }
             });
-    
-           
-    
-            let { 
-                name, 
-                las_name,
-                email,
-                psw,
-              } = req.body;
-            
-            let newUser = {
-                id: lastId + 1,
-                name,
-                las_name,
-              email,
-              psw ,
-               avatar: req.file ? req.file.fileName:  ["default-image.png"]
-            };
-    
-            users.push(newUser);
-    
-            writeUsersJSON(usersDB);
-    
-            res.redirect('/users/login')
-
-        } else {
-            res.render('registro',  {
-                title: "registro",
-                categories, 
-                errors : errors.mapped(),
-                old : req.body,
-                session: req.session 
-            })
         }
 
+        let{
+            firstName,
+            lastName, 
+            email,
+            password
+        } = req.body
 
+        let newUser = {
+            id: lastID +1,
+            firstName,
+            lastName,
+            email, 
+            password: bcrypt.hashSync(password, 10),
+            rol: 'user',
+            image: "default-image.png",
+            address: "",
+            PisoDpto: ''
+        }
 
+        users.push(newUser)
 
-},
-
+        writeUsersJson(users)
+        
+        res.redirect('/users/login')
+    },
+    accountEdit: (req, res) => {
+        res.render('users/accountEdit', {title: "Edita tu cuenta"})
+    }
 }
 
