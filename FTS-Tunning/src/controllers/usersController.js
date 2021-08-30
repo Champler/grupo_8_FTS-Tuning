@@ -1,5 +1,9 @@
+
+const {  validationResult}= require("express-validator")
+
+
 let { users, writeUsersJson} = require('../data/usersDB.js')
-const {validationResult} = require('express-validator')
+
 const bcrypt = require('bcryptjs')
 
 
@@ -11,43 +15,104 @@ module.exports = {
         res.render('users/Login', {title: "Login"})
     },
     register: (req,res) =>{
-        res.render('users/registro', {title: "Registro"})
+        res.render('users/registro', {title: "registro"})
     },
-    newUser: (req,res) => {
+    profile: (req, res) =>{
+        let user = users.find(user=> user.id === req.session.user.id);
+        res.render('userProfile', {
+            title: "profile",
+            session: req.session,
+            user
+        })
+    },
+    
+
+
+    processLogin: (req, res) => {
         let errors = validationResult(req)
+        
         if(errors.isEmpty()){
-            lastID = 0
+            let user = users.find(user => user.email === req.body.email);
+            req.session.user = {
+             id: user.id,
+             userName: user.name + " " + user.lastName,
+             email: user.email,
+             avatar: user.image,
+             rol: user.rol
+         }
+         /** creamos la cookie */
+         if(req.body.remember){
+             res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+         }
+         /------------------/
+         /** guardamos el usuario en locals */
+         res.locals.user = req.session.user
+         /**redireccionamos al home si todo esta ok */
+         res.redirect('/')
+         
+         /**sino -> */
+        }else{
+            res.render('users/Login', {
+                title: "Login",
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
+
+    },
+
+   
+    
+    proccesRegister: (req,res) => {
+
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()){
+
+           let lastID = 0
+
             users.forEach(user => {
                 if(user.id > lastID){
                     lastID = user.id
                 }
             });
+
+            let{
+                name,
+                lastName, 
+                email,
+                password1
+            } = req.body
+    
+            let newUser = {
+                id: lastID +1,
+                name,
+                lastName,
+                email, 
+                password1: bcrypt.hashSync(password1, 10),
+                rol: 'user',
+                image: "default-image.png",
+                address: "",
+                PisoDpto: ''
+            }
+    
+            users.push(newUser)
+    
+            writeUsersJson(users)
+            
+            res.redirect('/users/login')
+        }else{
+
+            console.log("esto tiene errorwes",errors);
+            res.render('users/registro', {
+                title: "Registro",
+                errors :errors.mapped(),
+                old : req.body,
+                session: req.session
+            })
         }
 
-        let{
-            firstName,
-            lastName, 
-            email,
-            password
-        } = req.body
-
-        let newUser = {
-            id: lastID +1,
-            firstName,
-            lastName,
-            email, 
-            password: bcrypt.hashSync(password, 10),
-            rol: 'user',
-            image: "default-image.png",
-            address: "",
-            PisoDpto: ''
-        }
-
-        users.push(newUser)
-
-        writeUsersJson(users)
-        
-        res.redirect('/users/login')
+       
     },
     accountEdit: (req, res) => {
         res.render('users/accountEdit', {title: "Edita tu cuenta"})
