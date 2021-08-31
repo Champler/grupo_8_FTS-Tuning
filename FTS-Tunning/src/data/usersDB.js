@@ -6,4 +6,5 @@ module.exports = {
     writeUsersJson : (dataBase) => {
         fs.writeFileSync('./src/data/user.json', JSON.stringify(dataBase), "utf-8")
     }
+  
 }
