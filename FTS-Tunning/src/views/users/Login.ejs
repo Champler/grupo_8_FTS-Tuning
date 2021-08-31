@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es"></html>
-    <%- include('../partials/head.ejs')  %> 
+    <%- include('partials/head.ejs')  %> 
 
 <body class="login">
     
@@ -18,34 +18,21 @@
             
             
             <div class="card">
-                <form class="box" action="/users/login" method="POST" class="form-ad">
-                    <input class="buttom-form" type="email" name="email" placeholder="email">
-                    <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %> </small>
-                    <% } %>
-                   
-                    <input class="buttom-form" type="password" name="pass" placeholder="Password">
-                    <% if (locals.errors && errors.pass) { %>
-                        <small class="text-danger"><%= errors.pass.msg %> </small>
-                    <% } %>
-
+                <form class="box">
+                    <input class="buttom-form" type="text" name="" placeholder="Username">
+                    <input class="buttom-form" type="password" name="" placeholder="Password">
                     <label><input type="checkbox" id="cbox1" value="first_checkbox">Recordarme la proxima vez</label><br>
-                    <input class="buttom-submit" type="submit" name="remember" value="Iniciar sesión" href="#">
-                        
-                    <% if (locals.errorMsg ) { %>
-                        <small class="text-danger"><%= errorMsg %> </small>
-                     <% } %>
-
+                    <input class="buttom-submit" type="submit" name="" value="Iniciar sesión" href="#">
                     <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                    <span><a href="register">Aún no tengo cuenta</a></span>
+                    <span><a href="registro">Aún no tengo cuenta</a></span>
                     
                 </form>
             </div>
-                                                                     
+            
         </div>
     </div>
 </main>
-<%- include('../partials/footer.ejs')  %> 
+<%- include('partials/footer.ejs')  %> 
 </body>
 
 </html>
