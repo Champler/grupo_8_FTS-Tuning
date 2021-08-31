@@ -15,12 +15,6 @@ module.exports = {
         res.render('users/Login', {title: "Login"})
     },
     register: (req,res) =>{
-<<<<<<< HEAD
-        res.render('registro', {title: "Registro"})
-    },
-    accountEdit: (req, res) => {
-        res.render('accountEdit', {title: "Edita tu cuenta"})
-=======
         res.render('users/registro', {title: "registro"})
     },
     profile: (req, res) =>{
@@ -122,7 +116,6 @@ module.exports = {
     },
     accountEdit: (req, res) => {
         res.render('users/accountEdit', {title: "Edita tu cuenta"})
->>>>>>> 3ea39778f4cbf0379faff661ec0259c42d9b9ce1
     }
 }
 
