@@ -8,6 +8,13 @@
         <!-- Carrousel -->
     <%- include('./partials/carrousel')  %> 
     <!-- Video -->
+    <!--Prueba Session-->
+
+    <% if (typeof session.user != "undefined") { %>
+        <a href="/users/profile">Tu perfil</a>
+        <a href="/users/logout">Cerrar Sesion</a>
+       <% } %>
+       
     <div class="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/UEcFR4TUtIE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
