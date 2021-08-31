@@ -32,7 +32,8 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(session({ 
   secret: "mySecret", 
   resave: false, 
-  saveUninitialized: true 
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 } 
 }));
 /* Rutas */
 app.use('/', indexRouter);
