@@ -36,5 +36,5 @@ check('password1')
 
 body('password2').custom((value,{req})=>value !== req.body.password1 ? false : true )
 .withMessage("las contraseñas no coinciden")
-
 ]
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('partials/head.ejs')  %> 
+    <%- include('../partials/head.ejs')  %> 
 <body class="register-body">
     <header>
         
@@ -12,24 +12,39 @@
     </header>
     
     <main class="register-main">
-        <form action="action_page">
+        <form action="/users/register" method="POST">
             <div class="container">
                 <h1>Registro</h1>
                 <hr>
-                <label for="email"><b>Nombre</b></label>
-                <input type="text" placeholder="Ingrese su nombre y apellido" name="name" id="name" required
-                >
                 
+                <label for="email"><b>Nombre</b></label>
+                <input type="text" placeholder="Ingrese su nombre" name="name" id="firstName" value="<%= locals.old && old.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="texto invalido"><%= errors.name.msg %> </small>
+                <% } %>
+
+
+
+                <label for="text"><b>Apellido</b></label>
+                <input type="text" placeholder="Ingrese su apellido" name="lastName" id="lastName" required>
                 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Ingrese su Email" name="email" id="email" required>
-                
+                <input type="email" placeholder="Ingrese su Email" name="email" id="email" required>
+                <% if (locals.errors && errors.email) { %>
+                    <small class="texto invalido"><%= errors.email.msg %> </small>
+                <% } %>
                 <label for="psw"><b>Contraseña</b></label>
-                <input type="password" placeholder="Ingrese su Contraseña" name="psw" id="psw" required>
+                <input type="password" placeholder="Ingrese su Contraseña" name="password1" id="password1" >
                 
+                <% if (locals.errors && errors.password1) { %>
+                    <small class="small"><%= errors.password1.msg %> </small>
+                <% } %>
+
                 <label for="psw-repeat"><b>Repita su Contraseña</b></label>
-                <input type="password" placeholder="Repita su Contraseña" name="psw-repeat" id="psw-repeat" required>
-                
+                <input type="password" placeholder="Repita su Contraseña" name="password2" id="password2" >
+                <% if (locals.errors && errors.password2) { %>
+                    <small class="small"><%= errors.password2.msg %> </small>
+                <% } %>
                 
                 <hr>
                 
@@ -42,7 +57,7 @@
         
     </main>
     
-    <%- include('partials/footer.ejs')  %> 
+    <%- include('../partials/footer.ejs')  %> 
     
     
     
