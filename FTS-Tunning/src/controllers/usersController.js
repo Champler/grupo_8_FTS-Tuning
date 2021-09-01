@@ -9,19 +9,17 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     historial: (req, res) => {
-        res.render('users/historialCompras', {title: "Historial"})
+        res.render('users/historialCompras', {title: "Historial", session: req.session})
     },
     login: (req, res) => {
-        res.render('users/Login', {title: "Login"})
+        res.render('users/Login', {title: "Login",session: req.session})
     },
     register: (req,res) =>{
-<<<<<<< HEAD
-        res.render('registro', {title: "Registro"})
+        res.render('users/registro', {title: "Registro", session: req.session})
     },
     accountEdit: (req, res) => {
-        res.render('accountEdit', {title: "Edita tu cuenta"})
-=======
-        res.render('users/registro', {title: "registro"})
+        res.render('accountEdit', {title: "Edita tu cuenta", session: req.session})
+        
     },
     profile: (req, res) =>{
         let user = users.find(user=> user.id === req.session.user.id);
@@ -121,8 +119,7 @@ module.exports = {
        
     },
     accountEdit: (req, res) => {
-        res.render('users/accountEdit', {title: "Edita tu cuenta"})
->>>>>>> 3ea39778f4cbf0379faff661ec0259c42d9b9ce1
+        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session})
     }
 }
 

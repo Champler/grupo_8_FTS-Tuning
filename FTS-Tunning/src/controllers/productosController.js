@@ -3,7 +3,7 @@ const { products } = require('../data/productsDB')
 
 module.exports = {
     producto: (req, res) => {
-        res.render('Productos', {products, title:"Productos"});
+        res.render('Productos', {products, title:"Productos", session: req.session});
     },
     detalle: (req, res) => {                             //  Fabio
         let paramsIdProducto = req.params.idProducto.trim();
@@ -17,14 +17,15 @@ module.exports = {
                 sliderProducts,
                 producto,
                 texto,
-                title: producto.name + " | FTS-Tuning"
+                title: producto.name + " | FTS-Tuning",
+                session: req.session
             })
         }else{
             res.send('No tenemos ese producto, pero tenemos muchos otros más...')
         }
     },
     carrito: (req, res) =>{
-        res.render('Carrito', {title: "Carrito"})
+        res.render('Carrito', {title: "Carrito", session: req.session})
     },
     categoria: (req,res) =>{
         let categoria = req.params.categoria.trim()
@@ -35,9 +36,9 @@ module.exports = {
             }
         })
         if(filtradosPorCategoria.length > 0){
-            res.render('Productos', {products: filtradosPorCategoria, title:"Categoría"})
+            res.render('Productos', {products: filtradosPorCategoria, title:"Categoría", session: req.session})
         }else {
-            res.render('Productos', {products, title:"Categoria"})
+            res.render('Productos', {products, title:"Categoria", session: req.session})
         }
         
     }
