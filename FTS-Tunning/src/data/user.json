@@ -132,49 +132,8 @@
         "PisoDpto": ""
     },
     {
-        "id": 13,
-        "firstName": "Alan",
-        "lastName": "Saucedo",
-        "email": "saucedodaniel76@hotmail.com",
-        "password": "$2a$10$e3cg3tlFmyCFhY4eg1O0hOhJO3gs8D4002fs/Bi34jG0u8EEwG4B2",
-        "rol": "user",
-        "image": "default-image.png",
-        "address": "",
-        "PisoDpto": ""
-    },
-    {
-        "id": 14,
-        "lastName": "Saucedo",
-        "email": "saucedodaniel876@hotmail.com",
-        "password1": "$2a$10$fg6/mZFzmBLE1Bczxbeo4OotVcsMf8HzpDjjG4l6ItoP1Wc20iAqC",
-        "rol": "user",
-        "image": "default-image.png",
-        "address": "",
-        "PisoDpto": ""
-    },
-    {
-        "id": 15,
-        "lastName": "Saucedo",
-        "email": "saucedodaniel12376@hotmail.com",
-        "password1": "$2a$10$1CTWVaCPbdKIn3Iv6lhUG.ESGwCpzoOhRGj.pqnFv0O8xQTXtFvmG",
-        "rol": "user",
-        "image": "default-image.png",
-        "address": "",
-        "PisoDpto": ""
-    },
-    {
-        "id": 16,
-        "lastName": "Saucedo",
-        "email": "saucedodaniel765@hotmail.com",
-        "password1": "$2a$10$IJghR7fRo3ZI/E9JE0u8keHzHXog7j6R6ndF.A3oPmoUlZ4Y6bOhO",
-        "rol": "user",
-        "image": "default-image.png",
-        "address": "",
-        "PisoDpto": ""
-    },
-    {
         "id": 17,
-        "name": "Alan Saucedo",
+        "firstName": "Alan Saucedo",
         "lastName": "Saucedo",
         "email": "saucedodaniel72226@hotmail.com",
         "password1": "$2a$10$sORhMH7EAl5UubtDSWrI5OVUlPphGa5LJlxQ2PiOqN/aKTiunA0PC",
@@ -185,7 +144,7 @@
     },
     {
         "id": 18,
-        "name": "Alan Saucedo",
+        "firstName": "Alan Saucedo",
         "lastName": "Saucedo",
         "email": "saucedodaniel7666@hotmail.com",
         "password1": "$2a$10$ztBbytuXMHnvoikaTrak6uPhx7wjeX1r6DpCOx6LpTzLavWNknAz6",
@@ -196,21 +155,32 @@
     },
     {
         "id": 19,
-        "name": "Tobias",
+        "firstName": "Tobias",
         "lastName": "Racedo",
         "email": "tobaracedo@gmail.com",
         "password1": "$2a$10$rw2BulD8CFvDIuCJCE7vlO4R8oChx72p1vOgqXC5WJsGLrWAZKY.e",
-        "rol": "user",
+        "rol": "admin",
         "image": "default-image.png",
         "address": "",
         "PisoDpto": ""
     },
     {
         "id": 20,
-        "name": "User1",
+        "firstName": "User1",
         "lastName": "User1",
         "email": "mail45@mail.com",
         "password1": "$2a$10$9PckQUPyLFeR1dYh9C8PSOlqqhTxKZGdaj5WfkNcivI0AAqOlMyhW",
+        "rol": "admin",
+        "image": "default-image.png",
+        "address": "",
+        "PisoDpto": ""
+    },
+    {
+        "id": 21,
+        "firstName": "Fabio",
+        "lastName": "Cicerelli",
+        "email": "mailfabio@mail.com",
+        "password1": "$2a$10$EBeRc0FsNTICsU6m7TtEQeWIp1MB/jU.OZxJRLmZdrZdHaEnr5Rf.",
         "rol": "admin",
         "image": "default-image.png",
         "address": "",

@@ -86,7 +86,7 @@ module.exports = {
     
             let newUser = {
                 id: lastID +1,
-                name,
+                firstName: name,
                 lastName,
                 email, 
                 password1: bcrypt.hashSync(password1, 10),
