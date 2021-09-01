@@ -11,13 +11,8 @@ let userSession = require('../middlewares/userSession')
 
 /* GET index cargaProductos */
 
-<<<<<<< HEAD
-router.get('/cargaProducto', /* userSession, userAdminCheck, */ controller.cargaProducto)
-router.post('/cargaProducto',upload.array('img'), productValidator, controller.create)
-=======
 router.get('/cargaProducto', userAdminCheck,controller.cargaProducto)
-router.post('/cargaProducto',upload.array('img'), controller.create)
->>>>>>> master
+router.post('/cargaProducto',upload.array('img'), productValidator, controller.create)
 
 router.get('/modificacionProducto', userAdminCheck,controller.modificacionProducto)
 
@@ -28,13 +23,9 @@ router.get('/productos', userAdminCheck,controller.productos);
 
 
 /* GET / mostrar datos de edicion */
-<<<<<<< HEAD
-router.get('/editarProducto/:id', /* userSession, userAdminCheck, */ controller.editForm)
-=======
 router.get('/editarProducto/:id', userAdminCheck,controller.editForm)
->>>>>>> master
 /* PUT - Recibe los datos de edicion */
-router.put('/editarProducto/:id', upload.array('img'), /* productValidator, */ controller.editProduct)
+router.put('/editarProducto/:id', upload.array('img'), productValidator, controller.editProduct)
 
 /* / Borrar un producto */
 router.delete('/eliminarProducto/:id', controller.delete)

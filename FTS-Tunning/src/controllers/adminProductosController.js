@@ -4,14 +4,7 @@ const { validationResult } = require('express-validator');
 
 module.exports = {
     cargaProducto: (req, res) => {
-<<<<<<< HEAD
-        res.render('cargaProductos', {
-            title: "Carga de Productos",
-            session: req.session
-        });
-=======
         res.render('cargaProductos', {title: "Carga de Productos", session: req.session ? req.session : ""});
->>>>>>> master
     },
     modificacionProducto: (req, res) => {
         res.render('modificacionProductos', {title: "Modificación de Productos", session: req.session ? req.session : ""});
@@ -76,11 +69,7 @@ module.exports = {
         res.render('modificacionProductos', {
             producto, 
             title: producto.name + " | FTS-Tuning",
-<<<<<<< HEAD
-            session: req.session
-=======
             session: req.session ? req.session : ""
->>>>>>> master
         })
     },
     editProduct: (req, res) => {
