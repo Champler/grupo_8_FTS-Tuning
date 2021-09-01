@@ -13,35 +13,47 @@
                 <div class="category-fcm">
                     <label for="category" class="label-fcm">Categoría:</label>
                     <select name="category" id="" class="select-fcm border-fcm">
-                        <option <%- producto.category === "Freno" ? "selected" : "" %> value="Freno">Freno</option>
-                        <option <%- producto.category === "Neumático" ? "selected" : "" %> value="Neumático">Neumático</option>
-                        <option <%- producto.category === "Caño de Escape" ? "selected" : "" %> value="Caño de Escape">Caño de Escape</option>
-                        <option <%- producto.category === "Motor" ? "selected" : "" %> value="Motor">Motor</option>
-                        <option <%- producto.category === "Volante" ? "selected" : "" %> value="Volante">Volante</option>
-                        <option <%- producto.category === "Interior" ? "selected" : "" %> value="Interior">Interior</option>
+                        <option <%- locals.old && old.category == "Freno" ? "selected" : producto.category === "Freno" ? "selected" : "" %> value="Freno">Freno</option>
+                        <option <%- locals.old && old.category == "Neumático" ? "selected" : producto.category === "Neumático" ? "selected" : "" %> value="Neumático">Neumático</option>
+                        <option <%- locals.old && old.category == "Caño de Escape" ? "selected" : producto.category === "Caño de Escape" ? "selected" : "" %> value="Caño de Escape">Caño de Escape</option>
+                        <option <%- locals.old && old.category == "Motor" ? "selected" : producto.category === "Motor" ? "selected" : "" %> value="Motor">Motor</option>
+                        <option <%- locals.old && old.category == "Volante" ? "selected" : producto.category === "Volante" ? "selected" : "" %> value="Volante">Volante</option>
+                        <option <%- locals.old && old.category == "Interior" ? "selected" : producto.category === "Interior" ? "selected" : "" %> value="Interior">Interior</option>
                     </select>
                 </div>
                 <div class="pricef-fcm">
                     <label for="price" class="label-fcm">Precio:</label>
-                    <input type="text" name="price" id="" class="price-input-fcm border-fcm" value="<%= producto.price %>">
+                    <input type="text" name="price" id="" class="price-input-fcm border-fcm" value="<%= locals.old ? old.price : producto.price %>">
+                    <% if (locals.errors && errors.price) { %>
+                        <small class="text-danger"><%= errors.price.msg %></small>
+                    <% } %>
                 </div>
                 <div class="pricef-fcm">
                     <label for="discount" class="label-fcm">Descuento:</label>
-                    <input type="text" name="discount" id="" class="discount-input-fcm border-fcm" value="<%= producto.discount %>">
+                    <input type="text" name="discount" id="" class="discount-input-fcm border-fcm" value="<%= locals.old ? old.discount : producto.discount %>">
                 </div>
             </div>
             <div class="nameModelYear-fcm">
                 <label for="name" class="label-fcm">Nombre del Producto:</label>
-                <input type="text" name="name" id="" class="name-fcm border-fcm" value="<%= producto.name %>">
+                <input type="text" name="name" id="" class="name-fcm border-fcm" value="<%= locals.old ? old.name : producto.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="text-danger"><%= errors.name.msg %></small>
+                <% } %>
             </div>
             <div class="brandModelYear-fcm">
                 <div class="brand-fcm">
                     <label for="brand" class="label-fcm">Marca: </label>
-                    <input type="text" name="brand" id="" class="select-fcm border-fcm" value="<%= producto.brand %>">
+                    <input type="text" name="brand" id="" class="select-fcm border-fcm" value="<%= locals.old ? old.brand : producto.brand %>">
+                    <% if (locals.errors && errors.brand) { %>
+                        <small class="text-danger"><%= errors.brand.msg %></small>
+                    <% } %>
                 </div>
                 <div>
                     <label for="carModel" class="label-fcm">Modelo:</label>
-                    <input type="text" name="carModel" id="" class="select-fcm border-fcm" value="<%= producto.carModel %>">
+                    <input type="text" name="carModel" id="" class="select-fcm border-fcm" value="<%= locals.old ? old.carModel : producto.carModel %>">
+                    <% if (locals.errors && errors.carModel) { %>
+                        <small class="text-danger"><%= errors.carModel.msg %></small>
+                    <% } %>
                 </div>
                 <div>
                     <label for="year" class="label-fcm">Año:</label>
@@ -78,7 +90,10 @@
             </div>
             <div class="description-fcm">
                 <label for="description" class="label-fcm">Descripción:</label>
-                <textarea name="description" id="" class="textarea-description-fcm border-fcm"><%= producto.description %></textarea>
+                <textarea name="description" id="" class="textarea-description-fcm border-fcm"><%= locals.old ? old.description : producto.description %></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <small class="text-danger"><%= errors.description.msg %></small>
+                <% } %>
             </div>
             <div class="colorDelIzq-fcm">
                 <div>

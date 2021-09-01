@@ -12,6 +12,7 @@ let adminProductosRouter = require('./routes/adminProductos');  // Fabio
 let productoRouter = require('./routes/producto');   
 let usRouter = require('./routes/us');              // Fabio
 let DatosDePagoRouter = require('./routes/DatosDePago') //Santiago
+var cookieSession = require('cookie-session');
 
 
 //Santiago
