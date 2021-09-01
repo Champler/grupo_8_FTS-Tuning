@@ -9,23 +9,19 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     historial: (req, res) => {
-        res.render('users/historialCompras', {title: "Historial", session: req.session})
+        res.render('users/historialCompras', {title: "Historial", session: req.session ? req.session : ""})
     },
     login: (req, res) => {
-        res.render('users/Login', {title: "Login",session: req.session})
+        res.render('users/Login', {title: "Login", session: req.session ? req.session : ""})
     },
     register: (req,res) =>{
-        res.render('users/registro', {title: "Registro", session: req.session})
-    },
-    accountEdit: (req, res) => {
-        res.render('accountEdit', {title: "Edita tu cuenta", session: req.session})
-        
+        res.render('users/registro', {title: "registro", session: req.session ? req.session : ""})
     },
     profile: (req, res) =>{
         let user = users.find(user=> user.id === req.session.user.id);
         res.render('userProfile', {
             title: "profile",
-            session: req.session,
+            session: req.session ? req.session : "",
             user
         })
     },
@@ -59,7 +55,7 @@ module.exports = {
             res.render('users/Login', {
                 title: "Login",
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session ? req.session : ""
             })
         }
 
@@ -112,14 +108,14 @@ module.exports = {
                 title: "Registro",
                 errors :errors.mapped(),
                 old : req.body,
-                session: req.session
+                session: req.session ? req.session : ""
             })
         }
 
        
     },
     accountEdit: (req, res) => {
-        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session})
+        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : ""})
     }
 }
 

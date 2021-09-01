@@ -6,8 +6,8 @@ profile,
 login,
 processLogin,
 proccesRegister} = require('../controllers/usersController')
-let  loginValidator = require("../validations/loginValidator") 
-let  registerValidator = require("../validations/registerValidator") 
+let loginValidator = require("../validations/loginValidator") 
+let registerValidator = require("../validations/registerValidator") 
 let userCreatedCheck = require("../middlewares/userCreatedCheck")
 let sessionExists = require("../middlewares/sessionExists")
 /* GET users listing */
