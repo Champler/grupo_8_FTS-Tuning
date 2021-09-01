@@ -3,16 +3,16 @@ const { users, writeUsersJson } = require('../data/usersDB')
 
 module.exports = {
     cargaProducto: (req, res) => {
-        res.render('cargaProductos', {title: "Carga de Productos"});
+        res.render('cargaProductos', {title: "Carga de Productos", session: req.session ? req.session : ""});
     },
     modificacionProducto: (req, res) => {
-        res.render('modificacionProductos', {title: "Modificación de Productos"});
+        res.render('modificacionProductos', {title: "Modificación de Productos", session: req.session ? req.session : ""});
     },
     usuarios: (req, res) => {
-        res.render('listaUsuarios', {title: "Usuarios", users})
+        res.render('listaUsuarios', {title: "Usuarios", users, session: req.session ? req.session : ""})
     },
     productos: (req, res) => {
-        res.render('adminProducts', {products, title:"Productos"})
+        res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
     },
     create: (req,res)=> { 
         let lastID = 1
@@ -54,7 +54,8 @@ module.exports = {
         })
         res.render('modificacionProductos', {
             producto, 
-            title: producto.name + " | FTS-Tuning"
+            title: producto.name + " | FTS-Tuning",
+            session: req.session ? req.session : ""
         })
     },
     editProduct: (req, res) => {

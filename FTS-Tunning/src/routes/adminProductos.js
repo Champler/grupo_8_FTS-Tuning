@@ -2,24 +2,24 @@ let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/adminProductosController')
 
-
+let userAdminCheck = require('../middlewares/userAdminCheck')
 let upload = require('../middlewares/uploadProdFiles')
 
 /* GET index cargaProductos */
 
-router.get('/cargaProducto', controller.cargaProducto)
+router.get('/cargaProducto', userAdminCheck,controller.cargaProducto)
 router.post('/cargaProducto',upload.array('img'), controller.create)
 
-router.get('/modificacionProducto', controller.modificacionProducto)
+router.get('/modificacionProducto', userAdminCheck,controller.modificacionProducto)
 
-router.get('/users', controller.usuarios);
-router.get('/productos', controller.productos);
+router.get('/users', userAdminCheck,controller.usuarios);
+router.get('/productos', userAdminCheck,controller.productos);
 
 
 
 
 /* GET / mostrar datos de edicion */
-router.get('/editarProducto/:id', controller.editForm)
+router.get('/editarProducto/:id', userAdminCheck,controller.editForm)
 /* PUT - Recibe los datos de edicion */
 router.put('/editarProducto/:id', upload.array('img'), controller.editProduct)
 
