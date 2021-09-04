@@ -5,14 +5,14 @@ let controller = require('../controllers/adminProductosController')
 let userAdminCheck = require('../middlewares/userAdminCheck')
 let upload = require('../middlewares/uploadProdFiles')
 
-let productValidator = require('../validations/productsValidator')
-let userAdminCheck = require('../middlewares/userAdminCheck')
-let userSession = require('../middlewares/userSession')
+let productsValidator = require('../validations/productsValidator')
+/* let userAdminCheck = require('../middlewares/userAdminCheck') */
+/* let userSession = require('../middlewares/userSession') */
 
 /* GET index cargaProductos */
 
 router.get('/cargaProducto', userAdminCheck,controller.cargaProducto)
-router.post('/cargaProducto',upload.array('img'), productValidator, controller.create)
+router.post('/cargaProducto',upload.array('img'), productsValidator, controller.create)
 
 router.get('/modificacionProducto', userAdminCheck,controller.modificacionProducto)
 
@@ -25,7 +25,7 @@ router.get('/productos', userAdminCheck,controller.productos);
 /* GET / mostrar datos de edicion */
 router.get('/editarProducto/:id', userAdminCheck,controller.editForm)
 /* PUT - Recibe los datos de edicion */
-router.put('/editarProducto/:id', upload.array('img'), productValidator, controller.editProduct)
+router.put('/editarProducto/:id', upload.array('img'), productsValidator, controller.editProduct)
 
 /* / Borrar un producto */
 router.delete('/eliminarProducto/:id', controller.delete)

@@ -27,7 +27,7 @@
                     <label for="price" class="label-fcm">Precio:</label>
                     <input type="number" name="price" id="" class="price-input-fcm border-fcm" value="<%= locals.old && old.price %>">
                     <% if (locals.errors && errors.price) { %>
-                        <small class="text-danger"><%= errors.price.msg %></small>
+                        <small class="small-red"><%= errors.price.msg %></small>
                     <% } %>
                 </div>
                 <div class="pricef-fcm">
@@ -39,7 +39,7 @@
                 <label for="name" class="label-fcm">Nombre del Producto:</label>
                 <input type="text" name="name" id="" class="name-fcm border-fcm" value="<%= locals.old && old.name %>">
                 <% if (locals.errors && errors.name) { %>
-                    <small class="text-danger"><%= errors.name.msg %></small>
+                    <small class="small-red"><%= errors.name.msg %></small>
                 <% } %>
             </div>
             <div class="brandModelYear-fcm">
@@ -47,14 +47,14 @@
                     <label for="brand" class="label-fcm">Marca</label>
                     <input type="text" name="brand" id="" class="select-fcm border-fcm" value="<%= locals.old && old.brand %>">
                     <% if (locals.errors && errors.brand) { %>
-                        <small class="text-danger"><%= errors.brand.msg %></small>
+                        <small class="small-red"><%= errors.brand.msg %></small>
                     <% } %>
                 </div>
                 <div>
                     <label for="carModel" class="label-fcm">Modelo:</label>
                     <input type="text" name="carModel" id="" class="select-fcm border-fcm" value="<%= locals.old && old.carModel %>">
                     <% if (locals.errors && errors.carModel) { %>
-                        <small class="text-danger"><%= errors.carModel.msg %></small>
+                        <small class="small-red"><%= errors.carModel.msg %></small>
                     <% } %>
                 </div>
                 <div>
@@ -94,7 +94,7 @@
                 <label for="description" class="label-fcm">Descripción:</label>
                 <textarea name="description" id="" class="textarea-description-fcm border-fcm"><%= locals.old && old.description %></textarea>
                 <% if (locals.errors && errors.description) { %>
-                    <small class="text-danger"><%= errors.description.msg %></small>
+                    <small class="small-red"><%= errors.description.msg %></small>
                 <% } %>
             </div>
             <div class="colorDelIzq-fcm">

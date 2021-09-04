@@ -58,7 +58,7 @@ module.exports = {
                 title: "Carga de Productos",
                 errors : errors.mapped(),
                 old : req.body,
-                session: req.session
+                session: req.session ? req.session : ""
             })
         } 
     },
@@ -101,7 +101,7 @@ module.exports = {
             });
             writeJson(products)
             res.redirect('/adminProductos/productos')
-        } else { res.send(errors)
+        } else {
             let producto = products.find(product => {
                 return product.id === +req.params.id
             })
@@ -111,7 +111,7 @@ module.exports = {
                 title: producto.name + " | FTS-Tuning",
                 errors : errors.mapped(),
                 old : req.body,
-                session: req.session
+                session: req.session ? req.session : ""
             })
         }
     },

@@ -34,7 +34,7 @@ app.use(session({
   secret: "mySecret", 
   resave: false, 
   saveUninitialized: true,
-  cookie: { maxAge: 60000 } 
+  cookie: { maxAge: 1000 * 60 * 10} 
 }));
 /* Rutas */
 app.use('/', indexRouter);
