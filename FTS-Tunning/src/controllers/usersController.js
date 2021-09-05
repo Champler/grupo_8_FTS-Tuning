@@ -35,7 +35,7 @@ module.exports = {
             let user = users.find(user => user.email === req.body.email);
             req.session.user = {
              id: user.id,
-             userName: user.name + " " + user.lastName,
+             userName: user.firstName + " " + user.lastName,
              email: user.email,
              avatar: user.image,
              rol: user.rol

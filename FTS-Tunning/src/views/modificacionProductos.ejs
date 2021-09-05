@@ -119,9 +119,9 @@
                 <div>
                     <label for="leftright" class="label-fcm">Izq/Der/No:</label>
                     <select name="leftright" id="" class="border-fcm">
-                        <option <%- locals.old && old.frontback == "no" ? "selected" : producto.frontback === "no" ? "selected" : "" %> value="no">No</option>
-                        <option <%- locals.old && old.frontback == "Izqquierdo" ? "selected" : producto.frontback === "Izqquierdo" ? "selected" : "" %> value="Izqquierdo">Izquierda</option>
-                        <option <%- locals.old && old.frontback == "Derecho" ? "selected" : producto.frontback === "Derecho" ? "selected" : "" %> value="Derecho">Derecha</option>
+                        <option <%- locals.old && old.leftright == "no" ? "selected" : producto.leftright === "no" ? "selected" : "" %> value="no">No</option>
+                        <option <%- locals.old && old.leftright == "Izquierdo" ? "selected" : producto.leftright === "Izquierdo" ? "selected" : "" %> value="Izquierdo">Izquierda</option>
+                        <option <%- locals.old && old.leftright == "Derecho" ? "selected" : producto.leftright === "Derecho" ? "selected" : "" %> value="Derecho">Derecha</option>
                     </select>
                 </div>
             </div>

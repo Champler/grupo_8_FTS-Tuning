@@ -4,10 +4,7 @@ let controller = require('../controllers/adminProductosController')
 
 let userAdminCheck = require('../middlewares/userAdminCheck')
 let upload = require('../middlewares/uploadProdFiles')
-
 let productsValidator = require('../validations/productsValidator')
-/* let userAdminCheck = require('../middlewares/userAdminCheck') */
-/* let userSession = require('../middlewares/userSession') */
 
 /* GET index cargaProductos */
 

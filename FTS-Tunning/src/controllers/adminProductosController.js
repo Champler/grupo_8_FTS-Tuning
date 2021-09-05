@@ -68,7 +68,7 @@ module.exports = {
         })
         res.render('modificacionProductos', {
             producto, 
-            title: producto.name + " | FTS-Tuning",
+            title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
             session: req.session ? req.session : ""
         })
     },
@@ -106,9 +106,9 @@ module.exports = {
                 return product.id === +req.params.id
             })
             
-            res.render('adminProductEditForm', {
+            res.render('modificacionProductos', {
                 producto,
-                title: producto.name + " | FTS-Tuning",
+                title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
                 errors : errors.mapped(),
                 old : req.body,
                 session: req.session ? req.session : ""
