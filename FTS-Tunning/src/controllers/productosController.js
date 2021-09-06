@@ -39,7 +39,7 @@ module.exports = {
             res.render('Productos', {products: filtradosPorCategoria, title:"Categoría", session: req.session ? req.session : ""})
         }else {
             res.render('Productos', {products, title:"Categoria", session: req.session ? req.session : ""})
-        }
-        
+        }   
     }
+    
 }

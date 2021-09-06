@@ -5,6 +5,7 @@ const {  validationResult}= require("express-validator")
 let { users, writeUsersJson} = require('../data/usersDB.js')
 
 const bcrypt = require('bcryptjs')
+const session = require("express-session")
 
 
 module.exports = {
@@ -17,17 +18,7 @@ module.exports = {
     register: (req,res) =>{
         res.render('users/registro', {title: "registro", session: req.session ? req.session : ""})
     },
-    profile: (req, res) =>{
-        let user = users.find(user=> user.id === req.session.user.id);
-        res.render('userProfile', {
-            title: "profile",
-            session: req.session ? req.session : "",
-            user
-        })
-    },
     
-
-
     processLogin: (req, res) => {
         let errors = validationResult(req)
         
@@ -36,7 +27,6 @@ module.exports = {
             req.session.user = {
              id: user.id,
              userName: user.firstName + " " + user.lastName,
-             email: user.email,
              avatar: user.image,
              rol: user.rol
          }
@@ -102,8 +92,6 @@ module.exports = {
             
             res.redirect('/users/login')
         }else{
-
-            console.log("esto tiene errorwes",errors);
             res.render('users/registro', {
                 title: "Registro",
                 errors :errors.mapped(),
@@ -111,11 +99,33 @@ module.exports = {
                 session: req.session ? req.session : ""
             })
         }
-
-       
     },
     accountEdit: (req, res) => {
-        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : ""})
+        let user = users.find(user=> user.id === req.session.user.id)
+        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : "", user})
+    },
+    userEdit: (req,res) =>{
+        let user = users.find(user=> user.id === req.session.user.id)
+    
+        user.id = user.id
+        user.firstName = req.body.firstName,
+        user.lastName = req.body.lastName,
+        user.address = req.body.address,
+        user.cp = req.body.cp,
+        user.provincia = req.body.provincia,
+        user.localidad = req.body.localidad
+                    
+        writeUsersJson(users)
+    
+        req.session.user = {
+            id: user.id,
+            userName: user.firstName + " " + user.lastName,
+            avatar: user.image,
+            rol: user.rol
+        }
+    
+        res.locals.user = req.session.user
+        res.redirect('/')
     }
 }
 

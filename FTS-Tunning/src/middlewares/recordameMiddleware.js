@@ -1,5 +1,4 @@
-
-let { users, writeUsersJson} = require('../data/usersDB.js')
+/* let { users } = require('../data/usersDB.js')
 
 module.exports = (req, res, next) => {
     
@@ -13,11 +12,10 @@ module.exports = (req, res, next) => {
         req.session.user = {
             id: userCookie.id,
             userName: userCookie.firstName + " " + userCookie.lastName,
-            email: userCookie.email,
             avatar: userCookie.image,
             rol: userCookie.rol
         }
         console.log("-----------------     CONTENIDO DE req.sesion.user:           id: " + req.session.user.id + ",     userName: " + req.session.user.userName + ",     email " + req.session.user.email + ",      rol:  " + req.session.user.rol + "      --------")
     }
     next();
-}
+} */

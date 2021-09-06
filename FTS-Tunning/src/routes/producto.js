@@ -9,4 +9,6 @@ router.get('/', controller.producto);
 router.get('/carrito', userCreated,controller.carrito)
 router.get('/:idProducto', controller.detalle);
 router.get('/categoria/:categoria?', controller.categoria)
+
+
 module.exports = router;

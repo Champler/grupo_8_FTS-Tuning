@@ -10,23 +10,22 @@
 
   <div class="mainEdit" >
    <!-- PERFIL PARA AGREGAR DATOS -->
-    <form action="form">
+    <form action="/users/profile?_method=PUT" method="POST">
         <div class="formulario">
         <!-- 1.Datos Personales -->
         <div class="datos-Personales-Edit">
           <h2>Datos Personales</h2>
           <hr>
           <label for="name"><b>Nombre</b></label>
-          <input type="text" placeholder="Nombre y apellido" name="name" id="name" required>
+          <input type="text" placeholder="Nombre " name="firstName" id="name" value="<%- user.firstName %>">
+          <label for="name"><b>Apellido</b></label>
+          <input type="text" placeholder="Apellido" name="lastName" id="name" value="<%- user.lastName %>">
       <br>
       
           <label for="email"><b>Email</b></label>
-          <input type="email" placeholder="Ingrese su Email" name="email" id="email" required>
-      <br>
-          <label for="telefono"><b>Telefono</b></label>
-          <input type="tel" placeholder="Ingrese su telefono" name="telefono" id="telefono" required>
+          <input type="email" placeholder="Ingrese su Email" disabled name="email" id="email" value="<%- user.email %>" >
     <br>
-    <img class="Profile" src="/images/accountEdit/Profile.jpg" alt="">
+    <img class="Profile" src="/images/users/<%- user.image %> " alt="">
     <br>
           <label for="Perfil"><b>Cambiar foto de Perfil</b></label>
           <input class="File" type="file" name="Perfil" accept="jpg">
@@ -39,21 +38,16 @@
             <h2>Datos de envio</h2>
             <hr>
             <label for="Dirrecion"><b>Dirrecion</b></label>
-            <input type="text" placeholder="Direccion" name="name" id="name" required
-            >
-            <label for="Dpto"><b>Dpto</b></label>
-            <input type="number" placeholder="Departamento" name="number" id="number" required>
+            <input type="text" placeholder="Direccion" name="address" id="name" value="<%- user.address %>">
         <br>
             <label for="Numero"><b>C.Postal</b></label>
-            <input type="number" placeholder="Codigo Postal" name="Numero" id="Numero" required>
+            <input type="number" placeholder="Codigo Postal" name="cp" id="Numero"value="<%- user.cp %>">
       
             <label for="name"><b>Provincia</b></label>
-            <input type="text" placeholder="Nombre y apellido" name="name" id="name" required
-            >
+            <input type="text" placeholder="Provincia" name="provincia" id="provincia" value="<%- user.provincia %>">
         <br>
             <label for="name"><b>Localidad</b></label>
-            <input type="text" placeholder="Provincia" name="name" id="name" required
-            >
+            <input type="text" placeholder="Localidad" name="localidad" id="name" value="<%- user.localidad %>">
             <hr>
           </div>
         </div>

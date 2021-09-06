@@ -34,9 +34,9 @@ app.use(session({
   secret: "mySecret", 
   resave: false, 
   saveUninitialized: true,
-  cookie: { maxAge: 1000 * 60 * 10} 
+  cookie: {maxAge: 1000 * 60 * 10} 
 }));
-app.use(recordameMiddleware);
+/* app.use(recordameMiddleware); */
 /* Rutas */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
