@@ -1,26 +1,26 @@
 let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/adminProductosController')
-
-let userAdminCheck = require('../middlewares/userAdminCheck')
+let userCreatedCheck = require("../middlewares/userCreatedCheck")     // Verifica si hay un usuario en sesión
+let userAdminCheck = require('../middlewares/userAdminCheck')         // Verifica si el usuario es administrador
 let upload = require('../middlewares/uploadProdFiles')
 let productsValidator = require('../validations/productsValidator')
 
 /* GET index cargaProductos */
 
-router.get('/cargaProducto', userAdminCheck,controller.cargaProducto)
+router.get('/cargaProducto', userCreatedCheck, userAdminCheck,controller.cargaProducto)
 router.post('/cargaProducto',upload.array('img'), productsValidator, controller.create)
 
 router.get('/modificacionProducto', userAdminCheck,controller.modificacionProducto)
 
-router.get('/users', userAdminCheck,controller.usuarios);
-router.get('/productos', userAdminCheck,controller.productos);
+router.get('/users', userCreatedCheck, userAdminCheck,controller.usuarios);
+router.get('/productos', userCreatedCheck, userAdminCheck,controller.productos);
 
 
 
 
 /* GET / mostrar datos de edicion */
-router.get('/editarProducto/:id', userAdminCheck,controller.editForm)
+router.get('/editarProducto/:id', userCreatedCheck, userAdminCheck,controller.editForm)
 /* PUT - Recibe los datos de edicion */
 router.put('/editarProducto/:id', upload.array('img'), productsValidator, controller.editProduct)
 

@@ -42,7 +42,7 @@ module.exports = {
          }
          /** creamos la cookie */
          if(req.body.remember){
-             res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60*10})
+             res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
          }
          /------------------/
          /** guardamos el usuario en locals */

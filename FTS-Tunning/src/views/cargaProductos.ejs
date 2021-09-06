@@ -15,12 +15,10 @@
                 <div class="category-fcm">
                     <label for="category" class="label-fcm">Categoría:</label>
                     <select name="category" id="" class="select-fcm border-fcm">
-                        <option value="Freno" <%= locals.old && old.category == "Freno" ? "selected" : "" %> >Frenos</option>
-                        <option value="Neumático" <%= locals.old && old.category == "Neumático" ? "selected" : "" %> >Neumáticos</option>
-                        <option value="Caño de Escape" <%= locals.old && old.category == "Caño de Escape" ? "selected" : "" %> >Escapes</option>
-                        <option value="Motor" <%= locals.old && old.category == "Motor" ? "selected" : "" %> >Motores</option>
-                        <option value="Volante" <%= locals.old && old.category == "Volante" ? "selected" : "" %> >Volantes</option>
-                        <option value="Interior" <%= locals.old && old.category == "Interior" ? "selected" : "" %> >Interiores</option>
+                        <% let categories = ["Freno","Neumático","Caño de Escape","Motor","Volante","Interior"] %>
+                        <% categories.forEach(category => { %>
+                            <option value=<%= category %> <%= locals.old && old.category == category ? "selected" : "" %> ><%= category %></option>
+                        <% }); %>
                     </select>
                 </div>
                 <div class="pricef-fcm">
@@ -60,29 +58,9 @@
                 <div>
                     <label for="year" class="label-fcm">Año:</label>
                     <select name="year" id="" class="border-fcm">
-                        <option value="2021" <%= locals.old && old.year == "2021" ? "selected" : "" %>>2021</option>
-                        <option value="2020" <%= locals.old && old.year == "2020" ? "selected" : "" %>>2020</option>
-                        <option value="2019" <%= locals.old && old.year == "2019" ? "selected" : "" %>>2019</option>
-                        <option value="2018" <%= locals.old && old.year == "2018" ? "selected" : "" %>>2018</option>
-                        <option value="2017" <%= locals.old && old.year == "2017" ? "selected" : "" %>>2017</option>
-                        <option value="2016" <%= locals.old && old.year == "2016" ? "selected" : "" %>>2016</option>
-                        <option value="2015" <%= locals.old && old.year == "2015" ? "selected" : "" %>>2015</option>
-                        <option value="2014" <%= locals.old && old.year == "2014" ? "selected" : "" %>>2014</option>
-                        <option value="2013" <%= locals.old && old.year == "2013" ? "selected" : "" %>>2013</option>
-                        <option value="2012" <%= locals.old && old.year == "2012" ? "selected" : "" %>>2012</option>
-                        <option value="2011" <%= locals.old && old.year == "2011" ? "selected" : "" %>>2011</option>
-                        <option value="2010" <%= locals.old && old.year == "2010" ? "selected" : "" %>>2010</option>
-                        <option value="2009" <%= locals.old && old.year == "2009" ? "selected" : "" %>>2009</option>
-                        <option value="2008" <%= locals.old && old.year == "2008" ? "selected" : "" %>>2008</option>
-                        <option value="2007" <%= locals.old && old.year == "2007" ? "selected" : "" %>>2007</option>
-                        <option value="2006" <%= locals.old && old.year == "2006" ? "selected" : "" %>>2006</option>
-                        <option value="2005" <%= locals.old && old.year == "2005" ? "selected" : "" %>>2005</option>
-                        <option value="2004" <%= locals.old && old.year == "2004" ? "selected" : "" %>>2004</option>
-                        <option value="2003" <%= locals.old && old.year == "2003" ? "selected" : "" %>>2003</option>
-                        <option value="2002" <%= locals.old && old.year == "2002" ? "selected" : "" %>>2002</option>
-                        <option value="2001" <%= locals.old && old.year == "2001" ? "selected" : "" %>>2001</option>
-                        <option value="2000" <%= locals.old && old.year == "2000" ? "selected" : "" %>>2000</option>
-                        <option value="1999" <%= locals.old && old.year == "1999" ? "selected" : "" %>>1999</option>
+                        <% for( let year = 2021; year > 1959; year-- ) { %>
+                            <option value=<%= year %> <%= locals.old && old.year == year ? "selected" : "" %>><%= year %> </option>
+                        <% } %>
                     </select>
                 </div>
             </div>
@@ -101,29 +79,28 @@
                 <div>
                     <label for="color" class="label-fcm">Color:</label>
                     <select name="color" id="" class="border-fcm">
-                        <option value="no" <%= locals.old && old.color == "no" ? "selected" : "" %>>no</option>
-                        <option value="Blanco" <%= locals.old && old.color == "Blanco" ? "selected" : "" %>>Blanco</option>
-                        <option value="Negro" <%= locals.old && old.color == "Negro" ? "selected" : "" %>>Negro</option>
-                        <option value="Azul" <%= locals.old && old.color == "Azul" ? "selected" : "" %>>Azul</option>
-                        <option value="Rojo" <%= locals.old && old.color == "Rojo" ? "selected" : "" %>>Rojo</option>
-                        <option value="Verde" <%= locals.old && old.color == "Verde" ? "selected" : "" %>>Verde</option>
-                        <option value="Plateado" <%= locals.old && old.color == "Plateado" ? "selected" : "" %>>Plateado</option>
+                        <% let colors = ["no","Blanco","Negro","Azul","Rojo","Verde","Plateado"] %> 
+                        <% colors.forEach(color => { %>
+                            <option value=<%= color %>  <%= locals.old && old.color == color ? "selected" : "" %>><%= color %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div>
                     <label for="frontback" class="label-fcm">Del/Tras/No:</label>
                     <select name="frontback" id="" class="border-fcm">
-                        <option value="no" <%= locals.old && old.frontback == "no" ? "selected" : "" %>>No</option>
-                        <option value="Delantero" <%= locals.old && old.frontback == "Delantero" ? "selected" : "" %>>Delantero</option>
-                        <option value="Trasero" <%= locals.old && old.frontback == "Trasero" ? "selected" : "" %>>Trasero</option>
+                        <% let frontbacks = ["no","Delantero","Trasero"] %> 
+                        <% frontbacks.forEach(frontback => { %>
+                            <option value=<%= frontback %>  <%= locals.old && old.frontback == frontback ? "selected" : "" %>><%= frontback %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div>
                     <label for="leftright" class="label-fcm">Izq/Der/No:</label>
                     <select name="leftright" id="" class="border-fcm">
-                        <option value="no" <%= locals.old && old.leftright == "no" ? "selected" : "" %>>No</option>
-                        <option value="Izquierdo" <%= locals.old && old.leftright == "Izquierdo" ? "selected" : "" %>>Izquierda</option>
-                        <option value="Derecho" <%= locals.old && old.leftright == "Derecho" ? "selected" : "" %>>Derecha</option>
+                        <% let leftrights = ["no","Izquierdo","Derecho"] %> 
+                        <% leftrights.forEach(leftright => { %>
+                            <option value=<%= leftright %>  <%= locals.old && old.leftright == leftright ? "selected" : "" %>><%= leftright %> </option>
+                        <% }) %>
                     </select>
                 </div>
             </div>

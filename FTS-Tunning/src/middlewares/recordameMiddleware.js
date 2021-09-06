@@ -2,18 +2,14 @@
 let { users, writeUsersJson} = require('../data/usersDB.js')
 
 module.exports = (req, res, next) => {
-    next();
-    /* console.log("+++++++++++++++++++++++  " + req.cookies.cookieFTS.email + "  +++++"); */
-    /* console.log("***********************  " + req.session.user.email + "  *****"); */
-    /* console.log(users); */
-
+    
+    
     if(req.cookies.cookieFTS != undefined && req.session.user == undefined) {
-        console.log(">>>>>" + req.cookies.cookieFTS.email + "<<<<<");
-        /* res.sendFile(req.cookies.cookieFTS) */
-        let elEmail = req.cookies.cookieFTS.email;
-        console.log(">>>>>" + elEmail + "<<<<<");
-        let userCookie = users.find(user => user.email === elEmail);
-        console.log("XXXXX  XXXXX   XXXXXX   XXX    " + userCookie.id + "    XXXXX  XXXXXXXX   XXX XXXX XXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        
+        console.log("-----------------     CONTENIDO DE req.cookies.cookieFTS:     id: " + req.cookies.cookieFTS.id + ",     userName: " + req.cookies.cookieFTS.userName + ",     email " + req.cookies.cookieFTS.email + ",      rol:  " + req.cookies.cookieFTS.rol + "      --------")
+        
+        let userCookie = users.find(user => user.email === req.cookies.cookieFTS.email);
+        
         req.session.user = {
             id: userCookie.id,
             userName: userCookie.firstName + " " + userCookie.lastName,
@@ -21,9 +17,7 @@ module.exports = (req, res, next) => {
             avatar: userCookie.image,
             rol: userCookie.rol
         }
-        console.log(req.session.user.id)
-        console.log(req.session.user.userName)
-        console.log(req.session.user.email)
-        console.log(req.session.user.rol)
+        console.log("-----------------     CONTENIDO DE req.sesion.user:           id: " + req.session.user.id + ",     userName: " + req.session.user.userName + ",     email " + req.session.user.email + ",      rol:  " + req.session.user.rol + "      --------")
     }
+    next();
 }
