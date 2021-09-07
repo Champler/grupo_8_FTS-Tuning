@@ -32,7 +32,7 @@ module.exports = {
          }
          /** creamos la cookie */
          if(req.body.remember){
-             res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+            res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
          }
          /------------------/
          /** guardamos el usuario en locals */
@@ -101,19 +101,9 @@ module.exports = {
         }
     },
     accountEdit: (req, res) => {
-        res.render('users/accountEdit', {title: "Edita tu cuenta"})
+        let user = users.find(user=> user.id === req.session.user.id)
+        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : "", user})
     },
-  
-        logout: (req, res) => {
-            req.session.destroy();
-            if(req.cookies.cookieFTS){
-                res.cookie('cookieFTS','',{maxAge:-1})
-            }
-            
-            return res.redirect('/')
-        },
-    
-    }
     userEdit: (req,res) =>{
         let user = users.find(user=> user.id === req.session.user.id)
     
@@ -136,6 +126,13 @@ module.exports = {
     
         res.locals.user = req.session.user
         res.redirect('/')
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if(req.cookies.cookieFTS){
+            res.cookie('cookieFTS','',{maxAge:-1})
+        }
+        
+        return res.redirect('/')
     }
-
-
+}

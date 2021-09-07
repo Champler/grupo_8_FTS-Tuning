@@ -6,7 +6,8 @@ accountEdit,
 login,
 processLogin,
 proccesRegister,
-userEdit
+userEdit,
+logout,
 } = require('../controllers/usersController')
 let loginValidator = require("../validations/loginValidator") 
 let registerValidator = require("../validations/registerValidator") 
