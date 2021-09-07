@@ -5,29 +5,20 @@ const {  validationResult}= require("express-validator")
 let { users, writeUsersJson} = require('../data/usersDB.js')
 
 const bcrypt = require('bcryptjs')
+const session = require("express-session")
 
 
 module.exports = {
     historial: (req, res) => {
-        res.render('users/historialCompras', {title: "Historial"})
+        res.render('users/historialCompras', {title: "Historial", session: req.session ? req.session : ""})
     },
     login: (req, res) => {
-        res.render('users/Login', {title: "Login"})
+        res.render('users/Login', {title: "Login", session: req.session ? req.session : ""})
     },
     register: (req,res) =>{
-        res.render('users/registro', {title: "registro"})
-    },
-    profile: (req, res) =>{
-        let user = users.find(user=> user.id === req.session.user.id);
-        res.render('userProfile', {
-            title: "profile",
-            session: req.session,
-            user
-        })
+        res.render('users/registro', {title: "registro", session: req.session ? req.session : ""})
     },
     
-
-
     processLogin: (req, res) => {
         let errors = validationResult(req)
         
@@ -35,8 +26,7 @@ module.exports = {
             let user = users.find(user => user.email === req.body.email);
             req.session.user = {
              id: user.id,
-             userName: user.name + " " + user.lastName,
-             email: user.email,
+             userName: user.firstName + " " + user.lastName,
              avatar: user.image,
              rol: user.rol
          }
@@ -55,7 +45,7 @@ module.exports = {
             res.render('users/Login', {
                 title: "Login",
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session ? req.session : ""
             })
         }
 
@@ -86,7 +76,7 @@ module.exports = {
     
             let newUser = {
                 id: lastID +1,
-                name,
+                firstName: name,
                 lastName,
                 email, 
                 password1: bcrypt.hashSync(password1, 10),
@@ -102,17 +92,13 @@ module.exports = {
             
             res.redirect('/users/login')
         }else{
-
-            console.log("esto tiene errorwes",errors);
             res.render('users/registro', {
                 title: "Registro",
                 errors :errors.mapped(),
                 old : req.body,
-                session: req.session
+                session: req.session ? req.session : ""
             })
         }
-
-       
     },
     accountEdit: (req, res) => {
         res.render('users/accountEdit', {title: "Edita tu cuenta"})
@@ -125,7 +111,31 @@ module.exports = {
             }
             
             return res.redirect('/')
+        },
+    
+    }
+    userEdit: (req,res) =>{
+        let user = users.find(user=> user.id === req.session.user.id)
+    
+        user.id = user.id
+        user.firstName = req.body.firstName,
+        user.lastName = req.body.lastName,
+        user.address = req.body.address,
+        user.cp = req.body.cp,
+        user.provincia = req.body.provincia,
+        user.localidad = req.body.localidad
+                    
+        writeUsersJson(users)
+    
+        req.session.user = {
+            id: user.id,
+            userName: user.firstName + " " + user.lastName,
+            avatar: user.image,
+            rol: user.rol
         }
     
-}
+        res.locals.user = req.session.user
+        res.redirect('/')
+    }
+
 

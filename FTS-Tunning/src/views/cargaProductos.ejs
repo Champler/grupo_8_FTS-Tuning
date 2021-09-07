@@ -15,101 +15,92 @@
                 <div class="category-fcm">
                     <label for="category" class="label-fcm">Categoría:</label>
                     <select name="category" id="" class="select-fcm border-fcm">
-                        <option value="Freno">Frenos</option>
-                        <option value="Neumático">Neumáticos</option>
-                        <option value="Caño de Escape">Escapes</option>
-                        <option value="Motor">Motores</option>
-                        <option value="Volante">Volantes</option>
-                        <option value="Interior">Interiores</option>
+                        <% let categories = ["Freno","Neumático","Caño de Escape","Motor","Volante","Interior"] %>
+                        <% categories.forEach(category => { %>
+                            <option value=<%= category %> <%= locals.old && old.category == category ? "selected" : "" %> ><%= category %></option>
+                        <% }); %>
                     </select>
                 </div>
                 <div class="pricef-fcm">
                     <label for="price" class="label-fcm">Precio:</label>
-                    <input type="number" name="price" id="" class="price-input-fcm border-fcm">
-
+                    <input type="number" name="price" id="" class="price-input-fcm border-fcm" value="<%= locals.old && old.price %>">
+                    <% if (locals.errors && errors.price) { %>
+                        <small class="small-red"><%= errors.price.msg %></small>
+                    <% } %>
                 </div>
                 <div class="pricef-fcm">
                     <label for="discount" class="label-fcm">Descuento:</label>
-                    <input type="number" name="discount" id="" class="discount-input-fcm border-fcm">
+                    <input type="number" name="discount" id="" class="discount-input-fcm border-fcm" value="<%= locals.old && old.discount %>">
                 </div>
             </div>
             <div class="nameModelYear-fcm">
                 <label for="name" class="label-fcm">Nombre del Producto:</label>
-                <input type="text" name="name" id="" class="name-fcm border-fcm">
+                <input type="text" name="name" id="" class="name-fcm border-fcm" value="<%= locals.old && old.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="small-red"><%= errors.name.msg %></small>
+                <% } %>
             </div>
             <div class="brandModelYear-fcm">
                 <div class="brand-fcm">
                     <label for="brand" class="label-fcm">Marca</label>
-                    <input type="text" name="brand" id="" class="select-fcm border-fcm">
+                    <input type="text" name="brand" id="" class="select-fcm border-fcm" value="<%= locals.old && old.brand %>">
+                    <% if (locals.errors && errors.brand) { %>
+                        <small class="small-red"><%= errors.brand.msg %></small>
+                    <% } %>
                 </div>
                 <div>
                     <label for="carModel" class="label-fcm">Modelo:</label>
-                    <input type="text" name="carModel" id="" class="select-fcm border-fcm">
+                    <input type="text" name="carModel" id="" class="select-fcm border-fcm" value="<%= locals.old && old.carModel %>">
+                    <% if (locals.errors && errors.carModel) { %>
+                        <small class="small-red"><%= errors.carModel.msg %></small>
+                    <% } %>
                 </div>
                 <div>
                     <label for="year" class="label-fcm">Año:</label>
                     <select name="year" id="" class="border-fcm">
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                        <option value="2013">2013</option>
-                        <option value="2012">2012</option>
-                        <option value="2011">2011</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
-                        <option value="2008">2008</option>
-                        <option value="2007">2007</option>
-                        <option value="2006">2006</option>
-                        <option value="2005">2005</option>
-                        <option value="2004">2004</option>
-                        <option value="2003">2003</option>
-                        <option value="2002">2002</option>
-                        <option value="2001">2001</option>
-                        <option value="2000">2000</option>
-                        <option value="1999">1999</option>
+                        <% for( let year = 2021; year > 1959; year-- ) { %>
+                            <option value=<%= year %> <%= locals.old && old.year == year ? "selected" : "" %>><%= year %> </option>
+                        <% } %>
                     </select>
                 </div>
             </div>
             <div class="photoFormulary-fcm">
                 <label for="img" class="label-fcm">Foto:</label>
-                <input type="file" name="img" id="" class="border-fcm" multiple>
+                <input type="file" name="img" id="" class="border-fcm" aria-label="file example" id="inputImage" multiple>
             </div>
             <div class="description-fcm">
                 <label for="description" class="label-fcm">Descripción:</label>
-                <textarea name="description" id="" class="textarea-description-fcm border-fcm"></textarea>
+                <textarea name="description" id="" class="textarea-description-fcm border-fcm"><%= locals.old && old.description %></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <small class="small-red"><%= errors.description.msg %></small>
+                <% } %>
             </div>
             <div class="colorDelIzq-fcm">
                 <div>
                     <label for="color" class="label-fcm">Color:</label>
                     <select name="color" id="" class="border-fcm">
-                        <option value="no">no</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Negro">Negro</option>
-                        <option value="Azul">Azul</option>
-                        <option value="Rojo">Rojo</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Plateado">Plateado</option>
+                        <% let colors = ["no","Blanco","Negro","Azul","Rojo","Verde","Plateado"] %> 
+                        <% colors.forEach(color => { %>
+                            <option value=<%= color %>  <%= locals.old && old.color == color ? "selected" : "" %>><%= color %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div>
                     <label for="frontback" class="label-fcm">Del/Tras/No:</label>
                     <select name="frontback" id="" class="border-fcm">
-                        <option value="no">No</option>
-                        <option value="Delantero">Delantero</option>
-                        <option value="Trasero">Trasero</option>
+                        <% let frontbacks = ["no","Delantero","Trasero"] %> 
+                        <% frontbacks.forEach(frontback => { %>
+                            <option value=<%= frontback %>  <%= locals.old && old.frontback == frontback ? "selected" : "" %>><%= frontback %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div>
                     <label for="leftright" class="label-fcm">Izq/Der/No:</label>
                     <select name="leftright" id="" class="border-fcm">
-                        <option value="no">No</option>
-                        <option value="Izquierdo">Izquierda</option>
-                        <option value="Derecho">Derecha</option>
+                        <% let leftrights = ["no","Izquierdo","Derecho"] %> 
+                        <% leftrights.forEach(leftright => { %>
+                            <option value=<%= leftright %>  <%= locals.old && old.leftright == leftright ? "selected" : "" %>><%= leftright %> </option>
+                        <% }) %>
                     </select>
                 </div>
             </div>

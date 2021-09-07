@@ -12,7 +12,8 @@ let adminProductosRouter = require('./routes/adminProductos');  // Fabio
 let productoRouter = require('./routes/producto');   
 let usRouter = require('./routes/us');              // Fabio
 let DatosDePagoRouter = require('./routes/DatosDePago') //Santiago
-
+var cookieSession = require('cookie-session');
+var recordameMiddleware = require('./middlewares/recordameMiddleware');
 
 //Santiago
 
@@ -32,8 +33,10 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(session({ 
   secret: "mySecret", 
   resave: false, 
-  saveUninitialized: true 
+  saveUninitialized: true,
+  cookie: {maxAge: 1000 * 60 * 10} 
 }));
+/* app.use(recordameMiddleware); */
 /* Rutas */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

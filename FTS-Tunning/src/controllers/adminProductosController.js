@@ -1,52 +1,66 @@
 const { products, writeJson } = require('../data/productsDB')
 const { users, writeUsersJson } = require('../data/usersDB')
+const { validationResult } = require('express-validator');
 
 module.exports = {
     cargaProducto: (req, res) => {
-        res.render('cargaProductos', {title: "Carga de Productos"});
+        res.render('cargaProductos', {title: "Carga de Productos", session: req.session ? req.session : ""});
     },
     modificacionProducto: (req, res) => {
-        res.render('modificacionProductos', {title: "Modificación de Productos"});
+        res.render('modificacionProductos', {title: "Modificación de Productos", session: req.session ? req.session : ""});
     },
     usuarios: (req, res) => {
-        res.render('listaUsuarios', {title: "Usuarios", users})
+        res.render('listaUsuarios', {title: "Usuarios", users, session: req.session ? req.session : ""})
     },
     productos: (req, res) => {
-        res.render('adminProducts', {products, title:"Productos"})
+        res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
     },
     create: (req,res)=> { 
-        let lastID = 1
-        products.forEach(product =>{
-            if(product.id > lastID){
-                lastID = product.id
-            }
-        })
-        let arrayImgs = []
-        if(req.files){
-            req.files.forEach(image => {
-                arrayImgs.push(image.filename)
-            })
-        }
-        let { name, category, description, carModel, brand, year, color, discount, price, frontback, leftright} = req.body
-        let newProduct = {
-            id: lastID + 1,
-            name,
-            category,
-            description,
-            img: arrayImgs.length > 0? arrayImgs: ["default-image.jpg"],
-            carModel,
-            brand, 
-            year,
-            color,
-            discount,
-            price,
-            frontback,
-            leftright
-        }
+        let errors = validationResult(req);
 
-        products.push(newProduct)
-        writeJson(products)
-        res.redirect('/adminProductos/productos')
+        if (errors.isEmpty()) {
+
+            let lastID = 1
+            products.forEach(product =>{
+                if(product.id > lastID){
+                    lastID = product.id
+                }
+            })
+            let arrayImgs = []
+            if(req.files){
+                req.files.forEach(image => {
+                    arrayImgs.push(image.filename)
+                })
+            }
+            let { name, category, description, carModel, brand, year, color, discount, price, frontback, leftright} = req.body
+            let newProduct = {
+                id: lastID + 1,
+                name,
+                category,
+                description,
+                img: arrayImgs.length > 0? arrayImgs: ["default-image.jpg"],
+                carModel,
+                brand, 
+                year,
+                color,
+                discount,
+                price,
+                frontback,
+                leftright
+            }
+
+            products.push(newProduct)
+            writeJson(products)
+            res.redirect('/adminProductos/productos')
+
+        } else {
+            res.render('cargaProductos', {
+                title: "Carga de Productos",
+                errors : errors.mapped(),
+                old : req.body,
+                session: req.session ? req.session : ""
+            })
+        } 
     },
     editForm: (req, res) => {
         let producto = products.find(product => {
@@ -54,35 +68,52 @@ module.exports = {
         })
         res.render('modificacionProductos', {
             producto, 
-            title: producto.name + " | FTS-Tuning"
+            title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
+            session: req.session ? req.session : ""
         })
     },
     editProduct: (req, res) => {
-        let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright } = req.body;
-        let arrayImages = [];
-        if(req.files){
-            req.files.forEach(image => {
-                arrayImages.push(image.filename)
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright } = req.body;
+            let arrayImages = [];
+            if(req.files){
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
+                })
+            }
+            products.forEach(product => {
+                if(product.id === +req.params.id){
+                    product.name = name,
+                    product.category = category,
+                    product.description = description,
+                    product.img = arrayImages.length > 0 ? arrayImages : ["default-image.jpg"],
+                    product.carModel = carModel,
+                    product.brand = brand,
+                    product.year = year,
+                    product.color = color,
+                    product.discount = discount,
+                    product.price = price,
+                    product.frontback = frontback,
+                    product.leftright = leftright
+                }
+            });
+            writeJson(products)
+            res.redirect('/adminProductos/productos')
+        } else {
+            let producto = products.find(product => {
+                return product.id === +req.params.id
+            })
+            
+            res.render('modificacionProductos', {
+                producto,
+                title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
+                errors : errors.mapped(),
+                old : req.body,
+                session: req.session ? req.session : ""
             })
         }
-        products.forEach(product => {
-            if(product.id === +req.params.id){
-                product.name = name,
-                product.category = category,
-                product.description = description,
-                product.img = arrayImages.length > 0 ? arrayImages : ["default-image.jpg"],
-                product.carModel = carModel,
-                product.brand = brand,
-                product.year = year,
-                product.color = color,
-                product.discount = discount,
-                product.price = price,
-                product.frontback = frontback,
-                product.leftright = leftright
-            }
-        });
-        writeJson(products)
-        res.redirect('/adminProductos/productos')
     },
     delete: (req, res) => {
         products.forEach(product => {

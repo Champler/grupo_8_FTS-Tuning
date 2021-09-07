@@ -7,7 +7,9 @@
         <!-- Parte Central (Input y Menu) -->
         <div class="input-ul-container">
             <div id="search-bar">
-                <input type="search" placeholder="Busca aquí">
+                <form action="/busqueda">
+                    <input type="search" placeholder="Busca aquí" name="busqueda">
+                </form>
                 <button>
                     <img src="/images/header/svg/Lupa.svg" alt="">
                 </button>
@@ -36,9 +38,14 @@
                     <li><a href="/productos/categoria/motor"></i>Motor</a></li>
                     <li><a href="/productos/categoria/interior"></i>Interior</a></li>
                     <li><a href="/productos/categoria/volante"></i>Volantes</a></li>
-                    <li><a href="/Carrito"></i>Carrito</a></li>
-                    <li><a href="/users/login"></i>Login</a></li>
-                    <li><a href="/users/register"></i>Registro</a></li>
+                    <% if (session.user && session.user.rol != "undefined") { %>
+                        <li><a href="/Carrito"></i>Carrito</a></li>                    
+                        <a href="/users/profile"><%- session.user.userName %></a>
+                        <a href="/users/logout">Cerrar Sesion</a>
+                    <% } else { %>
+                        <li><a href="/users/login"></i>Login</a></li>
+                        <li><a href="/users/register"></i>Registro</a></li>
+                    <% }%>
                 </ul>
             </div>
             <div class="pc">
@@ -46,10 +53,13 @@
                     <ul>
                         <li><img src="/images/header/svg/Login-registro.svg" alt="Login-registro">
                             <ul id="baja">
-                                <li><a href="/users/login">Login</a></li>
-                                <li><a href="/users/register">Registro</a></li>
-                                <li><a href="/users/register">Cerrar sesión</a></li>
-                                <li><a href="/users/historial">Historial de Compras</a></li>
+                                <% if (session.user && session.user.rol != "undefined") { %>                   
+                                    <li><a href="/users/profile"><%- session.user.userName %></a></li> 
+                                    <li><a href="/users/logout">Cerrar Sesion</a></li> 
+                                <% } else { %>
+                                    <li><a href="/users/login"></i>Login</a></li>
+                                    <li><a href="/users/register"></i>Registro</a></li>
+                                <% }%>
                             </ul>
                         </li>
                         
