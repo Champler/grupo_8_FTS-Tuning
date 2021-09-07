@@ -5,7 +5,9 @@ const{register,
 profile,
 login,
 processLogin,
-proccesRegister} = require('../controllers/usersController')
+proccesRegister,
+logout
+} = require('../controllers/usersController')
 let  loginValidator = require("../validations/loginValidator") 
 let  registerValidator = require("../validations/registerValidator") 
 let userSession = require("../middlewares/userSession")
@@ -22,5 +24,6 @@ router.get('/register',register)
 router.post('/register', registerValidator, proccesRegister)
 
 router.get('/profile',userSession ,profile);
+router.get('/logout', logout);
 
 module.exports = router;

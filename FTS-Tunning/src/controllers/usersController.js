@@ -116,6 +116,16 @@ module.exports = {
     },
     accountEdit: (req, res) => {
         res.render('users/accountEdit', {title: "Edita tu cuenta"})
-    }
+    },
+  
+        logout: (req, res) => {
+            req.session.destroy();
+            if(req.cookies.cookieFTS){
+                res.cookie('cookieFTS','',{maxAge:-1})
+            }
+            
+            return res.redirect('/')
+        }
+    
 }
 
