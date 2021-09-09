@@ -4,8 +4,11 @@
 
 <body>
  
+  <% if (session.user && session.user.rol == "admin") { %>                   
+    <%- include('partials/adminHeader.ejs')  %>
+<% } else { %>
   <%- include('partials/header.ejs')  %> 
-
+<% }%>
   <div class="mainpay" >
    <!-- FORMULARIO DE PAGO -->
     <form action="formpay">

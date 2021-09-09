@@ -5,7 +5,11 @@
 
 <body>
  
+  <% if (session.user && session.user.rol == "admin") { %>                   
+    <%- include('partials/adminHeader.ejs')  %>
+<% } else { %>
   <%- include('partials/header.ejs')  %> 
+<% }%>
 
   <main class="basket-main">
     <div class="basket">

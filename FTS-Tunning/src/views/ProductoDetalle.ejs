@@ -3,7 +3,11 @@
     <%- include('partials/head.ejs')  %> 
 <body>
     <!-----------------------------------                Header              ------------------------------------------->
-    <%- include('partials/header.ejs')  %> 
+    <% if (session.user && session.user.rol == "admin") { %>                   
+        <%- include('partials/adminHeader.ejs')  %>
+    <% } else { %>
+      <%- include('partials/header.ejs')  %> 
+    <% }%>
 
 
     <!-----------------------------------        Deltalle del Producto       ------------------------------------------->

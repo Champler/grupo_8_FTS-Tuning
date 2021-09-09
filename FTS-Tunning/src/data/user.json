@@ -237,5 +237,16 @@
         "image": "default-image.png",
         "address": "",
         "PisoDpto": ""
+    },
+    {
+        "id": 23,
+        "firstName": "Tobias",
+        "lastName": "Racedo",
+        "email": "tobaracedo@gmail.com",
+        "password1": "$2a$10$mfgXZSn1/MqHaQjhA55WRe.5Pe6EyOBK0MgtM5lQjiEFlBbyS.E42",
+        "rol": "admin",
+        "image": "default-image.png",
+        "address": "",
+        "PisoDpto": ""
     }
 ]
