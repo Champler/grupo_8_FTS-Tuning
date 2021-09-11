@@ -133,6 +133,6 @@ module.exports = {
             res.cookie('cookieFTS','',{maxAge:-1})
         }
         
-        return res.redirect('/')
+        res.redirect('/')
     }
 }
