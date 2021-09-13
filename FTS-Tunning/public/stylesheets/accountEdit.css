@@ -97,18 +97,24 @@
   
   /* MEDIAS QUERIES */
   
-  @media (max-width: 640px) {
+  @media (min-width: 1px) and (max-width: 380px) {
     .related-prod-title{
       display: none;
     }
     .related-prods{
       display: none;
     }
-   
-  
-  
-  
-  
+    form input{
+      width: 80%;
+    }
+    .entrega{
+    font-size: 1.0rem;
+    }
+    .datos-Personales-Edit{font-size: 0.95rem;
+
+    }
+
+  }
   
   
   
