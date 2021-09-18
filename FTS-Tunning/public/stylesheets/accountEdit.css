@@ -127,4 +127,11 @@
       display: flex;
       justify-content: space-between
     }
+    .entrega input {
+      margin: 10px;
+      padding: 3px
+    }
+    .datos-Personales-Edit input{
+      padding: 1px
+    }
   }
