@@ -89,8 +89,6 @@
     margin-left: 30%;
   }
  
-  
-  
   /* MEDIAS QUERIES */
   
   @media (min-width: 1px) and (max-width: 380px) {
@@ -105,9 +103,7 @@
     .datos-Personales-Edit{font-size: 0.95rem;
     width: 100%;
     }
-    
   }
-  
 
   
   @media (min-width: 380px) and (max-width: 960px){
@@ -120,7 +116,6 @@
       justify-content: space-between
     }
   }
-  
   
   @media (min-width: 960px) and (max-width: 2000px) {
     aside {   float: left;
