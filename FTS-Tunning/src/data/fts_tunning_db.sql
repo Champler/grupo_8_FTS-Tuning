@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: ftsTunning_db
+-- Host: localhost    Database: fts_tunning_db
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.20-MariaDB
 
@@ -28,7 +28,10 @@ CREATE TABLE `addresses` (
   `floor_dpt` int(11) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
   `province` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `addresses_FK` (`user_id`),
+  CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,7 +57,7 @@ CREATE TABLE `cart` (
   `date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `cart_FK` (`user_id`),
-  CONSTRAINT `cart_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `cart_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,8 +86,8 @@ CREATE TABLE `cart_detail` (
   PRIMARY KEY (`id`),
   KEY `cart_detail_FK` (`product_id`),
   KEY `cart_detail_FK_1` (`cart_id`),
-  CONSTRAINT `cart_detail_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  CONSTRAINT `cart_detail_FK_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`id`)
+  CONSTRAINT `cart_detail_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cart_detail_FK_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -133,7 +136,7 @@ CREATE TABLE `images` (
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `images_FK` (`product_id`),
-  CONSTRAINT `images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+  CONSTRAINT `images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -213,7 +216,7 @@ CREATE TABLE `products` (
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK` (`category_id`),
-  CONSTRAINT `products_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
+  CONSTRAINT `products_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -243,9 +246,9 @@ CREATE TABLE `tickets` (
   KEY `ticket_FK` (`payment_type_id`),
   KEY `ticket_FK_1` (`payment_method_id`),
   KEY `ticket_FK_2` (`cart_id`),
-  CONSTRAINT `ticket_FK` FOREIGN KEY (`payment_type_id`) REFERENCES `payment_types` (`id`),
-  CONSTRAINT `ticket_FK_1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`id`),
-  CONSTRAINT `ticket_FK_2` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`id`)
+  CONSTRAINT `ticket_FK` FOREIGN KEY (`payment_type_id`) REFERENCES `payment_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ticket_FK_1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ticket_FK_2` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -274,11 +277,8 @@ CREATE TABLE `users` (
   `rol` varchar(40) NOT NULL,
   `image` varchar(150) DEFAULT NULL,
   `telephone` varchar(25) DEFAULT NULL,
-  `address_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `users_un` (`email`),
-  KEY `users_FK` (`address_id`),
-  CONSTRAINT `users_FK` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`)
+  UNIQUE KEY `users_un` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -292,7 +292,7 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'ftsTunning_db'
+-- Dumping routines for database 'fts_tunning_db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -304,4 +304,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-19 20:06:19
+-- Dump completed on 2021-09-22 10:38:32

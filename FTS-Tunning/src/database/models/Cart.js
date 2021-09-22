@@ -23,10 +23,17 @@ module.exports = (sequelize, dataTypes) => {
     const Cart = sequelize.define(alias, cols, config); 
 
     Cart.associate = models => {
-        Cart.belongsTo(model.User)
-        Cart.belongsTo(model.Ticket)
-        Cart.hasMany(models.cart_detail, {
-            as: "cart_detail",
+        Cart.belongsTo((model.User), {
+            as:"user",
+            foreingKey: "user_id"
+        })
+        Cart.belongsTo((model.Ticket), {
+            as: "ticket",
+            foreingKey: "cart_id"
+        })
+        Cart.hasMany(models.CartDetail, {
+            as: "cartDetail",
+            foreingKey: "cart_id"
         })
     }
     return Cart
