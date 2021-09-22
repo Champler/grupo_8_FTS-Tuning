@@ -1,8 +1,15 @@
+
 const {carrousel, products } = require('../data/productsDB')
+const db = require('../database/models')
 
 module.exports = {
     index: (req, res) => {
-        res.render('Home', {title: "FTS - Tunning", carrousel, session: req.session ? req.session : ""})
+        db.User.findAll({include:[{association:"address"}]})
+        .then(resultado => {
+            res.send(resultado)
+        }).catch(error => console.log(error));
+        
+        /* res.render('Home', {title: "FTS - Tunning", carrousel, session: req.session ? req.session : ""}) */
     },
     busqueda: (req, res) => {
         let busqueda = req.query.busqueda.trim()

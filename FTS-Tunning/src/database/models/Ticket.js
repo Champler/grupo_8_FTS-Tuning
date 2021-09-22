@@ -39,12 +39,14 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'cart_id'
         })
         Ticket.belongsTo(models.PaymentMethod, {
-            as: 'ticket',
+            as: 'ticket-m',
             foreignKey: 'payment_method_id'
         })
         Ticket.belongsTo(models.PaymentType, {
-            as: 'ticket',
+            as: 'ticket-t',
             foreignKey: 'payment_type_id'
         })
     }
+
+    return Ticket
 }

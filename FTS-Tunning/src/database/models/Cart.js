@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = 'Cart';
     let cols = {
         id: {
@@ -23,11 +23,11 @@ module.exports = (sequelize, dataTypes) => {
     const Cart = sequelize.define(alias, cols, config); 
 
     Cart.associate = models => {
-        Cart.belongsTo((model.User), {
+        Cart.belongsTo((models.User), {
             as:"user",
             foreingKey: "user_id"
         })
-        Cart.belongsTo((model.Ticket), {
+        Cart.belongsTo((models.Ticket), {
             as: "ticket",
             foreingKey: "cart_id"
         })

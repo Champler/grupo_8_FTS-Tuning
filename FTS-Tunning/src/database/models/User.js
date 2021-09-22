@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = 'User';
     let cols = {
         id: {
@@ -8,44 +8,44 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         firstName: {
-            type: dataTypes.STRING(50),
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         lastName: {
-            type: dataTypes.STRING(50),
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         email: {
-            type: dataTypes.STRING(100),
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         password: {
-            type: dataTypes.STRING(70),
+            type: DataTypes.STRING(70),
             allowNull: false
         },
         rol: {
-            type: dataTypes.STRING(40),
+            type: DataTypes.STRING(40),
             allowNull: false
         },
         image: {
-            type: dataTypes.STRING(150),
+            type: DataTypes.STRING(150),
         },
         telephone: {
-            type: dataTypes.STRING(25),
+            type: DataTypes.STRING(25),
         }
     }
     let config = {
         tableName: "users",
-        timestamps: true,
+        timestamps: false
     }
     const User = sequelize.define(alias, cols, config); 
 
     User.associate = models => {
-        User.hasOne(models.Adress, {
+        User.hasMany(models.Address, {
             as: "address",
             foreignKey: "user_id"
         })
-        User.hasOne(models.Cart, {
+        User.hasMany(models.Cart, {
             as: "cart",
             foreignKey: "user_id"
         })

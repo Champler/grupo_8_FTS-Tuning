@@ -1,5 +1,3 @@
-const { production } = require("../config/config")
-
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product'
     let cols = {
@@ -62,10 +60,14 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "category_id"
         })
         Product.hasMany(models.Image, {
-            as: 'images'
+            as: 'images',
+            foreignKey: "product_id"
         })
-        Product.belongsToMany(models.CartDetail, {
-            as: 'cartDetail'
+        Product.hasMany(models.CartDetail, {
+            as: 'cartDetail',
+            foreignKey: 'product_id'
         })
     }
+
+    return Product
 }

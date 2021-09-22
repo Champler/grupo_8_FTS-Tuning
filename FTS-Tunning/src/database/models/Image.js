@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     let config = {
-        tableName = 'images',
-        timestamps = false
+        tableName: 'images',
+        timestamps: false
     }
 
     const Image = sequelize.define(alias, cols, config)
@@ -29,4 +29,6 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "product_id"
         })
     }
+
+    return Image
 }

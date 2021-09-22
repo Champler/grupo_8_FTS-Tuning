@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
 
     PaymentType.associate = models => {
         PaymentType.hasMany(models.Ticket, {
-            as: 'PaymentType'         
+            as: 'PaymentType',
+            foreignKey: 'payment_type_id'         
         })
     }
+
+    return PaymentType
 }
