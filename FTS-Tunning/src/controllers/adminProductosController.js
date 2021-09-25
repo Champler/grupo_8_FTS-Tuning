@@ -1,6 +1,9 @@
 const { products, writeJson } = require('../data/productsDB')
 const { users, writeUsersJson } = require('../data/usersDB')
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
+const { Op } = require("sequelize");
+
 
 module.exports = {
     cargaProducto: (req, res) => {
@@ -13,30 +16,34 @@ module.exports = {
         res.render('listaUsuarios', {title: "Usuarios", users, session: req.session ? req.session : ""})
     },
     productos: (req, res) => {
-        res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
+
+
+        db.Product.findAll()
+        .then(resultAll=>{
+            res.render('adminProducts', {resultAll, title:"Productos", session: req.session ? req.session : ""})
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
+       
     },
     create: (req,res)=> { 
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-
-            let lastID = 1
-            products.forEach(product =>{
-                if(product.id > lastID){
-                    lastID = product.id
-                }
-            })
             let arrayImgs = []
             if(req.files){
                 req.files.forEach(image => {
                     arrayImgs.push(image.filename)
                 })
             }
-            let { name, category, description, carModel, brand, year, color, discount, price, frontback, leftright} = req.body
-            let newProduct = {
-                id: lastID + 1,
+            let { name, description, carModel, brand, year, color, discount, price, frontback, leftright,stock} = req.body
+            console.log(req.body);
+            db.Product.create( {
+                id:db.Product.id,
                 name,
-                category,
+                category_id:2,
                 description,
                 img: arrayImgs.length > 0? arrayImgs: ["default-image.jpg"],
                 carModel,
@@ -46,12 +53,17 @@ module.exports = {
                 discount,
                 price,
                 frontback,
-                leftright
-            }
-
-            products.push(newProduct)
-            writeJson(products)
-            res.redirect('/adminProductos/productos')
+                leftright,
+                stock
+            })
+            .then(result => {
+                //console.log(req.files) //------------> descomentar para ver el producto a pushear
+                res.redirect('/adminProductos/productos')
+            })
+            .catch(error => {
+                res.send(error)
+            })
+          
 
         } else {
             res.render('cargaProductos', {
@@ -63,56 +75,54 @@ module.exports = {
         } 
     },
     editForm: (req, res) => {
-        let producto = products.find(product => {
-            return product.id === +req.params.id
-        })
+        let aProducto = req.params.id;
+            db.Product.findOne({
+                where : {
+                    id : aProducto
+                }
+            })
+       .then(producto =>{
         res.render('modificacionProductos', {
             producto, 
             title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
             session: req.session ? req.session : ""
         })
+       })
     },
     editProduct: (req, res) => {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright } = req.body;
-            let arrayImages = [];
-            if(req.files){
-                req.files.forEach(image => {
-                    arrayImages.push(image.filename)
-                })
-            }
-            products.forEach(product => {
-                if(product.id === +req.params.id){
-                    product.name = name,
-                    product.category = category,
-                    product.description = description,
-                    product.img = arrayImages.length > 0 ? arrayImages : ["default-image.jpg"],
-                    product.carModel = carModel,
-                    product.brand = brand,
-                    product.year = year,
-                    product.color = color,
-                    product.discount = discount,
-                    product.price = price,
-                    product.frontback = frontback,
-                    product.leftright = leftright
+            let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright,stock } = req.body;
+            let idProducto = req.params.id;
+            db.Product.update({
+                    name : name,
+                    category_id : 2,
+                    description : description,
+                    img : "aqui debe ir una immg",
+                    carModel : carModel,
+                    brand : brand,
+                    year : year,
+                    color : color,
+                    discount : discount,
+                    price : price,
+                    frontback : frontback,
+                    leftright : leftright,
+                    stock : stock
+                
+            },{
+            
+                where :{
+                    id: idProducto
                 }
-            });
-            writeJson(products)
-            res.redirect('/adminProductos/productos')
-        } else {
-            let producto = products.find(product => {
-                return product.id === +req.params.id
+            })
+            .then(result =>{
+                res.redirect('/adminProductos/productos')
+            })
+            .catch(error => {
+                console.log(error)
             })
             
-            res.render('modificacionProductos', {
-                producto,
-                title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
-                errors : errors.mapped(),
-                old : req.body,
-                session: req.session ? req.session : ""
-            })
         }
     },
     delete: (req, res) => {

@@ -13,11 +13,11 @@
         </div>
         <a href="/adminProductos/cargaProducto"><button>Agregar</button></a>
         <section class="admin-prods">
-            <% products.forEach(product => { %>
+            <% resultAll.forEach(product => { %>
                 <article class="admin-each-product">
                     <div>
                         <a href="/Productos/<%- product.id %>">
-                            <img src="/images/productos/<%- product.img[0] %>" alt="">
+                            <img src="/images/productos/<%- product.img %>" alt="">
                         </a>
                         <a href="/Productos/<%- product.id %>">
                             <h3><%= product.name %></h3>
