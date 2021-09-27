@@ -25,7 +25,7 @@ module.exports = {
         
         if(errors.isEmpty()){
             
-            db.Users.findOne({
+            db.User.findOne({
                 where:{
                     email: req.body.email
                 }
@@ -76,19 +76,17 @@ module.exports = {
     
             db.User.create(
                 {
-                    id: lastID +1,
                     firstName: name,
                     lastName,
                     email, 
-                    password1: bcrypt.hashSync(password1, 10),
+                    password: bcrypt.hashSync(password1, 10),
                     rol: 'user',
                     image: "default-image.png",
-                    address: "",
-                    PisoDpto: ''
+                    telephone: ''
                 }
             )
                 .then(()=>{
-                    res.redirect('/user/login')
+                    res.redirect('/users/login')
                 })
                 .catch(err=> console.log(err))
 

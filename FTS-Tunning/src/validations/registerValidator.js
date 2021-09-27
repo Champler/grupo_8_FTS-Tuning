@@ -12,14 +12,14 @@ check("email")
 .withMessage("debes ingresar un email valido"),
 
  body('email').custom(value => {
-    db.users.findOne({
+    return db.User.findOne({
         where : {
             email: value
         }
     })
     .then(user => {
         if(user){
-            return Promise.reject ("El email ya esta registrado")
+            return Promise.reject("El email ya esta registrado")
         }
     })
     }),
