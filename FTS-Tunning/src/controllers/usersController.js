@@ -74,7 +74,7 @@ module.exports = {
                 password1
             } = req.body
     
-            db.Users.create(
+            db.User.create(
                 {
                     id: lastID +1,
                     firstName: name,
