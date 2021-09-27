@@ -1,16 +1,17 @@
 
-const {  validationResult}= require("express-validator")
-
-
 let { users, writeUsersJson} = require('../data/usersDB.js')
+const {  validationResult}= require("express-validator")
 
 const bcrypt = require('bcryptjs')
 const session = require("express-session")
+const db = require('../database/models')
 
 
 module.exports = {
     historial: (req, res) => {
-        res.render('users/historialCompras', {title: "Historial", session: req.session ? req.session : ""})
+        res.render('users/historialCompras', {
+            title: "Historial", 
+            session: req.session ? req.session : ""})
     },
     login: (req, res) => {
         res.render('users/Login', {title: "Login", session: req.session ? req.session : ""})
@@ -23,22 +24,30 @@ module.exports = {
         let errors = validationResult(req)
         
         if(errors.isEmpty()){
-            let user = users.find(user => user.email === req.body.email);
-            req.session.user = {
-             id: user.id,
-             userName: user.firstName + " " + user.lastName,
-             avatar: user.image,
-             rol: user.rol
-         }
-         /** creamos la cookie */
-         if(req.body.remember){
-            res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
-         }
-         /------------------/
-         /** guardamos el usuario en locals */
-         res.locals.user = req.session.user
-         /**redireccionamos al home si todo esta ok */
-         res.redirect('/')
+            
+            db.Users.findOne({
+                where:{
+                    email: req.body.email
+                }
+            })
+            .then(user=>{
+                req.session.user = {
+                    id: user.id,
+                    userName: user.firstName + " " + user.lastName,
+                    avatar: user.image,
+                    rol: user.rol
+                }
+                /** creamos la cookie */
+                if(req.body.remember){
+                   res.cookie('cookieFTS', req.session.user, {maxAge: 1000*60})
+                }
+                /------------------/
+                /** guardamos el usuario en locals */
+                res.locals.user = req.session.user
+                /**redireccionamos al home si todo esta ok */
+                res.redirect('/')
+            })
+            .catch(err=> console.log(err))
          
          /**sino -> */
         }else{
@@ -58,15 +67,6 @@ module.exports = {
         let errors = validationResult(req)
 
         if(errors.isEmpty()){
-
-           let lastID = 0
-
-            users.forEach(user => {
-                if(user.id > lastID){
-                    lastID = user.id
-                }
-            });
-
             let{
                 name,
                 lastName, 
@@ -74,23 +74,24 @@ module.exports = {
                 password1
             } = req.body
     
-            let newUser = {
-                id: lastID +1,
-                firstName: name,
-                lastName,
-                email, 
-                password1: bcrypt.hashSync(password1, 10),
-                rol: 'user',
-                image: "default-image.png",
-                address: "",
-                PisoDpto: ''
-            }
-    
-            users.push(newUser)
-    
-            writeUsersJson(users)
-            
-            res.redirect('/users/login')
+            db.Users.create(
+                {
+                    id: lastID +1,
+                    firstName: name,
+                    lastName,
+                    email, 
+                    password1: bcrypt.hashSync(password1, 10),
+                    rol: 'user',
+                    image: "default-image.png",
+                    address: "",
+                    PisoDpto: ''
+                }
+            )
+                .then(()=>{
+                    res.redirect('/user/login')
+                })
+                .catch(err=> console.log(err))
+
         }else{
             res.render('users/registro', {
                 title: "Registro",
