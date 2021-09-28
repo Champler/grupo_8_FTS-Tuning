@@ -32,6 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         telephone: {
             type: DataTypes.STRING(25),
+        },
+        image: {
+            type: DataTypes.STRING(100)
         }
     }
     let config = {
@@ -42,12 +45,12 @@ module.exports = (sequelize, DataTypes) => {
 
     User.associate = models => {
         User.hasMany(models.Address, {
-            as: "address",
+            as: "addresses",
             foreignKey: "user_id"
         })
         User.hasMany(models.Cart, {
             as: "cart",
-            foreignKey: "user_id"
+            foreignKey: "userId"
         })
     }
     return User
