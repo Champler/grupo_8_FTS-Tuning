@@ -125,16 +125,14 @@ module.exports = {
             
         }
     },
-    delete: (req, res) => {
-        products.forEach(product => {
-            if(product.id === +req.params.id){
-                let productoAEliminar = products.indexOf(product)
-                products.splice(productoAEliminar, 1)
-                /* products.splice(products.indexOf(product), 1) */
+    delete:function(req,res){
+        let idProducto = req.params.id;
+        db.Product.destroy({
+            where : {
+                id : idProducto
             }
         })
-        writeJson(products)
-        res.redirect('/adminProductos/productos')
+        res.redirect("/")
     },
     deleteUser:(req,res) =>{
         users.forEach(user => {
