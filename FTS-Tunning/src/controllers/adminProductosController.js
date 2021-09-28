@@ -125,7 +125,7 @@ module.exports = {
         })
         writeJson(products)
         res.redirect('/adminProductos/productos')
-    },
+     },
     deleteUser:(req,res) =>{
         users.forEach(user => {
             if(user.id === +req.params.id){
