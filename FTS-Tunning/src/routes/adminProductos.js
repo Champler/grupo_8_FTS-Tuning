@@ -11,8 +11,6 @@ let productsValidator = require('../validations/productsValidator')
 router.get('/cargaProducto', userCreatedCheck, userAdminCheck,controller.cargaProducto)
 router.post('/cargaProducto',upload.array('img'), productsValidator, controller.create)
 
-router.get('/modificacionProducto', userAdminCheck,controller.modificacionProducto)
-
 router.get('/users', userCreatedCheck, userAdminCheck,controller.usuarios);
 router.get('/productos', userCreatedCheck, userAdminCheck,controller.productos);
 

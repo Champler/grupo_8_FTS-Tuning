@@ -11,24 +11,26 @@ module.exports = {
         .then(categories => {
             res.render('cargaProductos', {categories, title: "Carga de Productos", session: req.session ? req.session : ""});
         })    
-    },
-    modificacionProducto: (req, res) => {
-        res.render('modificacionProductos', {title: "Modificación de Productos", session: req.session ? req.session : ""});
-    },
+    },    
     usuarios: (req, res) => {
-        res.render('listaUsuarios', {title: "Usuarios", users, session: req.session ? req.session : ""})
+        db.User.findAll()
+        .then(users => { 
+            res.render('listaUsuarios', {title: "Usuarios", users, session: req.session ? req.session : ""})
+        })
     },
+
     productos: (req, res) => {
-        db.Product.findAll()
-        .then(resultAll=>{
-            res.render('adminProducts', {resultAll, title:"Productos", session: req.session ? req.session : ""})
+        db.Product.findAll({
+            include: [{association: 'images'}]
+        })
+        .then(products=>{
+            res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
         })
         .catch(error => {
             console.log(error)
         })
-
-       
     },
+
     create: (req,res)=> { 
         let errors = validationResult(req);
         if (errors.isEmpty()) {
@@ -61,22 +63,22 @@ module.exports = {
                         }
                     })
                     db.Image.bulkCreate(images)
-                    .then(()=> res.redirect('/admin/products'))
+                    .then(()=> res.redirect('/adminProductos/productos'))
                     .catch(err => console.log(err))                    
                 }else {
                     db.ProductImages.create({
                         image: "default-image.png",
                         productId: product.id
                     })
-                    .then(()=> res.redirect('/admin/products'))
+                    .then(()=> res.redirect('/adminProductos/productos'))
                     .catch(err => console.log(err))
                 }
             })
             .catch(error => {
                 res.send(error)
             })
-          
-
+            
+            
         } else {
             res.render('cargaProductos', {
                 title: "Carga de Productos",
@@ -87,48 +89,45 @@ module.exports = {
         } 
     },
     editForm: (req, res) => {
-        let aProducto = req.params.id;
-            db.Product.findOne({
-                where : {
-                    id : aProducto
-                }
-            })
-       .then(producto =>{
-        res.render('modificacionProductos', {
-            producto, 
-            title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
-            session: req.session ? req.session : ""
+        const product = db.Product.findOne({
+            where : {
+                id : req.params.id
+            }
         })
-       })
+        const category = db.Category.findAll()
+        Promise.all([product, category])
+        .then(([producto, categories]) =>{
+            res.render('modificacionProductos', {
+                producto, 
+                categories,
+                title: "Modificación del Producto :" + producto.name + " | FTS-Tuning",
+                session: req.session ? req.session : ""
+            })
+        })
     },
     editProduct: (req, res) => {
         let errors = validationResult(req);
-
+        
         if (errors.isEmpty()) {
-            let { name, category, description, /* img, */ carModel, brand, year, color, discount, price, frontback, leftright,stock } = req.body;
-            let idProducto = req.params.id;
-            db.Product.update({
-                    name : name,
-                    category_id : 2,
-                    description : description,
-                    img : "aqui debe ir una immg",
-                    carModel : carModel,
-                    brand : brand,
-                    year : year,
-                    color : color,
-                    discount : discount,
-                    price : price,
-                    frontback : frontback,
-                    leftright : leftright,
-                    stock : stock
-                
-            },{
+            let { name, category, description,  carModel, brand, year, color, discount, price,stock } = req.body;
             
+            db.Product.update({
+                name : name,
+                category_id : category,
+                description : description,
+                carModel : carModel,
+                brand : brand,
+                year : year,
+                color : color,
+                discount : discount,
+                price : price,
+                stock : stock      
+            },{           
                 where :{
-                    id: idProducto
+                    id: +req.params.id
                 }
             })
-            .then(result =>{
+            .then(()=>{
                 res.redirect('/adminProductos/productos')
             })
             .catch(error => {
@@ -138,31 +137,35 @@ module.exports = {
         }
     },
     delete:function(req,res){
-        let idProducto = req.params.id;
         db.Product.destroy({
             where : {
-                id : idProducto
+                id : +req.params.id
             }
         })
-        res.redirect("/")
+        res.redirect("/adminProductos/productos")
     },
     deleteUser:(req,res) =>{
-        users.forEach(user => {
-            if(user.id === +req.params.id){
-                let userAEliminar = users.indexOf(user)
-                users.splice(userAEliminar, 1) 
+        db.User.destroy({
+            where : {
+                id : +req.params.id
             }
         })
-        writeUsersJson(users)
         res.redirect('/adminProductos/users')
     },
     editUser:(req,res) =>{
-        users.forEach(user => {
-            if(user.id === +req.params.id){
-                user.rol = req.body.rol
+        db.User.update({
+            rol: req.body.rol    
+        },
+        {           
+            where :{
+                id: +req.params.id
             }
-        });
-        writeUsersJson(users)
-        res.redirect('/adminProductos/users')
+        })
+        .then(()=>{
+            res.redirect('/adminProductos/users')
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 }

@@ -13,9 +13,8 @@
                 <div class="category-fcm">
                     <label for="category" class="label-fcm">Categoría:</label>
                     <select name="category" id="" class="select-fcm border-fcm">
-                        <% let categories = ["Freno","Neumático","Caño de Escape","Motor","Volante","Interior"] %>
                         <% categories.forEach(category => { %>
-                            <option value=<%= category %> <%= locals.old && old.category == category ? "selected" : producto.category === category ? "selected" : "" %> ><%= category %></option>
+                            <option value=<%= category.id %> <%= locals.old && old.category == category ? "selected" : producto.category_id === category.id ? "selected" : "" %>><%= category.name %></option>
                         <% }); %>
                     </select>
                 </div>
@@ -80,24 +79,6 @@
                         <% let colors = ["no","Blanco","Negro","Azul","Rojo","Verde","Plateado"] %> 
                         <% colors.forEach(color => { %>
                             <option value=<%= color %>  <%= locals.old && old.color == color ? "selected" : producto.color === color ? "selected" : "" %>><%= color %></option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div>
-                    <label for="frontback" class="label-fcm">Del/Tras/No:</label>
-                    <select name="frontback" id="" class="border-fcm">
-                        <% let frontbacks = ["no","Delantero","Trasero"] %> 
-                        <% frontbacks.forEach(frontback => { %>
-                            <option value=<%= frontback %>  <%= locals.old && old.frontback == frontback ? "selected" : producto.frontback === frontback ? "selected" : "" %>><%= frontback %></option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div>
-                    <label for="leftright" class="label-fcm">Izq/Der/No:</label>
-                    <select name="leftright" id="" class="border-fcm">
-                        <% let leftrights = ["no","Izquierdo","Derecho"] %> 
-                        <% leftrights.forEach(leftright => { %>
-                            <option value=<%= leftright %>  <%= locals.old && old.leftright == leftright ? "selected" : producto.leftright === leftright ? "selected" : "" %>><%= leftright %> </option>
                         <% }) %>
                     </select>
                 </div>
