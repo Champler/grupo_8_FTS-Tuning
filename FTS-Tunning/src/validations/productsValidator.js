@@ -1,7 +1,7 @@
 const { check } = require('express-validator');
 
 module.exports = [
-    check('name')
+    /* check('name')
         .notEmpty().withMessage("Este campo es obligatorio").bail()
         .isLength({ min: 4 }).withMessage("El nombre del producto debe tener como mínimo 4 caracteres"),
    
@@ -18,7 +18,7 @@ module.exports = [
 
     check('description')
         .notEmpty().withMessage("Debes agregar una descripción del producto").bail()
-        .isLength({ min: 10 }).withMessage("La descripción debe tener como mínimo 10 caracteres")
+        .isLength({ min: 10 }).withMessage("La descripción debe tener como mínimo 10 caracteres") */
     
     
 ]

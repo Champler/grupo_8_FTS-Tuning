@@ -105,7 +105,6 @@ module.exports = {
     },
     userEdit: (req,res) =>{
         let user = users.find(user=> user.id === req.session.user.id)
-    
         user.id = user.id
         user.firstName = req.body.firstName,
         user.lastName = req.body.lastName,
