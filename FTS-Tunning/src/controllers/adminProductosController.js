@@ -24,6 +24,7 @@ module.exports = {
             include: [{association: 'images'}]
         })
         .then(products=>{
+            /* res.send(products) */
             res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
         })
         .catch(error => {
@@ -66,9 +67,9 @@ module.exports = {
                     .then(()=> res.redirect('/adminProductos/productos'))
                     .catch(err => console.log(err))                    
                 }else {
-                    db.ProductImages.create({
-                        image: "default-image.png",
-                        productId: product.id
+                    db.Image.create({
+                        name: "default-image.png",
+                        product_id: product.id
                     })
                     .then(()=> res.redirect('/adminProductos/productos'))
                     .catch(err => console.log(err))

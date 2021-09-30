@@ -19,7 +19,7 @@ router.get('/historial', userCreatedCheck,controller.historial)
 
 
 router.get('/login', sessionExists,login)
-router.post('/login',/* loginValidator, */processLogin )
+router.post('/login',/* loginValidator */processLogin )
 
 router.get('/register', sessionExists,register)
 router.post('/register', registerValidator, proccesRegister)

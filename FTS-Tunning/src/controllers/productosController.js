@@ -1,7 +1,6 @@
-//const { products } = require('../data/productsDB')
-//let db = require('../data/productsDataBase')
+const { products } = require('../data/productsDB');
 const db = require('../database/models');
-const { Op } = require("sequelize");
+
 
 module.exports = {
     producto: (req, res) => {
@@ -34,23 +33,28 @@ module.exports = {
         res.render('Carrito', {title: "Carrito", session: req.session ? req.session : ""})
     },
     categoria: (req,res) =>{
-        let categoria = req.params.categoria.trim()
-        let filtradosPorCategoria = []
-        db.Product.findAll()
-        .then(products => {
-           /*  products.forEach(producto =>{
-                if(producto.category.replace(/ /g, "").toLowerCase() === categoria.toLowerCase()){
+        const category = db.Category.findOne({
+            where: {
+                name: req.params.categoria.trim()
+            }
+        })
+        const products = db.Product.findAll({
+            include: [{association: "category"}, {association: "images"}]
+        })
+        Promise.all([category, products])
+        .then(([category, products] )=> {
+            let filtradosPorCategoria = []
+            products.forEach(producto =>{
+                if(producto.category_id === category.id){
                     filtradosPorCategoria.push(producto)
                 }
-            }) */
+            })
             if(filtradosPorCategoria.length > 0){
-                res.render('Productos', {products: filtradosPorCategoria, title:"Categoría", session: req.session ? req.session : ""})
+                res.render('Productos', {products: filtradosPorCategoria,n,category,title:"Categoría", session: req.session ? req.session : ""})
             }else {
-                res.render('Productos', {products, title:"Categoria", session: req.session ? req.session : ""})
+                res.render('Productos', {products, title:"Categoria",category,session: req.session ? req.session : ""})
             }   
-
         })
-
     }
     
 }
