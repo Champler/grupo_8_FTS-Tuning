@@ -8,12 +8,14 @@ module.exports = {
     },
     busqueda: (req, res) => {
         let busqueda = req.query.busqueda.trim()
-        let resultados = []
-        products.filter(product => {
-            if (product.name.includes(busqueda)){
-                resultados.push(product)
-            }
+        db.Product.findAll({
+            where: {
+                name: busqueda
+            },
+            include: [{association: "images"}]
         })
-        res.render('Productos', {title: busqueda,products: resultados, session: req.session ? req.session : ""})
+        .then(products => {
+            res.render('Productos',{title: busqueda,n:false,products, session: req.session ? req.session : ""})
+        })
     }
 }

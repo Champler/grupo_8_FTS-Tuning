@@ -30,12 +30,22 @@ module.exports = (sequelize, DataTypes) => {
         image: {
             type: DataTypes.STRING(150),
         },
-        telephone: {
-            type: DataTypes.STRING(25),
+        address: {
+            type: DataTypes.STRING(70),
+            allowNull: true
         },
-        image: {
-            type: DataTypes.STRING(100)
-        }
+        cp: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        city: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        province: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
     }
     let config = {
         tableName: "users",
@@ -44,10 +54,6 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(alias, cols, config); 
 
     User.associate = models => {
-        User.hasMany(models.Address, {
-            as: "addresses",
-            foreignKey: "user_id"
-        })
         User.hasMany(models.Cart, {
             as: "cart",
             foreignKey: "userId"

@@ -46,11 +46,10 @@ module.exports = {
                 }
             })
             if(filtradosPorCategoria.length > 0){
-                res.render('Productos', {products: filtradosPorCategoria,n,category,title:"Categoría", session: req.session ? req.session : ""})
+                res.render('Productos', {products: filtradosPorCategoria,n:true,category,title:"Categoría", session: req.session ? req.session : ""})
             }else {
-                res.render('Productos', {products, title:"Categoria",category,session: req.session ? req.session : ""})
+                res.render('Productos', {products,n:false, title:"Categoria",category,session: req.session ? req.session : ""})
             }   
         })
     }
-    
 }

@@ -7,35 +7,19 @@ module.exports = [
     .isEmail()
     .withMessage('Debes ingresar un email válido'),
 
-    body('email').custom(value => {
-        db.User.findOne({
-            where:{
-                email: value
-            }})
-            .then(user => {
-                if(user !== undefined){
-                    return true
-                   }else{
-                       return false
-                   }
-            })
-    })
-    .withMessage('El email no coincide con un usuario ya registrado'),
-
-    check('pass')
-    .notEmpty()
-    .withMessage('Debes escribir tu contraseña'),
-
-    body('pass')
-    .custom((value, {req}) =>{
-        db.User.findOne({
-            where:{
-                email: req.body.email
+    body("email").custom((value,  {req}) => {
+        return db.User.findOne({ where: { email: value } })
+          .then((user) => {
+            if (!user || !bcrypt.compareSync(req.body.password, user.password)){
+              return Promise.reject()
             }
-        })
-        .then(user => {
-            return bcrypt.compareSync(value, user.password)
-        })
-        })
-   .withMessage('La contraseña no coincide con el usuario')
+    
+            if(user.active === 0){
+              return Promise.reject()
+            }
+          })
+          .catch(() => {
+            return Promise.reject("Credenciales invalidas!");
+          });
+      })
 ]

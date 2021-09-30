@@ -1,7 +1,5 @@
-
 let { users, writeUsersJson} = require('../data/usersDB.js')
 const {  validationResult}= require("express-validator")
-
 const bcrypt = require('bcryptjs')
 const session = require("express-session")
 const db = require('../database/models')
@@ -58,14 +56,9 @@ module.exports = {
             })
         }
 
-    },
-
-   
-    
+    },   
     proccesRegister: (req,res) => {
-
         let errors = validationResult(req)
-
         if(errors.isEmpty()){
             let{
                 name,
@@ -82,7 +75,10 @@ module.exports = {
                     password: bcrypt.hashSync(password1, 10),
                     rol: 'user',
                     image: "default-image.png",
-                    telephone: ''
+                    province: '',
+                    address: '',
+                    cp: '',
+                    city: ''
                 }
             )
                 .then(()=>{
@@ -100,30 +96,39 @@ module.exports = {
         }
     },
     accountEdit: (req, res) => {
-        let user = users.find(user=> user.id === req.session.user.id)
-        res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : "", user})
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(user => {
+            res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : "", user})
+        })
     },
     userEdit: (req,res) =>{
-        let user = users.find(user=> user.id === req.session.user.id)
-        user.id = user.id
-        user.firstName = req.body.firstName,
-        user.lastName = req.body.lastName,
-        user.address = req.body.address,
-        user.cp = req.body.cp,
-        user.provincia = req.body.provincia,
-        user.localidad = req.body.localidad
-                    
-        writeUsersJson(users)
-    
-        req.session.user = {
-            id: user.id,
-            userName: user.firstName + " " + user.lastName,
-            avatar: user.image,
-            rol: user.rol
-        }
-    
-        res.locals.user = req.session.user
-        res.redirect('/')
+        db.User.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            address: req.body.address,
+            cp: req.body.cp,
+            province: req.body.provincia,
+            city: req.body.localidad,
+        },{
+            where:{
+                id: +req.session.user.id
+            }
+        })
+        .then(user => {
+            req.session.user = {
+                id: user.id,
+                userName: user.firstName + " " + user.lastName,
+                avatar: user.image,
+                rol: user.rol
+            }
+            res.redirect('/users/login')
+        })
+        .catch(error =>res.send(error))
+        
     },
     logout: (req, res) => {
         req.session.destroy();

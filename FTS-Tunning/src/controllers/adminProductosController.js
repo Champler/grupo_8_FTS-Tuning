@@ -24,7 +24,6 @@ module.exports = {
             include: [{association: 'images'}]
         })
         .then(products=>{
-            /* res.send(products) */
             res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
         })
         .catch(error => {
