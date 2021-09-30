@@ -9,7 +9,12 @@
     <% }%>
     <main class="product-main">
         <div class="titular">
-            <h3>Motores</h3>
+            <% if (n) { %>
+                <h3><%- category.name %> </h3>
+            <% }else { %> 
+                <h3>Todos nuestros productos</h3>
+            <% } %>
+             
             <div class="tit-des">
                 <p>A cambiar en futuro con bases de datos relacionales</p>
             </div>
@@ -35,7 +40,7 @@
                 <% products.forEach(product => { %>
                     <article class="each-product">
                         <div>
-                            <img src="/images/productos/<%- product.img[0] %>" alt="">
+                            <img src="/images/productos/<%- product.images[0].name %>" alt="">
                             <h5><%= product.name %></h5>
                             <p class="prod-prod-price"><%= product.price %></p>
                             <a href="/productos/<%= product.id %>"><button>Ver producto</button></a>
