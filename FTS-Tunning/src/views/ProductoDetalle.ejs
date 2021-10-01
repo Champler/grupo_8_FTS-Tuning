@@ -13,25 +13,25 @@
     <!-----------------------------------        Deltalle del Producto       ------------------------------------------->
     <main class="main-product">
         
-        <h1 class="title-product"><%= producto.name %>  </h1>
+        <h1 class="title-product"><%= product.name %>  </h1>
         <section class="destacado">
             <article class="photo-n-price">
                 <div class="images-container">
                     <div class="thumbnailImages">
-                        <% producto.images.forEach(image => { %>
+                        <% product.images.forEach(image => { %>
                             <img src="/images/productos/<%- image.name%>" alt="Imagen de producto" class="smallImg" onclick="myFunction(this);">
                         <% }) %>
                     </div>
                     <div class="mainImage">
-                        <img src="/images/productos/<%= producto.images[0].name%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
+                        <img src="/images/productos/<%= product.images[0].name%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
                     </div>
                 </div>
 
                 <div class="price-purchase">
-                    <h3 class="the-price">Precio: <%= producto.price %></h3>
-                    <p class="fees">12 cuotas de <%= Math.round(producto.price / 12 * 100) / 100 %></p>
-                    <p class="fees">18 cuotas de <%= Math.round(producto.price / 18 * 100) / 100 %></p>
-                    <p class="fees">24 cuotas de <%= Math.round(producto.price / 24 * 100) / 100 %></p>
+                    <h3 class="the-price">Precio: <%= product.price %></h3>
+                    <p class="fees">12 cuotas de <%= Math.round(product.price / 12 * 100) / 100 %></p>
+                    <p class="fees">18 cuotas de <%= Math.round(product.price / 18 * 100) / 100 %></p>
+                    <p class="fees">24 cuotas de <%= Math.round(product.price / 24 * 100) / 100 %></p>
                     <div class="credit">
                         <i class="fab fa-cc-visa credit"></i>
                         <i class="fab fa-cc-mastercard credit"></i>
@@ -51,15 +51,15 @@
                 <p class="paragraph"><%- parrafo %> </p>
             <% }) %>                                            <!-- Muestra los párrafos separdos previamente con let texto = producto.description.split('\r\n') -->
             <div class="product-details">
-                <img class="img-product-2" src="/images/productos/<%= producto.images[0].name %>" alt="Escape Chevrolet Corsa 2">
+                <img class="img-product-2" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
-                    <li>Nombre:  <%= producto.name %></li>
-                    <li>Marca:  <%= producto.brand %></li>
-                    <li>Modelo: <%- producto.carModel %></li>
-                    <li>Año: <%- producto.year %></li>
-                    <% if (producto.color != "no") { %>
-                        <li>Color: <%= producto.color %> </li>
+                    <li>Nombre:  <%= product.name %></li>
+                    <li>Marca:  <%= product.brand %></li>
+                    <li>Modelo: <%- product.carModel %></li>
+                    <li>Año: <%- product.year %></li>
+                    <% if (product.color != "no") { %>
+                        <li>Color: <%= product.color %> </li>
                     <% } %>
                     
                 </ul>
@@ -72,7 +72,7 @@
     </main>
 
     <!-- /* Slider */ -->  
-    
+    <%- include('partials/slider.ejs') %>
     <!-----------------------------------           Footer            ------------------------------------------->
     <%- include('partials/footer.ejs')  %> 
 

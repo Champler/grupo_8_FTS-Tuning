@@ -11,28 +11,24 @@ module.exports = {
         .catch(err => console.log(err))
     },
     detalle: (req, res) => {                             //  Fabio
-        const producto = db.Product.findByPk(req.params.idProducto, {
+        const product = db.Product.findByPk(req.params.idProducto, {
             include: [{association: "category"}, {association: "images"}]
         })
-        /* const slider = db.Product.findAll({
+        const slider = db.Product.findAll({
             include: [{association: "category"}, {association: "images"}]
         })
-        Promise.all([producto,slider])
-        .then((producto, slider) => { */
-        .then((producto) => { 
-        
-            if (producto !== undefined){ 
-                //let sliderProducts = slider;    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
-                let texto = producto.description.split('\r\n')
-                console.log(">>>  " + texto + "   <<<")
+        Promise.all([product,slider])
+        .then(([product, slider]) => {
+            if (product !== null){ 
+                let sliderProducts = slider;    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
+                let texto = product.description.split('\r\n')
                 res.render('ProductoDetalle', {
                     sliderTitle : "También te pueden interesar",
-                    //sliderProducts,
-                    producto,
+                    sliderProducts,
+                    product,
                     texto,
                     n: false,
-                    pk: req.params.idProducto,
-                    title: producto.name + " | FTS-Tuning",
+                    title: product.name + " | FTS-Tuning",
                     session: req.session ? req.session : ""
                 }) 
             }else{
