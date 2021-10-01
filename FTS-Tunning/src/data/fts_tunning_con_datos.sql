@@ -1,3 +1,6 @@
+CREATE DATABASE  IF NOT EXISTS `fts_tunning_db` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `fts_tunning_db`;
+
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
 -- Host: localhost    Database: fts_tunning_db
