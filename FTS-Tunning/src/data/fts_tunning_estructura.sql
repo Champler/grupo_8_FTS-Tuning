@@ -16,35 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `addresses`
---
-
-DROP TABLE IF EXISTS `addresses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `addresses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `address` varchar(70) DEFAULT NULL,
-  `floor_dpt` int(11) DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
-  `province` varchar(100) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `addresses_FK` (`user_id`),
-  CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `addresses`
---
-
-LOCK TABLES `addresses` WRITE;
-/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cart`
 --
 
@@ -138,7 +109,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`id`),
   KEY `images_FK` (`product_id`),
   CONSTRAINT `images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +189,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_FK` (`category_id`),
   CONSTRAINT `products_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -277,10 +248,13 @@ CREATE TABLE `users` (
   `password` varchar(70) NOT NULL,
   `rol` varchar(40) NOT NULL,
   `image` varchar(150) DEFAULT NULL,
-  `telephone` varchar(25) DEFAULT NULL,
+  `province` varchar(100) DEFAULT NULL,
+  `address` varchar(70) DEFAULT NULL,
+  `cp` int(11) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_un` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,7 +263,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'Tobias','Racedo','tobaracedo@gmail.com','$2a$10$XuHWb17bnxKxZloTKf/h9OrDXX4N6a2jjcOWMwk17olWg/lK7GIDC','admin','default-image.png','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,4 +279,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30 11:17:16
+-- Dump completed on 2021-10-01 17:07:10
