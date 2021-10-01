@@ -1,5 +1,3 @@
-const { products, writeJson } = require('../data/productsDB')
-const { users, writeUsersJson } = require('../data/usersDB')
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const { Op } = require("sequelize");
@@ -41,7 +39,6 @@ module.exports = {
                 })
             }
             let { name, description, carModel, brand, year, color, discount, price, stock, category} = req.body
-            console.log(req.body);
             db.Product.create( {
                 name,
                 category_id: category,
@@ -107,33 +104,84 @@ module.exports = {
     },
     editProduct: (req, res) => {
         let errors = validationResult(req);
-        
+        let images;
         if (errors.isEmpty()) {
-            let { name, category, description,  carModel, brand, year, color, discount, price,stock } = req.body;
-            
-            db.Product.update({
-                name : name,
-                category_id : category,
-                description : description,
-                carModel : carModel,
-                brand : brand,
-                year : year,
-                color : color,
-                discount : discount,
-                price : price,
-                stock : stock      
-            },{           
-                where :{
-                    id: +req.params.id
-                }
+              db.Image.destroy({
+                  where: {
+                    product_id: +req.params.id,
+                  },
+                })
+                .then((result) => {
+                    let { name, category, description,  carModel, brand, year, color, discount, price,stock } = req.body; 
+                    db.Product
+                    .update(
+                      {
+                        name : name,
+                        category_id : category,
+                        description : description,
+                        carModel : carModel,
+                        brand : brand,
+                        year : year,
+                        color : color,
+                        discount : discount,
+                        price : price,
+                        stock : stock 
+                      },
+                      {
+                        where: {
+                          id: +req.params.id,
+                        },
+                      }
+                    )
+                    .then((productUpdated) => {
+                      if (req.files.length > 0) {
+                        let images = [];
+                        let nameImages = req.files.map((image) => image.filename);
+                        nameImages.forEach((img) => {
+                          let newImage = {
+                            product_id: +req.params.id,
+                            name: img
+                          };
+                          images.push(newImage);
+                        });
+                        db.Image
+                          .bulkCreate(images)
+                          .then((result) => {
+                            res.redirect(`/adminProductos/productos`);
+                          });
+                      } else {
+                        db.Image.findAll({
+                            where: {
+                              product_id: req.params.id,
+                            },
+                          })
+                          .then((images) => {
+                            if (images == 0) {
+                              db.Image.create({
+                                product_id: req.params.id,
+                                name: "default-image.png",
+                              });
+                            }
+                            res.redirect(`/adminProductos/productos`);
+                          });
+                      }
+                    });
+                });
+            }else {
+          db.products
+            .findByPk(req.params.id, {
+              include: [
+                { association: "category" },
+                { association: "images" },
+              ],
             })
-            .then(()=>{
-                res.redirect('/adminProductos/productos')
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            
+            .then((product) => {
+              res.render("productEdit", {
+                errors: errors.mapped(),
+                old: req.body,
+                product,
+              });
+            });
         }
     },
     delete:function(req,res){

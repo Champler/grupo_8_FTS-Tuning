@@ -1,4 +1,3 @@
-let { users, writeUsersJson} = require('../data/usersDB.js')
 const {  validationResult}= require("express-validator")
 const bcrypt = require('bcryptjs')
 const session = require("express-session")
@@ -32,7 +31,6 @@ module.exports = {
                 req.session.user = {
                     id: user.id,
                     userName: user.firstName + " " + user.lastName,
-                    avatar: user.image,
                     rol: user.rol
                 }
                 /** creamos la cookie */
@@ -102,7 +100,7 @@ module.exports = {
             }
         })
         .then(user => {
-            res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session ? req.session : "", user})
+            res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session, user})
         })
     },
     userEdit: (req,res) =>{
@@ -113,18 +111,14 @@ module.exports = {
             cp: req.body.cp,
             province: req.body.provincia,
             city: req.body.localidad,
+            image: req.file && req.file.filename
         },{
             where:{
                 id: +req.session.user.id
             }
         })
         .then(user => {
-            req.session.user = {
-                id: user.id,
-                userName: user.firstName + " " + user.lastName,
-                avatar: user.image,
-                rol: user.rol
-            }
+            req.session.destroy();
             res.redirect('/users/login')
         })
         .catch(error =>res.send(error))

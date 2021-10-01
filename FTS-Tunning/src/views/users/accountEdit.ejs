@@ -14,7 +14,7 @@
 
   <div class="mainEdit" >
    <!-- PERFIL PARA AGREGAR DATOS -->
-    <form action="/users/profile?_method=PUT" method="POST">
+    <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="formulario">
         <!-- 1.Datos Personales -->
         <div class="datos-Personales-Edit">
@@ -49,10 +49,10 @@
             <input type="number" placeholder="Codigo Postal" name="cp" id="Numero"value="<%- user.cp %>">
       <br>
             <label for="name"><b>Provincia</b></label>
-            <input type="text" placeholder="Provincia" name="provincia" id="provincia" value="<%- user.provincia %>">
+            <input type="text" placeholder="Provincia" name="provincia" id="provincia" value="<%- user.province %>">
         <br>
             <label for="name"><b>Localidad</b></label>
-            <input type="text" placeholder="Localidad" name="localidad" id="name" value="<%- user.localidad %>">
+            <input type="text" placeholder="Localidad" name="localidad" id="name" value="<%- user.city %>">
             <hr>
           </div>
         </div>
