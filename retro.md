@@ -115,3 +115,30 @@
 ## Dejar de hacer
 
 - Administrar mal el tiempo
+
+# QUINTO SPRINT (17/9- 1/10)
+
+## Seguir haciendo
+
+- Entregar y todo a tiempo
+- Adelantar trabajo
+- Retrospectivas
+- Empezar ni bien nos las los sprints
+- Subdividir las tareas complejas en checklists, para hacerla mas llevadera
+
+## Hacer mas
+- Comunicarnos fuera de las reuniones por wpp
+- cumplir con las fechas de tarjetas 
+- Reuniones mas seguido
+- Hacer mas commits mas seguidos
+## Empezar a hacer
+
+- Reuniones fuera de sprint para ver el contenido de PG
+-
+## Hacer menos
+
+
+## Dejar de hacer
+
+- No confiarse con los plazos
+
