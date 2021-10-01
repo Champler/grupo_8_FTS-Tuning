@@ -26,3 +26,7 @@ Nuestra forma de trabajo se basa en generar un sistema de mercado amigable y seg
 ### ¿Por qué elegimos estas páginas?
 
   Nosotros siempre buscamos lo mejor para nuestro negocio, por lo cual buscamos las mejores funcionalidades de distintas páginas y buscamos replicarlas, menús como el de Mishimoto llamaron particularmente nuestra atención, mientras que, el filtrado de Jap Performance Parts, nos mostró una posibilidad de facilitarle la experiencia al usuario, que podrá ver todos los detalles de su producto gracias a una interfaz similar a la de Amazon.  El usuario, se podrá registrar en nuestra página gracias al fácil diseño simplista que nos ofrece Bikinis Sea You, y, cuando el mismo vaya a terminar su compra, un carrito inspirado en el diseño de Logitech mostrará su pedido de una manera completa pero resumida.
+
+## DATOS IMPORTANTES:
+- Usuario Admin: admin@mail.com password:123456
+Usuario Normal : Jose@gmail.com password:123456
