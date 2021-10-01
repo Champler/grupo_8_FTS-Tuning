@@ -18,12 +18,12 @@
             <article class="photo-n-price">
                 <div class="images-container">
                     <div class="thumbnailImages">
-                        <% producto.img.forEach(image => { %>
-                            <img src="/images/productos/<%- image%>" alt="Imagen de producto" class="smallImg" onclick="myFunction(this);">
+                        <% producto.images.forEach(image => { %>
+                            <img src="/images/productos/<%- image.name%>" alt="Imagen de producto" class="smallImg" onclick="myFunction(this);">
                         <% }) %>
                     </div>
                     <div class="mainImage">
-                        <img src="/images/productos/<%= producto.img[0]%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
+                        <img src="/images/productos/<%= producto.images[0].name%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
                     </div>
                 </div>
 
@@ -51,19 +51,13 @@
                 <p class="paragraph"><%- parrafo %> </p>
             <% }) %>                                            <!-- Muestra los párrafos separdos previamente con let texto = producto.description.split('\r\n') -->
             <div class="product-details">
-                <img class="img-product-2" src="/images/productos/<%= producto.img[0] %>" alt="Escape Chevrolet Corsa 2">
+                <img class="img-product-2" src="/images/productos/<%= producto.images[0].name %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
                     <li>Nombre:  <%= producto.name %></li>
                     <li>Marca:  <%= producto.brand %></li>
                     <li>Modelo: <%- producto.carModel %></li>
                     <li>Año: <%- producto.year %></li>
-                    <% if (producto.frontback != "no") { %>
-                        <li>Tipo: <%= producto.frontback %></li>
-                    <% } %>
-                    <% if (producto.leftright != "no") { %>
-                        <li>Lado: <%= producto.leftright %> </li>
-                    <% } %>
                     <% if (producto.color != "no") { %>
                         <li>Color: <%= producto.color %> </li>
                     <% } %>
@@ -78,7 +72,7 @@
     </main>
 
     <!-- /* Slider */ -->  
-    <%- include('partials/slider.ejs') %>
+    
     <!-----------------------------------           Footer            ------------------------------------------->
     <%- include('partials/footer.ejs')  %> 
 
