@@ -61,13 +61,11 @@ module.exports = {
                 }
             })
             
-            let n;
+            
             if(filtradosPorCategoria.length > 0){
-                n: true;
-                res.render('Productos', {products: filtradosPorCategoria,n,category,title:"Categoría", session: req.session ? req.session : ""})
-            }else {
-                n: false;
-                res.render('Productos', {products, title:"Categoria",n,category,session: req.session ? req.session : ""})
+                res.render('Productos', {products: filtradosPorCategoria,n: true,category,title:"Categoría", session: req.session ? req.session : ""})
+            }else {  
+                res.render('Productos', {products, title:"Categoria",n: false,category,session: req.session ? req.session : ""})
             }   
         })
     }
