@@ -213,5 +213,19 @@ module.exports = {
         .catch(error => {
             console.log(error)
         })
+    },
+    adminSearch: (req, res) => {
+        let busqueda = req.query.searchAllProds.trim()
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: busqueda
+                }
+            },
+            include: [{association: "images"}]
+        })
+        .then(products => {
+            res.render('adminProducts',{title:busqueda, products, session: req.session ? req.session : ""})
+        })
     }
 }

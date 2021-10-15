@@ -126,15 +126,12 @@ module.exports = {
         res.redirect('/') 
         })
         .catch(err=> console.log(err))
-       
-        
     },
     logout: (req, res) => {
         req.session.destroy();
         if(req.cookies.cookieFTS){
             res.cookie('cookieFTS','',{maxAge:-1})
         }
-        
         res.redirect('/')
     }
 }

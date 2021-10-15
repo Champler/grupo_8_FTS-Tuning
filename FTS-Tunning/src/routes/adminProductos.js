@@ -14,7 +14,7 @@ router.post('/cargaProducto',upload.array('img'), productsValidator, controller.
 router.get('/users', userCreatedCheck, userAdminCheck,controller.usuarios);
 router.get('/productos', userCreatedCheck, userAdminCheck,controller.productos);
 
-
+router.get('/search', controller.adminSearch)
 
 
 /* GET / mostrar datos de edicion */

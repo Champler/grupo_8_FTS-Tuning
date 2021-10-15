@@ -7,8 +7,8 @@
     <%- include('partials/adminHeader.ejs')  %>
     <main class="allProds">
         <div class="search-prod">
-            <form action="">
-                <input type="search" placeholder="Busca tu producto" name="search-all-prods">
+            <form action="/adminProductos/search">
+                <input type="search" placeholder="Busca tu producto" name="searchAllProds">
             </form>
         </div>
         <a href="/adminProductos/cargaProducto"><button>Agregar</button></a>
