@@ -21,12 +21,19 @@
           <h2>Datos Personales</h2>
           <hr>
           <label for="name"><b>Nombre</b></label>
-          <input type="text" placeholder="Nombre " name="firstName" id="name" value="<%- user.firstName %>">
+          <input type="text" placeholder="Nombre " name="firstName" id="firstName" value="<%- user.firstName %>">
+          <% if (locals.errors && errors.firstName) { %>
+            <small class="small-red"><%= errors.firstName.msg %></small>
+          <% } %>
+          <span class="error" id="firstNameError"></span>
           <br>
           <label for="name"><b>Apellido</b></label>
-          <input type="text" placeholder="Apellido" name="lastName" id="name" value="<%- user.lastName %>">
+          <input type="text" placeholder="Apellido" name="lastName" id="lastName" value="<%- user.lastName %>">
+          <span class="error" id="lastNameError"></span>
+          <% if (locals.errors && errors.lastName) { %>
+            <small class="small-red"><%= errors.lastName.msg %></small>
+           <% } %>
       <br>
-      
           <label for="email"><b>Email</b></label>
           <input type="email" placeholder="Ingrese su Email" disabled name="email" id="email" value="<%- user.email %>" >
     <br>
@@ -58,32 +65,13 @@
         </div>
           <button type='submit' class="checkout-cta-Edit">Editar</button><br>
 
-      </form>
-
-
-
-
-
-
-
-  
-
-
-    
-
-      
-       
+      </form>    
       </div>
    
   </div>
- 
-  
-  
-
-   
   </section>
   
-  
+    <script src="/javascripts/editProfileValidation.js"></script>
    <%- include('../partials/footer.ejs')  %> 
 </body>
 </html>

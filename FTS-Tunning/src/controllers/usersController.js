@@ -104,28 +104,40 @@ module.exports = {
         })
     },
     userEdit: (req,res) =>{
-        db.User.update({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            address: req.body.address,
-            cp: req.body.cp,
-            province: req.body.provincia,
-            city: req.body.localidad,
-            image: req.file && req.file.filename
-        },{
-            where:{
-                id: +req.session.user.id
-            }
-        })
-        .then(() => {
-            req.session.user = {
-                id: req.session.user.id,
-                userName: req.body.firstName + " " + req.body.lastName,
-                rol: req.session.user.rol
-            }
-        res.redirect('/') 
-        })
-        .catch(err=> console.log(err))
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            db.User.update({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                address: req.body.address,
+                cp: req.body.cp,
+                province: req.body.provincia,
+                city: req.body.localidad,
+                image: req.file && req.file.filename
+            },{
+                where:{
+                    id: +req.session.user.id
+                }
+            })
+            .then(() => {
+                req.session.user = {
+                    id: req.session.user.id,
+                    userName: req.body.firstName + " " + req.body.lastName,
+                    rol: req.session.user.rol
+                }
+            res.redirect('/') 
+            })
+            .catch(err=> console.log(err))
+        }else{
+            db.User.findOne({
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(user => {
+                res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session, user,errors :errors.mapped() ,old : req.body})
+            })
+        }
     },
     logout: (req, res) => {
         req.session.destroy();

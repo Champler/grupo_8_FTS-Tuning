@@ -74,15 +74,12 @@ module.exports = {
             .catch(error => {
                 res.send(error)
             })
-            
-            
         } else {
-            res.render('cargaProductos', {
-                title: "Carga de Productos",
-                errors : errors.mapped(),
-                old : req.body,
-                session: req.session ? req.session : ""
-            })
+            db.Category.findAll()
+            .then(categories => {
+            res.render('cargaProductos', {categories, title: "Carga de Productos", session: req.session ? req.session : "", errors : errors.mapped(),
+            old : req.body,});
+        })
         } 
     },
     editForm: (req, res) => {

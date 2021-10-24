@@ -1,9 +1,21 @@
 const { check } = require('express-validator');
+const db = require('../database/models')
 
 module.exports = [
-    /* check('name')
+    check('name').custom(value => {
+        return db.Product.findOne({
+            where : {
+                name: value
+            }
+        })
+        .then(product => {
+            if(product){
+                return Promise.reject("El nombre ya esta registrado")
+            }
+        })
+    })
         .notEmpty().withMessage("Este campo es obligatorio").bail()
-        .isLength({ min: 4 }).withMessage("El nombre del producto debe tener como mínimo 4 caracteres"),
+        .isLength({ min: 5 }).withMessage("El nombre del producto debe tener como mínimo 5 caracteres"),
    
     check('price')
         .isLength({ min:1 }).withMessage("Este campo es obligatorio"),
@@ -18,7 +30,5 @@ module.exports = [
 
     check('description')
         .notEmpty().withMessage("Debes agregar una descripción del producto").bail()
-        .isLength({ min: 10 }).withMessage("La descripción debe tener como mínimo 10 caracteres") */
-    
-    
+        .isLength({ min: 20 }).withMessage("La descripción debe tener como mínimo 20 caracteres")
 ]

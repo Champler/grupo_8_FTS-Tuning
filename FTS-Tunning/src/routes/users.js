@@ -14,6 +14,7 @@ let registerValidator = require("../validations/registerValidator")
 let userCreatedCheck = require("../middlewares/userCreatedCheck")
 let sessionExists = require("../middlewares/sessionExists")
 let uploadAvatar = require('../middlewares/uploadAvatar')
+let editValidator = require('../validations/editProfileValidator')
 /* GET users listing */
 router.get('/historial', userCreatedCheck,controller.historial)
 
@@ -26,6 +27,6 @@ router.get('/register', sessionExists,register)
 router.post('/register', registerValidator, proccesRegister)
 
 router.get('/profile', userCreatedCheck, accountEdit);
-router.put('/profile',uploadAvatar.single('Perfil'), userEdit)
+router.put('/profile',uploadAvatar.single('Perfil'),editValidator, userEdit)
 router.get('/logout', logout);
 module.exports = router;
