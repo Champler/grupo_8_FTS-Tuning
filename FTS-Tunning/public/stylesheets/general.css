@@ -24,7 +24,10 @@ small{
 }
 
 .error {
-    color: red;
+    color: var(--color-rojo);
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
 }
 
 /* clears the ‘X’ from Internet Explorer */

@@ -7,7 +7,8 @@ window.addEventListener('load', function(){
     let $firstNameError = qs('#firstNameError')
     let $lastName = qs('#lastName')
     let $lastNameError = qs('#lastNameError')
-
+    let $form = qs('#form')
+    let $errors = qs('#mistakes')
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
 
     $firstName.addEventListener('change', function(){
@@ -38,6 +39,21 @@ window.addEventListener('load', function(){
             default:
                 $lastNameError.innerHTML = ""
                 break;
+        }
+    })
+    $form.addEventListener('submit', function(event){
+        let error = false;
+        event.preventDefault();
+        let elementsForm = $form.elements;
+
+        for (let i = 0; i< elementsForm.length-1; i++){
+            if(elementsForm[i].value == ""  && elementsForm[i].name == "firstName"|| elementsForm[i].value == "" && elementsForm[i].name == "lastName"){
+                $errors.innerHTML = 'Los campos señalados son obligatorios'
+                error = true;
+            }
+        }
+        if(!error){
+            $form.submit();
         }
     })
 })

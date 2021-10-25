@@ -14,8 +14,8 @@
 
   <div class="mainEdit" >
    <!-- PERFIL PARA AGREGAR DATOS -->
-    <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div class="formulario">
+    <form id="form" action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="formulario" >
         <!-- 1.Datos Personales -->
         <div class="datos-Personales-Edit">
           <h2>Datos Personales</h2>
@@ -25,11 +25,11 @@
           <% if (locals.errors && errors.firstName) { %>
             <small class="small-red"><%= errors.firstName.msg %></small>
           <% } %>
-          <span class="error" id="firstNameError"></span>
+          <p class="error" id="firstNameError"></p>
           <br>
           <label for="name"><b>Apellido</b></label>
           <input type="text" placeholder="Apellido" name="lastName" id="lastName" value="<%- user.lastName %>">
-          <span class="error" id="lastNameError"></span>
+          <p class="error" id="lastNameError"></p>
           <% if (locals.errors && errors.lastName) { %>
             <small class="small-red"><%= errors.lastName.msg %></small>
            <% } %>
@@ -64,7 +64,7 @@
           </div>
         </div>
           <button type='submit' class="checkout-cta-Edit">Editar</button><br>
-
+          <span class="error" id="mistakes"></span>
       </form>    
       </div>
    
