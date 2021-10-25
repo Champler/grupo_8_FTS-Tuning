@@ -1,5 +1,3 @@
-alert('chupala')
-
 window.addEventListener("load", () =>{
     let $inputName = document.querySelector("#firstName"),
     $inputLastName = document.querySelector("#lastName"),
