@@ -1,4 +1,4 @@
-# PRIMER SPRING (1/6 - 16/6)
+# PRIMER SPRINT (1/6 - 16/6)
 
 ## Seguir haciendo
 
@@ -25,7 +25,7 @@
 
 - Procrastinar
 
-# SEGUNDO SPRING(2/7 - 16/7)
+# SEGUNDO SPRINT(2/7 - 16/7)
 
 ## Seguir haciendo
 
@@ -60,7 +60,7 @@
 
 
 
-# TERCER SPRING (13/8- 20/8)
+# TERCER SPRINT (13/8- 20/8)
 
 ## Seguir haciendo
 
@@ -90,7 +90,7 @@
 
 
 
-# CUARTO SPRING (23/8- /8)
+# CUARTO SPRINT (23/8- /8)
 
 ## Seguir haciendo
 
@@ -141,4 +141,30 @@
 ## Dejar de hacer
 
 - No confiarse con los plazos
+
+# SEXTO SPRINT (17/9- 1/10)
+
+## Seguir haciendo
+
+- Entregar y todo a tiempo
+- Adelantar trabajo
+- Retrospectivas
+- Empezar ni bien nos las los sprints
+- Subdividir las tareas complejas en checklists, para hacerla mas llevadera
+- Comunicarnos por Whatsapp
+- Cumplir con las fechas de tarjetas 
+
+## Hacer mas
+- Hacer mayor cantidad de push, para no generar grandes 'pushes'
+- Reuniones mas seguido
+- Hacer mas commits mas seguidos
+## Empezar a hacer
+
+- Reuniones fuera de sprint para ver el contenido de PG
+- Cambiar los equipitos de 2
+## Hacer menos
+
+
+## Dejar de hacer
+
 
