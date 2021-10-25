@@ -1,6 +1,7 @@
 
 const {carrousel, products } = require('../data/productsDB')
 const db = require('../database/models')
+const { Op } = require("sequelize");
 
 module.exports = {
     index: (req, res) => {
@@ -10,7 +11,9 @@ module.exports = {
         let busqueda = req.query.busqueda.trim()
         db.Product.findAll({
             where: {
-                name: busqueda
+                name: {
+                    [Op.substring]: busqueda
+                }
             },
             include: [{association: "images"}]
         })

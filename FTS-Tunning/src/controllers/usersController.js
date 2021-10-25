@@ -117,19 +117,21 @@ module.exports = {
                 id: +req.session.user.id
             }
         })
-        .then(user => {
-            req.session.destroy();
-            res.redirect('/users/login')
+        .then(() => {
+            req.session.user = {
+                id: req.session.user.id,
+                userName: req.body.firstName + " " + req.body.lastName,
+                rol: req.session.user.rol
+            }
+        res.redirect('/') 
         })
-        .catch(error =>res.send(error))
-        
+        .catch(err=> console.log(err))
     },
     logout: (req, res) => {
         req.session.destroy();
         if(req.cookies.cookieFTS){
             res.cookie('cookieFTS','',{maxAge:-1})
         }
-        
         res.redirect('/')
     }
 }

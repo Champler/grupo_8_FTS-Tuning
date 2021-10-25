@@ -106,15 +106,8 @@ module.exports = {
         let errors = validationResult(req);
         let images;
         if (errors.isEmpty()) {
-              db.Image.destroy({
-                  where: {
-                    product_id: +req.params.id,
-                  },
-                })
-                .then((result) => {
                     let { name, category, description,  carModel, brand, year, color, discount, price,stock } = req.body; 
-                    db.Product
-                    .update(
+                    db.Product.update(
                       {
                         name : name,
                         category_id : category,
@@ -133,22 +126,28 @@ module.exports = {
                         },
                       }
                     )
-                    .then((productUpdated) => {
+                    .then(() => {
                       if (req.files.length > 0) {
-                        let images = [];
-                        let nameImages = req.files.map((image) => image.filename);
-                        nameImages.forEach((img) => {
-                          let newImage = {
-                            product_id: +req.params.id,
-                            name: img
-                          };
-                          images.push(newImage);
-                        });
-                        db.Image
-                          .bulkCreate(images)
-                          .then((result) => {
-                            res.redirect(`/adminProductos/productos`);
-                          });
+                        db.Image.destroy({
+                            where: {
+                              product_id: +req.params.id,
+                            },
+                          }).then(()=> {
+                              let images = [];
+                              let nameImages = req.files.map((image) => image.filename);
+                              nameImages.forEach((img) => {
+                                let newImage = {
+                                  product_id: +req.params.id,
+                                  name: img
+                                };
+                                images.push(newImage);
+                              });
+                              db.Image
+                                .bulkCreate(images)
+                                .then(() => {
+                                  res.redirect(`/adminProductos/productos`);
+                                });
+                          })
                       } else {
                         db.Image.findAll({
                             where: {
@@ -166,7 +165,6 @@ module.exports = {
                           });
                       }
                     });
-                });
             }else {
           db.products
             .findByPk(req.params.id, {
@@ -214,6 +212,20 @@ module.exports = {
         })
         .catch(error => {
             console.log(error)
+        })
+    },
+    adminSearch: (req, res) => {
+        let busqueda = req.query.searchAllProds.trim()
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: busqueda
+                }
+            },
+            include: [{association: "images"}]
+        })
+        .then(products => {
+            res.render('adminProducts',{title:busqueda, products, session: req.session ? req.session : ""})
         })
     }
 }
