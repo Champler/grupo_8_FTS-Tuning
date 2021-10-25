@@ -3,6 +3,7 @@
   --color-gris: #E8E8E8;
   --color-rojo: #F05454;
   --color-azul: #30475E;
+  --color-azul-transparente: rgba(48, 71, 94, .06);
   --color-negro: #222831;
   /* Fuentes */
   --fuente: 'Roboto', sans-serif;

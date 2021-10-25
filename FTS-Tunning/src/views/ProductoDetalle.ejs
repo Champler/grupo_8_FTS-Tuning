@@ -40,7 +40,7 @@
                     </div>
                     <div>
                         <span class="fees">Cantidad: </span>
-                        <input type="number" value="1" min="0" max="15" class="quantity-field" />
+                        <input type="number" value="1" min="0" max="15" class="pd-quantity-field" />
                     </div>
                     
                     <a href="/Productos/Carrito"><button type="submit" class="button button-purchase">Comprar</button></a>
@@ -50,8 +50,8 @@
             <% texto.forEach(parrafo => { %>
                 <p class="paragraph"><%- parrafo %> </p>
             <% }) %>                                            <!-- Muestra los párrafos separdos previamente con let texto = producto.description.split('\r\n') -->
-            <div class="product-details">
-                <img class="img-product-2" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
+            <div class="pd-product-details">
+                <img class="img-product" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
                     <li>Nombre:  <%= product.name %></li>
@@ -66,9 +66,7 @@
             </div>
           
         </section>
-        <!-- Sugestions -->
-        <h3 class="sugestions"><%= sliderTitle %></h3>
-         
+                
     </main>
 
     <!-- /* Slider */ -->  
