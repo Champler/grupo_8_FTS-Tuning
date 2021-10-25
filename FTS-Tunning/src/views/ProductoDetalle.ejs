@@ -11,35 +11,35 @@
 
 
     <!-----------------------------------        Deltalle del Producto       ------------------------------------------->
-    <main class="pd-main-product">
+    <main class="main-product">
         
-        <h1 class="pd-title-product"><%= product.name %>  </h1>
-        <section class="pd-destacado">
-            <article class="pd-photo-n-price">
-                <div class="pd-images-container">
-                    <div class="pd-thumbnailImages">
+        <h1 class="title-product"><%= product.name %>  </h1>
+        <section class="destacado">
+            <article class="photo-n-price">
+                <div class="images-container">
+                    <div class="thumbnailImages">
                         <% product.images.forEach(image => { %>
-                            <img src="/images/productos/<%- image.name%>" alt="Imagen de producto" class="pd-smallImg" onclick="myFunction(this);">
+                            <img src="/images/productos/<%- image.name%>" alt="Imagen de producto" class="smallImg" onclick="myFunction(this);">
                         <% }) %>
                     </div>
-                    <div class="pd-mainImage">
-                        <img src="/images/productos/<%= product.images[0].name%>" alt="Imagen de producto" class="pd-bigImg" id="expandedImg">
+                    <div class="mainImage">
+                        <img src="/images/productos/<%= product.images[0].name%>" alt="Imagen de producto" class="bigImg" id="expandedImg">
                     </div>
                 </div>
 
-                <div class="pd-price-purchase">
-                    <h3 class="pd-the-price">Precio: <%= product.price %></h3>
-                    <p class="pd-fees">12 cuotas de <%= Math.round(product.price / 12 * 100) / 100 %></p>
-                    <p class="pd-fees">18 cuotas de <%= Math.round(product.price / 18 * 100) / 100 %></p>
-                    <p class="pd-fees">24 cuotas de <%= Math.round(product.price / 24 * 100) / 100 %></p>
-                    <div class="pd-credit">
+                <div class="price-purchase">
+                    <h3 class="the-price">Precio: <%= product.price %></h3>
+                    <p class="fees">12 cuotas de <%= Math.round(product.price / 12 * 100) / 100 %></p>
+                    <p class="fees">18 cuotas de <%= Math.round(product.price / 18 * 100) / 100 %></p>
+                    <p class="fees">24 cuotas de <%= Math.round(product.price / 24 * 100) / 100 %></p>
+                    <div class="credit">
                         <i class="fab fa-cc-visa credit"></i>
                         <i class="fab fa-cc-mastercard credit"></i>
                         <i class="fab fa-cc-amex credit"></i>
                         <i class="fab fa-cc-paypal credit"></i>
                     </div>
                     <div>
-                        <span class="pd-fees">Cantidad: </span>
+                        <span class="fees">Cantidad: </span>
                         <input type="number" value="1" min="0" max="15" class="pd-quantity-field" />
                     </div>
                     
@@ -48,12 +48,12 @@
                 </div>
             </article>
             <% texto.forEach(parrafo => { %>
-                <p class="pd-paragraph"><%- parrafo %> </p>
+                <p class="paragraph"><%- parrafo %> </p>
             <% }) %>                                            <!-- Muestra los párrafos separdos previamente con let texto = producto.description.split('\r\n') -->
             <div class="pd-product-details">
-                <img class="pd-img-product-2" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
-                <ul class="pd-description-list">
-                    <p class="pd-product-caracteristics">Características:</p>
+                <img class="img-product" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
+                <ul class="description-list">
+                    <p class="product-caracteristics">Características:</p>
                     <li>Nombre:  <%= product.name %></li>
                     <li>Marca:  <%= product.brand %></li>
                     <li>Modelo: <%- product.carModel %></li>
@@ -66,9 +66,7 @@
             </div>
           
         </section>
-        <!-- Sugestions -->
-        <h3 class="pd-sugestions"><%= sliderTitle %></h3>
-         
+                
     </main>
 
     <!-- /* Slider */ -->  
