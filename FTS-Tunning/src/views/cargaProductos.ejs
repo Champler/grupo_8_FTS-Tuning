@@ -10,7 +10,7 @@
     <!----------------------------------------  Carga de Productos  --------------------------------------------------------->
     <main>
         <h2 class="title-fcm">Formulario de Carga de Productos</h2>
-        <form action="/adminProductos/cargaProducto" class="form-fcm" method="POST" enctype="multipart/form-data">
+        <form action="/adminProductos/cargaProducto" class="form-fcm" method="POST" id="formFcm" enctype="multipart/form-data">
             <div class="categoryNPrice-fcm">
                 <div class="category-fcm">
                     <label for="category" class="label-fcm">Categoría:</label>
@@ -22,19 +22,25 @@
                 </div>
                 <div class="pricef-fcm">
                     <label for="price" class="label-fcm">Precio:</label>
-                    <input type="number" name="price" id="" class="price-input-fcm border-fcm" value="<%= locals.old && old.price %>">
+                    <input type="number" name="price" id="priceFcm" class="price-input-fcm border-fcm" value="<%= locals.old && old.price %>">
+                    <p id="priceFcmErrors"></p>
                     <% if (locals.errors && errors.price) { %>
                         <small class="small-red"><%= errors.price.msg %></small>
                     <% } %>
                 </div>
                 <div class="pricef-fcm">
                     <label for="discount" class="label-fcm">Descuento:</label>
-                    <input type="number" name="discount" id="" class="discount-input-fcm border-fcm" value="<%= locals.old && old.discount %>">
+                    <input type="number" name="discount" id="discountFcm" class="discount-input-fcm border-fcm" value="<%= locals.old && old.discount %>">
+                    <p id="discountFcmErrors"></p>
+                    <% if (locals.errors && errors.discount) { %>
+                        <small class="small-red"><%= errors.discount.msg %></small>
+                    <% } %>
                 </div>
             </div>
             <div class="nameModelYear-fcm">
                 <label for="name" class="label-fcm">Nombre del Producto:</label>
-                <input type="text" name="name" id="" class="name-fcm border-fcm" value="<%= locals.old && old.name %>">
+                <input type="text" name="name" id="nameFcm" class="name-fcm border-fcm" value="<%= locals.old && old.name %>">
+                <p id="nameFcmErrors"></p>
                 <% if (locals.errors && errors.name) { %>
                     <small class="small-red"><%= errors.name.msg %></small>
                 <% } %>
@@ -42,14 +48,16 @@
             <div class="brandModelYear-fcm">
                 <div class="brand-fcm">
                     <label for="brand" class="label-fcm">Marca</label>
-                    <input type="text" name="brand" id="" class="select-fcm border-fcm" value="<%= locals.old && old.brand %>">
+                    <input type="text" name="brand" id="brandFcm" class="select-fcm border-fcm" value="<%= locals.old && old.brand %>">
+                    <p id="brandFcmErrors"></p>
                     <% if (locals.errors && errors.brand) { %>
                         <small class="small-red"><%= errors.brand.msg %></small>
                     <% } %>
                 </div>
                 <div>
                     <label for="carModel" class="label-fcm">Modelo:</label>
-                    <input type="text" name="carModel" id="" class="select-fcm border-fcm" value="<%= locals.old && old.carModel %>">
+                    <input type="text" name="carModel" id="carModelFcm" class="select-fcm border-fcm" value="<%= locals.old && old.carModel %>">
+                    <p id="carModelFcmErrors"></p>
                     <% if (locals.errors && errors.carModel) { %>
                         <small class="small-red"><%= errors.carModel.msg %></small>
                     <% } %>
@@ -64,17 +72,21 @@
                 </div>
                 <div>
                     <label for="stock" class="label-fcm">Stock:</label>
-                    <input name="stock" id="" class="border-fcm">
+                    <input type="number" name="stock" id="stockFcm" class="border-fcm" value="<%= locals.old && old.stock %>">
                     </input>
+                    <p id="stockFcmErrors"></p>
                 </div>
             </div>
             <div class="photoFormulary-fcm">
                 <label for="img" class="label-fcm">Foto:</label>
-                <input type="file" name="img" id="" class="border-fcm" aria-label="file example" id="inputImage" multiple>
+                <input type="file" name="img" id="photoFormularyFcm" class="border-fcm" aria-label="file example"  multiple>
+                <p id="photoFormularyFcmErrors"></p>
+                <div class="img-container" id="img-preview"></div>
             </div>
             <div class="description-fcm">
                 <label for="description" class="label-fcm">Descripción:</label>
-                <textarea name="description" id="" class="textarea-description-fcm border-fcm"><%= locals.old && old.description %></textarea>
+                <textarea name="description" id="descriptionFcm" class="textarea-description-fcm border-fcm"><%= locals.old && old.description %></textarea>
+                <p id="descriptionFcmErrors"></p>
                 <% if (locals.errors && errors.description) { %>
                     <small class="small-red"><%= errors.description.msg %></small>
                 <% } %>
@@ -92,14 +104,15 @@
             </div>
             
             <div class="buttons-box-fcm">
+                <p id="submitErrors"></p>
                 <button type="submit" class="buttons-fcm button-red-fcm">Agregar</button>
             </div>
         </form>
     </main>
-
+    
 
     <!-----------------------------------           Footer            ------------------------------------------->
     <%- include('partials/footer.ejs')  %> 
-    
+    <script src="/javascripts/validations/productsValidatorFront.js"></script>
 </body>
 </html>
