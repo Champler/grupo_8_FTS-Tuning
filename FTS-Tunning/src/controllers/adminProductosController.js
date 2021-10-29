@@ -163,7 +163,7 @@ module.exports = {
                       }
                     });
             }else {
-          db.products
+          db.Product
             .findByPk(req.params.id, {
               include: [
                 { association: "category" },
@@ -171,10 +171,12 @@ module.exports = {
               ],
             })
             .then((product) => {
-              res.render("productEdit", {
+              res.render("adminProducts", {
                 errors: errors.mapped(),
                 old: req.body,
                 product,
+                title: 'Admin products',
+                session: req.session ? req.session : ""
               });
             });
         }
