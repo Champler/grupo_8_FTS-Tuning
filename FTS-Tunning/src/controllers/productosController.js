@@ -22,7 +22,7 @@ module.exports = {
         Promise.all([product,slider])
         .then(([product, slider]) => {
             if (product !== null){ 
-                let sliderProducts = slider;    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
+                let sliderProducts = slider.filter(element => element.discount > 0);    //  <----   Sololamente hay 2 productos por categoría, así que el slider muestra los 12 productos que hay hasta el momento
                 let texto = product.description.split('\r\n')
                 res.render('ProductoDetalle', {
                     sliderTitle : "También te pueden interesar",
