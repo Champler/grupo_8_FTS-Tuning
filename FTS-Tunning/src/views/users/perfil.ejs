@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')  %> 
+</head>
+
+<body>
+  <% if (session.user && session.user.rol == "admin") { %>                   
+    <%- include('../partials/adminHeader.ejs')  %>
+  <% } else { %>
+  <%- include('../partials/header.ejs')  %> 
+  <% }%>
+
+
+  <div class="mainEdit" >
+   <!-- PERFIL PARA AGREGAR DATOS -->
+    <form id="form" action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="formulario" >
+        <!-- 1.Datos Personales -->
+        <div class="datosPersonls">
+          <h2>Datos Personales</h2>
+          <hr>
+          <label for="name"><h3>Nombre</h3></label><br>
+        <p   Class="TeTx"><%- user.firstName %></p>
+          <% if (locals.errors && errors.firstName) { %>
+            <small class="small-red"><%= errors.firstName.msg %></small>
+          <% } %>
+          
+          <br>
+          <label for="name"><h3>Apellido</h3></label><br>
+          <p class="TeTx"> <%-  user.lastName %> </p>
+          <p class="error" id="lastNameError"></p>
+          <% if (locals.errors && errors.lastName) { %>
+            <small class="small-red"><%= errors.lastName.msg %></small>
+           <% } %>
+      <br>
+          <label for="email"><H3
+            >Email</H3
+            ></label>
+        <p class="TeTx"><%- user.email %>"</p>  <br>
+    <br>
+    <img class="Profile" src="/images/users/<%- user.image %> " alt="">
+    <br>
+         
+         
+    
+          <hr>
+        </div>
+
+        <!-- Datos de envio -->
+        <div class="entreGa">
+            <h2>Datos de envio</h2>
+            <hr>
+            <label for="Dirrecion"><H3
+              >Dirrecion</H3
+              ></label><br>
+           <p class="TeTx"><%- user.address %></p>
+        <br>
+            <label for="Numero"><H3
+              >C.Postal</H3
+              ></label><br>
+           <%- user.cp %>"
+      <br>
+            <label for="name"><H3
+              >Provincia</H3 ></label>
+              <p class="TeTx"><%- user.province %></p> 
+          <br>
+        <br>
+            <label for="name"><H3
+              >Localidad</H3
+              ></label>
+              <p class="TeTx"> <%- user.city %></p> <br>
+          <br>
+          <br>
+            <hr>
+          </div>
+        </div>
+          <button type='submit' class="checkout-cta-Edit">Editar</button><br>
+          <span class="error" id="mistakes"></span>
+      </form>    
+      </div>
+   
+  </div>
+  </section>
+  
+   <%- include('../partials/footer.ejs')  %> 
+</body>
+</html>

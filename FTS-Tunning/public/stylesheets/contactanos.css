@@ -50,6 +50,7 @@
     border-radius: 12px;
     margin: 12px;
     height: 60px;
+    width: 95%;
   }
   
   
@@ -106,7 +107,7 @@
   .input-qs{
 
    margin: 12px 122px;
- 
+   width: 77%;
   }
  
 

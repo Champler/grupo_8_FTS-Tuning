@@ -14,6 +14,7 @@ let usRouter = require('./routes/us');              // Fabio
 let DatosDePagoRouter = require('./routes/DatosDePago') //Santiago
 var cookieSession = require('cookie-session');
 var recordameMiddleware = require('./middlewares/recordameMiddleware');
+const usController = require('./controllers/usController');
 
 //Santiago
 
@@ -43,7 +44,11 @@ app.use('/users', usersRouter);
 app.use('/adminProductos', adminProductosRouter);  // Fabio
 app.use('/productos', productoRouter);   
 app.use('/us', usRouter)           // Fabio
-app.use('/DatosDePago', DatosDePagoRouter) //santiago
+app.use('/DatosDePago', DatosDePagoRouter)
+
+
+
+//santiago
  //santiago
 
 

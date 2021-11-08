@@ -103,6 +103,19 @@ module.exports = {
             res.render('users/accountEdit', {title: "Edita tu cuenta", session: req.session, user})
         })
     },
+
+
+
+    perfilUsers: (req, res) => {
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(user => {
+            res.render('users/perfil', {title: "perfil de usuario", session: req.session, user})
+        })
+    },
     userEdit: (req,res) =>{
         let errors = validationResult(req)
         if(errors.isEmpty()){

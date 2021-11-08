@@ -38,9 +38,12 @@
                     <li><a href="/productos/categoria/motores"></i>Motor</a></li>
                     <li><a href="/productos/categoria/interiores"></i>Interior</a></li>
                     <li><a href="/productos/categoria/volantes"></i>Volantes</a></li>
+
+
+
                     <% if (session.user && session.user.rol != "undefined") { %>
                         <li><a href="/Carrito"></i>Carrito</a></li>                    
-                        <a href="/users/profile"><%- session.user.userName %></a>
+                        <a href="/users/perfil"><%- session.user.userName %></a>
                         <a href="/users/logout">Cerrar Sesion</a>
                     <% } else { %>
                         <li><a href="/users/login"></i>Login</a></li>
@@ -54,7 +57,7 @@
                         <li><img src="/images/header/svg/Login-registro.svg" alt="Login-registro">
                             <ul id="baja">
                                 <% if (session.user && session.user.rol != "undefined") { %>                   
-                                    <li><a href="/users/profile"><%- session.user.userName %></a></li> 
+                                    <li><a href="/users/perfil"><%- session.user.userName %></a></li> 
                                     <li><a href="/users/logout">Cerrar Sesion</a></li> 
                                 <% } else { %>
                                     <li><a href="/users/login"></i>Login</a></li>
@@ -66,6 +69,15 @@
                     </ul>
                     
                 </div>
+
+                <% if (session.user && session.user.rol != "undefined") { %>
+                    <img src="/images/svg/cheque (1).png" height="33px" width="30px">
+                   
+                <% } else { %>
+                    
+                <% }%>
+
+
                 <a href="/Productos/carrito"><img src="/images/header/svg/Carrito.svg" alt="Carro de compras" id="Carrito"></a>
             </div>
         </div>

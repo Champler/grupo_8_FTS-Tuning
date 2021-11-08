@@ -36,6 +36,11 @@ section  .user{
    }
 
 
+   .text-drection-222{
+   display: flex;
+   margin-top: 2.5%;
+   }
+
    section article div .info-user{
        margin: 9%;
        font-size: 115%;
