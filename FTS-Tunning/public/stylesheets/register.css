@@ -28,6 +28,8 @@ input{
 .text-danger{
     font-size: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-style: oblique;
     
 }
 

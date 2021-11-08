@@ -52,7 +52,7 @@
                 <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                 <small id="error-password1" class="text-danger"></small>
                 <% if (locals.errors && errors.password1) { %>
-                    <small class="small"><%= errors.password1.msg %> </small>
+                    <small class="text-danger"><%= errors.password1.msg %> </small>
                 <% } %>
             </div>
                 <br>
@@ -62,7 +62,7 @@
                 <i class="fas fa-info-circle"></i><i class="fas fa-check-circle"></i>
                 <small id="error-password2" class="text-danger"></small>
                 <% if (locals.errors && errors.password2) { %>
-                    <small class="small"><%= errors.password2.msg %> </small>
+                    <small class="text-danger"><%= errors.password2.msg %> </small>
                 <% } %>
             </div>
             <br>
@@ -81,6 +81,6 @@
     <%- include('../partials/footer.ejs')  %> 
     
     
-    <script src="/javascripts/register.js"></script>
+    <script src="/javascripts/validations/register.js"></script>
 </body>
 </html>

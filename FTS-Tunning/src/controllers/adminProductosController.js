@@ -101,7 +101,6 @@ module.exports = {
     },
     editProduct: (req, res) => {
         let errors = validationResult(req);
-        let images;
         if (errors.isEmpty()) {
                     let { name, category, description,  carModel, brand, year, color, discount, price,stock } = req.body; 
                     db.Product.update(
@@ -163,21 +162,24 @@ module.exports = {
                       }
                     });
             }else {
-          db.products
-            .findByPk(req.params.id, {
-              include: [
-                { association: "category" },
-                { association: "images" },
-              ],
-            })
-            .then((product) => {
-              res.render("productEdit", {
+          const product = db.Product.findOne({
+            where : {
+                id : req.params.id
+            }
+        })
+        const category = db.Category.findAll()
+        Promise.all([product, category])
+        .then(([producto, categories]) =>{
+           res.render("modificacionProductos", {
                 errors: errors.mapped(),
                 old: req.body,
-                product,
-              });
-            });
-        }
+                producto,
+                categories,
+                title: 'Admin products',
+                session: req.session ? req.session : ""
+            })
+        })
+    }
     },
     delete:function(req,res){
         db.Product.destroy({

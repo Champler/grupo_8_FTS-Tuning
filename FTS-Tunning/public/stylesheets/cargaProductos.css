@@ -101,6 +101,7 @@
 }
 .form-fcm p {
     color: red;
+    font-weight: bold;
 }
 .is-invalid{
     border: 3px red solid;

@@ -44,7 +44,7 @@
 .photo-n-price .images-container .mainImage {
     width: 230px;
     height: 230px;
-    object-fit: contain;
+    object-fit: cover;
     margin: 10px;
 }
 
@@ -52,7 +52,7 @@
     width: 100%;
     height: 100%;
     
-    object-fit: cover;
+    object-fit: contain;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     margin: 5px 0;
     border-radius: 10px;
@@ -159,92 +159,25 @@
 .pd-product-details {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content:space-between;
     margin: 40px 30px 0 30px;
     background-color: var(--color-azul-transparente);
     border-radius: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    padding: 25px;
 }
 .button-purchase:hover {
     cursor:pointer;
     background-color: var(--color-azul);
     color: var(--color-rojo);
-    box-shadow: 0px 0px 3px 0px;   
+    box-shadow: 3px 3px 3px 2px rgba(206, 52, 52, 0.4); 
 }
 .button-add-to-cart:hover {
     cursor:pointer;
     background-color: var(--color-gris);
     color: var(--color-azul);
-    box-shadow: 0px 0px 3px 0px;   
-}
-
-/* ********************************************    Carrousel   ******************************************** */
-
-
-.carousel-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: solid 1px var(--color-negro);
-    border-radius: 20px;
-    padding: 5px;
-    margin: 2px;
-    /* width: 80%; */
-} 
-
-div.carousel-product {
-    display: flex; 
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* border: solid 1px var(--color-negro);
-    border-radius: 50px; */
-    padding:10px;
-    margin: 10px;
-}
-/* .photo-container{
-    width: 250px;
-    height: 250px;
-} 
-.photo-carousel {
-    width: auto; 
-    height: auto;
-    max-width: 250px;
-    max-height: 237px;
-} */
-.photo-carousel {
-    border-radius: 20px;
-    width: 79px;
-    height: 79px;
-    object-fit: cover;
-}
-.paragraph-card {
-    font-size: 12px;
-    font-weight: bold;
-    margin: 3px 0;
-    text-align: center;
-}
-.card-price {
-    color: var(--color-rojo);
-}
-.search-more button{
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    background-color: var(--color-rojo);
-    color: var(--color-azul);
-    border-radius: 15px;
-    margin-top: 5px;
-    box-shadow: 0px 0px 1px 0px var(--color-azul);
-    transition: 0.4s;
-}
-
-.search-more button:hover {
-    background-color: var(--color-azul);
-    color: var(--color-rojo);
-    box-shadow: 0px 0px 3px 0px;
+    box-shadow: 3px 3px 3px 2px rgba(206, 52, 52, 0.4); 
 }
 
 /******************************************** Media Queries ******************************************************/
@@ -302,16 +235,9 @@ div.carousel-product {
         width: 50%;
     }
    
-    .photo-carousel {
-        width: 120px;
-        height: 120px;
-    }
 }
 @media (min-width: 700px) {
-    .photo-carousel {
-        width: 180px;
-        height: 180px;
-    }
+    
     .photo-n-price .images-container .mainImage {
         width: 550px;
         height: 550px;
@@ -320,9 +246,6 @@ div.carousel-product {
 /* Desktop */
 
 @media (min-width: 860px) {
-    /* body {
-        max-width: 1000px;
-    } */
     .title-product {
         font-size: 42px;
         margin: 40px 0;
@@ -330,8 +253,8 @@ div.carousel-product {
     .photo-n-price {
         flex-direction: row;
         align-items: flex-start;
-        width: 85%;
-        margin: 0 60px;
+        width: 88%;
+        margin: 0 45px;
     }
     .photo-n-price .images-container .mainImage {
         width: 450px;
@@ -376,16 +299,25 @@ div.carousel-product {
     .img-product {
         width: 50%;
     }
-   
-    .photo-carousel {
-        width: 230px;
-        height: 230px;
+    .price-purchase {
+        width: 275px;
     }
+   
 }
 @media (min-width: 1024px) {
-    .photo-carousel {
-        width: 300px;
-        height: 300px;
+      /* body {
+        max-width: 1000px;
+    } */
+    .photo-n-price  .images-container  {
+        width: 900px;
     }
+    .photo-n-price .images-container .mainImage {
+        width: 650px;
+        height: 650px;
+    }
+    .price-purchase {
+        width: 300px;
+    }
+   
 }
   

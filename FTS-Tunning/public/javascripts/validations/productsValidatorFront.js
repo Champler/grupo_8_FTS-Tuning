@@ -248,7 +248,7 @@ window.addEventListener('load', function () {
         console.log("-> " + $descriptionFcm.value);
         switch (true) {
             case !$descriptionFcm.value.trim():
-                $descriptionFcmErrors.innerHTML = 'El campo nombre es obligatorio'
+                $descriptionFcmErrors.innerHTML = 'La descripción es obligatoria'
                 $descriptionFcm.classList.remove('is-valid')
                 $descriptionFcm.classList.add('is-invalid')
                 break;
@@ -274,14 +274,41 @@ window.addEventListener('load', function () {
     $formFcm.addEventListener('submit',function(event){
         let error = false;
         event.preventDefault()
+        console.log("<<<< $formFcm.elements >>>>")
         console.log($formFcm.elements)
         let elementosForm = this.elements
+        //////////////////////////////////////////////////////////////////////// hasta "Si hay errores"
+        let auxArray = this.elements
+        console.log("<<<< auxArray >>>>")
+        console.log(auxArray)
+        let elementosForm = auxArray.forEach(element => {
+            if(!(element.$photoFormularyFcm)){
+                auxArray.push(element)
+            }else{
+                if(element.$photoFormularyFcm.value){
+                    auxArray.push(element)
+                }
+            }
+        })
+        console.log("<<<< auxArray >>>>")
+        console.log(auxArray)
+        /* let elementosForm = auxArray; */
+        console.log("<<<< elementosForm >>>>")
+        console.log(elementosForm)
         //   Si hay errores
         for (let index = 0; index < elementosForm.length-1; index++) {
             if(elementosForm[index].value == ""){
                 elementosForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error = true;
+                if(!$photoFormularyFcm.value){
+                    $photoFormularyFcmErrors.innerHTML = '';                        //  prueba
+                    $photoFormularyFcm.classList.remove('is-invalid');             //  prueba
+                    $photoFormularyFcm.classList.add('is-valid');                  //  prueba
+                    error = false;                                                  //  prueba
+                }
+                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                //console.log("<<<<  >>>>")
+                //console.log(elementosForm);                                 //  prueba
             }
         }
         //   Si todo está OK!!!

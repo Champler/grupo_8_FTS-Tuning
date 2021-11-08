@@ -75,7 +75,7 @@ module.exports = {
                     image: "default-image.png",
                     province: '',
                     address: '',
-                    cp: '',
+                    cp: 0,
                     city: ''
                 }
             )

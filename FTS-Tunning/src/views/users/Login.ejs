@@ -16,13 +16,19 @@
             
             
             <div class="card">
-                <form class="box" action="/users/login" method="POST" class="form-ad">
-                    <input class="buttom-form" type="email" name="email" placeholder="email">
+                <form id="formLogin" class="box" action="/users/login" method="POST" class="form-ad">
+                    <div id="errores" class="errores" style="display:none">
+                        <ul></ul>
+                      </div>
+                      
+                    <input id="email" class="buttom-form" type="email" name="email" placeholder="email">
+                    <p id="emailErr" class="text-danger" style="color: var(--color-rojo);"></p>
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                     <% } %>
                    
-                    <input class="buttom-form" type="password" name="password" placeholder="Password">
+                    <input id="password" class="buttom-form" type="password" name="password" placeholder="Password">
+                    <p id="passErr" class="text-danger" style="color: var(--color-rojo);"></p>
                     <% if (locals.errors && errors.pass) { %>
                         <small class="text-danger"><%= errors.pass.msg %> </small>
                     <% } %>
@@ -44,8 +50,12 @@
     </div>
 </main>
 <%- include('../partials/footer.ejs')  %> 
+<<<<<<< HEAD
 
 <script src="/js/loginFrontValidations.js"></script>
+=======
+<script src="/javascripts/validations/loginValidator.js"></script>
+>>>>>>> 85768d202b8848963ce27779beceee606ac94cfd
 </body>
 
 </html>
