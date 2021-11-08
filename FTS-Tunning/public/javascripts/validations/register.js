@@ -303,3 +303,4 @@ $rePass.addEventListener("focus", () => {
     $rePassErrors.style.display = "none";
 });
 })
+
