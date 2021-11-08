@@ -40,7 +40,8 @@ window.addEventListener("load", () =>{
             case !regExAlpha.test($value):
              $inputName.placeholder = "";
              $inputNameErrors.style.display = "block";
-             $inputNameErrors.style.color = "orangered";
+             $inputNameErrors.style.color = "black";
+             $inputNameErrors.style.border = "3px orangered solid";
              $inputNameErrors.innerHTML = "";
              $inputNameErrors.innerHTML = "Ingresa un nombre válido.";
              $inputName.classList.remove("warning");
@@ -48,7 +49,7 @@ window.addEventListener("load", () =>{
              $inputName.classList.add("error");
                 document.querySelector(".div-name .fa-check-circle").style.display = "none";
                 document.querySelector(".div-name .fa-info-circle").style.display = "block";
-                document.querySelector(".div-name .fa-info-circle").style.color = "#F05454";
+                document.querySelector(".div-name .fa-info-circle").style.color = "orangered";
                 break;
             default:
              $inputNameErrors.style.display = "none";
@@ -83,9 +84,10 @@ window.addEventListener("load", () =>{
             case !regExAlpha.test($value):
              $inputLastName.placeholder = "";
              $inputLastNameErrors.style.display = "block";
-             $inputLastNameErrors.style.color = "orangered";
+             $inputLastNameErrors.style.color = "black";
              $inputLastNameErrors.innerHTML = "";
              $inputLastNameErrors.innerHTML = "Ingresa un nombre válido.";
+             $inputLastNameErrors.style.border = "3px orangered solid";
              $inputLastName.classList.remove("warning");
              $inputLastName.classList.remove("valid");
              $inputLastName.classList.add("error");
@@ -124,9 +126,10 @@ window.addEventListener("load", () =>{
             case !regExEmail.test($value):
                 $email.placeholder = "";
                 $emailErrors.style.display = "block";
-                $emailErrors.style.color = "orangered";
+                $emailErrors.style.color = "black";
                 $emailErrors.innerHTML = "";
                 $emailErrors.innerHTML = "Ingresa un email válido.";
+                $emailErrors.style.border = "3px orangered solid";
                 $email.classList.remove("warning");
                 $email.classList.remove("valid");
                 $email.classList.add("error");
@@ -162,19 +165,20 @@ $pass.addEventListener("blur", ()=>{
             $pass.classList.add("warning");
             document.querySelector(".div-password1 .fa-check-circle").style.display ="none";
             document.querySelector(".div-password1 .fa-info-cicle").style.display="block";
-            document.querySelector(".div-password1 .fa-info-circle").style.color= "green";
+            document.querySelector(".div-password1 .fa-info-circle").style.color= "orangered";
             break;
             case ($value.length<6 || $value.length>12):
                 $pass.placeholder = "";
+                $passErrors.style.border = "3px orangered solid";
                 $passErrors.style.display = "block";
-                $passErrors.style.color = "orangered";
+                $passErrors.style.color = "black";
                 $passErrors.innerHTML = "";
                 $passErrors.innerHTML = "La contraseña debe contener entre 6 y 12 dígitos.";
                 $pass.classList.remove("warning");
                 $pass.classList.remove("valid");
                 $pass.classList.add("error");
-                document.querySelector(".div-password1 .fa-check-circle").style.display = "none";
                 document.querySelector(".div-password1 .fa-info-cicle").style.display= "block";
+                document.querySelector(".div-password1 .fa-check-circle").style.display = "none";
                 document.querySelector(".div-password1 .fa-info-circle").style.color="orangered";
                 break;
             default:
@@ -211,7 +215,7 @@ $rePass.addEventListener("blur", ()=>{
         case !($value === $pass.value.trim()):
             $pass.placeholder = "";
             $passErrors.style.display = "block";
-            $passErrors.style.color = "orangered";
+            $passErrors.style.color = "black";
             $passErrors.innerHTML = "";
             $passErrors.innerHTML = "Los datos no coinciden."
             $pass.classList.remove("warning");
