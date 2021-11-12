@@ -8,11 +8,11 @@ module.exports = [
                 name: value
             }
         })
-        .then(product => {
+    /*     .then(product => {
             if(product){
                 return Promise.reject("El nombre ya esta registrado")
             }
-        })
+        }) */
     })
         .notEmpty().withMessage("Este campo es obligatorio").bail()
         .isLength({ min: 5 }).withMessage("El nombre del producto debe tener como mínimo 5 caracteres"),

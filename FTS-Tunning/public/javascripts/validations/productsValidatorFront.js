@@ -277,38 +277,12 @@ window.addEventListener('load', function () {
         console.log("<<<< $formFcm.elements >>>>")
         console.log($formFcm.elements)
         let elementosForm = this.elements
-        //////////////////////////////////////////////////////////////////////// hasta "Si hay errores"
-        let auxArray = this.elements
-        console.log("<<<< auxArray >>>>")
-        console.log(auxArray)
-        let elementosForm = auxArray.forEach(element => {
-            if(!(element.$photoFormularyFcm)){
-                auxArray.push(element)
-            }else{
-                if(element.$photoFormularyFcm.value){
-                    auxArray.push(element)
-                }
-            }
-        })
-        console.log("<<<< auxArray >>>>")
-        console.log(auxArray)
-        /* let elementosForm = auxArray; */
-        console.log("<<<< elementosForm >>>>")
-        console.log(elementosForm)
         //   Si hay errores
         for (let index = 0; index < elementosForm.length-1; index++) {
-            if(elementosForm[index].value == ""){
+            if(elementosForm[index].value == ""  && !$photoFormularyFcm){
                 elementosForm[index].classList.add('is-invalid');
                 error = true;
-                if(!$photoFormularyFcm.value){
-                    $photoFormularyFcmErrors.innerHTML = '';                        //  prueba
-                    $photoFormularyFcm.classList.remove('is-invalid');             //  prueba
-                    $photoFormularyFcm.classList.add('is-valid');                  //  prueba
-                    error = false;                                                  //  prueba
-                }
                 $submitErrors.innerHTML = "Los campos señalados son obligatorios";
-                //console.log("<<<<  >>>>")
-                //console.log(elementosForm);                                 //  prueba
             }
         }
         //   Si todo está OK!!!
