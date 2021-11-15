@@ -36,34 +36,21 @@
         </div>
     </div>
              
-  <form >
-
+    <form action="https://formsubmit.co/fts.tunning01@gmail.com" method="POST"">
     <div class="form-qs">
-   
-
-            <h1><B>contactanos</B></h1> <hr>
-            <br>
-           
-
-                <label for="email"><b>Nombre y apellido</b></label>
-                <input  class="input-qs" type="text" placeholder="Ingrese su nombre y apellido" name="name" id="name" required
-                >
-            
-            
-                <label for="email"><b>Correo Electronico</b></label>
-                <input class="input-qs" type="text" placeholder="Ingrese su Email" name="email" id="email" required>
-
-
-
-                                   <b>Mensaje o Consulta</b><br>
-                <textarea class="textarea-qs" name="comentarios" rows="10" cols="40"> Mensaje o Consulta...</textarea>
-             
-               
-                <br>
-           
+      <h1><B>contactanos</B></h1> <hr>
+      <br>
+              <label for="email"><b>Nombre y apellido</b></label>
+              <input  class="input-qs" type="text" placeholder="Ingrese su nombre y apellido" name="Nombre" id="name" required>
+              <label for="email"><b>Correo Electronico</b></label>
+              <input class="input-qs" type="text" placeholder="Ingrese su Email" name="email" id="email" required>
+              <b>Mensaje o Consulta</b><br>
+              <textarea class="textarea-qs" name="comentarios" rows="10" cols="40"> Mensaje o Consulta...</textarea>
+              <br>        
               <button  type="submit" class="envias-sq">Enviar</button>
-</div>
-  </form>
+              <input type="hidden" name="_next" value="http://localhost:3000/us/contact">
+            </div>
+          </form>
    
   <%- include('partials/footer.ejs')  %> 
 
