@@ -11,13 +11,16 @@
         <div class="titular">
             <% if (n) { %>
                 <h3><%- category.name %> </h3>
+                <div class="tit-des">
+                    <p style="font-weight: bold;">Todos tus <%- category.name.toLowerCase() %> en un solo lugar</p>
+                </div>
             <% }else { %> 
                 <h3>Todos nuestros productos</h3>
+                <div class="tit-des">
+                    <p style="font-weight: bold;">¡Conoce todos los productos que tenemos para ofrecerte!</p>
+                </div>
             <% } %>
              
-            <div class="tit-des">
-                <p>A cambiar en futuro con bases de datos relacionales</p>
-            </div>
         </div>
         <div class="bb">
             <!-- Sección de filtro -->

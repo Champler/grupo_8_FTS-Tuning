@@ -72,7 +72,7 @@ main .products .product img{
     height: 120px;
     border-radius: 15px;
     box-shadow: 1px 1px 1px 1px var(--color-azul);
-    transition: ease all 0.2s;
+    transition: ease all 0.5s;
 }
 
 .a {
