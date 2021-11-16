@@ -8,7 +8,12 @@
     <main class="allProds">
         <div class="search-prod">
             <form action="/adminProductos/search">
-                <input type="search" placeholder="Busca tu producto" name="searchAllProds">
+                <input type="search" placeholder="Busca tu producto" name="searchAllProds" style="padding: 4px;">
+                <select name="category" id="category" style="width: 100%; margin-top: 5px; padding: 5px;">
+                    <% categories.forEach(category => { %>
+                        <option value=<%= category.id %>><%= category.name %></option>
+                    <% }); %>
+                </select>
             </form>
         </div>
         <a href="/adminProductos/cargaProducto"><button>Agregar</button></a>

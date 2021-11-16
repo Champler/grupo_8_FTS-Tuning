@@ -18,11 +18,13 @@ module.exports = {
     },
 
     productos: (req, res) => {
-        db.Product.findAll({
-            include: [{association: 'images'}]
+        const categories = db.Category.findAll()
+        const products = db.Product.findAll({
+            include: [{association: "category"}, {association: "images"}]
         })
-        .then(products=>{
-            res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : ""})
+        Promise.all([categories, products])
+        .then(([categories, products] )=> {
+            res.render('adminProducts', {products, title:"Productos", session: req.session ? req.session : "", categories})
         })
         .catch(error => {
             console.log(error)
@@ -215,7 +217,15 @@ module.exports = {
     },
     adminSearch: (req, res) => {
         let busqueda = req.query.searchAllProds.trim()
-        db.Product.findAll({
+        let categorySearch = req.query.category.value
+        const categories = db.Category.findAll({
+            where: {
+                id: {
+                    [Op.substring]: categorySearch
+                }
+            }
+        })
+        const products =  db.Product.findAll({
             where: {
                 name: {
                     [Op.substring]: busqueda
@@ -223,8 +233,12 @@ module.exports = {
             },
             include: [{association: "images"}]
         })
-        .then(products => {
-            res.render('adminProducts',{title:busqueda, products, session: req.session ? req.session : ""})
+        Promise.all([categories, products])
+        .then(([categories, products] )=> {
+            res.render('adminProducts', {title:busqueda, products, session: req.session ? req.session : "", categories})
+        })
+        .catch(error => {
+            console.log(error)
         })
     }
 }
