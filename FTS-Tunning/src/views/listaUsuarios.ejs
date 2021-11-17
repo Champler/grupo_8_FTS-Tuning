@@ -24,7 +24,7 @@
                             </form>
                         </div>
                         <form action="/adminProductos/eliminarUsuario/<%- user.id %>?_method=DELETE" method="POST">
-                            <button type="submit">Eliminar</button>
+                            <button type="submit" onclick="if(!confirm('Desea eliminar el usuario')){return false}">Eliminar</button>
                         </form>
                         
                     </div>
