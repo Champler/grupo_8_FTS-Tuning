@@ -217,9 +217,11 @@ module.exports = {
         let busqueda = req.query.searchAllProds.trim()
         db.Product.findAll({
             where: {
-                name: {
-                    [Op.substring]: busqueda
-                }
+                [Op.or]: [
+                    {name: {[Op.substring]:`%${busqueda}%`}},
+                    {description: {[Op.substring]:`%${busqueda}%`}},
+                    {price: {[Op.like]:`%${busqueda}%`}},
+                ]
             },
             include: [{association: "images"}]
         })
