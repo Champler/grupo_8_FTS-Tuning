@@ -15,6 +15,7 @@ router.get('/users', userCreatedCheck, userAdminCheck,controller.usuarios);
 router.get('/productos', userCreatedCheck, userAdminCheck,controller.productos);
 
 router.get('/search', controller.adminSearch)
+router.get('/userSearch', controller.userSearch)  // buscador de usuarios
 
 
 /* GET / mostrar datos de edicion */

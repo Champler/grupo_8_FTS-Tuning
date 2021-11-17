@@ -8,8 +8,7 @@ processLogin,
 proccesRegister,
 userEdit,
 logout,
-perfilUsers,
-userSearch
+perfilUsers
 } = require('../controllers/usersController')
 let loginValidator = require("../validations/loginValidator") 
 let registerValidator = require("../validations/registerValidator") 
@@ -22,7 +21,6 @@ const usController = require('../controllers/usController');
 /* GET users listing */
 router.get('/historial', userCreatedCheck,controller.historial)
 
-router.get('/search', userSearch)  // buscador de usuarios
 
 router.get('/login', sessionExists,login)
 router.post('/login',loginValidator,processLogin )

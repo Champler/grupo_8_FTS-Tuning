@@ -228,5 +228,20 @@ module.exports = {
         .then(products => {
             res.render('adminProducts',{title:busqueda, products, session: req.session ? req.session : ""})
         })
+    },
+    userSearch: (req, res) => {
+        let busqueda = req.query.searchAllUsers.trim()
+        db.User.findAll({
+           where: {
+                [Op.or]: [
+                    {firstName: {[Op.substring]:`${busqueda}`}},
+                    {lastName: {[Op.substring]:`${busqueda}`}},
+                    {rol: {[Op.like]:`%${busqueda}%`}},
+                ]
+            } 
+        })
+        .then(users => {
+            res.render('listaUsuarios', {title: busqueda, users, session: req.session ? req.session : ""})
+        })
     }
 }

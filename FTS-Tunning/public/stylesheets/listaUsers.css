@@ -59,6 +59,10 @@
     padding: 7px;
    
 }
+.search-users input {
+    border-radius: 7px;
+    padding: 7px;
+}
 @media (min-width:768px){
     .users-list {
         display: grid;
