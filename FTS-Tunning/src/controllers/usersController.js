@@ -158,5 +158,8 @@ module.exports = {
             res.cookie('cookieFTS','',{maxAge:-1})
         }
         res.redirect('/')
+    },
+    userSearch: (req, res) => {
+        
     }
 }

@@ -5,6 +5,11 @@
     <%- include('partials/adminHeader.ejs')  %> 
 
         <main class="users-list">
+            <div class="search-users">
+                <form action="/users/search">
+                    <input type="search" placeholder="Busca un usario" name="searchUsers">
+                </form>
+            </div>
             <% users.forEach(user => { %>
                 <section class="users">
                     <div class="usuario">
