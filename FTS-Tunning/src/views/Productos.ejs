@@ -26,7 +26,7 @@
             <!-- Sección de filtro -->
             <section class="list-product">
                 <div id="lista">
-                    <h4>Categorias</h4>
+                    <h2>Categorias</h2>
                     <ul class="ul-product">
                         <li><a href="/productos/categoria/frenos">Frenos</a></li>
                         <li><a href="/productos/categoria/neumaticos">Neumaticos</a></li>
@@ -39,18 +39,26 @@
                 </div>
             </section>
             <!-- Sección de muestra de productos -->
-            <section class="lista-productos">
-                <% products.forEach(product => { %>
-                    <article class="each-product">
-                        <div>
-                            <img src="/images/productos/<%- product.images[0].name %>" alt="">
-                            <h5><%= product.name %></h5>
-                            <p class="prod-prod-price">$ <%= product.price %></p>
-                            <a href="/productos/<%= product.id %>"><button>Ver producto</button></a>
-                        </div>
+            <% if (products.length != 0) { %>
+                
+                <section class="lista-productos">
+                    <% products.forEach(product => { %>
+                        <article class="each-product">
+                            <div>
+                                <img src="/images/productos/<%- product.images[0].name %>" alt="">
+                                <h5><%= product.name %></h5>
+                                <p class="prod-prod-price">$ <%= product.price %></p>
+                                <a href="/productos/<%= product.id %>"><button>Ver producto</button></a>
+                            </div>
+                        </article>
+                        <% }) %>                
+                    </section>
+                <% }else { %>
+                    <article class="prod-not-found">       
+                        <h2>El producto que estas buscando no lo tenemos por el momento,</h2> <h2>¡Pero no dudes en contactarnos para que lo consigamos!</h2>
+                        <img src="images/art-not-found.png" alt="" style="width: 500px; height: 500px;">
                     </article>
-                    <% }) %>                
-                </section>
+                <% } %>
         </div>
         </main>
         <%- include('partials/footer.ejs')  %> 
