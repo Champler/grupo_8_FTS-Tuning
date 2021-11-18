@@ -13,27 +13,37 @@
         </div>
         <a href="/adminProductos/cargaProducto"><button>Agregar</button></a>
         <section class="admin-prods">
-            <% products.forEach(product => { %>
-                <article class="admin-each-product">
-                    <div>
-                        <a href="/Productos/<%- product.id %>">
-                            <img src="/images/productos/<%- product.images[0].name %>" alt="">
-                        </a>
-                        <a href="/Productos/<%- product.id %>">
-                            <h3><%= product.name %></h3>
-                        </a>
-                        <a href="/Productos/<%- product.id %>">    
-                            <p class="prod-prod-price">$<%= product.price %></p>
-                        </a>
-                        <div class="edit-delete">
-                            <a href="/adminProductos/editarProducto/<%- product.id %>"><button>Editar</button></a>
-                            <form action="/adminProductos/eliminarProducto/<%- product.id %>?_method=DELETE" method="post" >
-                                <button type="submit" class="delete-prod" onclick="if(!confirm('Desea eliminar el procuto')){return false}">Eliminar</button>
-                            </form>
+            <% if (products.length != 0) { %>                   
+                <% products.forEach(product => { %>
+                    <article class="admin-each-product">
+                        <div>
+                            <a href="/Productos/<%- product.id %>">
+                                <img src="/images/productos/<%- product.images[0].name %>" alt="">
+                            </a>
+                            <a href="/Productos/<%- product.id %>">
+                                <h3><%= product.name %></h3>
+                            </a>
+                            <a href="/Productos/<%- product.id %>">    
+                                <p class="prod-prod-price">$<%= product.price %></p>
+                            </a>
+                            <div class="edit-delete">
+                                <a href="/adminProductos/editarProducto/<%- product.id %>"><button>Editar</button></a>
+                                <form action="/adminProductos/eliminarProducto/<%- product.id %>?_method=DELETE" method="post">
+                                    <button type="submit" class="delete-prod">Eliminar</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <% }) %>                
+                    </article>
+                    <% }) %>    
+            <% } else { %>
+                <article class="prod-not-found">       
+                    <h2>El producto que estas buscando no lo tenemos por el momento,</h2> <h2>¡Pero lo podes agregar a la base de datos cuando quieras!</h2>
+                    <img src="/images/art-not-found.png" alt="" style="width: 500px; height: 500px;">
+                </article> 
+            <% }%>
+            <!-- -->
+
+                        
             </section>
         </main>
     </body>
