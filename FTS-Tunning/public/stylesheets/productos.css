@@ -50,6 +50,7 @@ main .lista-productos .each-product div img{
     width: 80%;
     height: 190px;
     border-radius: 30px;
+    object-fit: cover;
 }
 main .lista-productos .each-product div a button{
     width: 100%;
