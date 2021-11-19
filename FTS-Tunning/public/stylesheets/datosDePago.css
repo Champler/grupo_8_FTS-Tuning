@@ -31,24 +31,8 @@
   overflow: hidden;
   padding: 1rem 0;
   width: 60%;
+
 }
-
-
-/* Aside pue' */
-/* aside {
-  padding: 0 1rem;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-} */
-
-/* aside {
-  float: right;
-  position: relative;
-  width: 30vw;
-  bottom: -1.6rem;
-}
- */
 
 
 
@@ -71,7 +55,7 @@ form input{
   margin-bottom: 1rem;
 }
 
-.entrega{
+.entregaa{
   border-radius: 10px;
   line-height: 1.3rem;
     background-color: #eee;
@@ -104,7 +88,7 @@ justify-content: space-between;
 
 
 /* Resumen de compra */
-/* 
+
 .summary {
   background-color: #eee;
   border: 1px solid #aaa;
@@ -162,8 +146,7 @@ justify-content: space-between;
   font-size: 0.75rem;
 
 }
- */
-/* .checkboxx {
+  .checkboxx {
   padding-bottom: 1.625rem;
 }
 
@@ -176,8 +159,8 @@ justify-content: space-between;
   padding: 0.625rem 0;
   width: 100%;
 }
- */
-/* .summary-delivery-selection {
+ 
+ .summary-delivery-selection {
   background-color: #ccc;
   border: 1px solid #aaa;
   border-radius: 4px;
@@ -185,7 +168,7 @@ justify-content: space-between;
   font-size: 0.25rem;
   height: 34px;
   width: 100%;
-} */
+} 
 
 
 /* MEDIAS QUERIES */
@@ -310,10 +293,9 @@ justify-content: space-between;
 }
 
 
-/* @media (min-width: 768px) and (max-width: 2000px) {
-  aside {   float: left;
-    position: relative;
-    left: 25%;
-    width: 50%;
-  } */
-/* } */
+ @media (min-width: 768px) and (max-width: 2000px) {
+  .summary {  
+    float: inline-start;
+    width: 90%;
+  } 
+ }
