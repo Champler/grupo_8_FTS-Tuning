@@ -37,11 +37,13 @@
             </div>
             <div class="nameModelYear-fcm">
                 <label for="name" class="label-fcm">Nombre del Producto:</label>
-                <input type="text" name="name" id="nameFcm" class="name-fcm border-fcm" value="<%= locals.old ? old.name : producto.name %>">
-                <p id="nameFcmErrors"></p>
-                <% if (locals.errors && errors.name) { %>
-                    <small class="small-red"><%= errors.name.msg %></small>
-                <% } %>
+                <div class="nameFcmBlock">
+                    <input type="text" name="name" id="nameFcm" class="name-fcm border-fcm" value="<%= locals.old ? old.name : producto.name %>">
+                    <p id="nameFcmErrors"></p>
+                    <% if (locals.errors && errors.name) { %>
+                        <small class="small-red"><%= errors.name.msg %></small>
+                    <% } %>
+                </div>
             </div>
             <div class="brandModelYear-fcm">
                 <div class="brand-fcm">
@@ -79,8 +81,8 @@
                 <label for="img" class="label-fcm">Foto:</label>
                 <input type="file" name="img" id="photoFormularyFcm" class="border-fcm" multiple>
                 <p id="photoFormularyFcmErrors"></p>
-                <div class="img-container" id="img-preview"></div>
             </div>
+            <div class="img-container" id="img-preview"></div>
             <div class="description-fcm">
                 <label for="description" class="label-fcm">Descripción:</label>
                 <textarea name="description" id="descriptionFcm" class="textarea-description-fcm border-fcm"><%= locals.old ? old.description : producto.description %></textarea>
