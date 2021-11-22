@@ -51,7 +51,9 @@
                 <p class="paragraph"><%- parrafo %> </p>
             <% }) %>                                            <!-- Muestra los párrafos separdos previamente con let texto = producto.description.split('\r\n') -->
             <div class="pd-product-details">
-                <img class="img-product" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
+                <div class="pd-img-container">
+                    <img class="img-product" src="/images/productos/<%= product.images[0].name %>" alt="Escape Chevrolet Corsa 2">
+                </div>
                 <ul class="description-list">
                     <p class="product-caracteristics">Características:</p>
                     <li>Nombre:  <%= product.name %></li>
