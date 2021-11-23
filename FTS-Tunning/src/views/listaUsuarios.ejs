@@ -4,37 +4,47 @@
 <body>
     <%- include('partials/adminHeader.ejs')  %> 
 
+    <div class="search-users">
+        <form action="/adminProductos/userSearch">
+            <input type="search" placeholder="Busca un usario" name="searchAllUsers">
+        </form>
+    </div>
         <main class="users-list">
-            <div class="search-users">
-                <form action="/adminProductos/userSearch">
-                    <input type="search" placeholder="Busca un usario" name="searchAllUsers">
-                </form>
-            </div>
-            <% users.forEach(user => { %>
-                <section class="users">
-                    <div class="usuario">
-                        <div class="photo">
-                            <img src="/images/users/<%- user.image %> " alt="">
-                        </div>
-                        <h5><%- user.firstName + " " + user.lastName %></h5>
-                        <p>Email:<%- user.email%> </p>
-                        <p>ID: <%- user.id %> </p>
-                        <div class="user-type">
-                            <form action="/adminProductos/editarUsuario/<%- user.id %>?_method=PUT" method="POST">
-                                <select name="rol" id="" class="select-userType">
-                                    <option <%- user.rol === "user" ? "selected" : "" %> value="user">Usuario</option>
-                                    <option <%- user.rol === "admin" ? "selected" : "" %> value="admin">Admin</option>
-                                </select>
-                                <button type="submit">Editar</button>
-                            </form>
-                        </div>
-                        <form action="/adminProductos/eliminarUsuario/<%- user.id %>?_method=DELETE" method="POST">
-                            <button type="submit" onclick="if(!confirm('Desea eliminar el usuario')){return false}">Eliminar</button>
-                        </form>
-                        
-                    </div>
-                </section>
-            <% }) %>
+            <% if (users.length != 0) { %>
+                
+                <section class="lista-productos">
+                    <% users.forEach(user => { %>
+                        <section class="users">
+                            <div class="usuario">
+                                <div class="photo">
+                                    <img src="/images/users/<%- user.image %> " alt="">
+                                </div>
+                                <h5><%- user.firstName + " " + user.lastName %></h5>
+                                <p>Email:<%- user.email%> </p>
+                                <p>ID: <%- user.id %> </p>
+                                <div class="user-type">
+                                    <form action="/adminProductos/editarUsuario/<%- user.id %>?_method=PUT" method="POST">
+                                        <select name="rol" id="" class="select-userType">
+                                            <option <%- user.rol === "user" ? "selected" : "" %> value="user">Usuario</option>
+                                            <option <%- user.rol === "admin" ? "selected" : "" %> value="admin">Admin</option>
+                                        </select>
+                                        <button type="submit">Editar</button>
+                                    </form>
+                                </div>
+                                <form action="/adminProductos/eliminarUsuario/<%- user.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" onclick="if(!confirm('Desea eliminar el usuario')){return false}">Eliminar</button>
+                                </form>
+                                
+                            </div>
+                        </section>
+                    <% }) %>
+                <% }else { %>
+                    <article class="prod-not-found">       
+                        <h2>El usuario que estas buscando no esta registrado por el momento,</h2>
+                        <img src="/images/art-not-found.png" alt="" style="width: 500px; height: 500px;">
+                    </article>
+                <% } %>
+           
             
         </main>
      <%- include('partials/footer.ejs')  %> 

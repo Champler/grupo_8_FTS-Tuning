@@ -153,7 +153,7 @@ window.addEventListener('load', function () {
                 $carModelFcm.classList.remove('is-valid')
                 $carModelFcm.classList.add('is-invalid')
                 break;
-            case $carModelFcm.value.trim().length < 3:
+            case $carModelFcm.value.trim().length < 4:
                 $carModelFcmErrors.innerHTML = 'Ingrese más de 3 caracteres'
                 $carModelFcm.classList.remove('is-valid')
                 $carModelFcm.classList.add('is-invalid')
